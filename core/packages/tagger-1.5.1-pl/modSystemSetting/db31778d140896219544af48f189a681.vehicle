@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tagger',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'cc0215f9ca63dbdfba62a28bdd7d347a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'db31778d140896219544af48f189a681',
+  'native_key' => 'tagger.place_tvs_tab_label',
+  'object' => '{"key":"tagger.place_tvs_tab_label","value":"tagger.tab.label","xtype":"textfield","namespace":"tagger","area":"places","editedon":null}',
+);

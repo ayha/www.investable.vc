@@ -1,0 +1,16 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'namespace' => 'userimport',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '521a45eb7ae40f793f1523dc9a7e6003',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '4fde2d0a3e13ad06d3009d3781901f5a',
+  'native_key' => 'userimport',
+  'object' => '{"text":"userimport","parent":"components","action":"index","description":"userimport.desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"userimport"}',
+);

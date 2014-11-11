@@ -1,0 +1,66 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'copy_exclude_patterns' => 
+  array (
+    0 => '/^__/',
+  ),
+  'namespace' => 'userimport',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"userimport-1.0.0-beta1\\/modCategory\\/5b2abfb1934d2c57a1c017779207f876\\/0\\/","target":"return MODX_CORE_PATH.\'components\\/\';","name":"userimport"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"userimport-1.0.0-beta1\\/modCategory\\/5b2abfb1934d2c57a1c017779207f876\\/1\\/","target":"return MODX_ASSETS_PATH.\'components\\/\';","name":"userimport"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '8e841bf0851b28b7bf3049fe626e42b6',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '5b2abfb1934d2c57a1c017779207f876',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"UserImport"}',
+);

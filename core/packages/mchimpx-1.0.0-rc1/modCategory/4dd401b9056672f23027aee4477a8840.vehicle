@@ -1,0 +1,69 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'f7ab6b9aa21bb05cfa7c3d374d5c17f7' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":1,"name":"mChimpXSubscribe","description":"A default example of how to use mChimpXSubscribe snippet","editor_type":0,"category":0,"cache_type":0,"snippet":"[[!FormIt?\\n  &submitVar=`subscribeMchimp`\\n  &hooks=`spam,mChimpXSubscribe`\\n  &validate=`nospam:blank,firstname:required,lastname:required,email:email:required`\\n  &successMessage=`You\'re now subscribed to the mailinglist!`\\n  \\n  &mcApiKey=`--YOUR-API-KEY-HERE--`\\n  &mcListId=`--YOUR-LIST-ID-HERE--`\\n  &mcMergeTags=`FNAME:firstname,LNAME:lastname,FULLNAME:firstname:lastname`\\n  &mcSendWelcome=`0`\\n]]\\n\\n[[!+fi.error_message:notempty=`<p>[[+fi.error_message]]<\\/p>`]]\\n\\n[[!+fi.successMessage:notempty=`<p><strong>[[+fi.successMessage]]<\\/strong><\\/p>`]]\\n\\n<form action=\\"[[~[[*id]]]]\\" method=\\"post\\">\\n  <p style=\\"margin:0px;\\"><input type=\\"hidden\\" name=\\"nospam\\" value=\\"\\" \\/><\\/p>\\n  <p>\\n    <strong>Your firstname:<\\/strong><br \\/>\\n    <input type=\\"text\\" name=\\"firstname\\" value=\\"[[+fi.firstname]]\\" \\/>\\n  <\\/p>\\n  <p>\\n    <strong>Your lastname:<\\/strong><br \\/>\\n    <input type=\\"text\\" name=\\"lastname\\" value=\\"[[+fi.lastname]]\\" \\/>\\n  <\\/p>\\n  <p>\\n    <strong>Your Email:<\\/strong><br \\/>\\n    <input type=\\"text\\" name=\\"email\\" value=\\"[[+fi.email]]\\" \\/>\\n  <\\/p>\\n  <p>\\n    <input type=\\"submit\\" name=\\"subscribeMchimp\\" value=\\"Subscribe\\" \\/>\\n  <\\/p>\\n<\\/form>","locked":0,"properties":""}',
+        'guid' => '70490c1d85fc3fc58ef52a5622eb7ea7',
+        'native_key' => 1,
+        'signature' => '5bb2aa510173cf248822ef7b695c0075',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '339def85f21c8c22d71a59eee947069c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":1,"name":"mChimpXSubscribe","description":"Subscribe users to the Mailchimp mailing list","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * mChimpX\\n *\\n * Copyright 2011-2012 by Bert Oost at OostDesign.nl <bert@oostdesign.nl>\\n *\\n * mChimpX is free software; you can redistribute it and\\/or modify it\\n * under the terms of the GNU General Public License as published by the Free\\n * Software Foundation; either version 2 of the License, or (at your option) any\\n * later version.\\n *\\n * mChimpX is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * mChimpX; if not, write to the Free Software Foundation, Inc., 59 Temple Place,\\n * Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package mchimpx\\n *\\/\\n\\/**\\n * mChimpXSubscribe - Subscribe users to the Mailchimp mailing list\\n * USE IT AS FORMIT HOOK!\\n *\\n * @package mchimpx\\n * @author Bert Oost at OostDesign.nl <bert@oostdesign.nl>\\n *\\/\\n\\n$apikey = $modx->getOption(\'mcApiKey\', $scriptProperties, false);\\n$listid = $modx->getOption(\'mcListId\', $scriptProperties, false);\\n$emailField = $modx->getOption(\'mcEmailField\', $scriptProperties, \'email\');\\n$mergeTags = $modx->getOption(\'mcMergeTags\', $scriptProperties, \'FNAME:firstname,LNAME:lastname,FULLNAME:firstname:lastname\');\\n\\n\\/\\/ subscribe options\\n$emailType = $modx->getOption(\'mcEmailType\', $scriptProperties, \'html\');\\n$doubleOptin = (boolean) $modx->getOption(\'mcDoubleOptin\', $scriptProperties, 1);\\n$updateExisting = (boolean) $modx->getOption(\'mcUpdateExisting\', $scriptProperties, 0);\\n$replaceInterests = (boolean) $modx->getOption(\'mcReplaceInterests\', $scriptProperties, 1);\\n$sendWelcome = (boolean) $modx->getOption(\'mcSendWelcome\', $scriptProperties, 1);\\n\\n\\/\\/ error reporting options\\n$debug = (boolean) $modx->getOption(\'mcDebug\', $scriptProperties, 0);\\n$errorApiKey = (boolean) $modx->getOption(\'mcFailOnApiKey\', $scriptProperties, 0);\\n$errorListNotExists = (boolean) $modx->getOption(\'mcFailOnListNotExists\', $scriptProperties, 0);\\n$errorAlreadySubscribed = (boolean) $modx->getOption(\'mcFailOnAlreadySubscribed\', $scriptProperties, 0);\\n$errorNotSubscribed = (boolean) $modx->getOption(\'mcFailOnNotSubscribed\', $scriptProperties, 0);\\n$errorMissingReq = (boolean) $modx->getOption(\'mcFailOnMissingRequired\', $scriptProperties, 0);\\n\\n\\/\\/ get form values\\n$values = $hook->getValues();\\n\\n\\/\\/ load lexicons\\n$modx->lexicon->load(\'mchimpx:default\');\\n\\nif(empty($apikey)) {\\n  $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.noapi\'));\\n  return false;\\n}\\nif(empty($listid)) {\\n  $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.nolistid\'));\\n  return false;\\n}\\nif(empty($emailField) || !isset($values[$emailField]) || empty($values[$emailField])) {\\n  $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.noemail\'));\\n  return false;\\n}\\nif(empty($mergeTags) || !stripos($mergeTags, \':\')) {\\n  $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.nomergefields\'));\\n  return false;\\n}\\n\\n\\/\\/ Secure page?\\n$secure = false;\\nif(isset($_SERVER[\'HTTPS\']) && $_SERVER[\'HTTPS\'] == \'on\') {\\n  $secure = true;\\n}\\n\\n\\/\\/ load Mailchimp API\\ntry {\\n  $modx->loadClass(\'MCAPI\', $modx->getOption(\'mchimpx.core_path\',null,$modx->getOption(\'core_path\').\'components\\/mchimpx\\/\').\'model\\/\', true, true);\\n  $mc = new MCAPI($apikey, $secure);\\n  \\n  \\/\\/ find out the merge values\\n  $mergeValues = array();\\n  $parsefields = explode(\',\', trim($mergeTags));\\n  foreach($parsefields as $field) {\\n    $fields = explode(\':\', $field);\\n    $keyField = array_shift($fields);\\n    $mergeValues[$keyField] = \'\';\\n    foreach($fields as $index => $submitfield) {\\n      if(isset($values[$submitfield])) {\\n\\t$mergeValues[$keyField] .= (($index > 0) ? \' \' : \'\').$values[$submitfield];\\n      }\\n    }\\n  }\\n  \\n  \\/\\/ subscribe\\n  $success = $mc->listSubscribe($listid, $values[$emailField], $mergeValues, $emailType, $doubleOptin, $updateExisting, $replaceInterests, $sendWelcome);\\n  if(!$success) {\\n    \\n    switch($mc->errorCode) {\\n      case \'104\': \\/\\/ Invalid_ApiKey\\n        if($errorApiKey) { $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.invalidapikey\')); }\\n      break;\\n      case \'200\': \\/\\/ List_DoesNotExist\\n        if($errorListNotExists) { $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.listnotexists\')); }\\n      break;\\n      case \'214\': \\/\\/ List_AlreadySubscribed\\n      case \'230\': \\/\\/ Email_AlreadySubscribed\\n        if($errorAlreadySubscribed) { $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.alreadysubscribed\')); }\\n      break;\\n      case \'215\': \\/\\/ List_NotSubscribed\\n      case \'233\': \\/\\/ Email_NotSubscribed\\n        if($errorNotSubscribed) { $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.notsubscribed\')); }\\n      break;\\n      case \'250\': \\/\\/ List_MergeFieldRequired\\n        if($errorMissingReq) { $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.missingrequired\')); }\\n      break;\\n    }\\n    \\n    if($debug) {\\n      $modx->log(modX::LOG_LEVEL_ERROR, \'[mChimpX] ERROR: \'.$mc->errorMessage);\\n    }\\n    \\n    return false;\\n  }\\n  \\n  return true;\\n}\\ncatch(Exception $e) {\\n  \\n  if($debug) {\\n    $modx->log(modX::LOG_LEVEL_ERROR, \'[mChimpX] ERROR: \'.$e->getMessage());\\n  }\\n  \\n  $hook->addError(\'\', $modx->lexicon(\'mchimpx.error.unknown\'));\\n  return false;\\n}","locked":0,"properties":null,"moduleguid":""}',
+        'guid' => 'f73700817daf9f7310493c63680bf0c1',
+        'native_key' => 1,
+        'signature' => '195ef8eacccd452ce9485e1f9b21f61e',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'mchimpx',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"mchimpx-1.0.0-rc1\\/modCategory\\/4dd401b9056672f23027aee4477a8840\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"mchimpx"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'eb0314679db1947590680bc14cb71be7',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '4dd401b9056672f23027aee4477a8840',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"mChimpX"}',
+);

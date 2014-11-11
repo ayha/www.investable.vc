@@ -1,0 +1,6 @@
+.htaccess
+/core/*
+/manager/*
+/connectors/*
+/setup/*
+/assets/images/members/

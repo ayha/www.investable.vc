@@ -1,0 +1,78 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      '59cef5f0962908036011c3295bdf20fc' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'related_objects' => true,
+        'related_object_attributes' => 
+        array (
+          'Children' => 
+          array (
+            'preserve_keys' => false,
+            'update_object' => true,
+            'unique_key' => 
+            array (
+              0 => 'namespace',
+              1 => 'controller',
+            ),
+          ),
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"tagger","controller":"index","haslayout":1,"lang_topics":"tagger:default","assets":"","help_url":"","parent":0}',
+        'guid' => 'd7d8e1b0897afaf367b3b2b9b71d156f',
+        'native_key' => 1,
+        'signature' => 'c363ce579579b17d0a6bde3734254683',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'Children' => 
+        array (
+          'preserve_keys' => false,
+          'update_object' => true,
+          'unique_key' => 
+          array (
+            0 => 'namespace',
+            1 => 'controller',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'tagger',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '735ff2ae22b436262da00822dad396af',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => 'bd5fbc7e15cd9f3ec4585cc94e7453f4',
+  'native_key' => 'tagger.menu.tagger',
+  'object' => '{"text":"tagger.menu.tagger","parent":"components","action":1,"description":"tagger.menu.tagger_desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"core"}',
+);

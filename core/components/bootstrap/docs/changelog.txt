@@ -1,0 +1,72 @@
+Changelog file for Bootstrap.
+
+Bootstrap 1.0.12-pl
+====================================
+- Removed donate link in the readme.txt
+
+Bootstrap 1.0.11-pl
+====================================
+- Updated dependency BreadCrumb in the _build/subpackages to 1.4.2-pl
+
+Bootstrap 1.0.10-pl
+====================================
+- Updated bootstrap/dist to v3.2.0
+- Updated bootstrap/vendor/js/html5shiv.js to v3.7.2
+
+Bootstrap 1.0.9-pl
+====================================
+- Updated bootstrap/vendor/js/jquery.js to v1.11.1
+
+Bootstrap 1.0.8-pl
+====================================
+- Minor BootstrapTemplate cleanup
+- Added URL of this extra at the bottom right of the chunk Footer
+- Added donate link in the readme.txt
+
+Bootstrap 1.0.7-pl
+====================================
+- This update is actual for new installation only, because templates and chunks are not overridden during extra update or reinstall
+- Added lang="[[++cultureKey]]" instead of lang="en" in the BootstrapTemplate
+- Updated BootstrapTemplate, chunk Head and style.css for new "Sticky footer" implementation
+
+Bootstrap 1.0.6-pl
+====================================
+- Skip update templates and chunks during extra update or reinstall
+- Setting bootstrap.dropdown_disabled equal to 1 by default
+
+Bootstrap 1.0.5-pl
+====================================
+- Updated bootstrap/dist to v3.1.1
+
+Bootstrap 1.0.4-pl
+====================================
+- Fixed bootstrap dist contents
+
+Bootstrap 1.0.3-pl
+====================================
+- Updated readme
+
+Bootstrap 1.0.3-beta-1
+====================================
+- Added lexicons
+- Updated readme
+- Fixed setting bootstrap.dropdown_disabled
+- Zip up transport package via the Build script instead of the extra PackMan
+
+Bootstrap 1.0.2-beta-1
+====================================
+- Updated readme
+
+Bootstrap 1.0.1-beta-1
+====================================
+- Updated template BootstrapTemplate
+- Updated chunk Header
+- Added [[++site_url]] instead of "/" in the chunk Navbar
+- Updated bootstrap/dist to v3.1.0
+- Updated bootstrap/vendor/html5shiv.js to v3.7.0
+- Updated bootstrap/vendor/respond.min.js to v1.4.2
+- Updated bootstrap/vendor/jquery.js to v1.11.0
+ 
+Bootstrap 1.0.0-beta-1
+====================================
+- Initial release

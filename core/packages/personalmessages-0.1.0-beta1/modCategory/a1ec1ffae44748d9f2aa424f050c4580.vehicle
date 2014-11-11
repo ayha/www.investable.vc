@@ -1,0 +1,156 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'd898cfdb68ac9d6405f808dc52b80244' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":139,"source":0,"property_preprocess":0,"name":"pmEmailTpl","description":"Email template.","editor_type":0,"category":51,"cache_type":0,"snippet":"The new private message!\\n\\nYou can read by clicking on the link [[~1? &scheme=`full`]]\\n\\nThank you!","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"The new private message!\\n\\nYou can read by clicking on the link [[~1? &scheme=`full`]]\\n\\nThank you!"}',
+        'guid' => '119c936ea75870062af68658601cb700',
+        'native_key' => 139,
+        'signature' => '4fc7ee37f0d8e77d9c978e9919ec0f56',
+      ),
+      'd2e2389eb07af9cdef0dfe1ccd55dfd1' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":138,"source":0,"property_preprocess":0,"name":"pmMessageTpl","description":"","editor_type":0,"category":51,"cache_type":0,"snippet":"<li [[+read:isequalto=`0`:then=`class=\\"unread\\"`]]>\\n  [[+contact.username]]: <a href=\\"[[+target]]?message=[[+id]]\\">[[+subject]]<\\/a> ([[+date_sent]])\\n<\\/li>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<li [[+read:isequalto=`0`:then=`class=\\"unread\\"`]]>\\n  [[+contact.username]]: <a href=\\"[[+target]]?message=[[+id]]\\">[[+subject]]<\\/a> ([[+date_sent]])\\n<\\/li>"}',
+        'guid' => '6ab2269bbbef7db1f8f925960e13173d',
+        'native_key' => 138,
+        'signature' => 'f64009cb419ec0c9cea4664be77b1e39',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '54088da15cef6f32225e80fd3f65376e' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":137,"source":0,"property_preprocess":0,"name":"pmInbox","description":"Show current user inbox messages.","editor_type":0,"category":51,"cache_type":0,"snippet":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n\\n$userId = $user->get(\'id\');\\n\\n$mode = $modx->getOption(\'mode\', $scriptProperties, \'receive\');\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$targetId = (int)$modx->getOption(\'targetId\', $scriptProperties, 0);\\n$markAsRead = (int)$modx->getOption(\'markAsRead\', $scriptProperties, 0);\\n$offset = (int)$modx->getOption(\'offset\', $scriptProperties, 0);\\n$limit = (int)$modx->getOption(\'limit\', $scriptProperties, 0);\\n$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'pmMessageTpl\');\\n\\n$output = \'\';\\n$outputSeparator = isset($outputSeparator) ? $outputSeparator : \\"\\\\n\\";\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->select($modx->getSelectColumns(\'modUserMessage\', \'modUserMessage\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Contact\', \'contact.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'ContactProfile\', \'contact.profile.\'));\\n\\nif($mode == \'receive\'){\\n  $q->innerJoin(\'modUser\', \'Contact\', \'Contact.id = modUserMessage.sender\');\\n  $q->innerJoin(\'modUserProfile\', \'ContactProfile\', \'ContactProfile.internalKey = Contact.id\');\\n  $q->where(array(\\n      \'modUserMessage.recipient\' => $userId\\n  ));\\n} else if($mode == \'sent\'){\\n  $q->innerJoin(\'modUser\', \'Contact\', \'Contact.id = modUserMessage.recipient\');\\n  $q->innerJoin(\'modUserProfile\', \'ContactProfile\', \'ContactProfile.internalKey = Contact.id\');\\n  $q->where(array(\\n      \'modUserMessage.sender\' => $userId\\n  ));\\n} else {\\n  return \'Uncorrect mode\';\\n}\\n\\n$total = $modx->getCount(\'modUserMessage\', $q);\\n$modx->setPlaceholders(array(\'total\' => $total), $placeholderPrefix);\\n  \\n$q->sortby(\'modUserMessage.date_sent\',\'DESC\');\\n$q->limit($offset,$limit);\\n\\n$messages = $modx->getCollection(\'modUserMessage\', $q);\\n$target = \'\';\\nif($targetId != 0){\\n  $target = $modx->makeUrl($targetId);\\n}\\n\\nforeach ($messages as $msg){\\n  $msgArray = array_merge($msg->toArray(), array(\'target\' => $target));\\n  $output .= $modx->getChunk($tpl, $msgArray).$outputSeparator;\\n\\n  if($markAsRead == 1 && $mode == \'receive\'){\\n    $msg->set(\'read\', 1);\\n    $msg->save();\\n  }\\n}\\n\\nreturn $output;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n\\n$userId = $user->get(\'id\');\\n\\n$mode = $modx->getOption(\'mode\', $scriptProperties, \'receive\');\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$targetId = (int)$modx->getOption(\'targetId\', $scriptProperties, 0);\\n$markAsRead = (int)$modx->getOption(\'markAsRead\', $scriptProperties, 0);\\n$offset = (int)$modx->getOption(\'offset\', $scriptProperties, 0);\\n$limit = (int)$modx->getOption(\'limit\', $scriptProperties, 0);\\n$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'pmMessageTpl\');\\n\\n$output = \'\';\\n$outputSeparator = isset($outputSeparator) ? $outputSeparator : \\"\\\\n\\";\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->select($modx->getSelectColumns(\'modUserMessage\', \'modUserMessage\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Contact\', \'contact.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'ContactProfile\', \'contact.profile.\'));\\n\\nif($mode == \'receive\'){\\n  $q->innerJoin(\'modUser\', \'Contact\', \'Contact.id = modUserMessage.sender\');\\n  $q->innerJoin(\'modUserProfile\', \'ContactProfile\', \'ContactProfile.internalKey = Contact.id\');\\n  $q->where(array(\\n      \'modUserMessage.recipient\' => $userId\\n  ));\\n} else if($mode == \'sent\'){\\n  $q->innerJoin(\'modUser\', \'Contact\', \'Contact.id = modUserMessage.recipient\');\\n  $q->innerJoin(\'modUserProfile\', \'ContactProfile\', \'ContactProfile.internalKey = Contact.id\');\\n  $q->where(array(\\n      \'modUserMessage.sender\' => $userId\\n  ));\\n} else {\\n  return \'Uncorrect mode\';\\n}\\n\\n$total = $modx->getCount(\'modUserMessage\', $q);\\n$modx->setPlaceholders(array(\'total\' => $total), $placeholderPrefix);\\n  \\n$q->sortby(\'modUserMessage.date_sent\',\'DESC\');\\n$q->limit($offset,$limit);\\n\\n$messages = $modx->getCollection(\'modUserMessage\', $q);\\n$target = \'\';\\nif($targetId != 0){\\n  $target = $modx->makeUrl($targetId);\\n}\\n\\nforeach ($messages as $msg){\\n  $msgArray = array_merge($msg->toArray(), array(\'target\' => $target));\\n  $output .= $modx->getChunk($tpl, $msgArray).$outputSeparator;\\n\\n  if($markAsRead == 1 && $mode == \'receive\'){\\n    $msg->set(\'read\', 1);\\n    $msg->save();\\n  }\\n}\\n\\nreturn $output;"}',
+        'guid' => 'e1664d6d7b6855bf5297d8d249bf0454',
+        'native_key' => 137,
+        'signature' => '2bfa508bd6352ac7d52d2f16b2bd459a',
+      ),
+      '2e7ab202c743878192de6e754663b9bb' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":138,"source":0,"property_preprocess":0,"name":"pmRead","description":"Read private message","editor_type":0,"category":51,"cache_type":0,"snippet":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$markAsRead = (int)$modx->getOption(\'markAsRead\', $scriptProperties, 1);\\n$paramName = $modx->getOption(\'paramName\', $scriptProperties, \'message\');\\nif(!$paramName){\\n  return false;\\n}\\n\\nif(!isset($_REQUEST[$paramName])){\\n  return false;\\n}\\n\\n$messageId = intval($_REQUEST[$paramName]);\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->select($modx->getSelectColumns(\'modUserMessage\', \'modUserMessage\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Sender\', \'sender.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'SenderProfile\', \'sender.profile.\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Recipient\', \'recipient.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'RecipientProfile\', \'recipient.profile.\'));\\n$q->innerJoin(\'modUser\', \'Sender\', \'Sender.id = modUserMessage.sender\');\\n$q->innerJoin(\'modUserProfile\', \'SenderProfile\', \'SenderProfile.internalKey = Sender.id\');\\n$q->innerJoin(\'modUser\', \'Recipient\', \'Recipient.id = modUserMessage.recipient\');\\n$q->innerJoin(\'modUserProfile\', \'RecipientProfile\', \'RecipientProfile.internalKey = Recipient.id\');\\n$q->where(array(\\n  \'modUserMessage.id\' => $messageId,\\n  array(\'modUserMessage.recipient\' => $userId,\\n        \'OR:modUserMessage.sender:=\' => $userId\\n\\t)\\n));\\n\\n$message = $modx->getObject(\'modUserMessage\', $q);\\nif(!$message){\\n  return false;\\n}\\n\\n$modx->setPlaceholders($message->toArray(), $placeholderPrefix);\\n\\nif($markAsRead == 1 && $message->get(\'recipient\') == $userId){\\n  $message->set(\'read\', 1);\\n  $message->save();\\n}","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$markAsRead = (int)$modx->getOption(\'markAsRead\', $scriptProperties, 1);\\n$paramName = $modx->getOption(\'paramName\', $scriptProperties, \'message\');\\nif(!$paramName){\\n  return false;\\n}\\n\\nif(!isset($_REQUEST[$paramName])){\\n  return false;\\n}\\n\\n$messageId = intval($_REQUEST[$paramName]);\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->select($modx->getSelectColumns(\'modUserMessage\', \'modUserMessage\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Sender\', \'sender.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'SenderProfile\', \'sender.profile.\'));\\n$q->select($modx->getSelectColumns(\'modUser\', \'Recipient\', \'recipient.\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'RecipientProfile\', \'recipient.profile.\'));\\n$q->innerJoin(\'modUser\', \'Sender\', \'Sender.id = modUserMessage.sender\');\\n$q->innerJoin(\'modUserProfile\', \'SenderProfile\', \'SenderProfile.internalKey = Sender.id\');\\n$q->innerJoin(\'modUser\', \'Recipient\', \'Recipient.id = modUserMessage.recipient\');\\n$q->innerJoin(\'modUserProfile\', \'RecipientProfile\', \'RecipientProfile.internalKey = Recipient.id\');\\n$q->where(array(\\n  \'modUserMessage.id\' => $messageId,\\n  array(\'modUserMessage.recipient\' => $userId,\\n        \'OR:modUserMessage.sender:=\' => $userId\\n\\t)\\n));\\n\\n$message = $modx->getObject(\'modUserMessage\', $q);\\nif(!$message){\\n  return false;\\n}\\n\\n$modx->setPlaceholders($message->toArray(), $placeholderPrefix);\\n\\nif($markAsRead == 1 && $message->get(\'recipient\') == $userId){\\n  $message->set(\'read\', 1);\\n  $message->save();\\n}"}',
+        'guid' => '29d15a53cd817ef65da1747c114976b6',
+        'native_key' => 138,
+        'signature' => 'a70a3c2b3d906fee7e9526f495bcdb18',
+      ),
+      '7a0c835a7c9341ce8a991f6fb1ddc14f' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":140,"source":0,"property_preprocess":0,"name":"pmRecipientDetails","description":"Set placeholders with recipient details","editor_type":0,"category":51,"cache_type":0,"snippet":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.recipient.\');\\n$paramName = $modx->getOption(\'paramName\', $scriptProperties, \'recipient\');\\n\\nif(!$paramName){\\n  return false;\\n}\\n\\nif(!isset($_REQUEST[$paramName])){\\n  return false;\\n}\\n\\n$recipientId = intval($_REQUEST[$paramName]);\\n\\n$q = $modx->newQuery(\'modUser\');\\n$q->select($modx->getSelectColumns(\'modUser\', \'modUser\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'modUserProfile\', \'profile.\'));\\n$q->innerJoin(\'modUserProfile\', \'modUserProfile\', \'modUserProfile.internalKey = modUser.id\');\\n$q->where(array(\\n  \'modUser.id\' => $recipientId,\\n  \'modUser.active\' => 1,\\n));\\n\\n$recipient = $modx->getObject(\'modUser\', $q);\\n\\nif(!$recipient){\\n  return false;\\n}\\n\\n$modx->setPlaceholders($recipient->toArray(), $placeholderPrefix);","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.recipient.\');\\n$paramName = $modx->getOption(\'paramName\', $scriptProperties, \'recipient\');\\n\\nif(!$paramName){\\n  return false;\\n}\\n\\nif(!isset($_REQUEST[$paramName])){\\n  return false;\\n}\\n\\n$recipientId = intval($_REQUEST[$paramName]);\\n\\n$q = $modx->newQuery(\'modUser\');\\n$q->select($modx->getSelectColumns(\'modUser\', \'modUser\'));\\n$q->select($modx->getSelectColumns(\'modUserProfile\', \'modUserProfile\', \'profile.\'));\\n$q->innerJoin(\'modUserProfile\', \'modUserProfile\', \'modUserProfile.internalKey = modUser.id\');\\n$q->where(array(\\n  \'modUser.id\' => $recipientId,\\n  \'modUser.active\' => 1,\\n));\\n\\n$recipient = $modx->getObject(\'modUser\', $q);\\n\\nif(!$recipient){\\n  return false;\\n}\\n\\n$modx->setPlaceholders($recipient->toArray(), $placeholderPrefix);"}',
+        'guid' => 'b048c7a8728ceb04866960015059a5ff',
+        'native_key' => 140,
+        'signature' => '41caa91e8e68d3f7cfa79f9aa100e027',
+      ),
+      'a6aba458b99abeae9784d3376d93385b' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":141,"source":0,"property_preprocess":0,"name":"pmSend","description":"Hook to send a message","editor_type":0,"category":51,"cache_type":0,"snippet":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$recipient = $hook->getValue(\'recipient\');\\n$subject = $hook->getValue(\'subject\');\\n$message = $hook->getValue(\'message\');\\n\\n$msg = $modx->newObject(\'modUserMessage\');\\n\\n$msg->fromArray(array(\\n  \'sender\' => $userId,\\n  \'recipient\' => $recipient,\\n  \'message\' => $message,\\n  \'subject\' => $subject,\\n  \'read\' => 0,\\n  \'private\' => 1,\\n  \'date_sent\'=> strftime(\'%Y-%m-%d %T\'),\\n));\\n\\n$msg->save();\\n\\nreturn true;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n$userId = $user->get(\'id\');\\n\\n$recipient = $hook->getValue(\'recipient\');\\n$subject = $hook->getValue(\'subject\');\\n$message = $hook->getValue(\'message\');\\n\\n$msg = $modx->newObject(\'modUserMessage\');\\n\\n$msg->fromArray(array(\\n  \'sender\' => $userId,\\n  \'recipient\' => $recipient,\\n  \'message\' => $message,\\n  \'subject\' => $subject,\\n  \'read\' => 0,\\n  \'private\' => 1,\\n  \'date_sent\'=> strftime(\'%Y-%m-%d %T\'),\\n));\\n\\n$msg->save();\\n\\nreturn true;"}',
+        'guid' => '42c0c9e4fcc635721cdd31a994a259e7',
+        'native_key' => 141,
+        'signature' => '9a1d8cffe37319575eccf08c7e30deea',
+      ),
+      '0d82c62b9bbf8d4e47b50083fc4464fe' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":139,"source":0,"property_preprocess":0,"name":"pmUnreadCount","description":"Gets the number of unread messages.","editor_type":0,"category":51,"cache_type":0,"snippet":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$toPlaceholder = $modx->getOption(\'toPlaceholder\', $scriptProperties, 0);\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->where(array(\\n    \'modUserMessage.recipient\' => $userId,\\n    \'modUserMessage.read\' => 0\\n));\\n\\n$result = $modx->getCount(\'modUserMessage\', $q);\\nif($toPlaceholder == 0){\\n  return $result;\\n}\\n\\n$modx->setPlaceholders(array(\'unread\' => $result), $placeholderPrefix);","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$user = $modx->getAuthenticatedUser();\\nif(!$user){\\n  return false;\\n}\\n\\n$userId = $user->get(\'id\');\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\', $scriptProperties, \'pm.\');\\n$toPlaceholder = $modx->getOption(\'toPlaceholder\', $scriptProperties, 0);\\n\\n$q = $modx->newQuery(\'modUserMessage\');\\n$q->where(array(\\n    \'modUserMessage.recipient\' => $userId,\\n    \'modUserMessage.read\' => 0\\n));\\n\\n$result = $modx->getCount(\'modUserMessage\', $q);\\nif($toPlaceholder == 0){\\n  return $result;\\n}\\n\\n$modx->setPlaceholders(array(\'unread\' => $result), $placeholderPrefix);"}',
+        'guid' => 'f02af3a4b76a360f1360879820724e49',
+        'native_key' => 139,
+        'signature' => '96830eca12a2c1fa640d4878a05589a5',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'personalmessages',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"personalmessages-0.1.0-beta1\\/modCategory\\/a1ec1ffae44748d9f2aa424f050c4580\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"personalmessages"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"personalmessages-0.1.0-beta1\\/modCategory\\/a1ec1ffae44748d9f2aa424f050c4580\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"personalmessages"}',
+    ),
+    2 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"personalmessages-0.1.0-beta1\\/modCategory\\/a1ec1ffae44748d9f2aa424f050c4580\\/2\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"personalmessages"}',
+    ),
+    3 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"personalmessages-0.1.0-beta1\\/modCategory\\/a1ec1ffae44748d9f2aa424f050c4580\\/3\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"personalmessages"}',
+    ),
+    4 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"personalmessages-0.1.0-beta1\\/modCategory\\/a1ec1ffae44748d9f2aa424f050c4580\\/4\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"personalmessages"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd3ab049797ff61bf6b52031b5de00004',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'a1ec1ffae44748d9f2aa424f050c4580',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"PersonalMessages"}',
+);

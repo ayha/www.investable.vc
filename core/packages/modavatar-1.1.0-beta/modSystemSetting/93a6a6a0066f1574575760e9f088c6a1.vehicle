@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'modavatar',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '19915c84e54300b98e48e11bd2647587',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '93a6a6a0066f1574575760e9f088c6a1',
+  'native_key' => 'modavatar.default_media_source',
+  'object' => '{"key":"modavatar.default_media_source","value":"1","xtype":"modx-combo-source","namespace":"modavatar","area":"site","editedon":null}',
+);

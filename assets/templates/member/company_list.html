@@ -1,0 +1,151 @@
+[[$member_head]]
+<!DOCTYPE html>
+<html lang="[[++cultureKey]]">
+	<head>
+		[[$Head]]
+	</head>
+	<body>
+		[[$Navbar]]
+		<div class="container main_content">
+
+			<div class="page-header">
+				<h1>[[%investable.startup_opportunities? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			
+				[[$member_navigation]]
+				<div class="allclear"></div>
+			</div>
+			<div class="member_content">
+				 <div class="startup_filters">
+				 	<span class="filter_title">[[%member.filter_by? &topic=`default` &namespace=`investable` &language=`en`]]:</span>
+				 	
+				 	<select name="startup_stage" id="startup_stage">
+				 		<option value="">All Stages</option>
+				 		[[get_stage_list]]
+				 	</select>
+				 	<select name="startup_industry" id="startup_industry">
+				 		<option value="">All Industries</option>
+				 		[[get_industry_list]]
+				 	</select>
+				 
+				 </div>
+				 <div class="note" style="text-align:right">[[%investable.all_currencies? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+				 <div class="startup_list">
+				    [[!get_startup_list?]]
+				    <div class="allclear"></div>
+				 </div>
+			</div>
+		</div>
+		[[$Footer]]
+		[[$member_footer]]
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".startup_item .startup_img .startup_logo").click(function(e){
+					
+					window.location.href=$(this).parent().parent().data("url");
+				});
+				
+				$(".startup_item .startup_quickinfo h3").click(function(e){
+					
+					window.location.href=$(this).parent().parent().data("url");
+				});
+				
+				$(".startup_item").each(function(ind){
+					updateCountdown($(this).attr("id"));
+				    updateFundedPercentage($(this).attr("id"));
+				});
+				
+				$(".rewards_badge").click(function(e){
+					e.preventDefault();
+				
+				});
+				
+				$(".video_badge a.watch_video").fancybox({
+					maxWidth	: 800,
+					maxHeight	: 600,
+					fitToView	: false,
+					width		: '70%',
+					height		: '70%',
+					autoSize	: false,
+					closeClick	: false,
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+				
+				$("#startup_stage").change(function(e){
+					var stage = $(this).children("option:selected").val();
+					insertParam("stage", stage);
+				});
+				
+				$("#startup_industry").change(function(e){
+					var industry = $(this).children("option:selected").val();
+					insertParam("industry", industry);
+				});
+				
+				 $("a.follow_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	
+			    	$.ajax("[[~80]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.invest_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.meet_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	
+			    	$.ajax("[[~82]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+				
+			});		
+			
+			
+			
+			
+					
+           
+            
+		</script>
+	</body>
+</html>

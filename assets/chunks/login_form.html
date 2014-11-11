@@ -1,0 +1,27 @@
+<div id="login_form_wrapper">
+   <div class="form_header">[[%login? &topic=`default` &namespace=`login` &language=`en`]]</div>
+  
+   <form name="login_form"  action="[[~10]]" method="post" >
+       <input class="returnUrl" type="hidden" name="returnUrl" value="[[+request_uri]]" />
+       <input class="loginLoginValue" type="hidden" name="service" value="login" />
+     
+      <div class="form_section">
+         
+         <a class="btn login_with_linkedin" href="#" style="display:none;">[[%investable.login_with_linkedin? &topic=`default` &namespace=`investable` &language=`en`]]</a>
+          <div id="profiles"></div>
+      </div>
+      <div class="form_section">
+      <div class="form_row"> <div class="loginMessage">[[+errors]]</div></div>
+<div class="form_row"><input type="text" name="username" placeholder="[[%login.username]]" /></div>
+      <div class="form_row"><input type="password" name="password" placeholder="[[%login.password]]" /></div>
+      </div>
+      <div class="form_section submit">
+         <div class="form_row">[[+login.recaptcha_html]]</div>
+         <div class="form_row"><input type="submit" name="login_submit" value="[[+actionMsg]]" /></div>
+        <div class="form_row">[[%login.trouble_loggin_in]] <a href="[[~44]]">[[%login.forgot_password]]</a></div>
+      
+      </div>
+   </form>
+
+
+</div>

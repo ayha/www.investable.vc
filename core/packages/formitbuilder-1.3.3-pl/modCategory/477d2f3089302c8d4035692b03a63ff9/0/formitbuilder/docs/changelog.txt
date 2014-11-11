@@ -1,0 +1,85 @@
+Changelog for FormItBuilder.
+FormItBuilder 1.3.3-pl
+====================================
+- Small bugfix in select form element compare code.
+- Added hidden spans before/after each main element label for extra css flexibility
+- Added methods to set / get redirectParams for the redirect FormIt hook.
+- Added $o_form->setSubmitVar('myCustomSubmitVar') to allow processing to be ignored or run only in certain conditions.
+- Replaced all inbuilt FormIt post check calls (like FormItIsSelected, FormItIsChecked and any other +fi. placeholder). Replaced with own processing (faster).
+- Added Matrix Element (with text, radio and checkbox types)
+
+FormItBuilder 1.3.2-pl
+====================================
+- Added ability to supply "yyyy" in the FormRuleType::date to check a valid year
+- Added a custom minimum length rule instead of using the FormIt one (FormIt would not allow and empty field that had a minimum length). Users frequently want a non required field with a minumum length.
+- Added new FormItBuilder_elementDate element that allows date selection via a series of three dropdowns for date/month/year.
+- Added ability to add extra classes onto the element wrapper using the setExtraClasses method. e.g. $o_fe_postcode->setExtraClasses(array('tiny','numeric'));
+- Added <span class="before"></span> and <span class="after"></span> around all input elemetns to allow field prefixes and suffix labels such as a unit (meters, feet pints etc). Using the CSS command :after or :before allows text inside this spans that would normally be invisible. Could also use javascript to inject html into these areas as well.
+- Added power user ability to assign custom variables into each element for retrieval in scripts. e.g. $o_fe_minLen->setCustomObject(array('asfsaf'=>'fdhdfh','dyhsg'=>32456));
+- Fixed but in checkbox default (Setting default ticked to true did not work).
+- In checkbox you can now supply a value such as "Checked", "Agree" as well as boolean true to have the checkbox checked by default. e.g. new FormItBuilder_elementCheckbox('agree_terms','I agree terms', 'Agree', 'Disagree', 'Agree');
+- Now FormItBuilder will pass "0" as valid. Had to make an inbuilt custom validator for the required rule. This is because MANY people want "0" to pass validation. FormIT does not allow "0" to pass.
+- Added the ability to output labels after the elements by using the new setLabelAfterElement(true) method on each element. Although CSS can position one in from of the other it can cause extra frustration when trying to align elements in a variety of ways. By setting this property to true you can force an element to output the label after the element. 
+- Made file field not output row in email table by default.
+
+FormItBuilder 1.3.0-pl
+====================================
+- Added Auto Responder systems
+- Repair bug in FormRuleType::date causing issues with javascript validation. (Thanks for the report Kiel)
+- Removed default "Created by FormItBuilder" form title attribute.
+- Added a lot of documentation
+
+FormItBuilder 1.2.0-pl
+====================================
+- Repair bug in FormItBuilder_elementCheckboxGroup HTML output (missing open div)
+
+FormItBuilder 1.1.0-pl
+====================================
+- Added new hidden field element (FormItBuilder_elementHidden) by default it doesn't appear in email output. Use showInEmail to send into email.
+
+FormItBuilder 1.0.1-pl
+====================================
+- Added new FormItBuilder_elementCheckboxGroup element (Thanks for the assistance Michelle)
+- Added setDescription method on form element classes (Allows a sub label to be displayed within the main label - Good suggestion Michelle)
+- Modified architecture of FormItBuilder_customValidation
+- More code comments
+
+FormItBuilder 0.1.9-rc3
+====================================
+- Fixed a great number of trivial PHP errors in the ModX error log (Thanks for the report Alex)
+- Fixed some glitches in date custom validation
+- Code comments
+
+FormItBuilder 0.1.9-rc2
+====================================
+- Added element type class to element wrappers (for extra CSS flexibility)
+- Add title attributes
+- Added default value for text field.
+- Fix single digit date issues with date field
+- Added ability to output javascript into a placeholder with the setPlaceholderJavascript method.
+- Added "store" FormIt config option.
+- Added captcha support
+- Fixed bug in non-required date fields (if date field was not required and empty an error message would be thrown).
+- Fix some class orders that were having issues with some PHP installs.
+
+FormItBuilder 0.1.8-beta
+====================================
+- Added emailFromName, emailToName, emailReplyToAddress, emailReplyToName, emailCCAddress, emailCCName, emailBCCAddress, emailBCCName
+- Added ability to alter dynamic emailTpl
+- Added file upload support*
+- Added customValidators (see customValidators property for formIt)*
+- Added validate (to allow extra validate options to be set)*
+* Thanks for the assistance Adam!
+
+FormItBuilder 0.1.7-beta
+====================================
+- Fixed escaping issues for special characters (Should have been using htmlspecialchars instead of htmlentities)
+- Added methods for outputRaw and postHookRaw to allow a raw dump of formIt syntax and emailChunkSyntax.
+
+FormItBuilder 0.1.6-beta
+====================================
+- Documentation Updates and small tweak to example snippet
+
+FormItBuilder 0.1.5-beta
+====================================
+- First public release. Still a big work in progress.

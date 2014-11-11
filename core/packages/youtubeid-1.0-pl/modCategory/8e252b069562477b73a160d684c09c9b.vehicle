@@ -1,0 +1,60 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      '71289ac958a146d5ef92fb29c40c68a5' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":23,"source":2,"property_preprocess":0,"name":"getYouTubeId","description":"","editor_type":0,"category":11,"cache_type":0,"snippet":"\\/**\\n * getYouTubeId\\n * \\n * Created by Jason Carney (DashMedia.com.au) for use\\n * as a simple output modifier for MODX, all credit for\\n * RegEx String goes to the community at StackOverflow.com\\n *\\n * @package youTubeId\\n *\\/\\n\\/**\\n * @var string $input   - youtube URL to video\\n * \\n * @returns string      - youTube ID\\n *\\/\\n$ytUrl = $input;\\nif(isset($ytUrl) && !empty($ytUrl)){\\n    $pattern = \'#^(?:https?:\\/\\/)?(?:www\\\\.)?(?:youtu\\\\.be\\/|youtube\\\\.com(?:\\/embed\\/|\\/v\\/|\\/watch\\\\?v=|\\/watch\\\\?.+&v=))([\\\\w-]{11})(?:.+)?$#x\';\\n    preg_match($pattern, $ytUrl, $matches);\\n    return (isset($matches[1])) ? $matches[1] : false;\\n}","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * getYouTubeId\\n * \\n * Created by Jason Carney (DashMedia.com.au) for use\\n * as a simple output modifier for MODX, all credit for\\n * RegEx String goes to the community at StackOverflow.com\\n *\\n * @package youTubeId\\n *\\/\\n\\/**\\n * @var string $input   - youtube URL to video\\n * \\n * @returns string      - youTube ID\\n *\\/\\n$ytUrl = $input;\\nif(isset($ytUrl) && !empty($ytUrl)){\\n    $pattern = \'#^(?:https?:\\/\\/)?(?:www\\\\.)?(?:youtu\\\\.be\\/|youtube\\\\.com(?:\\/embed\\/|\\/v\\/|\\/watch\\\\?v=|\\/watch\\\\?.+&v=))([\\\\w-]{11})(?:.+)?$#x\';\\n    preg_match($pattern, $ytUrl, $matches);\\n    return (isset($matches[1])) ? $matches[1] : false;\\n}"}',
+        'guid' => '636e8083fd1b2734f44de50edc187742',
+        'native_key' => 23,
+        'signature' => 'fb2a917e7d7a3f7cd81f30fc7f57a303',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'youtubeid',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a424e550408d43efb0d37795a6e1153c',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '8e252b069562477b73a160d684c09c9b',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"youTubeId"}',
+);

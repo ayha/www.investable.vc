@@ -1,0 +1,34 @@
+<div id="footer">
+	<div class="container">
+		<p class="text-muted pull-right">
+                
+[[!getResources? &parents=`14` &tpl=`footer_link_item` &limit=`10` &showHidden=`1` &includeContent=`0`  &sortby=`{"menuindex":"ASC"}`]]
+ 
+                &copy; [[++site_name]], [[Years]]
+			
+		</p>
+	</div>
+</div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="[[++assets_url]]components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+<!-- include hidden elements on the page -->
+<div class="hidden">
+[[!checkLogin:is=``:then=`
+[[!Login? &loginTpl=`login_form` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`43` &logoutResourceId=`42`]]
+
+<!-- LinkedIn -->
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+  api_key: 75o8vtonqq7441
+  onLoad: onLinkedInLoad
+   //authorize: true
+</script>
+
+<!-- End LinkedIn -->
+
+`]]
+
+</div>
+[[!log_user_visits?]]

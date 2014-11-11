@@ -1,0 +1,1 @@
+[2014-11-10 16:12:16] (ERROR in xPDOConnection::connect @ /var/www/html/core/xpdo/xpdo.class.php : 3043) SQLSTATE[42000] [1044] Access denied for user 'invest_modx'@'localhost' to database 'investable_live_modx'

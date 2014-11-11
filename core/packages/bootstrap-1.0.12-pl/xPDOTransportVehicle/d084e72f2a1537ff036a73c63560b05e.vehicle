@@ -1,0 +1,25 @@
+<?php return array (
+  'class' => 'xPDOTransportVehicle',
+  'object' => 
+  array (
+    'source' => 'bootstrap-1.0.12-pl/xPDOTransportVehicle/d084e72f2a1537ff036a73c63560b05e/',
+    'target' => 'return MODX_CORE_PATH . \'packages/\';',
+    'name' => 'wayfinder-2.3.3-pl.transport.zip',
+  ),
+  'vehicle_class' => 'xPDOTransportVehicle',
+  'namespace' => 'bootstrap',
+  'resolve' => NULL,
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"bootstrap-1.0.12-pl\\/xPDOTransportVehicle\\/d084e72f2a1537ff036a73c63560b05e.wayfinder.validator","type":"php","name":"wayfinder"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => 'd7cf4e83761d7e0c1395014fca223b04',
+  'package' => '',
+  'signature' => 'd084e72f2a1537ff036a73c63560b05e',
+  'native_key' => 'd7cf4e83761d7e0c1395014fca223b04',
+);

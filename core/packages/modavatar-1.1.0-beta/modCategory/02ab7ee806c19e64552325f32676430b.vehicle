@@ -1,0 +1,139 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      '9bc4a278628021a257d68674d3012c9c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"modAvatar.output_tpl","description":"Template for userphoto output","editor_type":0,"category":0,"cache_type":0,"snippet":"<img src=\\"[[+photo]]\\" title=\\"[[+username]]\\" \\/>","locked":0,"properties":null,"static":0,"static_file":"","content":"<img src=\\"[[+photo]]\\" title=\\"[[+username]]\\" \\/>"}',
+        'guid' => '2abbc66077e35700eda6770397703de6',
+        'native_key' => NULL,
+        'signature' => '2b94a26fd48b05051dec9b64ddd5cda8',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'd443e5602a606c082b0f3f5dbc64c7ae' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"modAvatar","description":"Get user photo","editor_type":0,"category":0,"cache_type":0,"snippet":"$output = \'\';\\n\\n\\/\\/ Check filters\\nif(!$userid && !$username && !$email){\\n    $modx->log(xPDO::LOG_LEVEL_ERROR, \\"You should set userid or username or email\\");\\n    return $output;\\n}\\n\\n\\/\\/ Create query\\n$where = array(\\n    \'Profile.photo:!=\' => \'\',\\n);\\n$q = $modx->newQuery(\'modUser\');\\n$q->join(\'modUserProfile\', \'Profile\');\\n$q->select(array(\\n    \'modUser.id\',\\n    \'modUser.username\',\\n    \'Profile.photo\',\\n    \'Profile.email\',\\n    \'Profile.fullname\',\\n));\\n$q->limit(1);\\n\\nif($userid){\\n    $where[\'modUser.id\'] = $userid;\\n}\\nif($username){\\n    $where[\'modUser.username\'] = $username;\\n}\\nif($email){\\n    $where[\'Profile.email\'] = $email;\\n}\\n$q->where($where);\\n\\nif(!$q->prepare() || !$q->stmt->execute()){\\n    return $output;\\n}\\n\\n\\/\\/ get photo\\n$data = $q->stmt->fetch(PDO::FETCH_ASSOC);\\n\\n\\/\\/ get mediasource id\\nif(!$sourceid = $modx->getOption(\'modavatar.default_media_source\', null)){\\n    $sourceid = $modx->getOption(\'default_media_source\', null, 1);\\n}\\n\\/\\/ get full path\\nif($source = $modx->getObject(\'sources.modMediaSource\', $sourceid) AND $source->initialize()){\\n    $data[\'photo\'] = $source->getObjectUrl($data[\'photo\']);\\n}\\nif($tpl){\\n    return $modx->getChunk($tpl, $data);\\n}\\nreturn $data[\'photo\'];","locked":0,"properties":"a:4:{s:6:\\"userid\\";a:9:{s:4:\\"name\\";s:6:\\"userid\\";s:4:\\"desc\\";s:15:\\"Find user by id\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";s:0:\\"\\";s:4:\\"area\\";s:0:\\"\\";s:10:\\"desc_trans\\";s:15:\\"Find user by id\\";s:10:\\"area_trans\\";s:0:\\"\\";}s:8:\\"username\\";a:9:{s:4:\\"name\\";s:8:\\"username\\";s:4:\\"desc\\";s:21:\\"Find user by username\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";s:0:\\"\\";s:4:\\"area\\";s:0:\\"\\";s:10:\\"desc_trans\\";s:21:\\"Find user by username\\";s:10:\\"area_trans\\";s:0:\\"\\";}s:5:\\"email\\";a:9:{s:4:\\"name\\";s:5:\\"email\\";s:4:\\"desc\\";s:18:\\"Find user by email\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";s:0:\\"\\";s:4:\\"area\\";s:0:\\"\\";s:10:\\"desc_trans\\";s:18:\\"Find user by email\\";s:10:\\"area_trans\\";s:0:\\"\\";}s:3:\\"tpl\\";a:9:{s:4:\\"name\\";s:3:\\"tpl\\";s:4:\\"desc\\";s:43:\\"If set tpl, output will be return via chunk\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:20:\\"modAvatar.output_tpl\\";s:7:\\"lexicon\\";s:0:\\"\\";s:4:\\"area\\";s:0:\\"\\";s:10:\\"desc_trans\\";s:43:\\"If set tpl, output will be return via chunk\\";s:10:\\"area_trans\\";s:0:\\"\\";}}","moduleguid":"","static":0,"static_file":"","content":"$output = \'\';\\n\\n\\/\\/ Check filters\\nif(!$userid && !$username && !$email){\\n    $modx->log(xPDO::LOG_LEVEL_ERROR, \\"You should set userid or username or email\\");\\n    return $output;\\n}\\n\\n\\/\\/ Create query\\n$where = array(\\n    \'Profile.photo:!=\' => \'\',\\n);\\n$q = $modx->newQuery(\'modUser\');\\n$q->join(\'modUserProfile\', \'Profile\');\\n$q->select(array(\\n    \'modUser.id\',\\n    \'modUser.username\',\\n    \'Profile.photo\',\\n    \'Profile.email\',\\n    \'Profile.fullname\',\\n));\\n$q->limit(1);\\n\\nif($userid){\\n    $where[\'modUser.id\'] = $userid;\\n}\\nif($username){\\n    $where[\'modUser.username\'] = $username;\\n}\\nif($email){\\n    $where[\'Profile.email\'] = $email;\\n}\\n$q->where($where);\\n\\nif(!$q->prepare() || !$q->stmt->execute()){\\n    return $output;\\n}\\n\\n\\/\\/ get photo\\n$data = $q->stmt->fetch(PDO::FETCH_ASSOC);\\n\\n\\/\\/ get mediasource id\\nif(!$sourceid = $modx->getOption(\'modavatar.default_media_source\', null)){\\n    $sourceid = $modx->getOption(\'default_media_source\', null, 1);\\n}\\n\\/\\/ get full path\\nif($source = $modx->getObject(\'sources.modMediaSource\', $sourceid) AND $source->initialize()){\\n    $data[\'photo\'] = $source->getObjectUrl($data[\'photo\']);\\n}\\nif($tpl){\\n    return $modx->getChunk($tpl, $data);\\n}\\nreturn $data[\'photo\'];"}',
+        'guid' => 'c8e4cab7c7d9620217fadb58c4b31dc0',
+        'native_key' => NULL,
+        'signature' => 'b4cb51b6ccff38bc5d6eb67551d57199',
+      ),
+    ),
+    'Plugins' => 
+    array (
+      'd2465b9c0f0cf9c9412d6ebff39aea80' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'b8928aca749f5721f656ee299c1e25b9' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnUserFormPrerender","priority":0,"propertyset":0}',
+              'guid' => '9b651d78bdc185854262ed38d04f343b',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnUserFormPrerender',
+              ),
+              'signature' => 'f479e86be350b1d81d3b6e4054eb1e15',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => false,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"modavatar","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"switch($modx->event->name){\\n    case \'OnUserFormPrerender\':\\n        $modx->lexicon->load(\'modavatar:default\');\\n        \\n        $mgrUrl = $modx->getOption(\'manager_url\',null,MODX_MANAGER_URL);\\n        $modx->regClientStartupScript($mgrUrl.\'assets\\/modext\\/widgets\\/element\\/modx.panel.tv.renders.js\');\\n         \\n        $photo;\\n        \\n        if($scriptProperties[\'user\']->Profile){\\n            $photo = $scriptProperties[\'user\']->Profile->get(\'photo\');\\n        }\\n        \\n        if(!$path = $modx->getOption(\'modavatar.manager_url\', null)){\\n            $path = $modx->getOption(\'manager_url\', null).\'components\\/modavatar\\/\';\\n        }\\n        $path .= \'js\\/\';\\n        \\n        if(!$source = $modx->getOption(\'modavatar.default_media_source\', null)){\\n            $source = $modx->getOption(\'default_media_source\', null, 1);\\n        }\\n        \\n        $modx->regClientStartupScript($path.\'core\\/modavatar.js\');\\n        \\n        $lexicon = (array)$modx->lexicon->loadCache(\'modavatar\');\\n        $modx->regClientStartupScript( \'<script type=\\"text\\/javascript\\">\\n            MODx.ux.modAvatar = new MODx.ux.modAvatar({\\n                lexicon: \'.$modx->toJSON($lexicon).\'\\n            });\\n<\\/script>\',true);\\n        $modx->regClientStartupScript($path.\'widgets\\/userpanel.js\');\\n        $modx->regClientStartupScript( \'<script type=\\"text\\/javascript\\">\\n            Ext.onReady(function(){\\n                var tab = Ext.getCmp(\\"modx-user-tabs\\");\\n                var panel = Ext.getCmp(\\"modx-panel-user\\");\\n                var infotab = tab.find(\\"title\\", _(\\"general_information\\"));\\n                var infopanel;\\n                var user;\\n                try{\\n                    user = infotab[0].get(0);\\n                    infopanel = user.get(0);\\n                }\\n                catch(e){\\n                    return;\\n                }  \\n                var fieldset = new MODx.ux.modAvatar.widget.UserPanel({\\n                    panel: panel\\n                    ,photo: \\"\'.$photo.\'\\"\\n                    ,source: \'.$source.\'\\n                });\\n                infopanel.add(fieldset);\\n            });\\n<\\/script>\',true);\\n        break;\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"switch($modx->event->name){\\n    case \'OnUserFormPrerender\':\\n        $modx->lexicon->load(\'modavatar:default\');\\n        \\n        $mgrUrl = $modx->getOption(\'manager_url\',null,MODX_MANAGER_URL);\\n        $modx->regClientStartupScript($mgrUrl.\'assets\\/modext\\/widgets\\/element\\/modx.panel.tv.renders.js\');\\n         \\n        $photo;\\n        \\n        if($scriptProperties[\'user\']->Profile){\\n            $photo = $scriptProperties[\'user\']->Profile->get(\'photo\');\\n        }\\n        \\n        if(!$path = $modx->getOption(\'modavatar.manager_url\', null)){\\n            $path = $modx->getOption(\'manager_url\', null).\'components\\/modavatar\\/\';\\n        }\\n        $path .= \'js\\/\';\\n        \\n        if(!$source = $modx->getOption(\'modavatar.default_media_source\', null)){\\n            $source = $modx->getOption(\'default_media_source\', null, 1);\\n        }\\n        \\n        $modx->regClientStartupScript($path.\'core\\/modavatar.js\');\\n        \\n        $lexicon = (array)$modx->lexicon->loadCache(\'modavatar\');\\n        $modx->regClientStartupScript( \'<script type=\\"text\\/javascript\\">\\n            MODx.ux.modAvatar = new MODx.ux.modAvatar({\\n                lexicon: \'.$modx->toJSON($lexicon).\'\\n            });\\n<\\/script>\',true);\\n        $modx->regClientStartupScript($path.\'widgets\\/userpanel.js\');\\n        $modx->regClientStartupScript( \'<script type=\\"text\\/javascript\\">\\n            Ext.onReady(function(){\\n                var tab = Ext.getCmp(\\"modx-user-tabs\\");\\n                var panel = Ext.getCmp(\\"modx-panel-user\\");\\n                var infotab = tab.find(\\"title\\", _(\\"general_information\\"));\\n                var infopanel;\\n                var user;\\n                try{\\n                    user = infotab[0].get(0);\\n                    infopanel = user.get(0);\\n                }\\n                catch(e){\\n                    return;\\n                }  \\n                var fieldset = new MODx.ux.modAvatar.widget.UserPanel({\\n                    panel: panel\\n                    ,photo: \\"\'.$photo.\'\\"\\n                    ,source: \'.$source.\'\\n                });\\n                infopanel.add(fieldset);\\n            });\\n<\\/script>\',true);\\n        break;\\n}"}',
+        'guid' => '0848c145d0b8236f78c7f4caaf0b86fc',
+        'native_key' => 1,
+        'signature' => 'df9c5a18cdc304f01e9e888901b71fd8',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'modavatar',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"modavatar-1.1.0-beta\\/modCategory\\/02ab7ee806c19e64552325f32676430b\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"modavatar"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"modavatar-1.1.0-beta\\/modCategory\\/02ab7ee806c19e64552325f32676430b\\/1\\/","target":"return MODX_MANAGER_PATH . \'components\\/\';","name":"modavatar"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd53e1832e19e0713a1b21d68bd56b62f',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '02ab7ee806c19e64552325f32676430b',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"modAvatar"}',
+);

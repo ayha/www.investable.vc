@@ -1,0 +1,60 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      'a4f476ef49c8d2e80d00aa28c39348ad' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":47,"name":"makeQR","description":"generate QR code using google chart api","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/\\/ http:\\/\\/chart.apis.google.com\\/chart?cht=qr&chs=120x120&chl=MODx+Rocks!\\n$size = $modx->getOption(\'size\',$scriptProperties,\'177\'); \\/\\/ width x height, or omit height for square images; 177px is version 40 and is read by most mobile phones\\n$message = $modx->getOption(\'message\',$scriptProperties,\'MODx Rocks!\');\\n$error = $modx->getOption(\'error\',$scriptProperties,\'L\'); \\/\\/ L,M,Q,H\\n$margin = \\"|\\".$modx->getOption(\'margin\',$scriptProperties,\'4\');\\n$chld = $error . $margin;\\n$encodedMessage = urlencode(utf8_decode($message));\\n\\n$qr = \\"<img src=\\\\\\"http:\\/\\/chart.apis.google.com\\/chart?\\ncht=qr\\n&chs=$size\\n&chl=$encodedMessage\\n&chld=$chld\\n\\\\\\" \\nalt=\\\\\\"QR code\\\\\\" \\ntitle=\\\\\\"$message\\\\\\"\\/>\\";\\n\\nreturn $qr;","locked":0,"properties":"a:4:{s:4:\\"size\\";a:6:{s:4:\\"name\\";s:4:\\"size\\";s:4:\\"desc\\";s:73:\\"120x180 for example, you can omit one for a square. The default is 177px.\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:3:\\"177\\";s:7:\\"lexicon\\";s:4:\\"size\\";}s:7:\\"message\\";a:6:{s:4:\\"name\\";s:7:\\"message\\";s:4:\\"desc\\";s:78:\\"The item that you want to make into a QR code. Web address, message, or vcard.\\";s:4:\\"type\\";s:8:\\"textarea\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:11:\\"MODx Rocks!\\";s:7:\\"lexicon\\";s:7:\\"message\\";}s:5:\\"error\\";a:6:{s:4:\\"name\\";s:5:\\"error\\";s:4:\\"desc\\";s:106:\\"QR codes support four levels of error correction to enable recovery of missing, misread, or obscured data.\\";s:4:\\"type\\";s:4:\\"list\\";s:7:\\"options\\";a:4:{i:0;a:3:{s:4:\\"name\\";s:1:\\"L\\";s:5:\\"value\\";s:12:\\"7% data loss\\";s:4:\\"menu\\";N;}i:1;a:3:{s:4:\\"name\\";s:1:\\"M\\";s:5:\\"value\\";s:13:\\"15% data loss\\";s:4:\\"menu\\";N;}i:2;a:3:{s:4:\\"name\\";s:1:\\"Q\\";s:5:\\"value\\";s:13:\\"25% data loss\\";s:4:\\"menu\\";N;}i:3;a:3:{s:4:\\"name\\";s:1:\\"H\\";s:5:\\"value\\";s:13:\\"30% data loss\\";s:4:\\"menu\\";N;}}s:5:\\"value\\";s:1:\\"L\\";s:7:\\"lexicon\\";s:5:\\"error\\";}s:6:\\"margin\\";a:6:{s:4:\\"name\\";s:6:\\"margin\\";s:4:\\"desc\\";s:67:\\"The width of the white border around the data portion of the chart.\\";s:4:\\"type\\";s:11:\\"numberfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:1:\\"4\\";s:7:\\"lexicon\\";s:6:\\"margin\\";}}","moduleguid":""}',
+        'guid' => '0f235b53fe83c188b8bd95da71f04d6c',
+        'native_key' => 47,
+        'signature' => '86dcea2f596fdc6ccba1bd06a82bfe78',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'makeqr',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a06bfe7f395b954c561be38b4a50e737',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'ab7063b42a2dcfe421efee4a393c6419',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"makeQR"}',
+);

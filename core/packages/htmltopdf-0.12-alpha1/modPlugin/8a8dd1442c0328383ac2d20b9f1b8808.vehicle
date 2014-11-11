@@ -1,0 +1,54 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 'name',
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'b6610bbf0219bb12c1e7ab67034a15d5' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":3,"event":"OnDocFormSave","priority":0,"propertyset":0}',
+        'guid' => 'e73370a9bbb8dc28e82b2dcd5f1f2069',
+        'native_key' => 
+        array (
+          0 => 3,
+          1 => 'OnDocFormSave',
+        ),
+        'signature' => 'c327b179717cbb839426a14f0315a8ad',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'htmltopdf',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '855ec41a4667c8b674374c70b6a18d85',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => '8a8dd1442c0328383ac2d20b9f1b8808',
+  'native_key' => 3,
+  'object' => '{"id":3,"source":0,"property_preprocess":0,"name":"HTMLtoPDF","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"$basePath = $modx->getOption(\'base_path\');\\n$corePath = $modx->getOption(\'core_path\');\\n$id = $resource->get(\'id\');\\n$tpl = $modx->getOption(\'pdfTpl\', $scriptProperties, \'pdfTpl\');\\n$css = $modx->getOption(\'cssTpl\', $scriptProperties, \'cssTpl\');\\n$createField = $modx->getOption(\'pdfTV\', $scriptProperties, \'createPDF\');\\n$processTVs = $modx->getOption(\'processTVs\', $scriptProperties, null);\\n$siteurl = $modx->getOption(\'site_url\');\\n$params = array();\\n$assetsPath = $modx->getOption(\'assets_path\');\\n\\n$createPDF = $resource->getTVValue($createField);\\nif($createPDF != \'1\') {\\n   @unlink($assetsPath.$id.\'.pdf\'); \\/\\/remove file if it exists\\n   return false; \\/\\/exit plugin\\n}\\n\\n$params = $resource->toArray();\\n\\n$tvs = $modx->getCollection(\'modTemplateVar\');\\nforeach ($tvs as $tv) {\\n    $params[$tv->get(\'name\')] = (empty($processTVs) ? $tv->getValue($id) : $tv->renderOutput($id));\\n    if($tv->get(\'name\') == \'pdfTpl\' && $tv->getValue($id) != \'\' ) {\\n        $tpl = $tv->getValue($id);\\n    }\\n}\\n\\n$html = $modx->getChunk($tpl, $params);\\n$css = $modx->getChunk($css, $params);\\nunset($params);\\n\\nrequire_once($corePath.\'components\\/htmltopdf\\/mpdf.php\');\\n\\n$mpdf = new mPDF(\'utf-8\', \'A4\', \'8\', \'\', 10, 10, 7, 7, 10, 10);\\n$mpdf->charset_in = \'utf-8\';\\n$stylesheet = $css;\\n$mpdf->WriteHTML($stylesheet, 1);\\n$mpdf->list_indent_first_level = 0; \\n$mpdf->WriteHTML($html, 2);\\n$mpdf->Output($assetsPath.\'pdf\\/\'.$id.\'.pdf\', \'F\');","locked":0,"properties":"a:5:{s:11:\\"assets_path\\";a:7:{s:4:\\"name\\";s:11:\\"assets_path\\";s:4:\\"desc\\";s:0:\\"\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:11:\\"assets\\/pdf\\/\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:6:\\"cssTpl\\";a:7:{s:4:\\"name\\";s:6:\\"cssTpl\\";s:4:\\"desc\\";s:13:\\"Chunk for CSS\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:6:\\"cssTpl\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:5:\\"pdfTV\\";a:7:{s:4:\\"name\\";s:5:\\"pdfTV\\";s:4:\\"desc\\";s:0:\\"\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:9:\\"createPDF\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:6:\\"pdfTpl\\";a:7:{s:4:\\"name\\";s:6:\\"pdfTpl\\";s:4:\\"desc\\";s:16:\\"Template for pdf\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:6:\\"pdfTpl\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:10:\\"processTVs\\";a:7:{s:4:\\"name\\";s:10:\\"processTVs\\";s:4:\\"desc\\";s:0:\\"\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}}","disabled":0,"moduleguid":"","static":0,"static_file":"","content":"$basePath = $modx->getOption(\'base_path\');\\n$corePath = $modx->getOption(\'core_path\');\\n$id = $resource->get(\'id\');\\n$tpl = $modx->getOption(\'pdfTpl\', $scriptProperties, \'pdfTpl\');\\n$css = $modx->getOption(\'cssTpl\', $scriptProperties, \'cssTpl\');\\n$createField = $modx->getOption(\'pdfTV\', $scriptProperties, \'createPDF\');\\n$processTVs = $modx->getOption(\'processTVs\', $scriptProperties, null);\\n$siteurl = $modx->getOption(\'site_url\');\\n$params = array();\\n$assetsPath = $modx->getOption(\'assets_path\');\\n\\n$createPDF = $resource->getTVValue($createField);\\nif($createPDF != \'1\') {\\n   @unlink($assetsPath.$id.\'.pdf\'); \\/\\/remove file if it exists\\n   return false; \\/\\/exit plugin\\n}\\n\\n$params = $resource->toArray();\\n\\n$tvs = $modx->getCollection(\'modTemplateVar\');\\nforeach ($tvs as $tv) {\\n    $params[$tv->get(\'name\')] = (empty($processTVs) ? $tv->getValue($id) : $tv->renderOutput($id));\\n    if($tv->get(\'name\') == \'pdfTpl\' && $tv->getValue($id) != \'\' ) {\\n        $tpl = $tv->getValue($id);\\n    }\\n}\\n\\n$html = $modx->getChunk($tpl, $params);\\n$css = $modx->getChunk($css, $params);\\nunset($params);\\n\\nrequire_once($corePath.\'components\\/htmltopdf\\/mpdf.php\');\\n\\n$mpdf = new mPDF(\'utf-8\', \'A4\', \'8\', \'\', 10, 10, 7, 7, 10, 10);\\n$mpdf->charset_in = \'utf-8\';\\n$stylesheet = $css;\\n$mpdf->WriteHTML($stylesheet, 1);\\n$mpdf->list_indent_first_level = 0; \\n$mpdf->WriteHTML($html, 2);\\n$mpdf->Output($assetsPath.\'pdf\\/\'.$id.\'.pdf\', \'F\');"}',
+);

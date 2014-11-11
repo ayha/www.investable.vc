@@ -1,0 +1,69 @@
+<div data-url="[[~[[+id]]]]" class="startup_item" id="company_[[+alias]]" data-rewards="[[+tv.rewards:ne=``:then=`1`]]" data-youtube="[[+tv.youtube]]" data-nest="[[+tv.invested_by_nest]]" data-alias="[[+alias]]" data-goal="[[+tv.goal]]" data-cid="[[+id]]" data-raised="[[+tv.raised]]" data-enddate="[[+unpub_date]]">
+	<div class="startup_img col-md-3 col-sm-5">
+		<div class="startup_logo" style="background-image:url([[+tv.content_image:phpthumbof=`w=400`]]); background-repeat:no-repeat;background-size:contain;background-position:center center"></div>
+		[[+tv.country:ne=``:then=`
+		<div class="founded_in">
+			[[+tv.country]]
+		</div>
+		`]]
+		<div class="company_badges">[[+tv.youtube:ne=``:then=`<div class="startup_badge video_badge"><a href="[[+tv.youtube]]" target="_blank" class="watch_video  fancybox.iframe">[[%startups.watch_live_pitch? &topic=`default` &namespace=`investable` &language=`en`]]</a></div>
+			`]][[+tv.rewards:ne=``:then=`<div class="startup_badge reward_badge">[[%startups.rewards? &topic=`default` &namespace=`investable` &language=`en`]]<div class="hidden reward_content">[[+tv.rewards]]</div></div>
+			`]]
+			
+			
+		</div>
+	</div>
+	<div class="startup_quickinfo col-md-9 col-sm-7">
+		<h3>[[+longtitle]]</h3>
+		<div class="industry">[[+tv.industry]]</div>
+		<div class="short_intro">[[+introtext]]
+			<p><a href="[[~[[+id]]]]" class="seefullpitch">[[%startups.see_full_pitch? &topic=`default` &namespace=`investable` &language=`en`]]</a></p>
+		</div>
+		
+		<div class="investment_badges">
+			[[+tv.invested_by_nest:ne=``:then=`
+				<div class="startup_badge nest_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+			`]]
+			
+			[[+tv.invested_by_angellist:ne=``:then=`
+				<div class="startup_badge angellist_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+			`]]
+
+		</div>
+		
+		<div class="quickfacts">
+			<div class="col-md-2 col-xs-6 fact_item percentage" >
+				<span class="fact_number"></span><span class="fact_title">[[%startups.funded? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			<div class="col-md-2 col-xs-6 fact_item target">
+				<span class="fact_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[+tv.goal:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</span><span class="fact_title">[[%startups.goal? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			[[+tv.equity:ne=``:then=`
+			<div class="col-md-2 col-xs-6 fact_item equity">
+				<span class="fact_number">[[+tv.equity]]</span><span class="fact_title">[[%startups.equity_offered? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			`]]
+			[[+tv.premoney:ne=``:then=`
+			<div class="col-md-2 col-xs-6 fact_item premoney">
+				<span class="fact_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[+tv.premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</span><span class="fact_title">[[%startups.premoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			`]]
+			<div class="col-md-2 col-xs-6 fact_item round">
+				<span class="fact_number">[[+tv.stage]]</span><span class="fact_title">[[%startups.stage? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			<div class="col-md-2 col-xs-6 fact_item timeleft">
+				<span class="fact_number"></span><span class="fact_title">[[%startups.days_left? &topic=`default` &namespace=`investable` &language=`en`]]</span>
+			</div>
+			<div class="allclear"></div>
+		</div>
+		<div class="quick_support">
+			<div class="support_company">
+						<a class="btn support_button invest_company" data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Support" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[+id]]` &getCount=`1`]]</span>)</a>
+						<a class="btn support_button follow_company"  data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Follow" href="#">[[%startups.add_favourite? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_followers? &companyid=`[[+id]]` &getCount=`1`]]</span>)</a>
+						<a class="btn support_button meet_company"  data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Meet The Startup" href="#">[[%startups.meet? &topic=`default` &namespace=`investable` &language=`en`]]</a>
+			</div>
+			
+		</div>
+	</div>
+	<div class="allclear"></div>
+</div>

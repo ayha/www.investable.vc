@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'inherittemplate',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '757427b1079cc60acbcac2ac12cca5ad',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '3e206389ba0a4b4a939cfbe82a7f2ac4',
+  'native_key' => 'inheritTpl.tvname',
+  'object' => '{"key":"inheritTpl.tvname","value":"inheritTpl","xtype":"textfield","namespace":"inherittemplate","area":"backend","editedon":null}',
+);

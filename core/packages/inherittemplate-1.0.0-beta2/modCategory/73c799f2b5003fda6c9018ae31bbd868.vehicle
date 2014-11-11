@@ -1,0 +1,101 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '3a6aeddc29df9c9e49ee86bd670268a4' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"Inherit Template","description":"Enable user to set automatic template selection when creating a new child document","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\r\\n * Inherit Template for MODx Revolution\\r\\n *\\r\\n * This plugin sets the new document template to have a default template from\\r\\n * parent\'s TV selection. This is only triggered by \'OnDocFormRender\' event.\\r\\n * This only works one level, as it\'s intended.\\r\\n *\\r\\n * Inherit Template is free software; you can redistribute it and\\/or modify it under\\r\\n * the terms of the GNU General Public License as published by the Free Software\\r\\n * Foundation; either version 2 of the License, or (at your option) any later\\r\\n * version.\\r\\n *\\r\\n * Inherit Template is distributed in the hope that it will be useful, but WITHOUT\\r\\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\\r\\n * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more\\r\\n * details.\\r\\n *\\r\\n * You should have received a copy of the GNU General Public License along with\\r\\n * Inherit Template; if not, write to the Free Software Foundation, Inc., 59 Temple\\r\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\r\\n *\\r\\n * @author      goldsky     <goldsky.milis@gmail.com>\\r\\n * @copyright   Copyright\\u00a0(c)\\u00a02012,\\u00a0goldsky\\r\\n * @license     GPL v2\\r\\n *\\r\\n * @package     Inherit Template\\r\\n * @subpackage  plugin\\r\\n *\\/\\r\\n\\/\\/ this plugin only apply to the new document\\r\\nif (empty($scriptProperties[\'mode\']) || $scriptProperties[\'mode\'] !== \'new\') {\\r\\n    return;\\r\\n}\\r\\nif ($modx->event->name === \'OnDocFormRender\') {\\r\\n    \\/\\/ get the parent\'s ID\\r\\n    $parentObj = $modx->getObject(\'modResource\', $_REQUEST[\'parent\']);\\r\\n    if (!$parentObj) {\\r\\n        return;\\r\\n    }\\r\\n    $parent = $parentObj->toArray();\\r\\n\\r\\n    \\/\\/ checking the parent\'s TV\\r\\n    $inheritTplObj = $modx->getObject(\'modTemplateVar\', array(\\r\\n        \'name\' => $modx->getOption(\'inheritTpl.tvname\')\\r\\n            ));\\r\\n\\r\\n    if (!$inheritTplObj || !$inheritTplObj->hasTemplate($parent[\'template\'])) {\\r\\n        return;\\r\\n    }\\r\\n\\r\\n    \\/\\/ get the value from the parent\'s TV\\r\\n    $inheritTpl = $inheritTplObj->toArray();\\r\\n    $tvValueObj = $modx->getObject(\'modTemplateVarResource\', array(\\r\\n        \'tmplvarid\' => $inheritTpl[\'id\'],\\r\\n        \'contentid\' => $parent[\'id\']\\r\\n            ));\\r\\n    if (!$tvValueObj) {\\r\\n        return;\\r\\n    }\\r\\n    $tvValueArray = $tvValueObj->toArray();\\r\\n\\r\\n    \\/\\/ force\\/override the template to the opening document\\r\\n    $modx->controller->setProperty(\'template\', $tvValueArray[\'value\']);\\r\\n\\r\\n    return;\\r\\n}\\r\\n\\r\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\r\\n * Inherit Template for MODx Revolution\\r\\n *\\r\\n * This plugin sets the new document template to have a default template from\\r\\n * parent\'s TV selection. This is only triggered by \'OnDocFormRender\' event.\\r\\n * This only works one level, as it\'s intended.\\r\\n *\\r\\n * Inherit Template is free software; you can redistribute it and\\/or modify it under\\r\\n * the terms of the GNU General Public License as published by the Free Software\\r\\n * Foundation; either version 2 of the License, or (at your option) any later\\r\\n * version.\\r\\n *\\r\\n * Inherit Template is distributed in the hope that it will be useful, but WITHOUT\\r\\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\\r\\n * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more\\r\\n * details.\\r\\n *\\r\\n * You should have received a copy of the GNU General Public License along with\\r\\n * Inherit Template; if not, write to the Free Software Foundation, Inc., 59 Temple\\r\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\r\\n *\\r\\n * @author      goldsky     <goldsky.milis@gmail.com>\\r\\n * @copyright   Copyright\\u00a0(c)\\u00a02012,\\u00a0goldsky\\r\\n * @license     GPL v2\\r\\n *\\r\\n * @package     Inherit Template\\r\\n * @subpackage  plugin\\r\\n *\\/\\r\\n\\/\\/ this plugin only apply to the new document\\r\\nif (empty($scriptProperties[\'mode\']) || $scriptProperties[\'mode\'] !== \'new\') {\\r\\n    return;\\r\\n}\\r\\nif ($modx->event->name === \'OnDocFormRender\') {\\r\\n    \\/\\/ get the parent\'s ID\\r\\n    $parentObj = $modx->getObject(\'modResource\', $_REQUEST[\'parent\']);\\r\\n    if (!$parentObj) {\\r\\n        return;\\r\\n    }\\r\\n    $parent = $parentObj->toArray();\\r\\n\\r\\n    \\/\\/ checking the parent\'s TV\\r\\n    $inheritTplObj = $modx->getObject(\'modTemplateVar\', array(\\r\\n        \'name\' => $modx->getOption(\'inheritTpl.tvname\')\\r\\n            ));\\r\\n\\r\\n    if (!$inheritTplObj || !$inheritTplObj->hasTemplate($parent[\'template\'])) {\\r\\n        return;\\r\\n    }\\r\\n\\r\\n    \\/\\/ get the value from the parent\'s TV\\r\\n    $inheritTpl = $inheritTplObj->toArray();\\r\\n    $tvValueObj = $modx->getObject(\'modTemplateVarResource\', array(\\r\\n        \'tmplvarid\' => $inheritTpl[\'id\'],\\r\\n        \'contentid\' => $parent[\'id\']\\r\\n            ));\\r\\n    if (!$tvValueObj) {\\r\\n        return;\\r\\n    }\\r\\n    $tvValueArray = $tvValueObj->toArray();\\r\\n\\r\\n    \\/\\/ force\\/override the template to the opening document\\r\\n    $modx->controller->setProperty(\'template\', $tvValueArray[\'value\']);\\r\\n\\r\\n    return;\\r\\n}\\r\\n\\r\\nreturn;"}',
+        'guid' => 'b2183da46154ebe40559fab4084dfa6c',
+        'native_key' => NULL,
+        'signature' => '03bb7a15311b89fc4f7710b2fde3f5a5',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '252a2316e899c9c3aa1b8692a7118e7f' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormRender","priority":0,"propertyset":0}',
+              'guid' => '141e3a9f238b97caded6a5a1804acc52',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormRender',
+              ),
+              'signature' => '5733cb60917d2e7e59a7cffb8fc45d26',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'TemplateVars' => 
+    array (
+      '3da73a4a83cb814d3400531d2ed5fe3a' => 
+      array (
+        'class' => 'modTemplateVar',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"type":"listbox","name":"inheritTpl","caption":"Children\'s Template","description":"Select default template for the child documents. It can be changed manually later on.","editor_type":0,"category":0,"locked":0,"elements":"@EVAL return include_once MODX_CORE_PATH . \'components\\/inherittemplate\\/elements\\/tvs\\/inherittemplate.tvs.php\';","rank":0,"display":"","default_text":null,"properties":null,"input_properties":null,"output_properties":null,"static":0,"static_file":"","content":null}',
+        'guid' => '0ee6d0b1dd7d295beee810a63fc72908',
+        'native_key' => NULL,
+        'signature' => '6a80d28d37161e35e7a08cd1a35e66b1',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+    'TemplateVar' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'inherittemplate',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"inherittemplate-1.0.0-beta2\\/modCategory\\/73c799f2b5003fda6c9018ae31bbd868\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"inherittemplate"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f4536194165c7aa971cd10648f5cd5ce',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '73c799f2b5003fda6c9018ae31bbd868',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"Inherit Template"}',
+);

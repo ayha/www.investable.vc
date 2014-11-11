@@ -1,0 +1,55 @@
+[[$member_head]]
+<!DOCTYPE html>
+<html lang="[[++cultureKey]]">
+	<head>
+		[[$Head]]
+	</head>
+	<body>
+		[[$Navbar]]
+		<div class="container main_content">
+
+			<div class="page-header">
+				<h1>[[*longtitle]]</h1>
+			
+				[[$member_navigation]]
+				<div class="allclear"></div>
+			</div>
+			<div class="member_dashboard member_content">
+
+				<div class="dashboard_module col-md-6" id="newsfeed">
+					<h2 class="module_head">[[%member.newsfeed? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
+					<div class="module_content">
+
+					</div>
+				</div>
+
+				<div class="dashboard_module col-md-6" id="message_center">
+					<h2 class="module_head">[[%member.message_center? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
+					<div class="module_content">
+
+					</div>
+				</div>
+				<div class="allclear"></div>
+				<div class="dashboard_module  col-md-6" id="porfolio">
+					<h2 class="module_head">[[%member.portfolio? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
+					<div class="module_content">
+						<div id="portfolio_companies">
+							<h3>[[%member.favourite_companies? &topic=`default` &namespace=`investable` &language=`en`]]</h3>
+						</div>
+
+						<div id="portfolio_performance">
+							<h3>[[%member.performance? &topic=`default` &namespace=`investable` &language=`en`]]</h3>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		[[$Footer]]
+		[[$member_footer]]
+		<script type="text/javascript">
+			
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+<?php
+/* 
+   Language Definition: English
+*/
+$lang = Array();
+$lang["readmore"] = "Read More";
+$lang["backtohome"] = "&lt; Back to Home";
+$lang["source"] = "Source";
+
+?>

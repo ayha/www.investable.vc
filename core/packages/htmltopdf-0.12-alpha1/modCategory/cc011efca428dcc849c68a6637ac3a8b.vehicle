@@ -1,0 +1,83 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'f1d3b14f13de825e9f15e7292c5e3f20' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":26,"source":0,"property_preprocess":0,"name":"pdfTpl","description":"PDF template","editor_type":0,"category":5,"cache_type":0,"snippet":"<h1>[[+pagetitle]]<\\/h1>\\n[[+content]]","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<h1>[[+pagetitle]]<\\/h1>\\n[[+content]]"}',
+        'guid' => '7e021070a27da2d71b052b532937fc5b',
+        'native_key' => 26,
+        'signature' => 'ce7f94b0c7ce8482dffebf9f9949edaa',
+      ),
+      '18e2d47120fed9bab40dbab1c2d34a50' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":25,"source":0,"property_preprocess":0,"name":"cssTpl","description":"CSS template","editor_type":0,"category":5,"cache_type":0,"snippet":"\\/* Insert here your css code *\\/","locked":0,"properties":null,"static":0,"static_file":"","content":"\\/* Insert here your css code *\\/"}',
+        'guid' => '171d772b44a08b25870773b5a8291d68',
+        'native_key' => 25,
+        'signature' => '8e361bea79b0405fa8cf065ff7e0c8de',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'htmltopdf',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"htmltopdf-0.12-alpha1\\/modCategory\\/cc011efca428dcc849c68a6637ac3a8b\\/0\\/","target":"return \\"\\".MODX_ASSETS_PATH.\\"\\/\\";","name":"pdf"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"htmltopdf-0.12-alpha1\\/modCategory\\/cc011efca428dcc849c68a6637ac3a8b\\/1\\/","target":"return \\"\\".MODX_CORE_PATH.\\"components\\/\\";","name":"htmltopdf"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7090c59af4d8e2c0dff88bfda0a11d54',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'cc011efca428dcc849c68a6637ac3a8b',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"HTMLtoPDF"}',
+);
