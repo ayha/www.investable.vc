@@ -234,12 +234,13 @@ blockquote h2{
 }
 
 a.btn.profile_button{
-	
+	font-size:0.8em;
 	
 }
 
 a.btn.logout_button{
 	background-color:#454545;
+	font-size:0.8em;
 	
 }
 
