@@ -1191,13 +1191,17 @@ border-radius: 7px;
 #newsletter_form{
 	display:inline;
 	margin-left:15px;
+	margin-top:5px;
 }
 
 #newsletter_form #newsletter_email{
    font-size:0.9em;
    margin:0;
    width:100px;
-   
+   height: 20px;
+   background:#ccc;
+   color:#a40a42;
+   border:1px solid #73072E;
 }
 
 #newsletter_form #newsletter_submit{
@@ -1206,6 +1210,7 @@ border-radius: 7px;
    text-transform:uppercase;
    color:#fff;
    background-color:#454545;
+   padding:3px 10px;
    
 }
 
