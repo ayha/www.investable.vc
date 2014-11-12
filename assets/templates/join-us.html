@@ -47,15 +47,15 @@
    			<input type="hidden" name="fullname" value="" id="investor_fullname" />
    			<div class="form_header">Login Information</div>
       		<div class="form_section" id="investor_login_details">
-      			<input type="hidden" name="username" id="investor_username" placeholder="Username" /> 
-                        <div class="form_row"><label>Email</label><input type="email" name="email" id="investor_email" placeholder="Email Address" /> <span class="error">[[!+reg.error.email]]</span></div>
-      			<div class="form_row"><label>Password</label><input type="password" name="password" placeholder="Password" /> <span class="error">[[!+reg.error.password]]</span></div>
-      			<div class="form_row"><label>Confirm your password</label><input type="password" name="confirm_password" placeholder="Confirm Your Password" /> <span class="error">[[!+reg.error.confirm_password]]</span></div>
+      			<input type="hidden" name="username" id="investor_username" placeholder="Username"  required="required" /> 
+                <div class="form_row"><label>Email</label><input type="email" name="email" id="investor_email" placeholder="Email Address"  required="required" /> <span class="error">[[!+reg.error.email]]</span></div>
+      			<div class="form_row"><label>Password</label><input type="password" name="password" placeholder="Password"  required="required" /> <span class="error">[[!+reg.error.password]]</span></div>
+      			<div class="form_row"><label>Confirm your password</label><input type="password" name="confirm_password" placeholder="Confirm Your Password"  required="required" /> <span class="error">[[!+reg.error.confirm_password]]</span></div>
       		</div>
       		<div class="form_header">Personal Information</div>
       		<div class="form_section" id="investor_contact">
-         		<div class="form_row"><label>First Name</label><input type="text" name="firstname" id="investor_firstname" placeholder="First Name" /> <span class="error">[[!+reg.error.firstname]]</span> </div>
-         		<div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="investor_lastname" placeholder="Last Name" /> <span class="error">[[!+reg.error.lastname]]</span></div>
+         		<div class="form_row"><label>First Name</label><input type="text" name="firstname" id="investor_firstname" placeholder="First Name"   required="required" /> <span class="error">[[!+reg.error.firstname]]</span> </div>
+         		<div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="investor_lastname" placeholder="Last Name"  required="required" /> <span class="error">[[!+reg.error.lastname]]</span></div>
          		
       		</div>
       		
@@ -84,13 +84,13 @@
       	 	<div class="form_header">Founder Information</div>
          <div class="form_section" id="#startup_contact">
          
-            <div class="form_row"><label>First Name</label><input type="text" name="firstname" id="startup_firstname" placeholder="First Name"/> </div>
-            <div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="startup_lastname" placeholder="Last Name"/> </div>
-            <div class="form_row"><label>Primary Email</label><input type="text" name="email" id="startup_email" placeholder="email"/> </div>
+            <div class="form_row"><label>First Name</label><input type="text" name="firstname" id="startup_firstname" placeholder="First Name" required="required"/> </div>
+            <div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="startup_lastname" placeholder="Last Name"  required="required"/> </div>
+            <div class="form_row"><label>Primary Email</label><input type="email" name="email" id="startup_email" placeholder="email"  required="required"/> </div>
          </div>
          <div class="form_header">Founder Information</div>
          <div class="form_section" id="#startup_moreinfo">
-         	<div class="form_row"><input type="text" name="startup_name" id="startup_company_name" placeholder="Company Name" /></div>
+         	<div class="form_row"><input type="text" name="startup_name" id="startup_company_name" placeholder="Company Name"  required="required" /></div>
          	<div class="form_row"><label>Describe your business in 50 words or less</label><textarea rows="3" name="company_description" id="company_description"></textarea></div>
          	<div class="form_row"><label>Highlight market opportunities in 100 words or less</label><textarea rows="5" name="market_opportunities" id="market_opportunities"></textarea></div>
             <div class="form_row"><label>Describe your competitive advantage in 100 words or less</label><textarea rows="5" name="competitive_advantage" id="competitive_advantage"></textarea></div>
