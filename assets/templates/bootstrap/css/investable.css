@@ -28,7 +28,7 @@ a:hover{
 }
 
 
-p{
+p, li{
 	color:#666;
 	font-size:1em;
 	
@@ -949,6 +949,9 @@ border-radius: 7px;
 .company_details h3{
 	font-size:1.1em;
 	text-transform:uppercase;
+	margin-top:25px;
+	margin-bottom:10px;
+	padding-bottom:0;
 }
 
 .company_details h4{
@@ -1213,7 +1216,8 @@ border-radius: 7px;
 		margin-left:0;
 		 
 	}
-	
+
+
 	.navbar-nav>li>a{
 		text-align:right;
 		background:#cccccc;
