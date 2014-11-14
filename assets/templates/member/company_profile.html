@@ -128,7 +128,12 @@
 							[[*mobile_app:ne=``:then=`<h3>[[%startups.mobile_app? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*mobile_app]]`]]
 							[[*use_of_funds:ne=``:then=`<h3>[[%startups.use_of_funds? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*use_of_funds]]`]]
 							[[*news:ne=``:then=`<h3>[[%startups.news_press? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*news]]`]]
-							<h3>Financial Statements</h3><p>Financial statements are available upon request.</p>
+							[[*fin_statements:is=``:then=`
+								<h3>Financial Statements</h3><p>Financial statements are available upon request.</p>
+							`:else=`
+								<h3>Financial Statements</h3>[[*fin_statements]]
+							`]]
+							
 							<div class="company_investors">
 								[[!get_company_investors:ne=`0`:then=`
 								 <h3>[[%startups.investors_invested_in? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
