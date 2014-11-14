@@ -1,3 +1,4 @@
+[[!http_auth?]]
 <!DOCTYPE html>
 <html lang="[[++cultureKey]]">
 	<head>
@@ -25,6 +26,7 @@
 	    	<!--<a href="#" class="btn update_table">Update Table</a>--> 
 	    	<a href="#" class="btn download_data">Download</a> 
 	    </div>
+	    <p>Total: <span class="total_count"></span></p>
 		<table name="user_table" id="user_table" cellpadding="5" cellspacing="0" border="1" width="100%">
 			<tr>
 				<th>ID</th>
@@ -43,6 +45,8 @@
 		</div>
 		[[$Footer]]
 		<script type="text/javascript">
+		
+		    $("span.total_count").html($("#user_table tr:last-child").data("total"));
 			$("a.update_table").click(function(e){
 				e.preventDefault();
 				//var promote = $("#filter_promote option:selected").val();
