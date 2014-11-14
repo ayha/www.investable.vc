@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="[[++cultureKey]]">
+	<head>
+		[[$Head]]
+		<link href="/assets/templates/admin/admin.css" rel="stylesheet" media="all">
+	</head>
+	<body>
+		[[$Navbar]]
+		<div class="container main_content">
+		
+	<div class="page-header">
+				<h1>[[*pagetitle]]</h1>
+			</div>
+	    <div class="admin_filters">
+	    	<!--<input type="text" name="keyword" id="filter_keyword" placeholder="Name / Email / Phone" value="[[!http_get? &key=`keyword`]]"/>
+	    	
+	    	<!--<input type="date" name="start_date" id="filter_start_date" placeholder="Start Date: YYY-MM-DD" value="[[!http_get? &key=`start_date`]]" />
+	    	<input type="date" name="end_date" id="filter_end_date" placeholder="End Date: YYYY-MM-DD" value="[[!http_get? &key=`end_date`]]" />
+	    	-->
+	    	<select name="promote" id="filter_promote">
+	    		<option value="">-- Receive updates from investable --</option>
+	    		<option value="Yes" [[!http_get:is=`Yes`:then=`SELECTED`? &key=`promote`]]>Yes</option>
+	    		<option value="No" [[!http_get:is=`No`:then=`SELECTED`? &key=`promote`]]>No</option>
+	    	</select>
+	    	<!--<a href="#" class="btn update_table">Update Table</a>--> 
+	    	<a href="#" class="btn download_data">Download</a> 
+	    </div>
+		<table name="user_table" id="user_table" cellpadding="5" cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Update From Investable</th>
+				<!--<th>Booked Information Session</th>-->
+				<th>Regsitration Date</th>
+				<!--<th>Number of Visits</th>-->
+			</tr>
+			
+			[[!user_table?]]
+		</table>
+		</div>
+		[[$Footer]]
+		<script type="text/javascript">
+			$("a.update_table").click(function(e){
+				e.preventDefault();
+				//var promote = $("#filter_promote option:selected").val();
+				
+				//insertParam("promote", promote);
+			});
+			
+			$("select#filter_promote").change(function(){
+				var promote = $("#filter_promote option:selected").val();
+				insertParam("promote", promote);
+			});
+			
+			$("a.download_data").click(function(e){
+				e.preventDefault();
+				var promote = $("#filter_promote option:selected").val();
+				window.location.href="[[~109]]?action=download&promote="+promote;
+			});
+			
+		</script>
+	</body>
+</html>

@@ -44,6 +44,7 @@
         	<div class="investor_form_wrapper"  >
    		<form name="investor_register_form"  action="[[++site_url]][[~[[*id]]]]" method="post">
    			<input type="hidden" name="usertype" value="investor" id=""/>
+   			<input type="hidden" name="reg_date" value="[[!current_time?]]" />
    			<input type="hidden" name="fullname" value="" id="investor_fullname" />
    			<div class="form_header">Login Information</div>
       		<div class="form_section" id="investor_login_details">

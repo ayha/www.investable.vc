@@ -1,0 +1,18 @@
+.admin_filters{
+	text-align:right;
+	
+}
+
+.admin_filters a.btn{
+	font-size:0.8em;
+	
+}
+
+tr th{
+	font-size:0.8em;
+	color:#fff;
+	background:#a40a42;
+	font-weight:bold;
+	padding:3px;
+	
+}
