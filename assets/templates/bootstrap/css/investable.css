@@ -18,12 +18,13 @@ img{
 } 
 
 a, a:link, a:hover, a:active, a:visited{
-	color:#a40a42;
+	color:#333;
 	text-decoration:none;
 	
 }
 
 a:hover{
+	color:#a40a42;
 	text-decoration:underline;
 }
 
@@ -38,7 +39,7 @@ h1, h2, h3, h4,h5,h6{
 	font-family:'Oswald', 'Helvetica Neue', Helvetica, sans-serif;
 	font-weight:bold;
 	color:#a40a42;
-	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+	/*text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);*/
 	
 }
 
@@ -340,7 +341,10 @@ a.btn.logout_button:hover{
 
 .faq_item .faq_question{
 	font-size:0.9em;
+	color:#333;
 }
+
+
 
 .faq_answer{
 	display:block;

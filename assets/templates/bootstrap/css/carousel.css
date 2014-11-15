@@ -33,18 +33,23 @@
  .carousel-caption h1{
  	color:	#AD2255;
  	margin-top:0;
+ 	text-shadow:none;
  	
  }
  .carousel-caption p {
     margin-bottom: 5px;
  	font-size:0.85em;
-  	color:#fff;
+  	color:#666;
+  	text-shadow:none;
+ 
  }
  
   .carousel-caption ul li {
     margin-bottom: 5px;
  	font-size:0.85em;
- 	color:#fff;
+ 	color:#666;
+ 	text-shadow:none;
+ 
   
   }
 
@@ -55,7 +60,9 @@
 }
 
 #howitworks-slide .item{
-	 background-color: #73072E;
+	 /*background-color: #73072E;*/
+	
+	background:#fff;
 	
 }
 
@@ -69,7 +76,8 @@
 }
 
 #about-slide .item{
-	 background-color: #73072E;
+	/* background-color: #73072E;*/
+	background-color:#fff;
 	height:500px;
 	
 }
@@ -91,6 +99,11 @@
 
 
 
+.carousel-control.left, .carousel-control.right{
+  	background:none;
+  	background-image:none;
+  	
+  }
 
 
 
@@ -115,10 +128,11 @@
   
   .carousel-caption ul li {
    font-size:0.95em;
- 
+   
   
   }
-
+  
+  
  #about-slide .carousel-inner > .item > img{
     display:none;
  }

@@ -6,7 +6,7 @@ if(empty($tpl)){
 	
 }
 
-$ignore_list = "16,17,376,395,397,303,224,45,173,319,259,245";
+$ignore_list = "16,17,376,395,397,303,224,45,173,319,259,245,311";
 
 $query = "SELECT a.*, u.username FROM ".$config["table_prefix"]."user_attributes a ";
 $query .= " LEFT JOIN ".$config["table_prefix"]."users u ON a.internalKey =u.id ";
