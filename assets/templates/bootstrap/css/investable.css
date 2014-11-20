@@ -211,6 +211,13 @@ a.btn{
 	color:#fff;
 }
 
+@media (max-width: 360px){
+	a.btn{
+		padding:5px 5px;
+	}
+	
+}
+
 a.btn:hover{
 	text-decoration:none;
 	background-color:#a40a42;
