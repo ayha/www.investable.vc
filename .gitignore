@@ -1,0 +1,5 @@
+.htaccess
+/core/*
+/manager/*
+/connectors/*
+/setup/*
