@@ -175,23 +175,23 @@ select[multiple]{
 }
 
 .navbar-social .linkedin{
-	background-image:url(/assets/images/linkedin_icon_inverted.png);
+	background-image:url(../../../../assets/images/linkedin_icon_inverted.png);
 }
 
 .navbar-social .twitter{
-	background-image:url(/assets/images/twitter_icon_inverted.png);
+	background-image:url(../../../../assets/images/twitter_icon_inverted.png);
 }
 
 .navbar-social .gplus{
-	background-image:url(/assets/images/googleplus_icon_inverted.png);
+	background-image:url(../../../../assets/images/googleplus_icon_inverted.png);
 }
 
 .navbar-social .facebook{
-	background-image:url(/assets/images/facebook_icon_inverted.png);
+	background-image:url(../../../../assets/images/facebook_icon_inverted.png);
 }
 
 .navbar-social .wechat{
-	background-image:url(/assets/images/wechat_icon_inverted.png);
+	background-image:url(../../../../assets/images/wechat_icon_inverted.png);
 }
 
 .navbar-signin{
@@ -522,7 +522,7 @@ h5.team_name{
 	width:24px;
 	height:24px;
 	margin-right:5px;
-	background:url(/assets/images/linkedin_icon.png) center center no-repeat transparent;
+	background:url(../../../../assets/images/linkedin_icon.png) center center no-repeat transparent;
 }
 
 .team_social .team_email{
@@ -531,7 +531,7 @@ h5.team_name{
 	width:24px;
 	height:24px;
 	margin-right:5px;
-	background:url(/assets/images/email_icon.png) center center no-repeat transparent;
+	background:url(../../../../assets/images/email_icon.png) center center no-repeat transparent;
 }
 
 .team_social .team_twitter{
@@ -540,7 +540,7 @@ h5.team_name{
 	width:24px;
 	height:24px;
 	margin-right:5px;
-	background:url(/assets/images/twitter_icon.png) center center no-repeat transparent;
+	background:url(../../../../assets/images/twitter_icon.png) center center no-repeat transparent;
 	
 }
 
@@ -585,12 +585,12 @@ label{
 }
 
 .cd-tabs-navigation li a#tab-investor{
-	/*background:url(/assets/images/investor_icon.png) 30px center no-repeat transparent;*/
+	/*background:url(../../../../assets/images/investor_icon.png) 30px center no-repeat transparent;*/
 	width:100%;
 }
 
 .cd-tabs-navigation li a#tab-startup{
-	/*background:url(/assets/images/startup_icon.png) 30px center no-repeat transparent;*/
+	/*background:url(../../../../assets/images/startup_icon.png) 30px center no-repeat transparent;*/
 	width:100%;
 }
 
@@ -762,7 +762,7 @@ h2.module_head {
 	display:block;
 	background-color:#73072e;
 	color:#fff;
-	background-image:url(/assets/images/location_white_icon_24.png);
+	background-image:url(../../../../assets/images/location_white_icon_24.png);
 	background-position:15px center;
 	padding:10px 0 10px 40px;
 	background-repeat: no-repeat;
@@ -809,7 +809,7 @@ border-radius: 7px;
 .video_badge{
 	padding-left:35px;
 	
-	background-image:url(/assets/images/video_icon_white_24.png);
+	background-image:url(../../../../assets/images/video_icon_white_24.png);
 	background-position: 5px center;
 	background-repeat:no-repeat;
 }
@@ -825,7 +825,7 @@ border-radius: 7px;
 
 .reward_badge{
 	padding-left:35px;
-	background-image:url(/assets/images/reward_icon_white_24.png);
+	background-image:url(../../../../assets/images/reward_icon_white_24.png);
 	background-position: 5px center;
 	background-repeat:no-repeat;
 }  
@@ -842,7 +842,7 @@ border-radius: 7px;
 
 .nest_badge{
 	padding-right:75px;
-	background-image:url(/assets/images/nest_logo_wine.png);
+	background-image:url(../../../../assets/images/nest_logo_wine.png);
 	background-position: right center;
 	background-repeat:no-repeat;
 	background-color:#fff;
@@ -852,7 +852,7 @@ border-radius: 7px;
 
 .angellist_badge{
 	padding-right:103px;
-	background-image:url(/assets/images/angellist_logo_wine.png);
+	background-image:url(../../../../assets/images/angellist_logo_wine.png);
 	background-position: right center;
 	background-repeat:no-repeat;
 	background-color:#fff;
@@ -863,7 +863,7 @@ border-radius: 7px;
 
 .angellist_badge{
 	padding-right:103px;
-	background-image:url(/assets/images/angellist_logo_wine.png);
+	background-image:url(../../../../assets/images/angellist_logo_wine.png);
 	background-position: right center;
 	background-repeat:no-repeat;
 	background-color:#fff;
@@ -875,7 +875,7 @@ border-radius: 7px;
 
 .angelvest_badge{
 	padding-right:100px;
-	background-image:url(/assets/images/angelvest_logo_wine.png);
+	background-image:url(../../../../assets/images/angelvest_logo_wine.png);
 	background-position: right center;
 	background-repeat:no-repeat;
 	background-color:#fff;
@@ -1158,15 +1158,15 @@ border-radius: 7px;
 }
 
 .support_company a.support_button.invest_company{
-	background-image:url(/assets/images/invest_white_icon_24.png);
+	background-image:url(../../../../assets/images/invest_white_icon_24.png);
 }
 
 .support_company a.support_button.follow_company{
-	background-image:url(/assets/images/favourite_white_icon_24.png);
+	background-image:url(../../../../assets/images/favourite_white_icon_24.png);
 }
 
 .support_company a.support_button.meet_company{
-	background-image:url(/assets/images/meet_white_icon_24.png);
+	background-image:url(../../../../assets/images/meet_white_icon_24.png);
 }
 
 .floating_content .company_intro .company_logo{
