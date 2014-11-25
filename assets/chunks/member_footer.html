@@ -1,0 +1,51 @@
+
+<!-- include hidden elements on the page -->
+<div class="hidden">
+   <div id="send_message_wrapper">
+      <form id="send_message_form" name="send_message" method="post" action="[[~56]]">
+         <input type="hidden" name="private_message" id="msg_action_page" value="[[~56]]" />
+         <input type="hidden" name="connect_message" id="connect_action_page" value="[[~57]]" />
+         <input type="hidden" name="action_type" id="action_type" value="message" />
+         <input type="hidden" name="from" id="sender_id" value="[[+id]]" />
+         <input type="hidden" name="to" id="recipient_id" value="" />
+         <div class="form_header">Send Message</div>
+         <div class="form_section">
+            <div class="form_row"><label>Subject</label><input type="text" name="subject" id="msg_subject" /></div>  
+            <div class="form_row"><label>Message</label><textarea cols="40" rows="3" name="message" id="msg_message"></textarea></div>
+         </div> 
+         <div class="form_section form_submit">
+            <input type="submit" name="send_message_submit" id="send_message_submit" value="Send" />
+         </div>
+      </form>
+      <div class="form_message">[[%connection.message_sent? &topic=`default` &namespace=`investable` &language=`en`]]
+   </div>
+   
+   
+   <div id="pledge_form_wrapper"> 
+   		<form id="pledge_form" name="pledge_form" method="post" action="[[~81]]">
+   			<input type="hidden" name="companyid" id="pledge_company_id" value="" />
+   			<input type="hidden" name="companyname" id="pledge_company_name" value="" />
+   			<div class="form_header">Pledge Investment</div>
+   			<div class="form_section"> 
+   				<div class="form_row"><label>Amount (USD)</label><input type="number" name="pledge_amount" id="pledge_amount" required="required" min="5000" placeholder="Min. 5000"/></div>
+   				<div class="form_row">
+   					<p>The minimum investment pledge is US $5000<br />
+					There is no maximum.</p> 
+
+					<p>N.B. Completing this process is NOT an immediate online transaction but simply an indication of interest to pledge an investment in this start up.</p>
+   					
+   				</div>
+   			</div>
+   			<div class="form_section form_submit">
+            <input type="submit" name="pledge_submit" id="pledge_submit" value="Pledge Investment" />
+         </div>
+   		</form>
+   </div>
+   
+</div>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+       
+   });
+</script>

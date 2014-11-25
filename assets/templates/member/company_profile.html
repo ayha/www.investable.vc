@@ -177,6 +177,8 @@
 			</div>
 			 
 		</div>
+		
+		
 		[[$Footer]]
 		[[$member_footer]]
 		<script type="text/javascript">  
@@ -230,7 +232,10 @@
 			    		data: {"companyid":companyid, "companyname":companyname},
 			    		complete:function(xhr, status){
 			    			if(status == "success"){
-			    				$.fancybox.open(xhr.responseText);
+			    				$.fancybox.open(xhr.responseText, {
+			    					"afterClose": function(){window.location.reload();}
+			    					
+			    				});
 			    			}else{
 			    				alert("There was an error sending the request, please try again.");
 			    			}
@@ -243,13 +248,43 @@
 			    	e.preventDefault();
 			    	var companyname ="[[*longtitle]]";
 			    	var companyid = "[[*id]]";
-			    	
+			    	/*
 			    	$.ajax("[[~81]]",{
 			    		type:"POST",
 			    		data: {"companyid":companyid, "companyname":companyname},
 			    		complete:function(xhr, status){
 			    			if(status == "success"){
 			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	*/
+			    	
+			    	$("#pledge_form").children("#pledge_company_id").val(companyid);
+			    	$("#pledge_form").children("#pledge_company_name").val(companyname);
+			    	$.fancybox.open("#pledge_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	});
+			    });
+			    
+			    $("#pledge_form").submit(function(e){
+			    	e.preventDefault();
+			    	var companyname = $("#pledge_form").find("#pledge_company_name").val();
+			    	var companyid = $("#pledge_form").find("#pledge_company_id").val();
+			    	var pledgeamount = $("#pledge_form").find("#pledge_amount").val();
+			    	
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname, "pledge_amount":pledgeamount},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){ window.location.reload();}
+			    					
+			    				});
 			    			}else{
 			    				alert("There was an error sending the request, please try again.");
 			    			}
@@ -268,7 +303,9 @@
 			    		data: {"companyid":companyid, "companyname":companyname},
 			    		complete:function(xhr, status){
 			    			if(status == "success"){
-			    				$.fancybox.open(xhr.responseText);
+			    				$.fancybox.open(xhr.responseText,{
+			    						"afterClose": function(){window.location.reload();}
+			    				});
 			    			}else{
 			    				alert("There was an error sending the request, please try again.");
 			    			}
