@@ -916,6 +916,17 @@ border-radius: 7px;
 	
 }
 
+.highlight_note{
+	color:#ffffff;
+	margin-right:15px;
+	display:block;
+	
+}
+
+.highlight_note p{
+	color:#ffffff;
+}
+
 
 .startup_item .startup_quickinfo{
 	padding:10px;
