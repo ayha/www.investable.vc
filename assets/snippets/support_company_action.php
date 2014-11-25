@@ -1,5 +1,5 @@
 <?php
-$emailTo="alex@investable.vc";
+$emailTo="emma@investable.vc";
 $emailCC = "alex@investable.vc";
 
 
