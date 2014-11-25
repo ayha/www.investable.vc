@@ -35,7 +35,7 @@ $modx->mail->set(modMail::MAIL_FROM_NAME, "Investable.vc");
 $modx->mail->set(modMail::MAIL_SENDER, $from);;
 $modx->mail->set(modMail::MAIL_SUBJECT, $subject);
 $modx->mail->address('to', $emailTo, $emailTo);
-$modx->mail->address('cc', $emailCC, $emailCC);
+$modx->mail->address('to', $emailCC, $emailCC);
 $modx->mail->address('reply-to', $from);
 $modx->mail->setHTML(true);
 //call send mail
