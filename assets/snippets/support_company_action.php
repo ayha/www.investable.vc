@@ -1,8 +1,9 @@
 <?php
-$emailTo="emma@investable.vc";
+$emailTo="alex@investable.vc";
 $emailCC = "alex@investable.vc";
 
 
+$config = $modx->getConfig();
 
 if(!empty($_POST)){
    foreach($_POST as $k=>$v){
@@ -20,8 +21,9 @@ $username = $profile->get("fullname");
 $q = "INSERT INTO ext_support_company (userid, username, companyid, companyname, pledge_amount, date_sent) VALUES ($userid, '".$username."', ".$_POST["companyid"].", ".$_POST["companyname"].", ".$_POST["pledge_amount"].", '".date("Y-m-d H:i:s")."')";
 $result = $modx->query($q);
 
-
-
+$tvid =13;
+$update_q = "UPDATE ".$config["table_prefix"]."site_tmplvar_contentvalues SET value=(value+".$_POST["pledge_amount"].") WHERE tmplvarid=".$tvid ." AND contentid=".$_POST["companyid"];
+$r2 = $modx->query($update_q);
 
 if(is_object($result)){
    $subject = "New investment from investor ".$username ." to invest in ".$_POST["companyname"];
