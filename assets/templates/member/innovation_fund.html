@@ -19,19 +19,35 @@
 				<div class="quick_facts">
 					<div class="project_logo col-md-4">
 						<div class="logo_holder" style="background-image:url([[*content_image:phpthumbof=`w=500&h=300`]]);"></div>
-						<div class="company_badges">
-							
-							[[*rewards:ne=``:then=`
-								<div class="startup_badge reward_badge">[[%startups.rewards? &topic=`default` &namespace=`investable` &language=`en`]]<div class="hidden reward_content">[[*rewards]]</div></div>
-							`]]
-							
-							
-						</div>
+						
 					</div>
 					<div class="project_status col-md-8"> 
 						<h2>[[*longtitle]]</h2>
 						<div class="intro">
 						[[*content:ne=``:then=`[[*content]]`]]
+						</div>
+						
+						
+						<div class="fund_status">
+							
+							
+							
+							[[*raised:ne=``:then=`
+							<div class="status_item col-xs-6  col-sm-4" id="raised" data-value="[[*raised]]">
+								<div class="status_name">[[%startups.funded? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+								<div class="status_number"></div>
+								<div class="allclear"></div>
+							</div>
+							`]]
+							
+							<div class="status_item col-xs-6  col-sm-4" id="goal" data-value="[[*goal]]">
+								<div class="status_name">[[%startups.goal? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*goal:is=``:then=`0`:else=`[[*goal:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]`]]</div>
+								<div class="allclear"></div>
+							</div>
+							
+							
+							<div class="allclear"></div>
 						</div>
 						
 					</div>
@@ -89,8 +105,15 @@
 					}, 1500, function(){});
 					
 				});
+			 
 			
-			
+				var investment_goal = $("#goal").data("value");
+				var investment_raised = $("#raised").data("value");
+				
+				percentage_raised = Math.ceil(investment_raised*100/investment_goal);
+				
+				$("#raised .status_number").html(percentage_raised + "%");
+				
 				
 				
 			
