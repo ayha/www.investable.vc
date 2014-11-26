@@ -1055,6 +1055,11 @@ border-radius: 7px;
 
 .quick_facts .intro{
 	margin-bottom:15px;
+	
+}
+
+.quick_facts p{
+	color:#fff;
 }
 
 .quick_facts .fund_status {
