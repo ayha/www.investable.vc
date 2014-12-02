@@ -14,6 +14,7 @@
                &reloadOnSuccess=`1`
                 &excludeExtended=`profile_submit,confirm_password,new_photo,avatar` 
                 &preHooks=`uploadUserPhoto`
+                
              ]]
              
              [[!ChangePassword?
@@ -23,6 +24,7 @@
 			   &fieldConfirmNewPassword=`confirm_password`
 			   &validateOldPassword=`0`
 			   &validate=`nospam:blank`
+			   &successMessage=`Your password has been updated!`
 			]]
              
 			<div class="page-header">
@@ -32,8 +34,9 @@
 				<div class="allclear"></div>
 			</div>
 			<div class="member_content">
-				<div class="updprof-error">[[+error.message]]</div>
-                <div class="form_message">[[+login.update_success:is=`1`:then=`[[%login.profile_updated? &namespace=`login` &topic=`updateprofile`]]`]]</div>
+				<div class="updprof-error">[[!+error_message]]</div>
+				<div class="form_message">[[!+successMessage]]</div>
+                <div class="form_message">[[+login.update_success:is=`1`:then=`Your profile information has been updated`]]</div>
  
 				<form name="profile_update_form" id="profile_update_form" method="post" action="[[~[[*id]]]]"  enctype="multipart/form-data">
 					<div class="form_header">Personal Information</div>
