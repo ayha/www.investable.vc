@@ -15,6 +15,16 @@
                 &excludeExtended=`profile_submit,confirm_password,new_photo,avatar` 
                 &preHooks=`uploadUserPhoto`
              ]]
+             
+             [[!ChangePassword?
+			   &submitVar=`update_password`
+			   &placeholderPrefix=``
+			   &fieldNewPassword=`password`
+			   &fieldConfirmNewPassword=`confirm_password`
+			   &validateOldPassword=`0`
+			   &validate=`nospam:blank`
+			]]
+             
 			<div class="page-header">
 				<h1>[[*longtitle]]</h1>
 			
@@ -83,12 +93,6 @@
 						
 					</div>
 					
-					<div class="form_header">Password</div>
-					<div class="form_section">
-						<div class="form_row"><label>New Password</label><input type="password" name="password" id="password" placeholder="New password" /> <span class="error">[[!+reg.error.password]]</span> </div>
-						<div class="form_row"><label>Confirm New Password</label><input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your new password" />  <span class="error">[[!+reg.error.confirm_password]]</span> </div>
-					</div>
-					
 					<div class="form_header">Getting involved with Investable</div>
 					<div class="form_section">
 						<input type="hidden" name="promote" id="hidden_promote" value="No" />
@@ -102,8 +106,19 @@
 					<div class="form_section submit">
          				<div class="form_row"><input type="submit" name="profile_submit" id="profile_submit" value="Update" /></div>
       				</div>
+      				
+      				
+					<div class="form_header">Password</div>
+					<div class="form_section">
+						<div class="form_row"><label>New Password</label><input type="password" name="password" id="password" placeholder="New password" /> <span class="error">[[!+error.password]]</span> </div>
+						<div class="form_row"><label>Confirm New Password</label><input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your new password" />  <span class="error">[[!+error.confirm_password]]</span> </div>
+					</div>
+					<div class="form_section submit">
+         				<div class="form_row"><input type="submit" name="update_password" id="update_password" value="Update" /></div>
+      				</div>
+      				
 				</form>
-				<div class=""
+				
 			</div>
 		</div>
 		[[$Footer]]
