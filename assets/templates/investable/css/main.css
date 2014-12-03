@@ -1,22 +1,240 @@
+/* variables */
+/* mixins */
+/* @font-face definitions */
+/* calvert for titles */
+@font-face {
+  font-family: "CalvertMT";
+  src: url("../fonts/calvert-mt.eot");
+  src: url("../fonts/calvert-mt.eot") format("embedded-opentype"), url("../fonts/calvert-mt.woff2") format("woff2"), url("../fonts/calvert-mt.woff") format("woff"), url("../fonts/calvert-mt.ttf") format("truetype"), url("../fonts/calvert-mt.svg#CalvertMTRegular") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: "CalvertMT";
+  src: url("../fonts/calvert-mt-bold.eot");
+  src: url("../fonts/calvert-mt-bold.eot") format("embedded-opentype"), url("../fonts/calvert-mt-bold.woff2") format("woff2"), url("../fonts/calvert-mt-bold.woff") format("woff"), url("../fonts/calvert-mt-bold.ttf") format("truetype"), url("../fonts/calvert-mt-bold.svg#CalvertMTBold") format("svg");
+  font-style: normal;
+  font-weight: bold; }
+/* scala font content */
+@font-face {
+  font-family: "ScalaSans";
+  src: url("../fonts/scala-sans-regular-webfont.eot");
+  src: url("../fonts/scala-sans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-regular-webfont.woff2") format("woff2"), url("../fonts/scala-sans-regular-webfont.woff") format("woff"), url("../fonts/scala-sans-regular-webfont.ttf") format("truetype"), url("../fonts/scala-sans-regular-webfont.svg#scala_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "ScalaSans";
+  src: url("../fonts/scala-sans-bold-italic-webfont.eot");
+  src: url("../fonts/scala-sans-bold-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-bold-italic-webfont.woff2") format("woff2"), url("../fonts/scala-sans-bold-italic-webfont.woff") format("woff"), url("../fonts/scala-sans-bold-italic-webfont.ttf") format("truetype"), url("../fonts/scala-sans-bold-italic-webfont.svg#scala_sansbold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "ScalaSans";
+  src: url("../fonts/scala-sans-regular-italic-webfont.eot");
+  src: url("../fonts/scala-sans-regular-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-regular-italic-webfont.woff2") format("woff2"), url("../fonts/scala-sans-regular-italic-webfont.woff") format("woff"), url("../fonts/scala-sans-regular-italic-webfont.ttf") format("truetype"), url("../fonts/scala-sans-regular-italic-webfont.svg#scala_sansregular_italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "ScalaSans";
+  src: url("../fonts/scala-sans-bold-webfont.eot");
+  src: url("../fonts/scala-sans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-bold-webfont.woff2") format("woff2"), url("../fonts/scala-sans-bold-webfont.woff") format("woff"), url("../fonts/scala-sans-bold-webfont.ttf") format("truetype"), url("../fonts/scala-sans-bold-webfont.svg#scala_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+html, body, p, li, a {
+  font-family: "ScalaSans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #636363; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "CalvertMT", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #636363; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+h1 {
+  font-size: 22px; }
 
+h2 {
+  font-size: 18px; }
 
+h3 {
+  font-size: 16px; }
 
+h4 {
+  font-size: 14px; }
 
+body {
+  margin-top: 70px; }
 
+.clearboth {
+  clear: both; }
 
+.btn {
+  background: #20B6AE;
+  padding: 5px 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff; }
 
+.btn:hover {
+  color: #ffffff; }
 
+input[type=text], input[type=email], input[type=number], input[type=date], input[type=password] {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  padding: 3px 5px;
+  font-size: 12px;
+  width: 150px;
+  color: #636363; }
 
+input[type=submit], button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #20B6AE;
+  padding: 3px 10px;
+  font-size: 12px;
+  background: #20B6AE;
+  color: #ffffff; }
 
+/* header */
+.navbar-bg {
+  background-color: #FFFFFF;
+  opacity: 0.95;
+  display: block;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3; }
 
+.navbar .container {
+  position: relative;
+  z-index: 5; }
 
+.navbar {
+  z-index: 10; }
 
+.navbar-toggle .icon-bar {
+  background-color: #20B6AE; }
 
+.navbar-brand {
+  text-indent: -9999px;
+  background-image: url(../../../images/template/investable_logo_196x41.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 196px;
+  margin-left: 0 !important; }
 
+.navbar-nav > li > a, .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background: none; }
 
+.navbar-nav > li > a:hover, .navbar-nav > li > a.active {
+  color: #20B6AE; }
 
+.navbar-nav {
+  margin-left: 20px;
+  margin-top: 3px; }
+
+.navbar-header.header_login_btn {
+  margin-top: -50px; }
+
+.navbar-header.header_login_btn a.btn {
+  background-image: url(../../../images/template/arrow_white_right.png);
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  padding-right: 25px;
+  text-transform: uppercase; }
+
+/* end of header */
+/* footer */
+footer {
+  background-color: #20B6AE;
+  color: #ffffff; }
+
+footer p {
+  color: #ffffff; }
+
+footer h3, footer h3 a, footer h3 a:hover, footer h3 a:active {
+  font-family: "CalvertMT", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-weight: normal;
+  text-decoration: none; }
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+footer ul li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+footer ul li a, footer ul li a:hover, footer ul li a.active, footer ul li a:focus {
+  color: #fff; }
+
+footer .footer_social a.footer_social_icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  text-indent: -9999px;
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 5px; }
+
+footer .footer_social .facebook {
+  background-image: url(../../../images/template/social_facebook_18x18.png); }
+
+footer .footer_social .gplus {
+  background-image: url(../../../images/template/social_gplus_18x18.png); }
+
+footer .footer_social .linkedin {
+  background-image: url(../../../images/template/social_linkedin_18x18.png); }
+
+footer .footer_social .twitter {
+  background-image: url(../../../images/template/social_twitter_18x18.png); }
+
+footer .footer_social .weibo {
+  background-image: url(../../../images/template/social_weibo_18x18.png); }
+
+footer #newsletter_form input[type=submit] {
+  border: 1px solid #ffffff;
+  color: #FFFFFF;
+  background: transparent; }
+
+footer #newsletter_form input[type=submit]:hover {
+  border: 1px solid #20B6AE;
+  background: #FFFFFF;
+  color: #20B6AE; }
+
+footer .copyright {
+  font-size: 11px;
+  color: #fff; }
+
+/* end of footer= */
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 10px !important; } }
+.main_content, footer {
+  z-index: 1; }
+
+section.parallax {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+
+/*# sourceMappingURL=main.css.map */

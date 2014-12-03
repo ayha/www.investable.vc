@@ -4,47 +4,47 @@
  */
 $database_type = 'mysql';
 $database_server = 'localhost';
-$database_user = 'invest_modx';
-$database_password = 'invest+123';
+$database_user = 'root';
+$database_password = 'root';
 $database_connection_charset = 'utf8';
-$dbase = 'investable_dev_modx';
+$dbase = 'investable_local_modx';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=localhost;dbname=investable_dev_modx;charset=utf8';
+$database_dsn = 'mysql:host=localhost;dbname=investable_local_modx;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
 );
 
-$lastInstallTime = 1415604951;
+$lastInstallTime = 1416565795;
 
-$site_id = 'modx54606ad77e0b12.74978315';
-$site_sessionname = 'SN543b6c0e6f7d6_dev';
+$site_id = 'modx546f14234e9629.77368408';
+$site_sessionname = 'SN546f13c896631_local';
 $https_port = '443';
-$uuid = 'bd0169d7-083f-4663-8a0a-1fd40b5c4f1f';
+$uuid = 'fb5851cc-5cd9-45da-8e97-db9ba65949bc';
 
 if (!defined('MODX_CORE_PATH')) {
-    $modx_core_path= '/var/www/vhosts/dev.investable.vc/html/core/';
+    $modx_core_path= '/Users/alexay/Documents/Github/www.investable.vc/core/';
     define('MODX_CORE_PATH', $modx_core_path);
 }
 if (!defined('MODX_PROCESSORS_PATH')) {
-    $modx_processors_path= '/var/www/vhosts/dev.investable.vc/html/core/model/modx/processors/';
+    $modx_processors_path= '/Users/alexay/Documents/Github/www.investable.vc/core/model/modx/processors/';
     define('MODX_PROCESSORS_PATH', $modx_processors_path);
 }
 if (!defined('MODX_CONNECTORS_PATH')) {
-    $modx_connectors_path= '/var/www/vhosts/dev.investable.vc/html/connectors/';
-    $modx_connectors_url= '/connectors/';
+    $modx_connectors_path= '/Users/alexay/Documents/Github/www.investable.vc/connectors/';
+    $modx_connectors_url= '/www.investable.vc/connectors/';
     define('MODX_CONNECTORS_PATH', $modx_connectors_path);
     define('MODX_CONNECTORS_URL', $modx_connectors_url);
 }
 if (!defined('MODX_MANAGER_PATH')) {
-    $modx_manager_path= '/var/www/vhosts/dev.investable.vc/html/manager/';
-    $modx_manager_url= '/manager/';
+    $modx_manager_path= '/Users/alexay/Documents/Github/www.investable.vc/manager/';
+    $modx_manager_url= '/www.investable.vc/manager/';
     define('MODX_MANAGER_PATH', $modx_manager_path);
     define('MODX_MANAGER_URL', $modx_manager_url);
 }
 if (!defined('MODX_BASE_PATH')) {
-    $modx_base_path= '/var/www/vhosts/dev.investable.vc/html/';
-    $modx_base_url= '/';
+    $modx_base_path= '/Users/alexay/Documents/Github/www.investable.vc/';
+    $modx_base_url= '/www.investable.vc/';
     define('MODX_BASE_PATH', $modx_base_path);
     define('MODX_BASE_URL', $modx_base_url);
 }
@@ -59,10 +59,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='dev.investable.vc';
+        $http_host='localhost:8888';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'dev.investable.vc';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'localhost:8888';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }
@@ -75,8 +75,8 @@ if (!defined('MODX_SITE_URL')) {
     define('MODX_SITE_URL', $site_url);
 }
 if (!defined('MODX_ASSETS_PATH')) {
-    $modx_assets_path= '/var/www/vhosts/dev.investable.vc/html/assets/';
-    $modx_assets_url= '/assets/';
+    $modx_assets_path= '/Users/alexay/Documents/Github/www.investable.vc/assets/';
+    $modx_assets_url= '/www.investable.vc/assets/';
     define('MODX_ASSETS_PATH', $modx_assets_path);
     define('MODX_ASSETS_URL', $modx_assets_url);
 }

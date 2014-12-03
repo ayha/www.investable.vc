@@ -3,4 +3,9 @@
 /manager/*
 /connectors/*
 /setup/*
-/assets/images/members/
+assets/components/phpthumbof/cache/*
+/assets/images/members/*
+/assets/images/*
+/core/config/*
+core/config/config.inc.php
+.project
