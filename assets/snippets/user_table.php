@@ -49,6 +49,10 @@ if(is_object($result)){
 		
 		$rowOutput["reg_date"] = $extended->{"reg_date"};
 		$rowOutput["total"] = $result->rowCount();
+		
+		$rowOutput["remarks"] = $extended->{"remarks"};
+		
+		
 		if($display){
 			$output .= $modx->getChunk($tpl, $rowOutput);
 			array_push($outputArray, $rowOutput);

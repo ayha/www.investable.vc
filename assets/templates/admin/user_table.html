@@ -3,7 +3,7 @@
 <html lang="[[++cultureKey]]">
 	<head>
 		[[$Head]]
-		<link href="/assets/templates/admin/admin.css" rel="stylesheet" media="all">
+		<link href="[[++site_url]]assets/templates/admin/admin.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		[[$Navbar]]
@@ -34,9 +34,10 @@
 				<th>Last Name</th>
 				<th>Email</th>
 				<th>Phone</th>
-				<th>Update From Investable</th>
+				<th>Receive Updates</th>
 				<!--<th>Booked Information Session</th>-->
 				<th>Regsitration Date</th>
+				<th>Remarks</th>
 				<!--<th>Number of Visits</th>-->
 			</tr>
 			
@@ -64,6 +65,28 @@
 				var promote = $("#filter_promote option:selected").val();
 				window.location.href="[[~109]]?action=download&promote="+promote;
 			});
+			
+			
+			
+			$("a.save_note").click(function(e){
+				e.preventDefault();
+				var uid = $(this).data("uid");
+				var notes_content =$(this).parent().children("textarea").val();
+				save_remarks(uid, notes_content);
+			});
+			
+			function save_remarks(uid, remarks){
+				$.ajax("processors/save-user-notes.html", {
+					type: "POST", 
+					data: {"uid": uid, "remarks": remarks},
+					complete: function(xhr, status){
+						$.fancybox.open("Remarks Updated");
+					
+						
+					}
+					
+				});
+			}
 			
 		</script>
 	</body>
