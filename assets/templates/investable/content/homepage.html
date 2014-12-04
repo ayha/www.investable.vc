@@ -16,24 +16,36 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <section class="fullpage parallax">
 	    <div class="jumbotron section" id="home_lead_image" style="background-image:url([[*content_image]]);">
+	    	<div class="container">
 	     	[[*content]]
+	     	<div class="join_cta">
+	     		<a class="btn jumbotron_btn" href="[[~10]]">[[%cta.joinus? &namespace=`investable` ]]</a>
+	     	</div>
+	     	
+	     	<div class="registered_members pull-right">
+	     		<p>[[!get_member_count?]] [[%title.registered_investors? &namespace=`investable` ]]</p>
+	     	</div>
+	     	</div>
 	    </div>
-	    </section>
-	   	<section id="home_news" >
+	</section>
+	
+    <div class="main_content" id="homepage_content">
+    	<section id="home_news" >
 	   		<div class="container">
 	   			<h2>[[%title.newsroom? &namespace=`investable` ]]</h2>
 	   		</div>
-	   	</section>
-    <div class="main_content" id="homepage_content">
-    	
+		</section>
 	    <section id="home_benefits" >
 	    	<div class="container">
 	    		<h2>[[%title.members_benefits? &namespace=`investable`]]</h2>
+	    		 [[!getResources? &parents=`[[*id]]` &tplPath=`assets_path+ "chunks/investable/content/"` &tpl=`@FILE home_partners.html` &showHidden=`1` &includeContent=`1` &hideContainers=`0`]]
+                
 	    	</div>
 	    </section>
 		<section id="home_partners">
 			<div class="container">
 				<h2>[[%title.partners? &namespace=`investable`]]</h2>
+				 
 			</div>
 		</section>
 	</div>

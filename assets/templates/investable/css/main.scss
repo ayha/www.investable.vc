@@ -1,4 +1,4 @@
-/* variables */
+// variables
 
 $titleFont: "CalvertMT";
 $bodyFont: "ScalaSans";
@@ -16,13 +16,23 @@ $font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 
 
-/* mixins */
+// mixins
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
+}
+
+@mixin box-shadow(){
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  -moz-box-shadow:    2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  box-shadow:         2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+}
+
+@mixin text-shadow(){
+     text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8);
 }
 
 
@@ -128,7 +138,7 @@ html, body, p, li, a{
 
 h1, h2, h3, h4, h5, h6{
   font-family: $font_serif;
-  font-weight:bold;
+  font-weight:normal;
   color:$textColor;
 }
 
@@ -150,7 +160,7 @@ h4{
 }
 
 body{
-  margin-top: $headerHeight;
+ 
 }
 
 .clearboth{
@@ -225,6 +235,7 @@ input[type=submit], button{
   background-position: left center;
   background-repeat: no-repeat;
   background-color:transparent;
+  background-size:contain;
   width:196px;
   margin-left:0 !important;
 }
@@ -243,7 +254,7 @@ input[type=submit], button{
 }
 
 .navbar-header.header_login_btn{
-  margin-top:-$headerHeight+20px;
+  margin-top:20px;
 }
 
 .navbar-header.header_login_btn a.btn{
@@ -255,6 +266,61 @@ input[type=submit], button{
 }
 
 
+@media (max-width:768px){
+  .navbar-brand{
+    margin-left:10px !important; 
+  }
+  
+   .navbar-toggle{
+         margin-right:100px;
+  }
+  
+  .collapse .navbar-nav {
+     margin:0;
+     padding-left:0; 
+     padding-right:0;
+     
+  }
+  .container>.navbar-collapse{
+      
+     padding-left:0; 
+     padding-right:0;
+     margin: 0 -15px;
+  }
+  
+  .navbar-nav li a{
+    background-color:$turquoise;
+    color:#ffffff;
+    border-top:1px solid #cccccc;
+  }
+  
+  .collapse .navbar-nav li a:hover, .collapse .navbar-nav li a:active{
+     background:#ffffff;
+     color:$turquoise;
+  }
+  
+  .navbar-header.header_login_btn{
+    margin-top:-$headerHeight+20px;
+  }
+  
+   .navbar-header.header_login_btn a.btn{
+      position:absolute;
+      right:10px;
+     
+  }
+}
+
+@media (max-width:320px){
+  .navbar-brand{
+    max-width:120px;
+  
+  }
+  
+ 
+  
+  
+ 
+}
 /* end of header */
 
 
@@ -346,23 +412,99 @@ footer .copyright{
 /* end of footer= */
 
 
-@media (max-width:768px){
-  .navbar-brand{
-    margin-left:10px !important; 
-  }
-
-}
-
 .main_content, footer{
   z-index:1; 
 }
+.main_content section{
+  
+  min-height:500px;
+}
 
-section.parallax {
- 
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+.main_content{
+  
 }
 
 
+/* homepage */
+
+#homepage_content{
+  
+}
+
+.jumbotron{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  background-color:transparent;
+  position:relative;
+  background-attachment: fixed;
+}
+
+.jumbotron .container{
+  
+  
+}
+  h1.site-tagline{
+    color:#ffffff;
+    font-size:42px;
+    text-align:center;
+    @include text-shadow();
+    padding-top:20%;
+    max-width:650px;
+    margin:0 auto;
+  }
+  
+  
+  
+  .jumbotron .join_cta{
+    
+    text-align:center;
+    margin:50px auto;
+  }
+  
+  a.btn.jumbotron_btn{
+    background-color:$orange;
+    font-size:18px;  
+    padding:5px 15px;
+    @include box-shadow();
+    
+  }
+  
+  a.btn.jumbotron_btn:hover{
+    color:#ffffff;
+    background-color:$orange;
+    
+  }
+  
+  .jumbotron .registered_members{
+    background-position:right center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    
+    padding-right: 80px;
+    background-image: url(../../../images/template/investors_icon_71x70.png); 
+    height:70px;
+    position:absolute;
+    right:30px;
+    bottom:30px;
+  }
+  
+  .jumbotron .registered_members p{
+    color:#ffffff;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:20px;
+    line-height:18px;
+   
+    
+  }
+  
+  @media (max-width:320px){
+    .jumbotron h1.site-tagline{
+         font-size:28px;
+         margin-top:30px;
+    } 
+  }
+  
+/* end of homepage */

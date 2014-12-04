@@ -10,15 +10,18 @@
           </button>
           <a class="navbar-brand" href="[[++site_url]]">[[++site_name]]</a>
         </div>
+        <div class="navbar-header navbar-right header_login_btn"><a href="[[~10]]" class="btn">[[%cta.login? &namespace=`investable`]]</a></div>
       	<div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+          	   [[!getResources? &parents=`[[UltimateParent? &topLevel=`1`]]` &depth=`3` &tplPath=`assets_path+ "chunks/investable/content/"` &tpl=`@FILE main_nav_item.html` &showHidden=`1`  &sortby=`{"menuindex":"ASC"}`]]
+
           	  <li><a href="[[~6]]"   class="navlink">[[%nav.aboutus? &namespace=`investable`]]</a></li>
               <li><a href="[[~4]]"   class="navlink">[[%nav.howitworks? &namespace=`investable`]]</a></li>
               <li><a href="[[~7]]"  class="navlink">[[%nav.contactus? &namespace=`investable`]]</a></li>
           </ul>
             
          </div><!--/.navbar-collapse -->
-         <div class="navbar-header navbar-right header_login_btn"><a href="#" class="btn">[[%cta.login? &namespace=`investable`]]</a></div>
+         
       </div>
       
     </div>
