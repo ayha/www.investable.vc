@@ -1,40 +1,5 @@
-// variables
-
-$titleFont: "CalvertMT";
-$bodyFont: "ScalaSans";
-$headerHeight: 70px;
-$containerPad: 30px;
-$textColor: #636363;
-$darkGrey: #636363;
-$turquoise: #20B6AE;
-$skobeloff: #007B76;
-$orange: #F36B22;
-$rosebud: #FFB880;
-$btnRadius: 5px;
-$font_sans: 'ScalaSans', Helvetica, Arial, sans-serif;
-$font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-
-
-// mixins
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-@mixin box-shadow(){
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-  -moz-box-shadow:    2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-  box-shadow:         2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-}
-
-@mixin text-shadow(){
-     text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8);
-}
-
+@import "compass";
+@import "base";
 
 /* @font-face definitions */
 
@@ -407,6 +372,10 @@ footer .copyright{
   font-size:11px;
   color:#fff;
   
+}
+
+footer .footer_column{
+  margin-bottom:30px;
 }
 
 /* end of footer= */

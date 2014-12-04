@@ -5,63 +5,84 @@
   src: url("../fonts/calvert-mt.eot");
   src: url("../fonts/calvert-mt.eot") format("embedded-opentype"), url("../fonts/calvert-mt.woff2") format("woff2"), url("../fonts/calvert-mt.woff") format("woff"), url("../fonts/calvert-mt.ttf") format("truetype"), url("../fonts/calvert-mt.svg#CalvertMTRegular") format("svg");
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+}
 @font-face {
   font-family: "CalvertMT";
   src: url("../fonts/calvert-mt-bold.eot");
   src: url("../fonts/calvert-mt-bold.eot") format("embedded-opentype"), url("../fonts/calvert-mt-bold.woff2") format("woff2"), url("../fonts/calvert-mt-bold.woff") format("woff"), url("../fonts/calvert-mt-bold.ttf") format("truetype"), url("../fonts/calvert-mt-bold.svg#CalvertMTBold") format("svg");
   font-style: normal;
-  font-weight: bold; }
+  font-weight: bold;
+}
 /* scala font content */
 @font-face {
   font-family: "ScalaSans";
   src: url("../fonts/scala-sans-regular-webfont.eot");
   src: url("../fonts/scala-sans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-regular-webfont.woff2") format("woff2"), url("../fonts/scala-sans-regular-webfont.woff") format("woff"), url("../fonts/scala-sans-regular-webfont.ttf") format("truetype"), url("../fonts/scala-sans-regular-webfont.svg#scala_sansregular") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+}
 @font-face {
   font-family: "ScalaSans";
   src: url("../fonts/scala-sans-bold-italic-webfont.eot");
   src: url("../fonts/scala-sans-bold-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-bold-italic-webfont.woff2") format("woff2"), url("../fonts/scala-sans-bold-italic-webfont.woff") format("woff"), url("../fonts/scala-sans-bold-italic-webfont.ttf") format("truetype"), url("../fonts/scala-sans-bold-italic-webfont.svg#scala_sansbold_italic") format("svg");
   font-weight: bold;
-  font-style: italic; }
+  font-style: italic;
+}
 @font-face {
   font-family: "ScalaSans";
   src: url("../fonts/scala-sans-regular-italic-webfont.eot");
   src: url("../fonts/scala-sans-regular-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-regular-italic-webfont.woff2") format("woff2"), url("../fonts/scala-sans-regular-italic-webfont.woff") format("woff"), url("../fonts/scala-sans-regular-italic-webfont.ttf") format("truetype"), url("../fonts/scala-sans-regular-italic-webfont.svg#scala_sansregular_italic") format("svg");
   font-weight: normal;
-  font-style: italic; }
+  font-style: italic;
+}
 @font-face {
   font-family: "ScalaSans";
   src: url("../fonts/scala-sans-bold-webfont.eot");
   src: url("../fonts/scala-sans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/scala-sans-bold-webfont.woff2") format("woff2"), url("../fonts/scala-sans-bold-webfont.woff") format("woff"), url("../fonts/scala-sans-bold-webfont.ttf") format("truetype"), url("../fonts/scala-sans-bold-webfont.svg#scala_sansbold") format("svg");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+}
+/* line 98, ../sass/main.scss */
 html, body, p, li, a {
   font-family: "ScalaSans", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #636363; }
+  color: #636363;
+}
 
+/* line 104, ../sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "CalvertMT", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #636363; }
+  color: #636363;
+}
 
+/* line 111, ../sass/main.scss */
 h1 {
-  font-size: 22px; }
+  font-size: 22px;
+}
 
+/* line 115, ../sass/main.scss */
 h2 {
-  font-size: 18px; }
+  font-size: 18px;
+}
 
+/* line 119, ../sass/main.scss */
 h3 {
-  font-size: 16px; }
+  font-size: 16px;
+}
 
+/* line 123, ../sass/main.scss */
 h4 {
-  font-size: 14px; }
+  font-size: 14px;
+}
 
+/* line 131, ../sass/main.scss */
 .clearboth {
-  clear: both; }
+  clear: both;
+}
 
+/* line 135, ../sass/main.scss */
 .btn {
   background: #20B6AE;
   padding: 5px 10px;
@@ -69,11 +90,15 @@ h4 {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
+/* line 142, ../sass/main.scss */
 .btn:hover {
-  color: #ffffff; }
+  color: #ffffff;
+}
 
+/* line 147, ../sass/main.scss */
 input[type=text], input[type=email], input[type=number], input[type=date], input[type=password] {
   background: #ffffff;
   -webkit-border-radius: 5px;
@@ -84,8 +109,10 @@ input[type=text], input[type=email], input[type=number], input[type=date], input
   padding: 3px 5px;
   font-size: 12px;
   width: 150px;
-  color: #636363; }
+  color: #636363;
+}
 
+/* line 158, ../sass/main.scss */
 input[type=submit], button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -95,9 +122,11 @@ input[type=submit], button {
   padding: 3px 10px;
   font-size: 12px;
   background: #20B6AE;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 /* header */
+/* line 171, ../sass/main.scss */
 .navbar-bg {
   background-color: #FFFFFF;
   opacity: 0.95;
@@ -107,18 +136,26 @@ input[type=submit], button {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3; }
+  z-index: 3;
+}
 
+/* line 184, ../sass/main.scss */
 .navbar .container {
   position: relative;
-  z-index: 5; }
+  z-index: 5;
+}
 
+/* line 189, ../sass/main.scss */
 .navbar {
-  z-index: 10; }
+  z-index: 10;
+}
 
+/* line 193, ../sass/main.scss */
 .navbar-toggle .icon-bar {
-  background-color: #20B6AE; }
+  background-color: #20B6AE;
+}
 
+/* line 197, ../sass/main.scss */
 .navbar-brand {
   text-indent: -9999px;
   background-image: url(../../../images/template/investable_logo_196x41.png);
@@ -127,91 +164,135 @@ input[type=submit], button {
   background-color: transparent;
   background-size: contain;
   width: 196px;
-  margin-left: 0 !important; }
+  margin-left: 0 !important;
+}
 
+/* line 208, ../sass/main.scss */
 .navbar-nav > li > a, .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-  background: none; }
+  background: none;
+}
 
+/* line 212, ../sass/main.scss */
 .navbar-nav > li > a:hover, .navbar-nav > li > a.active {
-  color: #20B6AE; }
+  color: #20B6AE;
+}
 
+/* line 216, ../sass/main.scss */
 .navbar-nav {
   margin-left: 20px;
-  margin-top: 3px; }
+  margin-top: 3px;
+}
 
+/* line 221, ../sass/main.scss */
 .navbar-header.header_login_btn {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
+/* line 225, ../sass/main.scss */
 .navbar-header.header_login_btn a.btn {
   background-image: url(../../../images/template/arrow_white_right.png);
   background-repeat: no-repeat;
   background-position: right 5px center;
   padding-right: 25px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 @media (max-width: 768px) {
+  /* line 235, ../sass/main.scss */
   .navbar-brand {
-    margin-left: 10px !important; }
+    margin-left: 10px !important;
+  }
 
+  /* line 239, ../sass/main.scss */
   .navbar-toggle {
-    margin-right: 100px; }
+    margin-right: 100px;
+  }
 
+  /* line 243, ../sass/main.scss */
   .collapse .navbar-nav {
     margin: 0;
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0;
+  }
 
+  /* line 249, ../sass/main.scss */
   .container > .navbar-collapse {
     padding-left: 0;
     padding-right: 0;
-    margin: 0 -15px; }
+    margin: 0 -15px;
+  }
 
+  /* line 256, ../sass/main.scss */
   .navbar-nav li a {
     background-color: #20B6AE;
     color: #ffffff;
-    border-top: 1px solid #cccccc; }
+    border-top: 1px solid #cccccc;
+  }
 
+  /* line 262, ../sass/main.scss */
   .collapse .navbar-nav li a:hover, .collapse .navbar-nav li a:active {
     background: #ffffff;
-    color: #20B6AE; }
+    color: #20B6AE;
+  }
 
+  /* line 267, ../sass/main.scss */
   .navbar-header.header_login_btn {
-    margin-top: -50px; }
+    margin-top: -50px;
+  }
 
+  /* line 271, ../sass/main.scss */
   .navbar-header.header_login_btn a.btn {
     position: absolute;
-    right: 10px; } }
+    right: 10px;
+  }
+}
 @media (max-width: 320px) {
+  /* line 279, ../sass/main.scss */
   .navbar-brand {
-    max-width: 120px; } }
+    max-width: 120px;
+  }
+}
 /* end of header */
 /* footer */
+/* line 294, ../sass/main.scss */
 footer {
   background-color: #20B6AE;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
+/* line 299, ../sass/main.scss */
 footer p {
-  color: #ffffff; }
+  color: #ffffff;
+}
 
+/* line 303, ../sass/main.scss */
 footer h3, footer h3 a, footer h3 a:hover, footer h3 a:active {
   font-family: "CalvertMT", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #ffffff;
   font-weight: normal;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
+/* line 310, ../sass/main.scss */
 footer ul {
   margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
+/* line 316, ../sass/main.scss */
 footer ul li {
   margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
+/* line 322, ../sass/main.scss */
 footer ul li a, footer ul li a:hover, footer ul li a.active, footer ul li a:focus {
-  color: #fff; }
+  color: #fff;
+}
 
+/* line 326, ../sass/main.scss */
 footer .footer_social a.footer_social_icon {
   display: inline-block;
   width: 22px;
@@ -224,53 +305,82 @@ footer .footer_social a.footer_social_icon {
   border-radius: 5px;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 5px; }
+  margin-right: 5px;
+}
 
+/* line 338, ../sass/main.scss */
 footer .footer_social .facebook {
-  background-image: url(../../../images/template/social_facebook_18x18.png); }
+  background-image: url(../../../images/template/social_facebook_18x18.png);
+}
 
+/* line 342, ../sass/main.scss */
 footer .footer_social .gplus {
-  background-image: url(../../../images/template/social_gplus_18x18.png); }
+  background-image: url(../../../images/template/social_gplus_18x18.png);
+}
 
+/* line 346, ../sass/main.scss */
 footer .footer_social .linkedin {
-  background-image: url(../../../images/template/social_linkedin_18x18.png); }
+  background-image: url(../../../images/template/social_linkedin_18x18.png);
+}
 
+/* line 350, ../sass/main.scss */
 footer .footer_social .twitter {
-  background-image: url(../../../images/template/social_twitter_18x18.png); }
+  background-image: url(../../../images/template/social_twitter_18x18.png);
+}
 
+/* line 354, ../sass/main.scss */
 footer .footer_social .weibo {
-  background-image: url(../../../images/template/social_weibo_18x18.png); }
+  background-image: url(../../../images/template/social_weibo_18x18.png);
+}
 
+/* line 358, ../sass/main.scss */
 footer #newsletter_form input[type=submit] {
   border: 1px solid #ffffff;
   color: #FFFFFF;
-  background: transparent; }
+  background: transparent;
+}
 
+/* line 364, ../sass/main.scss */
 footer #newsletter_form input[type=submit]:hover {
   border: 1px solid #20B6AE;
   background: #FFFFFF;
-  color: #20B6AE; }
+  color: #20B6AE;
+}
 
+/* line 371, ../sass/main.scss */
 footer .copyright {
   font-size: 11px;
-  color: #fff; }
+  color: #fff;
+}
+
+/* line 377, ../sass/main.scss */
+footer .footer_column {
+  margin-bottom: 30px;
+}
 
 /* end of footer= */
+/* line 384, ../sass/main.scss */
 .main_content, footer {
-  z-index: 1; }
+  z-index: 1;
+}
 
+/* line 387, ../sass/main.scss */
 .main_content section {
-  min-height: 500px; }
+  min-height: 500px;
+}
 
 /* homepage */
+/* line 403, ../sass/main.scss */
 .jumbotron {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-color: transparent;
   position: relative;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+}
 
+/* line 416, ../sass/main.scss */
 h1.site-tagline {
   color: #ffffff;
   font-size: 42px;
@@ -278,24 +388,32 @@ h1.site-tagline {
   text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8);
   padding-top: 20%;
   max-width: 650px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
+/* line 428, ../sass/main.scss */
 .jumbotron .join_cta {
   text-align: center;
-  margin: 50px auto; }
+  margin: 50px auto;
+}
 
+/* line 434, ../sass/main.scss */
 a.btn.jumbotron_btn {
   background-color: #F36B22;
   font-size: 18px;
   padding: 5px 15px;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-  box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8); }
+  box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+}
 
+/* line 442, ../sass/main.scss */
 a.btn.jumbotron_btn:hover {
   color: #ffffff;
-  background-color: #F36B22; }
+  background-color: #F36B22;
+}
 
+/* line 448, ../sass/main.scss */
 .jumbotron .registered_members {
   background-position: right center;
   background-repeat: no-repeat;
@@ -305,20 +423,24 @@ a.btn.jumbotron_btn:hover {
   height: 70px;
   position: absolute;
   right: 30px;
-  bottom: 30px; }
+  bottom: 30px;
+}
 
+/* line 461, ../sass/main.scss */
 .jumbotron .registered_members p {
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
 @media (max-width: 320px) {
+  /* line 473, ../sass/main.scss */
   .jumbotron h1.site-tagline {
     font-size: 28px;
-    margin-top: 30px; } }
+    margin-top: 30px;
+  }
+}
 /* end of homepage */
-
-/*# sourceMappingURL=main.css.map */
