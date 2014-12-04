@@ -1,0 +1,52 @@
+ <footer>
+ 		<div class="container">
+        <div class="footer_menu hidden-sm col-md-8" role="navigation">
+        	<div class="footer_column col-md-4">
+        		<h3><a href="[[~6]]">[[%nav.aboutus? &namespace=`investable`]]</a></h3>
+        		<ul>
+        			<li><a href="[[~6]]">[[%nav.whatisinvestable? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~4]]">[[%nav.howitworks? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~27]]">[[%nav.members_benefits? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~28]]">[[%nav.team? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~7]]">[[%nav.contactus? &namespace=`investable`]]</a></li>
+        		</ul>
+        	</div>
+        	<div class="footer_column col-md-4">
+        		<h3><a href="[[~22]]">[[%nav.needhelp? &namespace=`investable`]]</a></h3>
+        		<ul>
+        			<li><a href="[[~22]]">[[%nav.faqs? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~17]]">[[%nav.documentation? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~15]]">[[%nav.terms? &namespace=`investable`]]</a></li>
+        			<li><a href="[[~16]]">[[%nav.privacy? &namespace=`investable`]]</a></li>
+        			
+        		</ul>
+        	</div>
+        	<div class="footer_column col-md-4">
+        		<h3><a href="[[~48]]">[[%nav.start_investing? &namespace=`investable`]]</a></h3>
+        		<ul>
+        			[[!get_industry_list? &tpl=`footer_nav_li`]]
+        		</ul>
+        	</div>
+        	<div class="clearboth"></div>
+        </div>
+        <div class="footer_social col-md-4">
+        	<h3>[[%nav.connect_with_us? &namespace=`investable`]]</h3>
+        	<div class="footer_social">
+        		<a href="http://www.linkedin.com/company/investable-vc/" target="_blank" class="footer_social_icon linkedin">LinkedIn</a>
+         		<a href="https://twitter.com/investableasia" target="_blank" class="footer_social_icon twitter">Twitter</a>
+        		<a href="https://www.facebook.com/InvestableAsia" target="_blank" class="footer_social_icon facebook">Facebook</a>
+        		<a href="https://plus.google.com/+InvestableAsia" target="_blank" class="footer_social_icon gplus">Google Plus</a>
+        		<a href="http://weibo.com/InvestableAsia" target="_blank" class="footer_social_icon weibo">Weibo</a>
+        	</div>
+        	<h3>[[%nav.join_mailinglist? &namespace=`investable`]]</h3>
+        	
+        	  <form name="newsletter_form" id="newsletter_form" method="post" action="processors/newsletter-signup-action.html">
+             <input type="email" name="newsletter_email" id="newsletter_email" required="required" placeholder="[[%field.email? &namespace=`investable` &topic=`form`]]" /> <input type="submit" value="[[%cta.join? &namespace=`investable` ]]" id="newsletter_submit" class="btn newsletter_submit" />
+        	 </form>
+        	
+        </div>
+        <div class="clearboth"></div>
+        <div class="copyright pull-right"><p>&copy; [[++site_name]] 2014</p></div>
+        
+        </div>
+ </footer>
