@@ -1,0 +1,47 @@
+<div id="feed_content"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+			$('#feed_content').dcSocialStream({
+			feeds: {
+			
+			rss: {
+				id: '[[++default_rss_feed]]'
+			},
+			facebook: {
+				id: '455528547892283',
+				out: 'intro,thumb,text,user,share'
+			},
+			
+			twitter: {
+				id: 'investableasia,#startup,#startuphk',
+				thumb: true,
+				url: '[[++assets_url]]lib/social_stream/twitter.php'
+			},
+			
+			
+			google: {
+				id: '101383478793760168461',
+				api_key: 'AIzaSyD00CRyUKuvfuRoT6V-5QsFctGttGqFqYg'
+			}
+			
+		},
+		rotate: {
+			delay: 0
+		},
+		twitterId: 'investableasia',
+		control: false,
+		filter: false,
+		wall: true,
+		cache: false,
+		max: 'limit',
+		limit: 1,
+		iconPath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/',
+		imagePath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/'
+	});
+});
+
+		</script>
+<div class="section_content">
+[[%get_more_news? &topic=`default` &namespace=`investable` &language=`en`]]
+</div>

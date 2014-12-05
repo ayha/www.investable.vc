@@ -197,7 +197,7 @@ input[type=submit], button {
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* line 235, ../sass/main.scss */
   .navbar-brand {
     margin-left: 10px !important;
@@ -369,7 +369,17 @@ footer .footer_column {
   min-height: 500px;
 }
 
+/* line 392, ../sass/main.scss */
+.main_content {
+  margin-top: 90px;
+}
+
 /* homepage */
+/* line 399, ../sass/main.scss */
+.main_content#homepage_content {
+  margin-top: 0;
+}
+
 /* line 403, ../sass/main.scss */
 .jumbotron {
   background-repeat: no-repeat;
@@ -391,29 +401,12 @@ h1.site-tagline {
   margin: 0 auto;
 }
 
-/* line 428, ../sass/main.scss */
+/* line 429, ../sass/main.scss */
 .jumbotron .join_cta {
   text-align: center;
   margin: 50px auto;
 }
-
 /* line 434, ../sass/main.scss */
-a.btn.jumbotron_btn {
-  background-color: #F36B22;
-  font-size: 18px;
-  padding: 5px 15px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-  box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
-}
-
-/* line 442, ../sass/main.scss */
-a.btn.jumbotron_btn:hover {
-  color: #ffffff;
-  background-color: #F36B22;
-}
-
-/* line 448, ../sass/main.scss */
 .jumbotron .registered_members {
   background-position: right center;
   background-repeat: no-repeat;
@@ -425,8 +418,7 @@ a.btn.jumbotron_btn:hover {
   right: 30px;
   bottom: 30px;
 }
-
-/* line 461, ../sass/main.scss */
+/* line 446, ../sass/main.scss */
 .jumbotron .registered_members p {
   color: #ffffff;
   font-size: 16px;
@@ -435,12 +427,80 @@ a.btn.jumbotron_btn:hover {
   margin-top: 20px;
   line-height: 18px;
 }
-
-@media (max-width: 320px) {
-  /* line 473, ../sass/main.scss */
+/* line 456, ../sass/main.scss */
+.jumbotron a.btn.jumbotron_btn {
+  background-color: #F36B22;
+  font-size: 18px;
+  padding: 5px 15px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+}
+/* line 464, ../sass/main.scss */
+.jumbotron a.btn.jumbotron_btn:hover {
+  color: #ffffff;
+  background-color: #F36B22;
+}
+@media (max-width: 767px) {
+  /* line 471, ../sass/main.scss */
   .jumbotron h1.site-tagline {
     font-size: 28px;
     margin-top: 30px;
   }
 }
+
+/* line 478, ../sass/main.scss */
+#home_benefits {
+  background-color: #f8f8f8;
+}
+/* line 481, ../sass/main.scss */
+#home_benefits .benefit {
+  float: left;
+  width: 33%;
+  padding-left: 60px;
+  padding-right: 25px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+@media (max-width: 990px) {
+  /* line 493, ../sass/main.scss */
+  #home_benefits .benefit {
+    height: 250px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 500, ../sass/main.scss */
+  #home_benefits .benefit {
+    height: 220px;
+    width: 50%;
+    background: none !important;
+    padding: 10px;
+  }
+}
+/* line 507, ../sass/main.scss */
+#home_benefits .benefit#top_startup {
+  background-image: url(../../../images/template/top_startup_colored.png);
+}
+/* line 511, ../sass/main.scss */
+#home_benefits .benefit#customized_approach {
+  background-image: url(../../../images/template/customized_approach_colored.png);
+}
+/* line 515, ../sass/main.scss */
+#home_benefits .benefit#newsroom {
+  background-image: url(../../../images/template/newsroom_colored.png);
+}
+/* line 519, ../sass/main.scss */
+#home_benefits .benefit#events {
+  background-image: url(../../../images/template/events_colored.png);
+}
+/* line 523, ../sass/main.scss */
+#home_benefits .benefit#documentation {
+  background-image: url(../../../images/template/documentation_colored.png);
+}
+/* line 527, ../sass/main.scss */
+#home_benefits .benefit#community {
+  background-image: url(../../../images/template/community_colored.png);
+}
+
 /* end of homepage */

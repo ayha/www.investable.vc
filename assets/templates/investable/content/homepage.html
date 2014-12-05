@@ -38,14 +38,22 @@
 	    <section id="home_benefits" >
 	    	<div class="container">
 	    		<h2>[[%title.members_benefits? &namespace=`investable`]]</h2>
-	    		 [[!getResources? &parents=`[[*id]]` &tplPath=`assets_path+ "chunks/investable/content/"` &tpl=`@FILE home_partners.html` &showHidden=`1` &includeContent=`1` &hideContainers=`0`]]
+	    		 [[!getResources? &parents=`[[*id]]` &tpl=`home_benefits` &showHidden=`1` &includeContent=`1` &hideContainers=`0` &where=`{"alias:=":"members-benefits"}`]]
                 
 	    	</div>
 	    </section>
 		<section id="home_partners">
 			<div class="container">
 				<h2>[[%title.partners? &namespace=`investable`]]</h2>
-				 
+				<div class="testimonials col-md-6">
+					 [[!getResources? &parents=`[[*id]]` &tpl=`home_testimonials` &showHidden=`1` &includeContent=`1` &hideContainers=`0` &where=`{"alias:=":"testimonials"}`]]
+				</div>
+				
+				<div class="partners col-md-6">
+					  [[!getResources? &parents=`[[*id]]` &tpl=`home_partners` &showHidden=`1` &includeContent=`1` &hideContainers=`0` &where=`{"alias:=":"partners"}`]]
+                
+				</div>
+				<div class="clearboth"></div>
 			</div>
 		</section>
 	</div>

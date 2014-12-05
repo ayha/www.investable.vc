@@ -231,7 +231,7 @@ input[type=submit], button{
 }
 
 
-@media (max-width:768px){
+@media (max-width:767px){
   .navbar-brand{
     margin-left:10px !important; 
   }
@@ -390,14 +390,14 @@ footer .footer_column{
 }
 
 .main_content{
-  
+  margin-top: $headerHeight +20px;
 }
 
 
 /* homepage */
 
-#homepage_content{
-  
+.main_content#homepage_content{
+  margin-top:0;
 }
 
 .jumbotron{
@@ -425,10 +425,32 @@ footer .footer_column{
   
   
   
-  .jumbotron .join_cta{
+.jumbotron {
+  .join_cta{
+     text-align:center;
+     margin:50px auto;
+  }
+  
+  .registered_members{
+    background-position:right center;
+    background-repeat:no-repeat;
+    background-color:transparent;
     
+    padding-right: 80px;
+    background-image: url(../../../images/template/investors_icon_71x70.png); 
+    height:70px;
+    position:absolute;
+    right:30px;
+    bottom:30px;
+  }
+  .registered_members p{
+    color:#ffffff;
+    font-size:16px;
+    font-weight:bold;
     text-align:center;
-    margin:50px auto;
+    margin-top:20px;
+    line-height:18px;
+
   }
   
   a.btn.jumbotron_btn{
@@ -445,35 +467,71 @@ footer .footer_column{
     
   }
   
-  .jumbotron .registered_members{
-    background-position:right center;
-    background-repeat:no-repeat;
-    background-color:transparent;
-    
-    padding-right: 80px;
-    background-image: url(../../../images/template/investors_icon_71x70.png); 
-    height:70px;
-    position:absolute;
-    right:30px;
-    bottom:30px;
-  }
-  
-  .jumbotron .registered_members p{
-    color:#ffffff;
-    font-size:16px;
-    font-weight:bold;
-    text-align:center;
-    margin-top:20px;
-    line-height:18px;
-   
-    
-  }
-  
-  @media (max-width:320px){
-    .jumbotron h1.site-tagline{
+  @media (max-width:767px){
+    h1.site-tagline{
          font-size:28px;
          margin-top:30px;
     } 
+  }
+}
+
+  #home_benefits{
+    background-color:#f8f8f8;
+    
+    .benefit{
+        float:left;
+        width:33%;
+        padding-left:60px; 
+        padding-right:25px;
+        background-position: left top;
+        background-repeat:no-repeat;
+        height:200px;
+        
+    }
+    
+    @media (max-width:990px){
+        .benefit{
+            height:250px; 
+        }
+    
+    }
+    
+    @media (max-width:767px){
+        .benefit{
+            height:220px;
+            width:50%;
+            background: none !important;
+            padding:10px;
+        }
+    }
+    .benefit#top_startup{
+        background-image:url(../../../images/template/top_startup_colored.png);
+    }
+    
+    .benefit#customized_approach{
+         background-image:url(../../../images/template/customized_approach_colored.png);
+    }
+    
+    .benefit#newsroom{
+          background-image:url(../../../images/template/newsroom_colored.png);
+    }
+    
+    .benefit#events{
+          background-image:url(../../../images/template/events_colored.png);
+    }
+    
+    .benefit#documentation{
+          background-image:url(../../../images/template/documentation_colored.png);
+    } 
+     
+    .benefit#community{
+          background-image:url(../../../images/template/community_colored.png);
+    }
+  }
+  
+  #home_partners{
+    
+    
   }
   
 /* end of homepage */
