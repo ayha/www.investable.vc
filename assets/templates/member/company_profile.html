@@ -58,8 +58,8 @@
 							
 							[[*equity:ne=``:then=`
 							<div class="status_item  col-xs-6  col-sm-4" id="equity" data-value="[[*equity]]">
-								<div class="status_name">[[%startups.equity_offered? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[*equity]]</div>
+								<div class="status_name">[[%startups.equity_offered? &topic=`default` &namespace=`investable` &language=`en`]] </div>
+								<div class="status_number">[[*equity]] [[*id:is=`112`:then=`<sup>#</sup>`]]</div>
 								<div class="allclear"></div>
 							</div>
 							`]]
@@ -75,7 +75,7 @@
 							[[*postmoney:ne=``:then=`
 							<div class="status_item  col-xs-6  col-sm-4" id="postmoney" data-value="[[*postmoney]]">
 								<div class="status_name">[[%startups.postmoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*postmoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</div>
+								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*postmoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]] [[*id:is=`112`:then=`<sup>*</sup>`]]</div>
 								<div class="allclear"></div>
 							</div>
 							`]]
@@ -101,6 +101,10 @@
 								<div class="startup_badge angelvest_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 							`]]
 							
+							[[*invested_by_500:ne=``:then=`
+								<div class="startup_badge fivehundred_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+							`]]
+							
 						</div>
 					</div>
 					
@@ -123,7 +127,7 @@
 							[[*content:ne=``:then=`<h3>[[%startups.company_description? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*content]]`]]
 							
 							[[*business_model:ne=``:then=`<h3>[[%startups.business_model? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*business_model]]`]]
-							[[*market:ne=``:then=`<h3>[[%startups.market_competition? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*market]]`]]
+							[[*competitors:ne=``:then=`<h3>[[%startups.market_competition? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*competitors]]`]]
 							[[*product_description:ne=``:then=`<h3>[[%startups.product_description? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*product_description]]`]]
 							[[*projections:ne=``:then=`<h3>[[%startups.projections? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*projections]]`]]
 							

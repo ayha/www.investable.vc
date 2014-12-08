@@ -29,6 +29,10 @@
 				<div class="startup_badge angelvest_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 			`]]
 
+			[[+tv.invested_by_500:ne=``:then=`
+				<div class="startup_badge fivehundred_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+			`]]
+
 		</div>
 		
 		<div class="quickfacts">

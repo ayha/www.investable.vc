@@ -911,7 +911,21 @@ border-radius: 7px;
 	border:2px solid #8F3958;
 }
 
-.angellist_badge:hover, .nest_badge:hover, .angelvest_badge:hover{
+.fivehundred_badge{
+	 
+	padding-right:45px;
+	background-image:url(../../../../assets/images/500_startup_wine.png);
+	background-position: right 10px center;
+	background-repeat:no-repeat;
+	
+	background-color:#fff;
+	color:#a40a42;
+	cursor:pointer;
+	border:2px solid #8F3958;
+}
+
+
+.angellist_badge:hover, .nest_badge:hover, .angelvest_badge:hover, .fivehundred_badge:hover{
 	background-color:#fff;
 	
 }
@@ -923,7 +937,7 @@ border-radius: 7px;
 	
 }
 
-.highlight_note p{
+.highlight_note p, .highlight_note a{
 	color:#ffffff;
 }
 
