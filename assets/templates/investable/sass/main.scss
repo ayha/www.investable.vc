@@ -232,6 +232,20 @@ input[type=submit], button{
   text-transform:uppercase;
 }
 
+.member_dropdown{
+
+    img.top_profile_btn{
+       max-height:25px; 
+       max-width:25px;
+    }
+    
+    .dropdown-menu{
+      left:auto;
+      right:0;
+    }
+}
+
+
 
 @media (max-width:767px){
   .navbar-brand{
@@ -274,6 +288,11 @@ input[type=submit], button{
       position:absolute;
       right:10px;
      
+  }
+  
+  .member_dropdown{
+    position:absolute;
+    right:10px;   
   }
 }
 
@@ -737,4 +756,8 @@ footer .footer_column{
 
 
 
+
+/* member's area */
+
+/* end of members area */
  

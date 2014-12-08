@@ -21,12 +21,14 @@
         			
         		</ul>
         	</div>
+        	 [[!checkLogin:ne=``:then=`
         	<div class="footer_column col-md-4">
         		<h3><a href="[[~48]]">[[%nav.start_investing? &namespace=`investable`]]</a></h3>
         		<ul>
         			[[!get_industry_list? &tpl=`footer_nav_li`]]
         		</ul>
         	</div>
+        	`]]
         	<div class="clearboth"></div>
         </div>
         <div class="footer_social col-md-4">
@@ -46,7 +48,27 @@
         	
         </div>
         <div class="clearboth"></div>
-        <div class="copyright pull-right"><p>&copy; [[++site_name]] 2014</p></div>
+        <div class="copyright pull-right"><p>&copy; [[++site_name]], [[Years]]</p></div>
         
         </div>
  </footer>
+ 
+
+<!-- include hidden elements on the page -->
+<div class="hidden">
+[[!checkLogin:is=``:then=`
+[[!Login? &loginTpl=`login_form` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`43` &logoutResourceId=`42`]]
+
+<!-- LinkedIn -->
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+  api_key: 75o8vtonqq7441
+  onLoad: onLinkedInLoad
+   //authorize: true
+</script>
+
+<!-- End LinkedIn -->
+
+`]]
+
+</div>
+[[!log_user_visits?]]
