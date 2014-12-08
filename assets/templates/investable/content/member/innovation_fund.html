@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content text_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    			<div class="page-header">
+				<h1>[[%investable.innovation_fund? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			
+				[[$member_navigation]]
+				<div class="allclear"></div>
+			</div>
+			<div class="member_content">
+				
+				<div class="quick_facts">
+					<div class="project_logo col-md-4">
+						<div class="logo_holder" style="background-image:url([[*content_image:phpthumbof=`w=500&h=300`]]);"></div>
+						
+					</div>
+					<div class="project_status col-md-8"> 
+						<h2>[[*longtitle]]</h2>
+						<div class="intro">
+						[[*content:ne=``:then=`[[*content]]`]]
+						</div>
+						
+					
+					</div>
+					
+					<div class="allclear"></div>
+					
+				</div>
+				
+				<div class="company_info">
+					<div class="company_details">
+					
+						<div class="company_description">
+							
+							[[*fund_terms]]
+							
+							[[*more_info]]
+							
+							
+						</div>
+					</div>
+					<div class="company_founder fund_manager">
+						<h2>Fund Manager</h2>
+						[[!get_company_founders? &founders=`[[*fund_manager]]` &tpl=`fund_manager_profile`]]
+						
+					</div>
+					<div class="allclear"></div>
+				</div>
+				
+				<div class="floating_content">
+					<div class="support_company">
+						<a class="btn support_button invest_company" title="[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]]" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`1`]]</span>)</a>
+						</div>
+				</div>
+			</div>
+			 
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   	[[$member_footer]]
+	
+   <script type="text/javascript">  
+		    var percentage_raised = 0;
+			$(document).ready(function(){
+				var bottomPad = 80;
+				
+				$(window).scroll(function(e){
+					$(".floating_content").finish();
+					var wtop = $(window).scrollTop();
+					var wheight = $(window).height();
+					var currTop = $(".floating_content").offset().top;
+					var diff = currTop - (top+wheight);
+				   
+					$(".floating_content").animate({
+						top: (wtop+wheight-bottomPad)+"px",	
+					}, 1500, function(){});
+					
+				});
+			 
+			/*
+				var investment_goal = $("#goal").data("value");
+				var investment_raised = $("#raised").data("value");
+				
+				percentage_raised = Math.ceil(investment_raised*100/investment_goal);
+				
+				$("#raised .status_number").html(percentage_raised + "%");
+				*/
+				
+				
+			
+			    
+			    $("a.invest_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname ="[[*longtitle]]";
+			    	var companyid = "[[*id]]";
+			    	/*
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	*/
+			    	
+			    	$("#pledge_form").children("#pledge_company_id").val(companyid);
+			    	$("#pledge_form").children("#pledge_company_name").val(companyname);
+			    	//$("#pledge_form #pledge_amount").attr("min", 20000);
+			    	//$("#pledge_form #pledge_amount").attr("placeholder", "Min. 20,000");
+			    	//$("#pledge_form #min_invest_amount").html("20000");
+			    	$.fancybox.open("#pledge_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	});
+			    });
+			    
+			    $("#pledge_form").submit(function(e){
+			    	e.preventDefault();
+			    	var companyname = $("#pledge_form").find("#pledge_company_name").val();
+			    	var companyid = $("#pledge_form").find("#pledge_company_id").val();
+			    	var pledgeamount = $("#pledge_form").find("#pledge_amount").val();
+			    	
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname, "pledge_amount":pledgeamount},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){ window.location.reload();}
+			    					
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.meet_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname ="[[*longtitle]]";
+			    	var companyid = "[[*id]]";
+			    	
+			    	$.ajax("[[~82]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText,{
+			    						"afterClose": function(){window.location.reload();}
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+				
+			});
+			
+			
+			
+			
+
+		</script>
+     
+    </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content text_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<div class="page-header">
+				<h1>[[%investable.startup_opportunities? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			
+				[[$member_navigation]]
+				<div class="allclear"></div>
+			</div>
+			<!-- main content -->    			
+	   			
+			
+			<div class="member_content">
+				 <div class="startup_info_session col-sm-6">
+				 	<a href="processors/book-info-session-action.html" class="btn info_session_button">Book an information session</a>
+				 	
+				 </div>
+				 <div class="startup_filters col-sm-6">
+				 	<span class="filter_title">[[%member.filter_by? &topic=`default` &namespace=`investable` &language=`en`]]:</span>
+				 	
+				 	<select name="startup_stage" id="startup_stage">
+				 		<option value="">All Stages</option>
+				 		[[get_stage_list]]
+				 	</select>
+				 	<select name="startup_industry" id="startup_industry">
+				 		<option value="">All Industries</option>
+				 		[[get_industry_list]]
+				 	</select>
+				 
+				 </div>
+				 <div class="note" style="text-align:right">[[%investable.all_currencies? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+				 <div class="startup_list">
+				    [[!get_startup_list?]]
+				    <div class="allclear"></div>
+				 </div>
+				 
+				 <div class="hidden">
+				<div id="info_session_form_wrapper">
+				<form name="info_session_form" id="info_session_form" method="post" action="processors/book-info-session-action.html">
+					<div class="form_header">Information session</div>
+					
+					<div class="form_section">
+						<p>Want to find out more about Investable and the opportunities that we are offering?<br />Book an information session now!</p>
+					    <div class="form_row"><label>Name:</label><input type="text" name="fullname" id="info_fullname" required="required" placeholder="Your Name" value="[[+fullname]]"/></div>
+					    <div class="form_row"><label>Email:</label><input type="email" name="email" id="info_email" required="required" placeholder="Email Address" value="[[+email]]"/></div>
+						<div class="form_row"><label>Contact Number:</label><input type="text" name="contact_number" id="info_contact" placeholder="Contact Number" value="[[+contact_number]]" /></div>
+						<div class="form_row"><label>Remarks:</label><input type="text" name="remarks" id="info_remarks" placeholder="Remarks..." /></div>
+					</div>
+					<div class="form_section submit">
+							<div class="form_row"><input type="submit" name="info_submit" id="info_submit" value="Book Now" /></div>
+					</div>
+					<div class="form_thankyou_message">
+						<p>Thank you. We have received your request and we will be in touch with you shortly.</p>
+					</div>
+				</form>
+				</div>
+				
+			</div>
+			</div>
+
+			<!-- end content -->
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$member_footer]]
+	[[$page_footer]]
+   
+	
+   <script type="text/javascript">
+   
+			$(document).ready(function(){
+				$(".startup_item .startup_img .startup_logo").click(function(e){
+					
+					window.location.href=$(this).parent().parent().data("url");
+				});
+				
+				$(".startup_item .startup_quickinfo h3").click(function(e){
+					
+					window.location.href=$(this).parent().parent().data("url");
+				});
+				
+				$(".startup_item").each(function(ind){
+					updateCountdown($(this).attr("id"));
+				    updateFundedPercentage($(this).attr("id"));
+				});
+				
+				$(".rewards_badge").click(function(e){
+					e.preventDefault();
+				
+				});
+				
+				$(".video_badge a.watch_video").fancybox({
+					maxWidth	: 800,
+					maxHeight	: 600,
+					fitToView	: false,
+					width		: '70%',
+					height		: '70%',
+					autoSize	: false,
+					closeClick	: false,
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+				
+				$("#startup_stage").change(function(e){
+					var stage = $(this).children("option:selected").val();
+					insertParam("stage", stage);
+				});
+				
+				$("#startup_industry").change(function(e){
+					var industry = $(this).children("option:selected").val();
+					insertParam("industry", industry);
+				});
+				
+				 $("a.follow_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	
+			    	$.ajax("[[~80]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){window.location.reload();}
+			    					
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.invest_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	/*
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText);
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	*/
+			    	$("#pledge_form").children("#pledge_company_id").val(companyid);
+			    	$("#pledge_form").children("#pledge_company_name").val(companyname);
+			    	$.fancybox.open("#pledge_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	});
+			    });
+			    
+			     $("#pledge_form").submit(function(e){
+			    	e.preventDefault();
+			    	var companyname = $("#pledge_form").find("#pledge_company_name").val();
+			    	var companyid = $("#pledge_form").find("#pledge_company_id").val();
+			    	var pledgeamount = $("#pledge_form").find("#pledge_amount").val();
+			    	
+			    	$.ajax("[[~81]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname, "pledge_amount":pledgeamount},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){ window.location.reload();}
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.meet_company").click(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).data("companyname");
+			    	var companyid = $(this).data("companyid");
+			    	
+			    	$.ajax("[[~82]]",{
+			    		type:"POST",
+			    		data: {"companyid":companyid, "companyname":companyname},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){ window.location.reload();}
+			    					
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    	
+			    });
+			    
+			    $("a.info_session_button").click(function(e){
+			    	e.preventDefault();
+			    	$.fancybox.open("#info_session_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	})
+			    	
+			    });
+			    
+			    $("#info_submit").click(function(e){
+			    	e.preventDefault();
+			    	var fullname = $("#info_session_form #info_fullname").val();
+			    	var email = $("#info_session_form #info_email").val();
+			    	var contact = $("#info_session_form #info_contact").val();
+			    	var remarks = $("#info_session_form #info_remarks").val();
+			    	$.ajax($("#info_session_form").attr("action"),{
+			    		type:"POST",
+			    		data: {"fullname":fullname, "email":email, "contact":contact, "remarks":remarks},
+			    		complete:function(xhr, status){
+			    			console.log(xhr);
+			    			if(status == "success" && xhr.responseText=="1"){
+			    			    $("#info_session_form .form_section").hide();
+			    			    $("#info_session_form .form_thankyou_message").show();
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    });
+				
+			});		
+			
+			
+			
+			
+					
+           
+            
+   </script>
+
+     
+    </body>
+</html>

@@ -18,10 +18,11 @@
     	<section> 
 	    	
     		<div class="container">
-    		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
-	    	
-    			
-	   		[[*content]]
+			<div class="page-header">
+				<h1>[[%startup.register_complete? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			</div>
+               [[%startup.register_complete_message? &topic=`default` &namespace=`investable` &language=`en`]]
+	
 	   		</div>
 		</section>
 	  	
@@ -36,3 +37,4 @@
      
     </body>
 </html>
+

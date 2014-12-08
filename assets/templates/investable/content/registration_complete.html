@@ -18,10 +18,12 @@
     	<section> 
 	    	
     		<div class="container">
-    		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
-	    	
-    			
-	   		[[*content]]
+			<div class="page-header">
+				<h1>[[%register.register_complete? &topic=`register` &namespace=`login` &language=`en`]]</h1>
+			</div>
+				[[!ConfirmRegister? &redirectTo=`43`]]
+                [[%register.register_complete_message? &topic=`register` &namespace=`login` &language=`en`]]
+	
 	   		</div>
 		</section>
 	  	
@@ -36,3 +38,4 @@
      
     </body>
 </html>
+

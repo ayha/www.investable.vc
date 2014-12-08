@@ -1,0 +1,22 @@
+<div class="team_member col-md-6">
+   
+   <div class="team_avatar col-md-4"><img src="[[+tv.content_image]]" alt="profile_image" /></div>
+   <div class="team_info col-md-8">
+   <h5 class="team_name">[[+longtitle]]</h5>
+   <div class="team_title">[[+tv.jobtitle]]</div>
+   <div class="team_social">
+      [[+tv.email:ne=``:then=`
+         <a href="mailto:[[+tv.email]]" class="team_email" title="Email [[+tv.email]]">[[+tv.email]]</a>
+      `]]
+
+       [[+tv.linkedin:ne=``:then=`
+          <a href="[[+tv.linkedin]]" target="_blank" class="team_linkedin" title="View [[+longtitle]]'s profile on LinkedIn">[[+tv.linkedin]]</a>
+       `]]
+
+       [[+tv.twitter:ne=``:then=`
+          <a href="[[+tv.twitter]]" target="_blank" class="team_twitter" title="Follow [[+longtitle]] on Twitter">[[+tv.twitter]]</a>
+       `]]
+   </div>
+   <div class="team_bio">[[+content]]</div>
+   </div>
+</div>

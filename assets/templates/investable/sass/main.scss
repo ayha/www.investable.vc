@@ -110,10 +110,12 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
   font-size:22px;
+  margin-bottom:20px;
 }
 
 h2{
-  font-size:18px; 
+  font-size:18px;
+  margin-bottom:20px;
 }
 
 h3{
@@ -386,11 +388,11 @@ footer .footer_column{
 }
 .main_content section{
   
-  min-height:500px;
 }
 
 .main_content{
   margin-top: $headerHeight +20px;
+
 }
 
 
@@ -475,7 +477,7 @@ footer .footer_column{
   }
 }
 
-  #home_benefits{
+  #home_benefits, #about_members-benefits{
     background-color:#f8f8f8;
     
     .benefit{
@@ -529,9 +531,210 @@ footer .footer_column{
     }
   }
   
+  
+  
   #home_partners{
+      
     
+
+  .testimonials{
+      padding:0 50px;
+      position:relative;
+      .testimonial_controls{
+              position:absolute;
+              top:40%; 
+              left:0;
+              z-index:10;
+              height:40px; 
+              width:100%;
+              
+         }
+         
+         a.prev_testimonial{
+             position:absolute;
+             left:0px;
+         }
+         
+         a.next_testimonial{
+             position:absolute;
+             right:0px; 
+         }         
+      
+      .testimonial_wrapper{
+          position:relative;
+           
+          display:block;
+          padding:0 30px;
+        
+      }
+      .testimonial_content, .testimonial_content p{
+          font-style:italic;
+          
+          
+      }  
+      .testimonial_content::before{
+          background:url(../../../images/template/open_quotation.png) left top no-repeat;
+          
+          width:20px;
+          height:20px;
+           content: ''; /* you have to define that to make the pseudo elements work */
+          position: absolute;
+          top: 0;
+          left:0px;
+      }
+      
+      .testimonial_content::after{
+        background:url(../../../images/template/close_quotation.png) left top no-repeat;
+        width:20px;
+        height:20px;
+          content: ''; /* you have to define that to make the pseudo elements work */
+        position: absolute;
+        bottom: 0;
+        right:0px;
+      } 
+      
+      .testimonial_from{
+         margin-top:35px;
+         display:block;
+         .from_picture{
+            float:left;
+            margin-right:15px;
+         }
+         .from{
+           float:left;
+           display:inline-block;
+           font-weight:bold;
+           max-width:250px; 
+           font-size:16px;
+           
+         }
+         
+         .from .title{
+           font-weight:normal;
+           font-size:14px;
+           line-height:16px;
+         }
+         
+         
+         .testimonial_controls{
+              position:relative;
+              top:50%; 
+              left:0;
+         }
+         
+         a.prev_testimonial{
+             position:absolute;
+             left:0;
+         }
+         
+         a.next_testimonial{
+             position:absolute;
+             right:0;
+         }         
+      }
+      
+      
+     
+  }
+
+   .partners{
+          max-width:100%;
+          overflow:hidden;
+          padding-left:30px;
+          
+          .partners_wrapper{
+             overflow:hidden;
+             height:280px;
+             
+          }
+          
+          .partner{
+             width: 40%;
+             float:left;
+             display:inline-block;
+             height:120px;
+              margin:5px 5%;
+              text-align:center;
+          }
+          
+          .partner img{
+             max-width:100%;
+          }
+      }
+        
+}
+  
+  
+  
+/* end of homepage */
+
+
+.main_content.text_page{
+  
+  margin-bottom:0;
+  padding-bottom:30px;
+  color:#fff;
+  
+  h1, h2, h3{  
+    color:$orange;
+  }
+}
+
+
+/* about us */
+
+#about-us_content{
+  margin-top:0;
+  
+  .section{
+      
+  }
+  
+   .intro_section, .section_1, .section_2{
+      
+      h1, h2, h3, p, a, li{
+       
+        font-size:120%;
+      }
+      
     
   }
   
-/* end of homepage */
+  .intro_section{
+    /*  @include background-image(linear-gradient($rosebud, $orange));*/
+  }
+  
+  
+  
+  .section_1{
+      @include background-image(linear-gradient(#fff, $rosebud));
+     //background-color:$rosebud;
+     
+  } 
+  
+  .section_2{
+      @include background-image(linear-gradient($rosebud, $rosebud));
+    //background-color:#f8f8f8;
+    
+    
+   
+  }
+   
+  .section_3{
+     background-color:#f8f8f8;
+     
+  }
+  
+}
+
+
+/* end about us */
+
+/* team */
+
+
+/* end team */
+
+
+
+ 

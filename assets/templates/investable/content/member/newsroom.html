@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content text_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<div class="page-header">
+				<h1>[[%investable.startup_newsroom? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			
+				[[$member_navigation]]
+				<div class="allclear"></div>
+			</div>
+			<div class="member_content">
+               <div id="feed_content"></div>
+			
+			</div>
+	    	
+    			
+	   		
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   	[[$member_footer]]
+	
+   <script type="text/javascript">
+   			$('#feed_content').dcSocialStream({
+		feeds: {
+			
+			rss: {
+				id: '[[*rss_feeds]]'
+			},
+			facebook: {
+				id: '455528547892283',
+				out: 'intro,thumb,text,user,share'
+			},
+			
+			twitter: {
+				id: 'investableasia,#startup,#startuphk',
+				thumb: true,
+				url: '[[++assets_url]]lib/social_stream/twitter.php'
+			},
+			
+			
+			google: {
+				id: '101383478793760168461',
+				api_key: 'AIzaSyD00CRyUKuvfuRoT6V-5QsFctGttGqFqYg'
+			}
+			
+		},
+		rotate: {
+			delay: 0
+		},
+		twitterId: 'investableasia',
+		control: false,
+		filter: true,
+		wall: true,
+		cache: false,
+		max: 'limit',
+		limit: 10,
+		iconPath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/',
+		imagePath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/'
+	});
+   </script>
+
+     
+    </body>
+</html>
