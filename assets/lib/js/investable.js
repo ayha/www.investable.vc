@@ -300,6 +300,10 @@ function scrollToSection(target_section){
                 days = parseInt(seconds_left / 86400);
 				
 				$("#"+company).find(".timeleft").children(".fact_number").html(days);
+				if(days <=10){
+				$("#"+company).find(".ribbon").html(days + " Days Left");
+				$("#"+company).find(".ribbon").addClass("active");
+				}
             }
             
             function updateFundedPercentage(company){
