@@ -10,6 +10,8 @@ $turquoise: #20B6AE;
 $skobeloff: #007B76;
 $orange: #F36B22;
 $rosebud: #FFB880;
+$palegrey: #f8f8f8;
+$darkgrey: #636363;
 $btnRadius: 5px;
 $font_sans: 'ScalaSans', Helvetica, Arial, sans-serif;
 $font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -60,4 +62,13 @@ $font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-right: $size/2 solid transparent;
   border-top: $size solid $color;
 }
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 

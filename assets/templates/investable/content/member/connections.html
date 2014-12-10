@@ -15,15 +15,15 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content member_page" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     		<div class="page-header">
-				<h1>[[%investable.startup_connections? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+				<h1>[[%title.my_connections?  &namespace=`investable` ]]</h1>
 			
-				[[$member_navigation]]
-				<div class="allclear"></div>
+				
+				<div class="clearboth"></div>
 			</div>
 			<div class="member_content">
 				 [[!get_connection_request_action:ne=`0`:then=`
@@ -31,7 +31,7 @@
 				   <h2>[[%connection.new_connections? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
   				    <div class="connection_list">
   				          [[!get_connection_request_action? &chunk=`connection_request_item`]]
-  				    <div class="allclear"></div>
+  				    <div class="clearboth"></div>
   				    </div>
   				    
   				    
@@ -43,7 +43,7 @@
 					
   				    <div class="connection_list">
   				    [[!get_my_connections? &chunk=`connection_item`]]
-  				    <div class="allclear"></div>
+  				    <div class="clearboth"></div>
   				    </div>
   				    
   				    
@@ -55,10 +55,10 @@
 					</div>
 					<div class="connection_list">
   				    [[!get_more_connections? &chunk=`new_connection_item`]]
-  				    <div class="allclear"></div>
+  				    <div class="clearboth"></div>
   				    </div>
 				</div>
-				<div class="allclear"></div>
+				<div class="clearboth"></div>
 			</div>
 	    	
     			

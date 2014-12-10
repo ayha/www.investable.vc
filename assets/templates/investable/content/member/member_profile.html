@@ -15,17 +15,17 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content member_page" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     		<div class="page-header">
-				<h1>[[%investable.member_profile? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+				<h1>[[%title.my_profile? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
 			
-				[[$member_navigation]]
-				<div class="allclear"></div>
+				
+				<div class="clearboth"></div>
 			</div>
-			
+			<div class="member_form_wrapper">
 			 [[!UpdateProfile? 
                &validate=`fullname:required,email:required:email,firstname:checkEmpty=^First Name^,lastname:checkEmpty=^Last Name^`  
  				 &customValidators=`checkEmpty` 
@@ -138,7 +138,7 @@
 			</div>
 	    	
     			
-	   		
+	   		</div>
 	   		</div>
 		</section>
 	  	

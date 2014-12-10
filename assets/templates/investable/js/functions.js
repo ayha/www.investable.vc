@@ -64,34 +64,6 @@ function show_testimonial(n){
 	});
 }
 
-function updateCountdown(company){
-	var end_date = $("#"+company).data("enddate");
-	//var target_date = new Date(end_date).getTime();
-	//var target_date = Date.parse(end_date);
-	var end_date = end_date.split(" ")[0].split("-");
-	 var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
-	var days, hours, minutes, seconds;
-	var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
-    
-    days = parseInt(seconds_left / 86400);
-	
-	$("#"+company).find(".timeleft").children(".fact_number").html(days);
-}
-            
-function updateFundedPercentage(company){
-	var goal = $("#"+company).data("goal");
-	var raised = $("#"+company).data("raised");
-	
-	var percentage = Math.ceil(raised*100/goal);
-	
-	//if(percentage <70){ // hide the percentage
-	//	$("#"+company).find(".quickfacts").children(".percentage").remove();
-		
-	//}else{
-	   $("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
-	//}
-}
 
 function insertParam(key, value)
 {
@@ -119,8 +91,7 @@ function insertParam(key, value)
 
  // 2. Runs when the JavaScript framework is loaded
   function onLinkedInLoad() {
-  
-  	//$("a.login_with_linkedin").show();
+
   	IN.Event.on(IN, "auth", onLinkedInAuth);
    
   }
@@ -168,3 +139,45 @@ function linkedin_regsiter_attemp(username, firstname, lastname, summary, token,
 }
 
 
+
+
+// member functions
+
+function updateCountdown(company){
+	var end_date = $("#"+company).data("enddate");
+	//var target_date = new Date(end_date).getTime();
+	//var target_date = Date.parse(end_date);
+	var end_date = end_date.split(" ")[0].split("-");
+	 var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
+	var days, hours, minutes, seconds;
+	var current_date = new Date().getTime();
+    var seconds_left = (target_date - current_date) / 1000;
+    
+    days = parseInt(seconds_left / 86400);
+	
+	$("#"+company).find(".timeleft").children(".fact_number").html(days);
+	
+	if(days <=10){
+		$("#"+company).find(".ribbon").html(days + " Days Left");
+		$("#"+company).find(".ribbon").addClass("active");
+	}
+}
+            
+function updateFundedPercentage(company){
+	var goal = $("#"+company).data("goal");
+	var raised = $("#"+company).data("raised");
+	
+	var percentage = Math.ceil(raised*100/goal);
+	
+	//if(percentage <70){ // hide the percentage
+	//	$("#"+company).find(".quickfacts").children(".percentage").remove();
+		
+	//}else{
+	   $("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
+	//}
+}
+
+
+function addRibbon(wrapper, text){
+	
+}

@@ -574,7 +574,7 @@ footer{
 }
 
   #home_benefits, #about_members-benefits{
-    background-color:#f8f8f8;
+    background-color:$palegrey;
     
     .benefit{
         float:left;
@@ -874,7 +874,7 @@ footer{
              cursor:pointer;
               border-bottom:2px solid #fff;
               @include transition(all 0.5s ease);
-              background-color:#f8f8f8;
+              background-color:$palegrey;
           }
           
           h4.faq_question{
@@ -993,7 +993,7 @@ footer{
           display:block;
           padding: 15px 15px 60px 15px;
           min-height:300px;
-          background-color:#f8f8f8;
+          background-color:$palegrey;
           top:120px;
           position:absolute; 
           
@@ -1130,5 +1130,277 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 }
 
-/* end of members area */
+.member_page{
+    
+  
+}
+ @media (max-width:767px){
+.startup_info_session{
+    margin-bottom:15px;
+    text-align:right;
+    
+}
+
+}
+
+.download_link{
+  padding-left: 35px;
+  line-height:40px;
+  height:40px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC4UlEQVRYR+2WW4hPQRzHd1FsUR6kaLctErmUB4lNYXPJLVEoIQ9uq/BA2WVbf0K8UKTkkgflTp5cQ5Tw4C6EFEkh93LJ9fOtGY0x55w5u2lf/lOfzjm/OfOb7/zmN5fSkmYupc3cf0lRQFMjUMYUyscX+NmY6cwroDWdDIXR0B86QQt4AzfgOJyG17Fi8ggYg9MC9DPOH/J8Bt+hA/QAReQprIdtpi5VS4yAVnhYBXXwAbbCXrgHX413+SkHRWYB9IIjMCcrGlkCFN6NsBAuwDzTcdqo2lHZAEvgLEyE90kNsgTMNqE8xXOSiYD11Z2X9vDLGBSRj05HS3lfBztAfoIlTUAFLa7CZxgIzz0Px/ge6Qio5l1RcstuPqbBMDgTUpAmQGFcadRrFH45iWGEYxwcEFCJ7SZchlGO2D/NkgS04Y9roPlUQin5/HICgyJgS0iA6nbCDOPnge8kSUBPfrwD+2BqoHOZYgUoCQ/DFDgQK2A4Pyrx6mFNggDlgMJqSxUvlwL/9sF2C5bD2lgB4/nxKGj5bfYaKfvbwiZQp7bMMh3d5+muhq58PwJtTrWxAmwECjRQIrpFWb0LWoI/heexSby77vvyfT1vBJQDt+EQaO78sgXDfM/4iu8hcNezq71yaTIcjI2AXQXaaLQK3noNtTqUIwOMXSehknV/QKz2AonoDdGrQH5WQAFCeaB6OTwHOog2wOJA592waTlfBJ0T/xzZMTuhTrtB8DjQwUxs02EcfPLqdY5oCidAo3ZC+VNmbzcj0Hp+GehEKyK0UWn5LjPtdSoGS9ZhpHqdhotMKJV4V5KcGXtHnqtBB1CTT0P5dO8D3/jWEtwD2lzegU5DXUS6wFioAZ0B2v3mQurtKCsC7mCVRNoT7I3oBe+6Ef0AJaIEqDwBbTqaOuVPaskjQI7snVBbsIR0BiWbRqmzQ9vzf7sThkZib8W6M9iLSdag/6rPG4FczmN+LgooRuA3sA+TIXFR74YAAAAASUVORK5CYII=) left center no-repeat;
+  display:inline-block;
+}
+
+.startup_filters{
+  text-align:right;
+  margin-bottom:15px;
+  
+}
+
+.startup_item{
+    background-color:$palegrey;
+    border:1px solid $darkgrey;
+    padding:15px;
+    margin-bottom:65px;
+    position:relative;
+    .startup_title{
+      display:block;
+      padding-left:10px;
+      h2.company_name{
+        color:$turquoise;
+        font-size:20px;
+        font-weight:bold;
+        margin:0;
+        padding:0;
+       display:inline-block;
+        width:auto;
+      }
+      
+      .company_industry{
+        font-size:14px;
+        font-style:italic;
+        margin-left:15px;
+        display:inline-block;
+      }
+      
+      .company_location{
+        font-size:14px;
+        padding:5px 10px 5px 25px;
+        background:url(../../../images/template/list_location_icon.png) left 5px center no-repeat;
+        
+      }
+      
+    }
+    
+    .startup_img{
+        .startup_logo{
+            border:1px solid $turquoise;
+            background-color:#fff;
+            min-height:200px;
+            position:relative;
+            text-align:center;
+          
+        }
+        
+        img.startup_image{
+          max-width:96%;
+          left:2%;
+          max-height:100%;
+          @include vertical-align; 
+        }
+    }
+    
+    .company_quick_links{
+      .startup_badge{
+          display:inline-block;
+          text-transform:uppercase;
+          margin-right:15px;
+          font-size:12px;
+          line-height:25px;
+          margin-bottom:10px;
+      }
+      
+      .startup_badge a{
+          font-size:12px;
+          line-height:25px;
+        font-weight:bold; 
+      }
+      
+      .video_badge{
+        background:url(../../../images/template/video_orange.png) left center no-repeat;
+        padding-left:35px;
+      }
+      
+      .reward_badge{
+        padding-left:30px;
+        background:url(../../../images/template/rewards_orange.png) left center no-repeat;
+      }
+      
+      .meet_startup{
+         padding-left:32px;
+         background:url(../../../images/template/meet_orange.png) left center no-repeat;
+      }
+      
+      
+    }
+    
+    .quickfacts{
+        display:block;
+        
+    }
+    
+    .quickfacts .fact_item{
+          display:block;
+          margin-bottom:10px;
+          .fact_number{
+            font-size:18px;
+            color:$turquoise;
+          }
+          
+          .fact_title{
+             font-size:12px;
+             display:block;
+             line-height:13px;
+          }
+        
+      }
+    
+    
+    .support_company{
+        position:absolute;
+        bottom:-38px;
+       right:0;
+       width:100%;
+       text-align:right;
+        .support_button{
+            -webkit-border-bottom-right-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -moz-border-radius-bottomright: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            
+            -webkit-border-top-left-radius: 0;
+            -webkit-border-top-right-radius: 0;
+            -moz-border-radius-topleft: 0;
+            -moz-border-radius-topright: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            
+            display:inline-block;
+            margin-right:5px;
+            font-size:18px;
+            text-transform:uppercase;
+        }
+    }
+    
+    
+}
+
+
+.key_investor_img{
+   display:none;
+  
+}
+
+.invested_by{
+    color:#fff;
+    padding:5px 10px;
+    background:$turquoise;
+    width:100%;
+    margin-top:3px;
+    text-align:center;
+    font-size:16px; 
+}
+
+.ribbon-wrapper {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index:100;
+}
+
+.ribbon{
+  display:none;
+  font-size:15px;
+  font-weight:bold;
+  text-align: center;
+  /*text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;*/
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: 8px;
+  top: 20px;
+  width: 145px;
+   
+}
+
+.ribbon.active{
+  display:block;
+}
+
+.ribbon_white {
+ 
+  
+  background-color: $turquoise;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($skobeloff), to($turquoise)); 
+  background-image: -webkit-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:    -moz-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:     -ms-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:      -o-linear-gradient(top, $skobeloff, $turquoise); 
+  color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon_white:before, .ribbon_white:after {
+  
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+
+}
+
+.ribbon:before {
+    content: "";
+   position:absolute;
+  bottom: -3px;
+  left: 0;
+ 
+}
+.ribbon:after {
+    content: "";
+   position:absolute;
+  bottom: -3px;
+  right: 0;
+}​
+
+
+
+
+
+.member_form_wrapper{
+        width:100%;
+        max-width:400px;
+        
+        margin: 0 auto;
+      
+    }
+    
+.connection_list{
+    margin-bottom:30px;
+    .connection_item img.profile_picture{
+        max-width:100%;
+        max-height:100%;
+    }
+  
+}
+/* end of members area */ 
  
