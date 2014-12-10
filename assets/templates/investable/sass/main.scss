@@ -1,5 +1,6 @@
 @import "compass";
 @import "base";
+@import "compass/css3/transform";
 
 /* @font-face definitions */
 
@@ -406,7 +407,7 @@ footer .footer_column{
   z-index:1; 
 }
 .main_content section{
-  
+    margin-bottom:40px;
 }
 
 .main_content{
@@ -414,6 +415,20 @@ footer .footer_column{
 
 }
 
+
+.main_content h1{
+   text-align:center;
+   padding-bottom:20px;
+   border-bottom:2px solid $turquoise;
+    margin:20px auto;;
+   width: auto; 
+   text-transform:uppercase;
+}
+
+.main_content#homepage_content h1{
+  border: none;
+  text-align:left;
+}
 
 /* homepage */
 
@@ -695,7 +710,7 @@ footer .footer_column{
   color:#fff;
   
   h1, h2, h3{  
-    color:$orange;
+   
   }
 }
 
@@ -703,46 +718,7 @@ footer .footer_column{
 /* about us */
 
 #about-us_content{
-  margin-top:0;
   
-  .section{
-      
-  }
-  
-   .intro_section, .section_1, .section_2{
-      
-      h1, h2, h3, p, a, li{
-       
-        font-size:120%;
-      }
-      
-    
-  }
-  
-  .intro_section{
-    /*  @include background-image(linear-gradient($rosebud, $orange));*/
-  }
-  
-  
-  
-  .section_1{
-      @include background-image(linear-gradient(#fff, $rosebud));
-     //background-color:$rosebud;
-     
-  } 
-  
-  .section_2{
-      @include background-image(linear-gradient($rosebud, $rosebud));
-    //background-color:#f8f8f8;
-    
-    
-   
-  }
-   
-  .section_3{
-     background-color:#f8f8f8;
-     
-  }
   
 }
 
@@ -754,6 +730,246 @@ footer .footer_column{
 
 /* end team */
 
+/*contact us */
+
+#contact-us_content{
+   #map{
+     width:100%;
+     height:200px;
+     margin-bottom:20px;
+     border:1px solid #ccc;
+     @include transition(all 0.5s ease);
+   }
+   
+   .map_wrapper{
+     position:relative;
+   }
+   
+    .map_expand{
+      cursor:pointer;
+      position:absolute;
+      bottom:-20px;
+      
+      right:10px;
+      
+      width:40px;
+      height:40px; 
+      
+   }
+   
+   .circle{
+      @include circle(40px, #ffffff);
+      border-color:$turquoise;
+      border-style:solid;
+      border-width:2px;
+      position:relative;
+   }
+   
+   .arrow_down{
+      @include triangle-down(20px, $turquoise);
+      position:absolute;
+      top:10px;
+      left:8px; 
+      @include transition(all 0.5s ease);
+   }
+   
+   .expand{
+     .arrow_down{
+        @include transform(rotate(180deg));
+         top: 7px;
+       
+     }
+     
+     #map{
+       height:500px;
+       
+     }
+     
+      @media (max-width:767px){
+         #map{
+          height:350px; 
+        }
+       }
+   }
+  
+  
+}
+
+/*end contact us*/
+
+/* faqs */
+#faqs_content{
+    display:block;
+    
+      .faq_list{
+          
+           margin:0;
+           padding:0;
+           
+
+          .faq_item{
+             padding:10px;
+             cursor:pointer;
+              border-bottom:2px solid #fff;
+              @include transition(all 0.5s ease);
+              background-color:#f8f8f8;
+          }
+          
+          h4.faq_question{
+              font-family:$font_sans;
+              font-size:16px;
+              cursor:pointer;
+          }
+          
+          .faq_answer{
+           display:block;
+           overflow:hidden;
+            @include transition(all 0.5s ease);
+            font-size:16px;
+            font-style:italic;
+            opacity: 0; 
+            height: 0; 
+            
+             
+          }
+          
+          .faq_answer p{
+              font-size:16px;
+            font-style:italic;
+            
+          }
+          
+          .faq_item.active{
+            background-color:$rosebud;   
+          }
+          
+          .faq_item.active .faq_answer{
+               height:auto;
+               opacity:1;
+               
+               
+          }
+        
+      }
+    
+  }
+
+/* end faqs */
+
+/* team */
+#team_content{
+    .team_type .team{
+       display:none;
+    }
+    
+    
+    
+    h2.team_type_title{
+        display:block;
+        text-align:center;
+    }
+    
+    .team_member{
+      display:block;
+    }
+    
+    ul.team_list{
+      list-style:none;
+      text-align:center;
+      width:100%;
+      position:relative;
+      margin:0 auto; 
+    }
+    
+    ul.team_list li{
+      display:inline-block;
+      position:relative;
+    }
+      
+     ul.team_list li .member_thumbnail{
+        width:120px;
+        height:120px;
+        margin:5px;
+        position:relative;
+        img{
+          width:120px;
+        }
+        
+        .member_name{
+          position:absolute;
+          bottom:0;
+          background:$skobeloff;
+          opacity:0.7; 
+          width:100%;
+          text-align:center;
+          z-index:20;
+          display:none;
+        }
+        
+        .thumbnail_content:hover .member_name{
+          display:block;  
+        }
+        
+        .member_name a:hover{
+           text-decoration:none;
+        }
+        
+        .member_name h4{
+          font-size:12px;
+          font-weight:bold;
+          color:#fff;
+        }
+        
+        .member_name h5{
+          font-size:9px;
+          color:#fff;
+        }
+        .thumbnail_content{
+          position:relative;
+        }
+         .member_details{
+          display:block;
+          padding: 15px 15px 60px 15px;
+          min-height:300px;
+          background-color:#f8f8f8;
+          top:120px;
+          position:absolute; 
+          
+        }
+        
+        .member_details .member_details_content{
+          max-width:650px;
+          margin:0 auto;
+          position:relative;
+          width:100%;
+          text-align:left;
+          
+        }
+        
+        .member_details .member_details_content h4{
+            text-transform: uppercase;
+            color:$orange;  
+        }
+        
+        .member_details .member_details_content h5{
+            font-size:13px;
+
+        }
+        
+        .member_details .close_member_bio{
+          display: block;    
+          position: absolute;
+          bottom: -35px;
+          right: 0px;
+          z-index: 30;
+         
+          
+        }
+     }
+    
+}
+
+/* end of team */
 
 
 

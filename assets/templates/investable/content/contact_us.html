@@ -14,13 +14,21 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
-	    	
+	    	<div class="map_wrapper">
+    		<div id="map"></div>
+    		<div class="map_expand">
+    			<div class="circle">
+    				<div class="arrow_down"></div>
+    			</div>
     			
+    		</div>
+    		</div>
+    		
 	   		[[*content]]
 	   		</div>
 		</section>
@@ -28,9 +36,37 @@
 	</div>
 	[[$page_footer]]
    
-	
+	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD00CRyUKuvfuRoT6V-5QsFctGttGqFqYg">
+</script>
+
    <script type="text/javascript">
-   		
+   		  var gmap;
+      var marker;
+      function initialize() {
+        var latlng = new google.maps.LatLng([[*lat]],[[*lng]]);
+        var mapOptions = {
+          center: latlng,
+          zoom: 17
+        };
+      
+        gmap = new google.maps.Map(document.getElementById('map'),
+            mapOptions);
+
+        marker =  new google.maps.Marker({
+            position: latlng,
+            map: gmap,
+            icon: "[[!++site_url]]assets/images/investable-icon.png",
+            title: 'Investable'
+            });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      
+      $(".map_expand").on("click", function(e){
+      		e.preventDefault();
+      		$(".map_wrapper").toggleClass("expand");
+      	
+      });
    </script>
 
      

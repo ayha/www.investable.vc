@@ -34,3 +34,30 @@ $font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @mixin text-shadow(){
      text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8);
 }
+
+@mixin circle($radius, $color){
+   width:$radius;
+  height: $radius;
+  background: $color;
+  -moz-border-radius: $radius/2;
+  -webkit-border-radius: $radius/2;
+  border-radius: $radius/2;
+  
+}
+
+@mixin triangle-up($size, $color){
+   width: 0;
+  height: 0;
+  border-left: $size/2 solid transparent;
+  border-right: $size/2 solid transparent;
+  border-bottom: $size solid $color;
+}
+
+@mixin triangle-down($size, $color){
+   width: 0;
+  height: 0;
+  border-left: $size/2 solid transparent;
+  border-right: $size/2 solid transparent;
+  border-top: $size solid $color;
+}
+

@@ -15,16 +15,7 @@
 
   
     <div class="main_content" id="[[*alias]]_content">
-    	<!--
-    	<section class="section intro_section">
-	    	
-    		<div class="container">
-    		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
-	   		[[*content]]
-	   		</div>
-		</section>
-		
-		-->
+    	
 	  	 [[!getResources? &parents=`[[*id]]` &tpl=`aboutus_item` &showHidden=`1` &includeContent=`1` &hideContainers=`0` &sortby=`{"menuindex":"ASC"}`]]
                 
 	</div>
@@ -33,6 +24,7 @@
 	
    <script type="text/javascript">
    		$(document).ready(function(){
+   			/*
    			$(".main_content").fullpage({
 				verticalCentered: true,
 				autoScrolling: false,
@@ -43,6 +35,7 @@
 				navigationTooltips: ['What is Investable', 'Why Investable']
 
 			});
+			*/
    		});
    </script>
 

@@ -14,15 +14,15 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
 	    	
-    			
+    		<div class="faq_list">	
 	   		  [[!getResources? &parents=`[[*id]]` &tpl=`faq_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`100` &showHidden=`1`  &sortby=`{"menuindex":"ASC"}`]]
-   
+   			</div>
 	   		</div>
 		</section>
 	  	
@@ -31,7 +31,11 @@
    
 	
    <script type="text/javascript">
-   		
+   		$(".faq_item").on("click", function(e){
+   			e.preventDefault();
+   			$(this).toggleClass("active");
+   			
+   		});
    </script>
 
      
