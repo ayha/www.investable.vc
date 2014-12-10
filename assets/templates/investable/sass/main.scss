@@ -147,7 +147,7 @@ body{
 }
 
 
-input[type=text], input[type=email], input[type=number], input[type=date], input[type=password]{
+input[type=text], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
   background:#ffffff;
    @include border-radius($btnRadius);
    border:none;
@@ -155,7 +155,7 @@ input[type=text], input[type=email], input[type=number], input[type=date], input
    font-size:12px;
    width: 150px;
    color:$darkGrey;
-  
+   border:1px solid $turquoise; 
 }
 
 input[type=submit], button{
@@ -168,6 +168,56 @@ input[type=submit], button{
 }
 
 
+.form_section{
+  width:100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-bottom: 1px solid #cccccc;
+   padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+.form_header{
+   text-transform:uppercase;
+   padding:5px;
+   width:100%;
+   text-align:center;
+   background:$orange;
+   color:#fff;
+   margin-bottom:15px;
+  
+}
+
+.error{
+  color:$orange;
+  font-style:italic;
+}
+
+.form_section.submit{
+  border:none; 
+  
+}
+
+
+.form_row{
+  width:100%;
+  margin-bottom:10px;
+ 
+  
+  label{
+   margin-bottom:3px;
+   display:block;
+   text-align:left;
+   font-weight:normal;
+}
+  input[type=text], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
+    width:100%;
+  }
+  
+} 
+
+
+  
 
 /* header */
 
@@ -316,89 +366,88 @@ input[type=submit], button{
 footer{
   background-color:$turquoise;
   color:#ffffff;
-}
-
-footer p{
-  color:#ffffff;
-}
-
-footer h3, footer h3 a, footer h3 a:hover, footer h3 a:active{
+  
+  h3, h3 a, h3 a:hover, h3 a:active{
   font-family: $font_serif;
   color:#ffffff;
   font-weight:normal;
   text-decoration:none;
-}
-
-footer ul{
+  }
+  
+  p, ul li a, ul li a:hover, ul li a.active, ul li a:focus{
+  color:#ffffff;
+  } 
+  
+  
+  ul{
   margin:0;
   padding:0;
   list-style-type:none;
-}
-
-footer ul li{
+  }
+  
+  ul li{
   margin:0;
   padding:0;
   list-style-type:none;
-}
-
-footer ul li a, footer ul li a:hover, footer ul li a.active, footer ul li a:focus{
-  color:#fff;
-}
-
-footer .footer_social a.footer_social_icon{
-  display:inline-block;
-  width:22px;
-  height:22px;
-  text-indent:-9999px;
-  background-color:#fff;
-  @include border-radius($btnRadius);
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-right:5px;
-}
-
-footer .footer_social .facebook{
+  }
+  
+  .footer_social a.footer_social_icon{
+    display:inline-block;
+    width:22px;
+    height:22px;
+    text-indent:-9999px;
+    background-color:#fff;
+    @include border-radius($btnRadius);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right:5px;
+  }
+  .footer_social .facebook{
   background-image:url(../../../images/template/social_facebook_18x18.png);
 }
-
-footer .footer_social .gplus{
+.footer_social .gplus{
   background-image:url(../../../images/template/social_gplus_18x18.png);
 }
-
-footer .footer_social .linkedin{
+  .footer_social .linkedin{
   background-image:url(../../../images/template/social_linkedin_18x18.png);
 }
 
-footer .footer_social .twitter{
+  .footer_social .twitter{
   background-image:url(../../../images/template/social_twitter_18x18.png);
 }
 
-footer .footer_social .weibo{
+ .footer_social .weibo{
   background-image:url(../../../images/template/social_weibo_18x18.png);
 }
+ .footer_social .angel{
+  background-image:url(../../../images/template/social_angelco_18x18.png);
+}
 
-footer #newsletter_form input[type=submit]{
+#newsletter_form input[type=submit]{
   border: 1px solid #ffffff;
   color:#FFFFFF;
   background: transparent;
 }
 
-footer #newsletter_form input[type=submit]:hover{
+#newsletter_form input[type=submit]:hover{
   border:1px solid $turquoise;
   background:#FFFFFF;
   color:$turquoise;
   
 }
 
-footer .copyright{
+.copyright{
   font-size:11px;
   color:#fff;
   
 }
-
-footer .footer_column{
+.footer_column{
   margin-bottom:30px;
 }
+
+
+}
+
 
 /* end of footer= */
 
@@ -421,13 +470,26 @@ footer .footer_column{
    padding-bottom:20px;
    border-bottom:2px solid $turquoise;
     margin:20px auto;;
-   width: auto; 
+   width: 50%; 
    text-transform:uppercase;
+}
+
+@media (max-width:767px){
+   .main_content h1{
+      width:100%;
+   }
 }
 
 .main_content#homepage_content h1{
   border: none;
   text-align:left;
+}
+
+.page-header{
+    margin:0 auto;
+    padding:0;
+    border:none;
+  
 }
 
 /* homepage */
@@ -707,7 +769,7 @@ footer .footer_column{
   
   margin-bottom:0;
   padding-bottom:30px;
-  color:#fff;
+ 
   
   h1, h2, h3{  
    
@@ -971,9 +1033,102 @@ footer .footer_column{
 
 /* end of team */
 
+/* login page */
+#login_form_wrapper, .loginFP, #register_form_wrapper{
+   max-width:400px;
+   margin: 0 auto;
+   
+   
+   .social_signin{
+      text-align:center;
+     
+   }
+   
+   
+}
+
+#forgot-password_content, #reset-password_content{
+  h2, p{
+    text-align:center;
+  } 
+  
+}
+
+#register_form_wrapper .cd-tabs-navigation li{
+    width:50%;
+    
+}
+
+ul.cd-tabs-navigation li a{
+    text-align:center;
+}
+
+ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
+    color:$orange !important;
+  
+}
+
+.cd-tabs-navigation a.selected{
+  box-shadow:none !important; 
+  border-top:2px solid $orange;
+  
+}
+ .cd-tabs ul{
+    width:100%;
+ }
+
+/* end login page */
+
+
 
 
 /* member's area */
+
+#how-it-works_content{
+  
+
+.howitworks_content{
+    marin:10px auto;
+     h3{
+        padding: 10px 10px;
+        background: $orange;
+        color:#fff;
+        margin-top:0;
+        text-align:center;
+        text-transform:uppercase;
+     }
+     
+     
+     
+     .way_of_investment{
+        border:1px solid #ccc;
+        padding:0;
+        width:29%;
+        margin:2%; 
+        min-height: 250px;
+     }
+     
+      @media (max-width:767px){
+        .way_of_investment{
+          width:auto;
+          margin:0 auto;
+          height: auto; 
+        }
+      }
+     
+     .way_description{
+        p{
+          padding: 0 5px;
+        } 
+        
+        ul li{
+          font-style:italic;
+        }   
+     }
+
+}
+
+}
 
 /* end of members area */
  
