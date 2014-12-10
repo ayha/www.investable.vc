@@ -194,6 +194,10 @@ select[multiple]{
 	background-image:url(../../../../assets/images/wechat_icon_inverted.png);
 }
 
+.navbar-social .angel{
+	background-image:url(../../../../assets/images/angelist_icon_inverted.png);
+}
+
 .navbar-signin{
 	text-align:right;
 }
