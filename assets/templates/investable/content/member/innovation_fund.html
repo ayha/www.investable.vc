@@ -15,15 +15,15 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content fund_details" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     			<div class="page-header">
-				<h1>[[%investable.innovation_fund? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+				<h1>[[*longtitle]]</h1>
 			
 				
-				<div class="allclear"></div>
+				<div class="clearboth"></div>
 			</div>
 			<div class="member_content">
 				
@@ -33,7 +33,7 @@
 						
 					</div>
 					<div class="project_status col-md-8"> 
-						<h2>[[*longtitle]]</h2>
+						
 						<div class="intro">
 						[[*content:ne=``:then=`[[*content]]`]]
 						</div>
@@ -41,12 +41,12 @@
 					
 					</div>
 					
-					<div class="allclear"></div>
+					<div class="clearboth"></div>
 					
 				</div>
 				
 				<div class="company_info">
-					<div class="company_details">
+					<div class="company_details col-sm-8">
 					
 						<div class="company_description">
 							
@@ -57,12 +57,12 @@
 							
 						</div>
 					</div>
-					<div class="company_founder fund_manager">
+					<div class="company_founder fund_manager col-sm-4">
 						<h2>Fund Manager</h2>
 						[[!get_company_founders? &founders=`[[*fund_manager]]` &tpl=`fund_manager_profile`]]
 						
 					</div>
-					<div class="allclear"></div>
+					<div class="clearboth"></div>
 				</div>
 				
 				<div class="floating_content">
@@ -82,7 +82,7 @@
    <script type="text/javascript">  
 		    var percentage_raised = 0;
 			$(document).ready(function(){
-				var bottomPad = 80;
+				var bottomPad = 230;
 				
 				$(window).scroll(function(e){
 					$(".floating_content").finish();

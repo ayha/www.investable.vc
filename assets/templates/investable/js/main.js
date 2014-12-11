@@ -166,6 +166,25 @@ $(document).ready(function(){
     		})    	
     });
     
+    $(".reward_badge a").click(function(e){
+					e.preventDefault();
+					
+					rewards = $(this).children(".reward_content").html();
+					$.fancybox.open(rewards);
+				
+				});
+				
+				$(".video_badge a.watch_video").fancybox({
+					maxWidth	: 800,
+					maxHeight	: 600,
+					fitToView	: false,
+					width		: '70%',
+					height		: '70%',
+					autoSize	: false,
+					closeClick	: false,
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
 	
 });
 

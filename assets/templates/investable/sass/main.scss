@@ -172,7 +172,7 @@ input[type=submit], button{
   width:100%;
   max-width: 500px;
   margin: 0 auto;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid $mediumgrey;
    padding-bottom:15px;
   margin-bottom:15px;
 }
@@ -240,7 +240,7 @@ input[type=submit], button{
 }
 
 .navbar{
-  z-index:10;
+  z-index:500;
 }
 
 .navbar-toggle .icon-bar{
@@ -323,7 +323,7 @@ input[type=submit], button{
   .navbar-nav li a{
     background-color:$turquoise;
     color:#ffffff;
-    border-top:1px solid #cccccc;
+    border-top:1px solid $mediumgrey;
   }
   
   .collapse .navbar-nav li a:hover, .collapse .navbar-nav li a:active{
@@ -799,7 +799,7 @@ footer{
      width:100%;
      height:200px;
      margin-bottom:20px;
-     border:1px solid #ccc;
+     border:1px solid $mediumgrey;
      @include transition(all 0.5s ease);
    }
    
@@ -1101,7 +1101,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
      
      
      .way_of_investment{
-        border:1px solid #ccc;
+        border:1px solid $mediumgrey;
         padding:0;
         width:29%;
         margin:2%; 
@@ -1159,7 +1159,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 .startup_item{
     background-color:$palegrey;
-    border:1px solid $darkgrey;
+    border:1px solid $mediumgrey;
     padding:15px;
     margin-bottom:65px;
     position:relative;
@@ -1210,39 +1210,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         }
     }
     
-    .company_quick_links{
-      .startup_badge{
-          display:inline-block;
-          text-transform:uppercase;
-          margin-right:15px;
-          font-size:12px;
-          line-height:25px;
-          margin-bottom:10px;
-      }
-      
-      .startup_badge a{
-          font-size:12px;
-          line-height:25px;
-        font-weight:bold; 
-      }
-      
-      .video_badge{
-        background:url(../../../images/template/video_orange.png) left center no-repeat;
-        padding-left:35px;
-      }
-      
-      .reward_badge{
-        padding-left:30px;
-        background:url(../../../images/template/rewards_orange.png) left center no-repeat;
-      }
-      
-      .meet_startup{
-         padding-left:32px;
-         background:url(../../../images/template/meet_orange.png) left center no-repeat;
-      }
-      
-      
-    }
+    
     
     .quickfacts{
         display:block;
@@ -1312,6 +1280,41 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
     text-align:center;
     font-size:16px; 
 }
+
+.company_quick_links{
+      text-align:right;
+      .startup_badge{
+          display:inline-block;
+          text-transform:uppercase;
+          margin-right:15px;
+          font-size:12px;
+          line-height:25px;
+          margin-bottom:10px;
+      }
+      
+      .startup_badge a{
+          font-size:12px;
+          line-height:25px;
+        font-weight:bold; 
+      }
+      
+      .video_badge{
+        background:url(../../../images/template/video_orange.png) left center no-repeat;
+        padding-left:35px;
+      }
+      
+      .reward_badge{
+        padding-left:30px;
+        background:url(../../../images/template/rewards_orange.png) left center no-repeat;
+      }
+      
+      .meet_startup{
+         padding-left:32px;
+         background:url(../../../images/template/meet_orange.png) left center no-repeat;
+      }
+      
+      
+    }
 
 .ribbon-wrapper {
   width: 120px;
@@ -1396,11 +1399,203 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
     
 .connection_list{
     margin-bottom:30px;
-    .connection_item img.profile_picture{
+   
+  
+}
+
+ .connection_item img.profile_picture{
         max-width:100%;
         max-height:100%;
+        
+}
+
+.support_button{
+  
+  @include box-shadow(); 
+}
+
+.company_details{
+    .member_content{
+        position:relative;
+      
+    }
+   .quick_facts{
+      background:$turquoise;
+      color:#fff;
+      margin-bottom:20px;
+      padding:20px 15px;
+      
+   }
+   
+   .status_item{
+      margin-bottom:25px;
+      .status_name{
+        font-size:12px;
+        font-style:italic;
+        
+      }
+      .status_number{
+        font-size:20px;
+        
+      }
+      
+      
+   }
+   
+   .company_founder{
+          padding:10px;
+          background:$palegrey;
+          margin-bottom:15px;
+    }
+    
+    .founder_profile{
+        h3{
+         font-size:14px;
+         color:$orange;
+      
+       }
+       
+       h3.founder_title{
+        color:$darkgrey;
+       }
+      
+      .profile_pic img{
+          max-width:100%;
+          vertical-align:top;
+          
+      }
+      .profile_content, .profile_content p, .profile_content li{
+          font-size:12px;
+      }
+      
+    } 
+    
+    
+      
+      .why_we_love{
+          padding:10px;
+          background-color:$rosebud;
+          
+      }
+      
+      .why_we_love, .why_we_love p, .why_we_love a{
+          color:#fff;
+      }
+      
+      .why_we_love h3{
+          font-size:16px;
+          color:#fff;
+         
+        
+      }
+      
+    .company_details h3{
+        color:$turquoise;
+      
+    }
+    
+    .company_title{
+      h2{
+        color:$turquoise;
+        font-size:22px;
+         margin-bottom:5px;
+         margin-top:0;
+      } 
+      
+      h3{
+        font-size: 14px;
+        margin-top:0;
+        margin-bottom:10px; 
+        
+        
+      }
+    }
+    
+    .company_quick_links{
+        padding-top:25px;
+      
+    }
+    
+    .quick_facts{
+      position:relative;
+      .key_investors{
+          position:absolute;
+          bottom:15px;
+          right:15px;
+        
+      }
+      
+      .key_investors .invested_by{
+          text-align:right;
+      }  
     }
   
 }
+
+.fund_details{
+    
+  
+    .quick_facts{
+        background:$turquoise;
+        padding: 15px;
+        color:#fff;
+        font-size:16px;
+    }
+    
+    .quick_facts p{
+        color:#fff;
+        font-size:16px;
+    }
+    
+    .project_logo .logo_holder{
+        background-color:#fff;
+         min-height:250px;
+         background-repeat:no-repeat;
+        width:100%;
+          background-position:center center;
+          background-size: contain;
+         
+      
+    }
+    
+    .company_description h2{
+        color:$turquoise;
+      
+    }
+    
+    .fund_manager{
+        background-color:$palegrey;
+        
+        h2{
+            color:$turquoise;
+        }
+    }
+    .profile_pic{
+    
+    }
+    
+    .profile_pic img{
+        max-width:100%;
+        vertical-align:top;
+    }
+}
+
+
+.member_content{
+        position:relative;
+}
+
+.floating_content{
+      display:block;
+      position:absolute;
+      text-align:right;
+      width:100%;
+      z-index:50;
+      .support_company{
+          text-align:right;
+      }
+    
+  }   
+
 /* end of members area */ 
  

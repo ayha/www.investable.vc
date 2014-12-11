@@ -199,7 +199,7 @@ input[type=submit], button {
 
 /* line 242, ../sass/main.scss */
 .navbar {
-  z-index: 10;
+  z-index: 500;
 }
 
 /* line 246, ../sass/main.scss */
@@ -724,7 +724,7 @@ h1.site-tagline {
   width: 100%;
   height: 200px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -1014,7 +1014,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 }
 /* line 1103, ../sass/main.scss */
 #how-it-works_content .howitworks_content .way_of_investment {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   padding: 0;
   width: 29%;
   margin: 2%;
@@ -1062,7 +1062,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 /* line 1160, ../sass/main.scss */
 .startup_item {
   background-color: #f8f8f8;
-  border: 1px solid #636363;
+  border: 1px solid #cccccc;
   padding: 15px;
   margin-bottom: 65px;
   position: relative;
@@ -1114,57 +1114,27 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 1214, ../sass/main.scss */
-.startup_item .company_quick_links .startup_badge {
-  display: inline-block;
-  text-transform: uppercase;
-  margin-right: 15px;
-  font-size: 12px;
-  line-height: 25px;
-  margin-bottom: 10px;
-}
-/* line 1223, ../sass/main.scss */
-.startup_item .company_quick_links .startup_badge a {
-  font-size: 12px;
-  line-height: 25px;
-  font-weight: bold;
-}
-/* line 1229, ../sass/main.scss */
-.startup_item .company_quick_links .video_badge {
-  background: url(../../../images/template/video_orange.png) left center no-repeat;
-  padding-left: 35px;
-}
-/* line 1234, ../sass/main.scss */
-.startup_item .company_quick_links .reward_badge {
-  padding-left: 30px;
-  background: url(../../../images/template/rewards_orange.png) left center no-repeat;
-}
-/* line 1239, ../sass/main.scss */
-.startup_item .company_quick_links .meet_startup {
-  padding-left: 32px;
-  background: url(../../../images/template/meet_orange.png) left center no-repeat;
-}
-/* line 1247, ../sass/main.scss */
+/* line 1215, ../sass/main.scss */
 .startup_item .quickfacts {
   display: block;
 }
-/* line 1252, ../sass/main.scss */
+/* line 1220, ../sass/main.scss */
 .startup_item .quickfacts .fact_item {
   display: block;
   margin-bottom: 10px;
 }
-/* line 1255, ../sass/main.scss */
+/* line 1223, ../sass/main.scss */
 .startup_item .quickfacts .fact_item .fact_number {
   font-size: 18px;
   color: #20B6AE;
 }
-/* line 1260, ../sass/main.scss */
+/* line 1228, ../sass/main.scss */
 .startup_item .quickfacts .fact_item .fact_title {
   font-size: 12px;
   display: block;
   line-height: 13px;
 }
-/* line 1269, ../sass/main.scss */
+/* line 1237, ../sass/main.scss */
 .startup_item .support_company {
   position: absolute;
   bottom: -38px;
@@ -1172,7 +1142,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   text-align: right;
 }
-/* line 1275, ../sass/main.scss */
+/* line 1243, ../sass/main.scss */
 .startup_item .support_company .support_button {
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -1192,12 +1162,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   text-transform: uppercase;
 }
 
-/* line 1301, ../sass/main.scss */
+/* line 1269, ../sass/main.scss */
 .key_investor_img {
   display: none;
 }
 
-/* line 1306, ../sass/main.scss */
+/* line 1274, ../sass/main.scss */
 .invested_by {
   color: #fff;
   padding: 5px 10px;
@@ -1208,7 +1178,42 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   font-size: 16px;
 }
 
-/* line 1316, ../sass/main.scss */
+/* line 1284, ../sass/main.scss */
+.company_quick_links {
+  text-align: right;
+}
+/* line 1286, ../sass/main.scss */
+.company_quick_links .startup_badge {
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 15px;
+  font-size: 12px;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+/* line 1295, ../sass/main.scss */
+.company_quick_links .startup_badge a {
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: bold;
+}
+/* line 1301, ../sass/main.scss */
+.company_quick_links .video_badge {
+  background: url(../../../images/template/video_orange.png) left center no-repeat;
+  padding-left: 35px;
+}
+/* line 1306, ../sass/main.scss */
+.company_quick_links .reward_badge {
+  padding-left: 30px;
+  background: url(../../../images/template/rewards_orange.png) left center no-repeat;
+}
+/* line 1311, ../sass/main.scss */
+.company_quick_links .meet_startup {
+  padding-left: 32px;
+  background: url(../../../images/template/meet_orange.png) left center no-repeat;
+}
+
+/* line 1319, ../sass/main.scss */
 .ribbon-wrapper {
   width: 120px;
   height: 120px;
@@ -1219,7 +1224,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   z-index: 100;
 }
 
-/* line 1326, ../sass/main.scss */
+/* line 1329, ../sass/main.scss */
 .ribbon {
   display: none;
   font-size: 15px;
@@ -1237,12 +1242,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 145px;
 }
 
-/* line 1344, ../sass/main.scss */
+/* line 1347, ../sass/main.scss */
 .ribbon.active {
   display: block;
 }
 
-/* line 1348, ../sass/main.scss */
+/* line 1351, ../sass/main.scss */
 .ribbon_white {
   background-color: #20B6AE;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#007B76), to(#20B6AE));
@@ -1256,14 +1261,14 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 1363, ../sass/main.scss */
+/* line 1366, ../sass/main.scss */
 .ribbon_white:before, .ribbon_white:after {
   border-top: 3px solid #6e8900;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
 }
 
-/* line 1371, ../sass/main.scss */
+/* line 1374, ../sass/main.scss */
 .ribbon:before {
   content: "";
   position: absolute;
@@ -1271,7 +1276,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   left: 0;
 }
 
-/* line 1378, ../sass/main.scss */
+/* line 1381, ../sass/main.scss */
 .ribbon:after {
   content: "";
   position: absolute;
@@ -1279,7 +1284,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   right: 0;
 }
 
-/* line 1383, ../sass/main.scss */
+/* line 1386, ../sass/main.scss */
 ​
 .member_form_wrapper {
   width: 100%;
@@ -1287,14 +1292,177 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   margin: 0 auto;
 }
 
-/* line 1397, ../sass/main.scss */
+/* line 1400, ../sass/main.scss */
 .connection_list {
   margin-bottom: 30px;
 }
-/* line 1399, ../sass/main.scss */
-.connection_list .connection_item img.profile_picture {
+
+/* line 1406, ../sass/main.scss */
+.connection_item img.profile_picture {
   max-width: 100%;
   max-height: 100%;
+}
+
+/* line 1412, ../sass/main.scss */
+.support_button {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+}
+
+/* line 1418, ../sass/main.scss */
+.company_details .member_content {
+  position: relative;
+}
+/* line 1422, ../sass/main.scss */
+.company_details .quick_facts {
+  background: #20B6AE;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 20px 15px;
+}
+/* line 1430, ../sass/main.scss */
+.company_details .status_item {
+  margin-bottom: 25px;
+}
+/* line 1432, ../sass/main.scss */
+.company_details .status_item .status_name {
+  font-size: 12px;
+  font-style: italic;
+}
+/* line 1437, ../sass/main.scss */
+.company_details .status_item .status_number {
+  font-size: 20px;
+}
+/* line 1445, ../sass/main.scss */
+.company_details .company_founder {
+  padding: 10px;
+  background: #f8f8f8;
+  margin-bottom: 15px;
+}
+/* line 1452, ../sass/main.scss */
+.company_details .founder_profile h3 {
+  font-size: 14px;
+  color: #F36B22;
+}
+/* line 1458, ../sass/main.scss */
+.company_details .founder_profile h3.founder_title {
+  color: #636363;
+}
+/* line 1462, ../sass/main.scss */
+.company_details .founder_profile .profile_pic img {
+  max-width: 100%;
+  vertical-align: top;
+}
+/* line 1467, ../sass/main.scss */
+.company_details .founder_profile .profile_content, .company_details .founder_profile .profile_content p, .company_details .founder_profile .profile_content li {
+  font-size: 12px;
+}
+/* line 1475, ../sass/main.scss */
+.company_details .why_we_love {
+  padding: 10px;
+  background-color: #FFB880;
+}
+/* line 1481, ../sass/main.scss */
+.company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
+  color: #fff;
+}
+/* line 1485, ../sass/main.scss */
+.company_details .why_we_love h3 {
+  font-size: 16px;
+  color: #fff;
+}
+/* line 1492, ../sass/main.scss */
+.company_details .company_details h3 {
+  color: #20B6AE;
+}
+/* line 1498, ../sass/main.scss */
+.company_details .company_title h2 {
+  color: #20B6AE;
+  font-size: 22px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+/* line 1505, ../sass/main.scss */
+.company_details .company_title h3 {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* line 1514, ../sass/main.scss */
+.company_details .company_quick_links {
+  padding-top: 25px;
+}
+/* line 1519, ../sass/main.scss */
+.company_details .quick_facts {
+  position: relative;
+}
+/* line 1521, ../sass/main.scss */
+.company_details .quick_facts .key_investors {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+/* line 1528, ../sass/main.scss */
+.company_details .quick_facts .key_investors .invested_by {
+  text-align: right;
+}
+
+/* line 1538, ../sass/main.scss */
+.fund_details .quick_facts {
+  background: #20B6AE;
+  padding: 15px;
+  color: #fff;
+  font-size: 16px;
+}
+/* line 1545, ../sass/main.scss */
+.fund_details .quick_facts p {
+  color: #fff;
+  font-size: 16px;
+}
+/* line 1550, ../sass/main.scss */
+.fund_details .project_logo .logo_holder {
+  background-color: #fff;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center center;
+  background-size: contain;
+}
+/* line 1561, ../sass/main.scss */
+.fund_details .company_description h2 {
+  color: #20B6AE;
+}
+/* line 1566, ../sass/main.scss */
+.fund_details .fund_manager {
+  background-color: #f8f8f8;
+}
+/* line 1569, ../sass/main.scss */
+.fund_details .fund_manager h2 {
+  color: #20B6AE;
+}
+/* line 1577, ../sass/main.scss */
+.fund_details .profile_pic img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/* line 1584, ../sass/main.scss */
+.member_content {
+  position: relative;
+}
+
+/* line 1588, ../sass/main.scss */
+.floating_content {
+  display: block;
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  z-index: 50;
+}
+/* line 1594, ../sass/main.scss */
+.floating_content .support_company {
+  text-align: right;
 }
 
 /* end of members area */

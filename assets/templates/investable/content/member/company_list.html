@@ -104,25 +104,7 @@
 				    updateFundedPercentage($(this).attr("id"));
 				});
 				
-				$(".reward_badge a").click(function(e){
-					e.preventDefault();
-					
-					rewards = $(this).children(".reward_content").html();
-					$.fancybox.open(rewards);
 				
-				});
-				
-				$(".video_badge a.watch_video").fancybox({
-					maxWidth	: 800,
-					maxHeight	: 600,
-					fitToView	: false,
-					width		: '70%',
-					height		: '70%',
-					autoSize	: false,
-					closeClick	: false,
-					openEffect	: 'none',
-					closeEffect	: 'none'
-				});
 				
 				$("#startup_stage").change(function(e){
 					var stage = $(this).children("option:selected").val();
@@ -255,12 +237,7 @@
 			    	});
 			    });
 			    
-			    $(".startup_item").find(".key_investors").children(".key_investor_img").each(function(ind, ele){
-			    		//console.log($(ele));
-			    		var src= $(ele).attr("src");
-			    		var html ='<div class="invested_by">Invested by <img src="'+src+ '" /></div>';
-			    		$(this).parent().append(html);
-			     });
+			    updateInvestorIcons(".startup_item");
 				
 			});		
 			

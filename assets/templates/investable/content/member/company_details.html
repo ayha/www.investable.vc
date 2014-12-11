@@ -6,6 +6,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
     <head>
        [[$page_head]] 
+       <link rel="stylesheet" href="[[++assets_url]]templates/investable/js/bxslider/jquery.bxslider.css">
+       <script src="[[++assets_url]]templates/investable/js/bxslider/jquery.bxslider.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -15,144 +17,192 @@
   	[[$site_nav]]
 
   
-    <div class="main_content text_page" id="[[*alias]]_content">
+    <div class="main_content company_details" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
     		<div class="page-header">
-				<h1>[[%investable.startup_opportunities? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+				<h1>[[%title.startups?  &namespace=`investable`]]</h1>
 			
 				
-				<div class="allclear"></div>
+				<div class="clearboth"></div>
 			</div>
 			<div class="member_content">
-				 <div class="note" style="text-align:right">[[%investable.all_currencies? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-				<div class="quick_facts">
-					<div class="project_logo col-md-4">
-						<div class="logo_holder" style="background-image:url([[*content_image:phpthumbof=`w=500&h=300`]]);"></div>
-						<div class="company_badges">
-							
+				<div class="company_meta">
+					<div class="company_title col-sm-5">
+						<h2>[[*longtitle]]</h2>
+						<h3><span class="industry">[[*industry]]</span> [[*country:ne=``:then=`| <span class="country">[[*country]]`]]</span></h3>
+					</div>
+					<div class="company_quick_links col-sm-7">
+							[[*youtube:ne=``:then=`
+								<div class="startup_badge video_badge"><a href="[[*youtube]]" target="_blank" class="watch_video  fancybox.iframe">[[%startups.watch_live_pitch? &topic=`default` &namespace=`investable` &language=`en`]]</a></div>
+							`]]
+
 							[[*rewards:ne=``:then=`
-								<div class="startup_badge reward_badge">[[%startups.rewards? &topic=`default` &namespace=`investable` &language=`en`]]<div class="hidden reward_content">[[*rewards]]</div></div>
+								<div class="startup_badge reward_badge"><a href="#">[[%rewards? &topic=`default` &namespace=`investable` &language=`en`]]<span class="hidden reward_content">[[*rewards]]</span></a></div>
 							`]]
 							
-							
-						</div>
+							<div class="startup_badge meet_startup"><a class="meet_company" data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Meet The Startup" href="#">[[%cta.meet? &namespace=`investable`]]</a></div>
+							<div class="clearboth"></div>
+
 					</div>
-					<div class="project_status col-md-8"> 
-						<h2>[[*longtitle]]</h2>
-						<h3><span class="industry">[[*industry]]</span>[[*country:ne=``:then=`, <span class="country">[[*country]]`]]</span></h3>
-						<div class="intro">[[*introtext:nl2br]]</div>
+					<div class="clearboth"></div>
+				</div>
+				<div class="quick_facts">
+					<div class="ribbon-wrapper"><div class="ribbon ribbon_white">Days Left</div></div>
+					<div class="company_slideshow col-md-8">
+						
+						<ul class="bxslider">
+						  <li><img src="[[*content_image]]" /></li>
+						  [[*slideshow1:ne=``:then=`
+						  <li><img src="[[*slideshow1]]" /></li>
+						  `]]
+						 
+						   [[*slideshow2:ne=``:then=`
+						  <li><img src="[[*slideshow2]]" /></li>
+						  `]]
+						  
+						   [[*slideshow3:ne=``:then=`
+						  <li><img src="[[*slideshow3]]" /></li>
+						  `]]
+						  
+						   [[*slideshow4:ne=``:then=`
+						  <li><img src="[[*slideshow4]]" /></li>
+						  `]]
+						  
+						   [[*slideshow5:ne=``:then=`
+						  <li><img src="[[*slideshow5]]" /></li>
+						  `]]
+						</ul>
+						
+						<div id="bx-pager" class="bx-pager">
+						  <a data-slide-index="0" href=""><img src="[[*content_image:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  [[*slideshow1:ne=``:then=`
+						  <a data-slide-index="1" href=""><img src="[[*slideshow1:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  `]]
+						    [[*slideshow1:ne=``:then=`
+						  <a data-slide-index="2" href=""><img src="[[*slideshow2:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  `]]
+						    [[*slideshow1:ne=``:then=`
+						  <a data-slide-index="3" href=""><img src="[[*slideshow3:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  `]]
+						    [[*slideshow1:ne=``:then=`
+						  <a data-slide-index="4" href=""><img src="[[*slideshow4:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  `]]
+						    [[*slideshow1:ne=``:then=`
+						  <a data-slide-index="5" href=""><img src="[[*slideshow5:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  `]]
+						  
+						</div>
+												
+					
+						
+					</div>
+					
+					<div class="project_status col-md-4"> 
+						
 						<div class="fund_status">
 							
-							[[*stage:ne=``:then=`
-							<div class="status_item col-xs-6 col-sm-4" id="stage" data-value="[[*stage]]">
-								<div class="status_name">[[%startups.stage? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[*stage]]</div>
-								<div class="allclear"></div>
-							</div>
-							`]]
+							
 							
 							[[*raised:ne=``:then=`
-							<div class="status_item col-xs-6  col-sm-4" id="raised" data-value="[[*raised]]">
+							<div class="status_item col-xs-6" id="raised" data-value="[[*raised]]">
 								<div class="status_name">[[%startups.funded? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number"></div>
-								<div class="allclear"></div>
+								<div class="clearboth"></div>
 							</div>
 							`]]
 							
-							<div class="status_item col-xs-6  col-sm-4" id="goal" data-value="[[*goal]]">
+							<div class="status_item col-xs-6 " id="goal" data-value="[[*goal]]">
 								<div class="status_name">[[%startups.goal? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*goal:is=``:then=`0`:else=`[[*goal:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]`]]</div>
-								<div class="allclear"></div>
+								<div class="clearboth"></div>
 							</div>
 							
-							[[*equity:ne=``:then=`
-							<div class="status_item  col-xs-6  col-sm-4" id="equity" data-value="[[*equity]]">
-								<div class="status_name">[[%startups.equity_offered? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[*equity]]</div>
-								<div class="allclear"></div>
+							[[*stage:ne=``:then=`
+							<div class="status_item col-xs-6 " id="stage" data-value="[[*stage]]">
+								<div class="status_name">[[%startups.stage? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+								<div class="status_number">[[*stage]]</div>
+								<div class="clearboth"></div>
 							</div>
 							`]]
 							
+							[[*equity:ne=``:then=`
+							<div class="status_item  col-xs-6 " id="equity" data-value="[[*equity]]">
+								<div class="status_name">[[%startups.equity_offered? &topic=`default` &namespace=`investable` &language=`en`]]</div>
+								<div class="status_number">[[*equity]]</div>
+								<div class="clearboth"></div>
+							</div>
+							`]]
+							
+							
+							
 							[[*premoney:ne=``:then=`
-							<div class="status_item  col-xs-6  col-sm-4" id="premoney" data-value="[[*premoney]]">
+							<div class="status_item  col-xs-6" id="premoney" data-value="[[*premoney]]">
 								<div class="status_name">[[%startups.premoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</div>
-								<div class="allclear"></div>
+								<div class="clearboth"></div>
 							</div>
 							`]]
 							
 							[[*postmoney:ne=``:then=`
-							<div class="status_item  col-xs-6  col-sm-4" id="postmoney" data-value="[[*postmoney]]">
+							<div class="status_item  col-xs-6" id="postmoney" data-value="[[*postmoney]]">
 								<div class="status_name">[[%startups.postmoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*postmoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</div>
-								<div class="allclear"></div>
+								<div class="clearboth"></div>
 							</div>
 							`]]
 							
 							
-							<div class="status_item col-xs-6  col-sm-4" id="countdown" data-target_date="[[*unpub_date]]">
+							<div class="status_item col-xs-6 " id="countdown" data-target_date="[[*unpub_date]]">
 								<div class="status_name">[[%startups.time_left_to_support? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number"></div>
-								<div class="allclear"></div>
+								<div class="clearboth"></div>
 							</div>
-							<div class="allclear"></div>
+							<div class="clearboth"></div>
 						</div>
 						
-						<div class="investment_badges">
-							[[*highlight_note:ne=``:then=`
-								<div class="highlight_note">[[*highlight_note]]</div>
-							`]]
-							[[*invested_by_nest:ne=``:then=`
-								<div class="startup_badge nest_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-							`]]
-							
-							[[*invested_by_angelvest:ne=``:then=`
-								<div class="startup_badge angelvest_badge">[[%startups.invested_by? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-							`]]
-							
-						</div>
+						
 					</div>
 					
-					<div class="allclear"></div>
-					
+					<div class="clearboth"></div>
+					<div class="key_investors">
+							[[*key_investors]]
+						</div>
 				</div>
 				
 				<div class="company_info">
-					<div class="company_details col-md-8">
+					<div class=" col-md-8">
 						
-						[[*youtube:ne=``:then=`
-						   <div class="company_pitch_video">
-							<iframe width="100%" height="300" src="//www.youtube.com/embed/[[getYouTubeId? &input=`[[*youtube]]`]]" frameborder="0" allowfullscreen></iframe>
-							</div>
-							
-						`]]
-						<div class="company_description">
+						
+						<div class="company_details">
 							
 							
-							[[*content:ne=``:then=`<h3>[[%startups.company_description? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*content]]`]]
+							[[*content:ne=``:then=`<h3 id="company_description">[[%title.company_description? &namespace=`investable`]]</h3>[[*content]]`]]
 							
-							[[*business_model:ne=``:then=`<h3>[[%startups.business_model? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*business_model]]`]]
-							[[*competitors:ne=``:then=`<h3>[[%startups.market_competition? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*competitors]]`]]
-							[[*product_description:ne=``:then=`<h3>[[%startups.product_description? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*product_description]]`]]
-							[[*projections:ne=``:then=`<h3>[[%startups.projections? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*projections]]`]]
+							[[*business_model:ne=``:then=`<h3 id="business_model">[[%title.business_model? &namespace=`investable`]]</h3>[[*business_model]]`]]
+							[[*competitors:ne=``:then=`<h3 id="market">[[%title.market_competition? &namespace=`investable`]]</h3>[[*competitors]]`]]
+							[[*product_description:ne=``:then=`<h3 id="product">[[%title.product_description? &namespace=`investable`]]</h3>[[*product_description]]`]]
+							[[*projections:ne=``:then=`<h3 id="projections">[[%title.projections? &namespace=`investable`]]</h3>[[*projections]]`]]
 							
-							[[*registered_ip:ne=``:then=`<h3>[[%startups.registered_ip? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*registered_ip]]`]]
-							[[*mobile_app:ne=``:then=`<h3>[[%startups.mobile_app? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*mobile_app]]`]]
-							[[*use_of_funds:ne=``:then=`<h3>[[%startups.use_of_funds? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*use_of_funds]]`]]
-							[[*news:ne=``:then=`<h3>[[%startups.news_press? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*news]]`]]
+							[[*registered_ip:ne=``:then=`<h3 id="registered_ip">[[%startups.registered_ip? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*registered_ip]]`]]
+							[[*mobile_app:ne=``:then=`<h3 id="mobile_app">[[%title.mobile_app? &namespace=`investable`]]</h3>[[*mobile_app]]`]]
+							[[*use_of_funds:ne=``:then=`<h3 id="use_of_funds">[[%title.use_of_funds? &namespace=`investable`]]</h3>[[*use_of_funds]]`]]
+							[[*news:ne=``:then=`<h3 id="news">[[%title.news? &namespace=`investable`]]</h3>[[*news]]`]]
+							<h3 id="financial_statements">[[%title.financial_statements? &namespace=`investable`]]</h3>
 							[[*fin_statements:is=``:then=`
-								<h3>Financial Statements</h3><p>Financial statements are available upon request.</p>
+								<p>Financial statements are available upon request.</p>
 							`:else=`
-								<h3>Financial Statements</h3>[[*fin_statements]]
+								[[*fin_statements]]
 							`]]
+							[[*downloads:ne=``:then=`<h3 id="downloads">[[%title.downloads? &namespace=`investable`]]</h3>[[*downloads]]`]]
+						
 							
 							<div class="company_investors">
 								[[!get_company_investors:ne=`0`:then=`
 								 <h3>[[%startups.investors_invested_in? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
 								  <div class="investor_list user_list">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`0`]]
-								  	<div class="allclear"></div>
+								  	<div class="clearboth"></div>
 								  	</div>
 								`? &getCount=`1`  &companyid=`[[*id]]` ]]
 								
@@ -163,26 +213,32 @@
 					        	[[!get_company_followers:ne=`0`:then=`
 					        	    <h3>[[%startups.investors_following? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
 								   <div class="follower_list user_list">[[!get_company_followers?  &getCount=`0`  &companyid=`[[*id]]` ]]
-								   	<div class="allclear"></div>
+								   	<div class="clearboth"></div>
 								   	</div>
 								`? &getCount=`1`  &companyid=`[[*id]]` ]]
 					        </div>
 							
 						</div>
 					</div>
-					<div class="company_founder col-md-4">
-						
+					<div class="col-md-4">
+						<div class="company_founder ">
 						[[!get_company_founders? &founders=`[[*founder]]`]]
-						
+						</div>
+						[[*why_we_love:ne=``:then=`
+						<div class="why_we_love">
+							[[*why_we_love]]
+							
+						</div>
+						`]]
 					</div>
-					<div class="allclear"></div>
+					<div class="clearboth"></div>
 				</div>
 				
 				<div class="floating_content">
 					<div class="support_company">
 						<a class="btn support_button invest_company" title="Support" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`1`]]</span>)</a>
 						<a class="btn support_button follow_company" title="Follow" href="#">[[%startups.add_favourite? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_followers? &companyid=`[[*id]]` &getCount=`1`]]</span>)</a>
-						<a class="btn support_button meet_company" title="Meet The Startup" href="#">[[%startups.meet? &topic=`default` &namespace=`investable` &language=`en`]]</a>
+						
 					</div>
 				</div>
 			</div>
@@ -196,7 +252,13 @@
    <script type="text/javascript">
    		 var percentage_raised = 0;
 			$(document).ready(function(){
-				var bottomPad = 80;
+				 updateInvestorIcons(".quick_facts");
+				$('.bxslider').bxSlider({
+				  pagerCustom: '#bx-pager',
+				  adaptiveHeight: true
+				});
+				
+				var bottomPad = 230;
 				
 				$(window).scroll(function(e){
 					$(".floating_content").finish();
@@ -325,6 +387,8 @@
 			    	});
 			    	
 			    });
+			    
+			   
 				
 			});
 			
