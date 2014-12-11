@@ -26,7 +26,10 @@
 				<div class="allclear"></div>
 			</div>
 			<div class="member_content">
-               <div id="feed_content"></div>
+               <div id="feed_content">
+               	
+               		
+               </div>
 			
 			</div>
 	    	
@@ -40,43 +43,21 @@
    	[[$member_footer]]
 	
    <script type="text/javascript">
-   			$('#feed_content').dcSocialStream({
-		feeds: {
-			
-			rss: {
-				id: '[[*rss_feeds]]'
-			},
-			facebook: {
-				id: '455528547892283',
-				out: 'intro,thumb,text,user,share'
-			},
-			
-			twitter: {
-				id: 'investableasia,#startup,#startuphk',
-				thumb: true,
-				url: '[[++assets_url]]lib/social_stream/twitter.php'
-			},
-			
-			
-			google: {
-				id: '101383478793760168461',
-				api_key: 'AIzaSyD00CRyUKuvfuRoT6V-5QsFctGttGqFqYg'
-			}
-			
-		},
-		rotate: {
-			delay: 0
-		},
-		twitterId: 'investableasia',
-		control: false,
-		filter: true,
-		wall: true,
-		cache: false,
-		max: 'limit',
-		limit: 10,
-		iconPath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/',
-		imagePath: '[[++assets_url]]lib/social_stream/images/dcsns-dark/'
-	});
+   		$(document).ready(function(){
+   			$("#feed_content").rssGrid({
+   					"newsCount": 10,
+					sources: [
+						{"name":"Techcrunch", "url":"http://feeds.feedburner.com/techcrunch/startups?format=xml", "icon": "/assets/images/template/techcrunch_icon.png"},
+						{"name":"WSJ Technology", "url":"http://online.wsj.com/xml/rss/3_7455.xml", "icon":  "/assets/images/template/wsj_icon.png"},
+						{"name": "NY Times", "url":"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml", "icon": "/assets/images/template/nytimes_icon.png"},
+						{"name":"Reuters", "url":"http://feeds.reuters.com/reuters/mergersNews?format=xml", "icon":"/assets/images/template/reuters_icon.png"},
+						{"name":"FinanceAsia", "url":"http://rss.feedsportal.com/c/32315/fe.ed/http://www.financeasia.com/RSS/rss.ashx?type=Category&ID=733", "icon":"/assets/images/template/financeasia_icon.png"}
+					]
+					
+			});
+				
+   			
+   		});
    </script>
 
      

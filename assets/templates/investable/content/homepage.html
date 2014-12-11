@@ -34,6 +34,11 @@
 	   		<div class="container">
 	   			<h2>[[%title.newsroom? &namespace=`investable` ]]</h2>
 	   		</div>
+	   		 
+	   		 <div class="feed_wrapper">
+	   		 <div id="feed_content"></div>
+
+			</div>	   		
 		</section>
 	    <section id="home_benefits" >
 	    	<div class="container">
@@ -77,8 +82,20 @@
 				responsive: 768
 
 			});
-			//$(".partner").hide();
-			//show_more_partners();
+			
+			
+			$("#feed_content").rssGrid({
+   					"newsCount": 2,
+					sources: [
+						{"name":"Techcrunch", "url":"http://feeds.feedburner.com/techcrunch/startups?format=xml", "icon": "/assets/images/template/techcrunch_icon.png"},
+						{"name":"WSJ Technology", "url":"http://online.wsj.com/xml/rss/3_7455.xml", "icon":  "/assets/images/template/wsj_icon.png"},
+						{"name": "NY Times", "url":"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml", "icon": "/assets/images/template/nytimes_icon.png"},
+						{"name":"Reuters", "url":"http://feeds.reuters.com/reuters/mergersNews?format=xml", "icon":"/assets/images/template/reuters_icon.png"},
+						{"name":"FinanceAsia", "url":"http://rss.feedsportal.com/c/32315/fe.ed/http://www.financeasia.com/RSS/rss.ashx?type=Category&ID=733", "icon":"/assets/images/template/financeasia_icon.png"}
+					]
+					
+			});
+			
 			partner_to = setInterval(function(){show_more_partners();}, 5000);
    			
    			$(".testimonial").hide();

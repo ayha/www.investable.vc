@@ -37,6 +37,7 @@
 	border:  5px solid #fff;
 	left: -5px;
 	background: #fff;
+	min-height:200px;
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);

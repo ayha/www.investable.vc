@@ -89,12 +89,12 @@
 			$(document).ready(function(){
 				
 				
-				$(".startup_item .startup_img .startup_logo").click(function(e){
+				$(".startup_item .startup_img, .startup_item .startup_title").click(function(e){
 					
-					window.location.href=$(this).parent().parent().data("url");
+					window.location.href=$(this).parent().data("url");
 				});
 				
-				$(".startup_item .startup_quickinfo h3").click(function(e){
+				$(".startup_item .startup_quickinfo .short_intro").click(function(e){
 					
 					window.location.href=$(this).parent().parent().data("url");
 				});

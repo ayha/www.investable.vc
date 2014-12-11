@@ -98,7 +98,7 @@ function show_member_by_hash(hash){
 	newDiv += '<h4>'+name+'</h4><h5>'+title+'</h5>'+content;
 	newDiv += "</div><div class='clearboth'></div>";
 	newDiv += "</div></div>";
-	$(".member_thumbnail[data-alias="+hash+"]").height(510);
+	$(".member_thumbnail[data-alias="+hash+"]").height(450);
 	
 	$(".member_thumbnail[data-alias="+hash+"]").append(newDiv);
 	$(".member_thumbnail .member_details").width(windowW-30);
