@@ -1269,13 +1269,27 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 }
 
 /* line 1366, ../sass/main.scss */
+.ribbon_details {
+  background-color: #20B6AE;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFB880), to(#F36B22));
+  background-image: -webkit-linear-gradient(top, #FFB880, #F36B22);
+  background-image: -moz-linear-gradient(top, #FFB880, #F36B22);
+  background-image: -ms-linear-gradient(top, #FFB880, #F36B22);
+  background-image: -o-linear-gradient(top, #FFB880, #F36B22);
+  color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 1381, ../sass/main.scss */
 .ribbon_white:before, .ribbon_white:after {
   border-top: 3px solid #6e8900;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
 }
 
-/* line 1374, ../sass/main.scss */
+/* line 1389, ../sass/main.scss */
 .ribbon:before {
   content: "";
   position: absolute;
@@ -1283,7 +1297,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   left: 0;
 }
 
-/* line 1381, ../sass/main.scss */
+/* line 1396, ../sass/main.scss */
 .ribbon:after {
   content: "";
   position: absolute;
@@ -1291,7 +1305,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   right: 0;
 }
 
-/* line 1386, ../sass/main.scss */
+/* line 1401, ../sass/main.scss */
 ​
 .member_form_wrapper {
   width: 100%;
@@ -1299,164 +1313,164 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   margin: 0 auto;
 }
 
-/* line 1400, ../sass/main.scss */
+/* line 1415, ../sass/main.scss */
 .connection_list {
   margin-bottom: 30px;
 }
 
-/* line 1406, ../sass/main.scss */
+/* line 1421, ../sass/main.scss */
 .connection_item img.profile_picture {
   max-width: 100%;
   max-height: 100%;
 }
 
-/* line 1412, ../sass/main.scss */
+/* line 1427, ../sass/main.scss */
 .highlight_notes {
   text-align: right;
   font-style: italic;
 }
 
-/* line 1417, ../sass/main.scss */
+/* line 1432, ../sass/main.scss */
 .support_button {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 
-/* line 1423, ../sass/main.scss */
+/* line 1438, ../sass/main.scss */
 .company_details .member_content {
   position: relative;
 }
-/* line 1427, ../sass/main.scss */
+/* line 1442, ../sass/main.scss */
 .company_details .quick_facts {
   background: #20B6AE;
   color: #fff;
   margin-bottom: 20px;
   padding: 20px 15px;
 }
-/* line 1435, ../sass/main.scss */
+/* line 1450, ../sass/main.scss */
 .company_details .status_item {
   margin-bottom: 25px;
 }
-/* line 1437, ../sass/main.scss */
+/* line 1452, ../sass/main.scss */
 .company_details .status_item .status_name {
   font-size: 12px;
   font-style: italic;
 }
-/* line 1442, ../sass/main.scss */
+/* line 1457, ../sass/main.scss */
 .company_details .status_item .status_number {
   font-size: 20px;
 }
-/* line 1450, ../sass/main.scss */
+/* line 1465, ../sass/main.scss */
 .company_details .company_founder {
   padding: 10px;
   background: #f8f8f8;
   margin-bottom: 15px;
 }
-/* line 1457, ../sass/main.scss */
+/* line 1472, ../sass/main.scss */
 .company_details .founder_profile h3 {
   font-size: 14px;
   color: #F36B22;
 }
-/* line 1463, ../sass/main.scss */
+/* line 1478, ../sass/main.scss */
 .company_details .founder_profile h3.founder_title {
   color: #636363;
 }
-/* line 1467, ../sass/main.scss */
+/* line 1482, ../sass/main.scss */
 .company_details .founder_profile .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
-/* line 1472, ../sass/main.scss */
+/* line 1487, ../sass/main.scss */
 .company_details .founder_profile .profile_content, .company_details .founder_profile .profile_content p, .company_details .founder_profile .profile_content li {
   font-size: 12px;
 }
-/* line 1478, ../sass/main.scss */
+/* line 1493, ../sass/main.scss */
 .company_details .startup_downloads {
   padding: 10px;
   background-color: #FFB880;
   color: #fff;
 }
-/* line 1482, ../sass/main.scss */
+/* line 1497, ../sass/main.scss */
 .company_details .startup_downloads p, .company_details .startup_downloads a, .company_details .startup_downloads h3 {
   color: #fff;
 }
-/* line 1486, ../sass/main.scss */
+/* line 1501, ../sass/main.scss */
 .company_details .startup_downloads h3 {
   font-size: 16px;
 }
-/* line 1493, ../sass/main.scss */
+/* line 1508, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1497, ../sass/main.scss */
+/* line 1512, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1503, ../sass/main.scss */
+/* line 1518, ../sass/main.scss */
 .company_details .why_we_love {
   padding: 10px;
   background-color: #FFB880;
 }
-/* line 1509, ../sass/main.scss */
+/* line 1524, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1513, ../sass/main.scss */
+/* line 1528, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1520, ../sass/main.scss */
+/* line 1535, ../sass/main.scss */
 .company_details .company_details h3 {
   color: #20B6AE;
 }
-/* line 1526, ../sass/main.scss */
+/* line 1541, ../sass/main.scss */
 .company_details .company_title h2 {
   color: #20B6AE;
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0;
 }
-/* line 1533, ../sass/main.scss */
+/* line 1548, ../sass/main.scss */
 .company_details .company_title h3 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 1542, ../sass/main.scss */
+/* line 1557, ../sass/main.scss */
 .company_details .company_quick_links {
   padding-top: 25px;
 }
-/* line 1547, ../sass/main.scss */
+/* line 1562, ../sass/main.scss */
 .company_details .quick_facts {
   position: relative;
 }
-/* line 1549, ../sass/main.scss */
+/* line 1564, ../sass/main.scss */
 .company_details .quick_facts .key_investors {
   position: absolute;
   bottom: 15px;
   right: 15px;
 }
-/* line 1556, ../sass/main.scss */
+/* line 1571, ../sass/main.scss */
 .company_details .quick_facts .key_investors .invested_by {
   text-align: right;
 }
 
-/* line 1566, ../sass/main.scss */
+/* line 1581, ../sass/main.scss */
 .fund_details .quick_facts {
   background: #20B6AE;
   padding: 15px;
   color: #fff;
   font-size: 16px;
 }
-/* line 1573, ../sass/main.scss */
+/* line 1588, ../sass/main.scss */
 .fund_details .quick_facts p {
   color: #fff;
   font-size: 16px;
 }
-/* line 1578, ../sass/main.scss */
+/* line 1593, ../sass/main.scss */
 .fund_details .project_logo .logo_holder {
   background-color: #fff;
   min-height: 250px;
@@ -1465,30 +1479,30 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   background-position: center center;
   background-size: contain;
 }
-/* line 1589, ../sass/main.scss */
+/* line 1604, ../sass/main.scss */
 .fund_details .company_description h2 {
   color: #20B6AE;
 }
-/* line 1594, ../sass/main.scss */
+/* line 1609, ../sass/main.scss */
 .fund_details .fund_manager {
   background-color: #f8f8f8;
 }
-/* line 1597, ../sass/main.scss */
+/* line 1612, ../sass/main.scss */
 .fund_details .fund_manager h2 {
   color: #20B6AE;
 }
-/* line 1605, ../sass/main.scss */
+/* line 1620, ../sass/main.scss */
 .fund_details .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
 
-/* line 1612, ../sass/main.scss */
+/* line 1627, ../sass/main.scss */
 .member_content {
   position: relative;
 }
 
-/* line 1616, ../sass/main.scss */
+/* line 1631, ../sass/main.scss */
 .floating_content {
   display: block;
   position: absolute;
@@ -1496,7 +1510,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   z-index: 50;
 }
-/* line 1622, ../sass/main.scss */
+/* line 1637, ../sass/main.scss */
 .floating_content .support_company {
   text-align: right;
 }

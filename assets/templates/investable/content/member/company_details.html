@@ -49,7 +49,7 @@
 					<div class="clearboth"></div>
 				</div>
 				<div class="quick_facts">
-					<div class="ribbon-wrapper"><div class="ribbon ribbon_white">Days Left</div></div>
+					<div class="ribbon-wrapper"><div class="ribbon ribbon_details">Days Left</div></div>
 					<div class="company_slideshow col-md-8">
 						
 						<ul class="bxslider">
@@ -417,6 +417,11 @@
                 days = parseInt(seconds_left / 86400);
 				
 				$("#countdown .status_number").html(days + " [[%startups.days? &topic=`default` &namespace=`investable` &language=`en`]]");
+				
+				if(days <=10){
+					$(".quick_facts").find(".ribbon").html(days + " Days Left");
+					$(".quick_facts").find(".ribbon").addClass("active");
+				}
 				
 			}
    </script>
