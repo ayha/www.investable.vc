@@ -1,5 +1,4 @@
 <?php
-
 $emailTo = $modx->getOption("startup_reg_email");
 $emailTo2 = $modx->getOption("member_email");
 $emailCC = $modx->getOption("email_cc");

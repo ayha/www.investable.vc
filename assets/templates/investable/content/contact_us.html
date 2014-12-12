@@ -47,7 +47,11 @@
         var latlng = new google.maps.LatLng([[*lat]],[[*lng]]);
         var mapOptions = {
           center: latlng,
-          zoom: 17
+          zoom: 17,
+           zoomControl: true,
+		    zoomControlOptions: {
+		      style: google.maps.ZoomControlStyle.SMALL
+		    }
         };
       
         gmap = new google.maps.Map(document.getElementById('map'),
@@ -56,7 +60,7 @@
         marker =  new google.maps.Marker({
             position: latlng,
             map: gmap,
-            icon: "[[!++site_url]]assets/images/investable-icon.png",
+            icon: "[[!++site_url]]favicon.png",
             title: 'Investable'
             });
       }
@@ -65,6 +69,7 @@
       $(".map_expand").on("click", function(e){
       		e.preventDefault();
       		$(".map_wrapper").toggleClass("expand");
+      		gmap.panTo({lat:[[*lat]], lng:[[*lng]]});
       	
       });
    </script>
