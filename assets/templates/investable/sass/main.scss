@@ -1412,6 +1412,11 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         
 }
 
+.highlight_notes{
+    text-align:right;
+    font-style:italic;
+}
+
 .support_button{
   
   @include box-shadow(); 
@@ -1473,8 +1478,31 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
       
     } 
     
-    
+    .startup_downloads{
+      padding:10px;
+      background-color:$rosebud;
+      color:#fff;    
+      p, a, h3{
+         color:#fff
+      }
       
+      h3{
+        font-size:16px;
+      }
+      
+    }
+      
+      
+      .why_we_love, .why_we_love p, .why_we_love a{
+          color:#fff;
+      }
+      
+      .why_we_love h3{
+          font-size:16px;
+          color:#fff;
+         
+        
+      } 
       .why_we_love{
           padding:10px;
           background-color:$rosebud;

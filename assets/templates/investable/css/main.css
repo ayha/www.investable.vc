@@ -1306,123 +1306,152 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 }
 
 /* line 1415, ../sass/main.scss */
+.highlight_notes {
+  text-align: right;
+  font-style: italic;
+}
+
+/* line 1420, ../sass/main.scss */
 .support_button {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 
-/* line 1421, ../sass/main.scss */
+/* line 1426, ../sass/main.scss */
 .company_details .member_content {
   position: relative;
 }
-/* line 1425, ../sass/main.scss */
+/* line 1430, ../sass/main.scss */
 .company_details .quick_facts {
   background: #20B6AE;
   color: #fff;
   margin-bottom: 20px;
   padding: 20px 15px;
 }
-/* line 1433, ../sass/main.scss */
+/* line 1438, ../sass/main.scss */
 .company_details .status_item {
   margin-bottom: 25px;
 }
-/* line 1435, ../sass/main.scss */
+/* line 1440, ../sass/main.scss */
 .company_details .status_item .status_name {
   font-size: 12px;
   font-style: italic;
 }
-/* line 1440, ../sass/main.scss */
+/* line 1445, ../sass/main.scss */
 .company_details .status_item .status_number {
   font-size: 20px;
 }
-/* line 1448, ../sass/main.scss */
+/* line 1453, ../sass/main.scss */
 .company_details .company_founder {
   padding: 10px;
   background: #f8f8f8;
   margin-bottom: 15px;
 }
-/* line 1455, ../sass/main.scss */
+/* line 1460, ../sass/main.scss */
 .company_details .founder_profile h3 {
   font-size: 14px;
   color: #F36B22;
 }
-/* line 1461, ../sass/main.scss */
+/* line 1466, ../sass/main.scss */
 .company_details .founder_profile h3.founder_title {
   color: #636363;
 }
-/* line 1465, ../sass/main.scss */
+/* line 1470, ../sass/main.scss */
 .company_details .founder_profile .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
-/* line 1470, ../sass/main.scss */
+/* line 1475, ../sass/main.scss */
 .company_details .founder_profile .profile_content, .company_details .founder_profile .profile_content p, .company_details .founder_profile .profile_content li {
   font-size: 12px;
 }
-/* line 1478, ../sass/main.scss */
-.company_details .why_we_love {
+/* line 1481, ../sass/main.scss */
+.company_details .startup_downloads {
   padding: 10px;
   background-color: #FFB880;
+  color: #fff;
 }
-/* line 1484, ../sass/main.scss */
+/* line 1485, ../sass/main.scss */
+.company_details .startup_downloads p, .company_details .startup_downloads a, .company_details .startup_downloads h3 {
+  color: #fff;
+}
+/* line 1489, ../sass/main.scss */
+.company_details .startup_downloads h3 {
+  font-size: 16px;
+}
+/* line 1496, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1488, ../sass/main.scss */
+/* line 1500, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1495, ../sass/main.scss */
+/* line 1506, ../sass/main.scss */
+.company_details .why_we_love {
+  padding: 10px;
+  background-color: #FFB880;
+}
+/* line 1512, ../sass/main.scss */
+.company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
+  color: #fff;
+}
+/* line 1516, ../sass/main.scss */
+.company_details .why_we_love h3 {
+  font-size: 16px;
+  color: #fff;
+}
+/* line 1523, ../sass/main.scss */
 .company_details .company_details h3 {
   color: #20B6AE;
 }
-/* line 1501, ../sass/main.scss */
+/* line 1529, ../sass/main.scss */
 .company_details .company_title h2 {
   color: #20B6AE;
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0;
 }
-/* line 1508, ../sass/main.scss */
+/* line 1536, ../sass/main.scss */
 .company_details .company_title h3 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 1517, ../sass/main.scss */
+/* line 1545, ../sass/main.scss */
 .company_details .company_quick_links {
   padding-top: 25px;
 }
-/* line 1522, ../sass/main.scss */
+/* line 1550, ../sass/main.scss */
 .company_details .quick_facts {
   position: relative;
 }
-/* line 1524, ../sass/main.scss */
+/* line 1552, ../sass/main.scss */
 .company_details .quick_facts .key_investors {
   position: absolute;
   bottom: 15px;
   right: 15px;
 }
-/* line 1531, ../sass/main.scss */
+/* line 1559, ../sass/main.scss */
 .company_details .quick_facts .key_investors .invested_by {
   text-align: right;
 }
 
-/* line 1541, ../sass/main.scss */
+/* line 1569, ../sass/main.scss */
 .fund_details .quick_facts {
   background: #20B6AE;
   padding: 15px;
   color: #fff;
   font-size: 16px;
 }
-/* line 1548, ../sass/main.scss */
+/* line 1576, ../sass/main.scss */
 .fund_details .quick_facts p {
   color: #fff;
   font-size: 16px;
 }
-/* line 1553, ../sass/main.scss */
+/* line 1581, ../sass/main.scss */
 .fund_details .project_logo .logo_holder {
   background-color: #fff;
   min-height: 250px;
@@ -1431,30 +1460,30 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   background-position: center center;
   background-size: contain;
 }
-/* line 1564, ../sass/main.scss */
+/* line 1592, ../sass/main.scss */
 .fund_details .company_description h2 {
   color: #20B6AE;
 }
-/* line 1569, ../sass/main.scss */
+/* line 1597, ../sass/main.scss */
 .fund_details .fund_manager {
   background-color: #f8f8f8;
 }
-/* line 1572, ../sass/main.scss */
+/* line 1600, ../sass/main.scss */
 .fund_details .fund_manager h2 {
   color: #20B6AE;
 }
-/* line 1580, ../sass/main.scss */
+/* line 1608, ../sass/main.scss */
 .fund_details .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
 
-/* line 1587, ../sass/main.scss */
+/* line 1615, ../sass/main.scss */
 .member_content {
   position: relative;
 }
 
-/* line 1591, ../sass/main.scss */
+/* line 1619, ../sass/main.scss */
 .floating_content {
   display: block;
   position: absolute;
@@ -1462,7 +1491,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   z-index: 50;
 }
-/* line 1597, ../sass/main.scss */
+/* line 1625, ../sass/main.scss */
 .floating_content .support_company {
   text-align: right;
 }

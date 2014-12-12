@@ -170,7 +170,10 @@
 							[[*key_investors]]
 						</div>
 				</div>
-				
+				<div class="highlight_notes">
+					[[*highlight_notes]]
+					
+				</div>
 				<div class="company_info">
 					<div class=" col-md-8">
 						
@@ -195,8 +198,7 @@
 							`:else=`
 								[[*fin_statements]]
 							`]]
-							[[*downloads:ne=``:then=`<h3 id="downloads">[[%title.downloads? &namespace=`investable`]]</h3>[[*downloads]]`]]
-						
+							
 							
 							<div class="company_investors">
 								[[!get_company_investors:ne=`0`:then=`
@@ -224,6 +226,15 @@
 						<div class="company_founder ">
 						[[!get_company_founders? &founders=`[[*founder]]`]]
 						</div>
+						
+						[[*downloads:ne=``:then=`
+						<div class="startup_downloads">
+							<h3>[[%title.downloads? &namespace=`investable`]]</h3>
+							[[*downloads]]
+						</div>
+						`]]
+						
+						
 						[[*why_we_love:ne=``:then=`
 						<div class="why_we_love">
 							[[*why_we_love]]
