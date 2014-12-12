@@ -58,6 +58,7 @@
 	.rssGrid-item{
 		width:100%;	
 		max-width:none;
+		margin:5px 0;
 	}	
 	
 	.rssGrid-item .news_img{
