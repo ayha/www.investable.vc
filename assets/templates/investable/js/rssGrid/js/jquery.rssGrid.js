@@ -57,7 +57,7 @@ $.fn.rssGrid = function(options){
 				//console.log(rssNode.mediaGroups[i].contents[0].url);
 				var url = rssNode.mediaGroups[i].contents[0].url;
 				if(typeof(url) != "undefined" && url !=""){
-					nodeHTML += '<div class="news_img" style="background:url('+url+')"></div>';
+					nodeHTML += '<div class="news_img" style="background-image:url('+url+')"></div>';
 					break;
 				}
 				 
@@ -70,7 +70,7 @@ $.fn.rssGrid = function(options){
 		outputHTML.push(nodeHTML);
 		nodeObj = $.parseHTML(nodeHTML);
 		_grid.isotope().prepend(nodeObj ).isotope( 'appended', nodeObj ).isotope('layout');
-		nodeObj.on("click", function(e){
+		$(nodeObj).on("click", function(e){
 			e.preventDefault();
 			var url = $(this).data("url");
 			window.open(url,'_blank');
