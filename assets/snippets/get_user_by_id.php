@@ -19,6 +19,11 @@ if(!empty($uid) && is_numeric($uid)){
          $placeholders[$k] = $v;
       }
       
+	  if(empty($placeholders["displayname"])){
+	  		$placeholders["displayname"] = substr($placeholders["fullname"], 0, strpos($placeholders["fullname"], " "));
+		
+	  }
+	  
       // get user avatar - requires modAvatar snippet
       $photo = $modx->runSnippet("modAvatar", array("userid"=>$row["internalKey"]));
 
