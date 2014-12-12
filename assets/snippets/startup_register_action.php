@@ -22,7 +22,7 @@ $message = "<p>Hi,</p><p>There is a new startup registration from Investable.vc 
 $message .= "<h3>Founder Information</h3><p>First Name: ".$_POST["firstname"]."<br />Last Name: ".$_POST["lastname"]."<br />Email: ".$_POST["email"]."</p><hr />";
 
 $message .= "<h3>Company Information</h3>";
-$message .= "<p>Company Name:<br />".nl2br($_POST["startup_company_name"])."</p>";
+$message .= "<p>Company Name:<br />".$_POST["startup_name"]."</p>";
 $message .= "<p>Business Description:<br />".nl2br($_POST["company_description"])."</p>";
 $message .= "<p>Market Opportunities:<br />".nl2br($_POST["market_opportunities"])."</p>";
 $message .= "<p>Competitive Advantage:<br />".nl2br($_POST["competitive_advantage"])."</p>";
