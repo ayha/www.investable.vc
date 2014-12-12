@@ -38,6 +38,9 @@
 	height:200px;
 	width:100%;
 	text-align:center;
+	background-position:center center;
+	background-repeat: no-repeat;
+	background-size:cover;
 }
 
 .rssGrid-item .news_img img{
@@ -45,9 +48,7 @@
 	height:200px;
 	display:block;
 	margin:0 auto;
-	background-position:center center;
-	background-repeat: no-repeat;
-	background-size:cover;
+	
 }
 
 
