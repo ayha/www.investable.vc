@@ -342,7 +342,7 @@ input[type=submit], button{
       right:0;
     }
     
-    .dropdown_menu li{
+    .dropdown-menu li{
       background:none;
       padding-left:0;
       margin-left:0;
@@ -1005,6 +1005,9 @@ footer{
     ul.team_list li{
       display:inline-block;
       position:relative;
+      background:none;
+      margin:0;
+      padding:0;
     }
       
      ul.team_list li .member_thumbnail{
