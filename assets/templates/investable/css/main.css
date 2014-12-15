@@ -1373,158 +1373,163 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 }
 
 /* line 1482, ../sass/main.scss */
+.connection_item {
+  margin-bottom: 15px;
+}
+
+/* line 1487, ../sass/main.scss */
 .connection_item img.profile_picture {
   max-width: 90%;
   max-height: 90%;
 }
 
-/* line 1488, ../sass/main.scss */
+/* line 1493, ../sass/main.scss */
 .highlight_notes {
   text-align: right;
   font-style: italic;
 }
 
-/* line 1493, ../sass/main.scss */
+/* line 1498, ../sass/main.scss */
 .support_button {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 
-/* line 1499, ../sass/main.scss */
+/* line 1504, ../sass/main.scss */
 .company_details .member_content {
   position: relative;
 }
-/* line 1503, ../sass/main.scss */
+/* line 1508, ../sass/main.scss */
 .company_details .quick_facts {
   background: #20B6AE;
   color: #fff;
   margin-bottom: 20px;
   padding: 20px 15px;
 }
-/* line 1511, ../sass/main.scss */
+/* line 1516, ../sass/main.scss */
 .company_details .status_item {
   margin-bottom: 25px;
 }
-/* line 1513, ../sass/main.scss */
+/* line 1518, ../sass/main.scss */
 .company_details .status_item .status_name {
   font-size: 12px;
   font-style: italic;
 }
-/* line 1518, ../sass/main.scss */
+/* line 1523, ../sass/main.scss */
 .company_details .status_item .status_number {
   font-size: 20px;
 }
-/* line 1526, ../sass/main.scss */
+/* line 1531, ../sass/main.scss */
 .company_details .company_founder {
   padding: 10px;
   background: #f8f8f8;
   margin-bottom: 15px;
 }
-/* line 1533, ../sass/main.scss */
+/* line 1538, ../sass/main.scss */
 .company_details .founder_profile h3 {
   font-size: 14px;
   color: #F36B22;
 }
-/* line 1539, ../sass/main.scss */
+/* line 1544, ../sass/main.scss */
 .company_details .founder_profile h3.founder_title {
   color: #636363;
 }
-/* line 1543, ../sass/main.scss */
+/* line 1548, ../sass/main.scss */
 .company_details .founder_profile .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
-/* line 1548, ../sass/main.scss */
+/* line 1553, ../sass/main.scss */
 .company_details .founder_profile .profile_content, .company_details .founder_profile .profile_content p, .company_details .founder_profile .profile_content li {
   font-size: 12px;
 }
-/* line 1554, ../sass/main.scss */
+/* line 1559, ../sass/main.scss */
 .company_details .startup_downloads {
   padding: 10px;
   background-color: #FFB880;
   color: #fff;
 }
-/* line 1558, ../sass/main.scss */
+/* line 1563, ../sass/main.scss */
 .company_details .startup_downloads p, .company_details .startup_downloads a, .company_details .startup_downloads h3 {
   color: #fff;
 }
-/* line 1562, ../sass/main.scss */
+/* line 1567, ../sass/main.scss */
 .company_details .startup_downloads h3 {
   font-size: 16px;
 }
-/* line 1569, ../sass/main.scss */
+/* line 1574, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1573, ../sass/main.scss */
+/* line 1578, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1579, ../sass/main.scss */
+/* line 1584, ../sass/main.scss */
 .company_details .why_we_love {
   padding: 10px;
   background-color: #FFB880;
 }
-/* line 1585, ../sass/main.scss */
+/* line 1590, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1589, ../sass/main.scss */
+/* line 1594, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1596, ../sass/main.scss */
+/* line 1601, ../sass/main.scss */
 .company_details .company_details h3 {
   color: #20B6AE;
 }
-/* line 1602, ../sass/main.scss */
+/* line 1607, ../sass/main.scss */
 .company_details .company_title h2 {
   color: #20B6AE;
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0;
 }
-/* line 1609, ../sass/main.scss */
+/* line 1614, ../sass/main.scss */
 .company_details .company_title h3 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 1618, ../sass/main.scss */
+/* line 1623, ../sass/main.scss */
 .company_details .company_quick_links {
   padding-top: 25px;
 }
-/* line 1623, ../sass/main.scss */
+/* line 1628, ../sass/main.scss */
 .company_details .quick_facts {
   position: relative;
 }
-/* line 1625, ../sass/main.scss */
+/* line 1630, ../sass/main.scss */
 .company_details .quick_facts .key_investors {
   position: absolute;
   bottom: 15px;
   right: 15px;
 }
-/* line 1632, ../sass/main.scss */
+/* line 1637, ../sass/main.scss */
 .company_details .quick_facts .key_investors .invested_by {
   text-align: right;
 }
 
-/* line 1642, ../sass/main.scss */
+/* line 1647, ../sass/main.scss */
 .fund_details .quick_facts {
   background: #20B6AE;
   padding: 15px;
   color: #fff;
   font-size: 16px;
 }
-/* line 1649, ../sass/main.scss */
+/* line 1654, ../sass/main.scss */
 .fund_details .quick_facts p {
   color: #fff;
   font-size: 16px;
 }
-/* line 1654, ../sass/main.scss */
+/* line 1659, ../sass/main.scss */
 .fund_details .project_logo .logo_holder {
   background-color: #fff;
   min-height: 250px;
@@ -1533,30 +1538,30 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   background-position: center center;
   background-size: contain;
 }
-/* line 1665, ../sass/main.scss */
+/* line 1670, ../sass/main.scss */
 .fund_details .company_description h2 {
   color: #20B6AE;
 }
-/* line 1670, ../sass/main.scss */
+/* line 1675, ../sass/main.scss */
 .fund_details .fund_manager {
   background-color: #f8f8f8;
 }
-/* line 1673, ../sass/main.scss */
+/* line 1678, ../sass/main.scss */
 .fund_details .fund_manager h2 {
   color: #20B6AE;
 }
-/* line 1681, ../sass/main.scss */
+/* line 1686, ../sass/main.scss */
 .fund_details .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
 
-/* line 1688, ../sass/main.scss */
+/* line 1693, ../sass/main.scss */
 .member_content {
   position: relative;
 }
 
-/* line 1692, ../sass/main.scss */
+/* line 1697, ../sass/main.scss */
 .floating_content {
   display: block;
   position: absolute;
@@ -1564,12 +1569,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   z-index: 50;
 }
-/* line 1698, ../sass/main.scss */
+/* line 1703, ../sass/main.scss */
 .floating_content .support_company {
   text-align: right;
 }
 
-/* line 1704, ../sass/main.scss */
+/* line 1709, ../sass/main.scss */
 #info_session_form .form_thankyou_message {
   display: none;
 }
