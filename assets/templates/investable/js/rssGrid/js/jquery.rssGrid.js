@@ -51,7 +51,7 @@ $.fn.rssGrid = function(options){
 	function createFeedItem(rssNode, feed_source, source_icon){
 		//console.log(rssNode);
 		//console.log(settings.total + " length: "+ _grid.children(".rssGrid-item").length);
-		if(settings.total >= && _grid.children(".rssGrid-item").length < settings.total){
+		if(settings.total >= 0 && _grid.children(".rssGrid-item").length < settings.total){
 		var nodeHTML = '<div class="rssGrid-item" data-source="'+feed_source+'" data-icon="'+source_icon+'" data-date="'+rssNode["publishedDate"]+'"" data-url="'+rssNode["link"]+'">';
 		nodeHTML += '<div class="source_icon_wrapper"><img src="'+source_icon+'" class="source_icon" alt="feed_source" /></div>';
 		
