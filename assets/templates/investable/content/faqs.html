@@ -37,7 +37,7 @@
    		$(document).ready(function(){
    			$(".faq_item h4").on("click", function(e){
    			e.preventDefault();
-   			$(this).toggleClass("active");
+   			$(this).parent().toggleClass("active");
    			
    		});
    		$("#info_session_form .form_thankyou_message").hide();
