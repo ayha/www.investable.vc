@@ -418,7 +418,36 @@ footer{
   list-style-type:none;
   }
   
-  .footer_social a.footer_social_icon{
+  
+
+#newsletter_form input[type=submit]{
+  border: 1px solid #ffffff;
+  color:#FFFFFF;
+  background: transparent;
+}
+
+#newsletter_form input[type=submit]:hover{
+  border:1px solid $turquoise;
+  background:#FFFFFF;
+  color:$turquoise;
+  
+}
+
+.copyright{
+  font-size:11px;
+  color:#fff;
+  margin-top:15px;
+  
+}
+.footer_column{
+  margin-bottom:30px;
+}
+
+
+}
+
+
+.footer_social a.footer_social_icon{
     display:inline-block;
     width:22px;
     height:22px;
@@ -453,32 +482,6 @@ footer{
 
  .footer_social .angel{
   background-image:url(../../../images/template/social_angelco_18x18.png);
-}
-
-#newsletter_form input[type=submit]{
-  border: 1px solid #ffffff;
-  color:#FFFFFF;
-  background: transparent;
-}
-
-#newsletter_form input[type=submit]:hover{
-  border:1px solid $turquoise;
-  background:#FFFFFF;
-  color:$turquoise;
-  
-}
-
-.copyright{
-  font-size:11px;
-  color:#fff;
-  margin-top:15px;
-  
-}
-.footer_column{
-  margin-bottom:30px;
-}
-
-
 }
 
 
@@ -1154,7 +1157,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         } 
         
         ul li{
-          font-style:italic;
+          
         }   
      }
 
