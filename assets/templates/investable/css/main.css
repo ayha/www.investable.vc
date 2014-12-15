@@ -357,6 +357,7 @@ input[type=submit], button {
 footer {
   background-color: #20B6AE;
   color: #ffffff;
+  margin-top: 25px;
 }
 /* line 397, ../sass/main.scss */
 footer h3, footer h3 a, footer h3 a:hover, footer h3 a:active {
