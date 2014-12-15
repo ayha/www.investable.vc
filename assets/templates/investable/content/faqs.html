@@ -28,14 +28,51 @@
 	  	
 	</div>
 	[[$page_footer]]
-   
-	
+   	
+	<div class="hidden">
+				[[$info_session_form]]
+				
+				</div>
    <script type="text/javascript">
-   		$(".faq_item").on("click", function(e){
+   		$(document).ready(function(){
+   			$(".faq_item").on("click", function(e){
    			e.preventDefault();
    			$(this).toggleClass("active");
    			
    		});
+   		$("#info_session_form .form_thankyou_message").hide();
+   			 $("a.info_session_button").click(function(e){
+			    	e.preventDefault();
+			    	$.fancybox.open("#info_session_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	})
+			    	
+			    });
+			    
+			    $("#info_submit").click(function(e){
+			    	e.preventDefault();
+			    	var fullname = $("#info_session_form #info_fullname").val();
+			    	var email = $("#info_session_form #info_email").val();
+			    	var contact = $("#info_session_form #info_contact").val();
+			    	var remarks = $("#info_session_form #info_remarks").val();
+			    	$.ajax($("#info_session_form").attr("action"),{
+			    		type:"POST",
+			    		data: {"fullname":fullname, "email":email, "contact":contact, "remarks":remarks},
+			    		complete:function(xhr, status){
+			    			console.log(xhr);
+			    			if(status == "success" && xhr.responseText=="1"){
+			    			    $("#info_session_form .form_section").hide();
+			    			    $("#info_session_form .form_thankyou_message").show();
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    });
+   			
+   		});
+   		
    </script>
 
      

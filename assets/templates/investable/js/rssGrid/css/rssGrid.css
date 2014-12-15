@@ -1,7 +1,7 @@
 .rssGrid-item{
-	width:21%;
+	width:260px;
 	display:inline-block;
-	margin:5px 1%;
+	margin:10px 15px;
 	border:1px solid #cccccc;
 	background-color:#fff;
 	min-width:200px;

@@ -13,7 +13,8 @@ $.fn.rssGrid = function(options){
 	var settings = $.extend({
 		"sources": [],
 		"newsCount": 5,
-		"boxWidth" : 300,
+		
+		"total"	: 0,  // limit the total number of articles to be displayed, 0=unlimited
 		"containerWidth":"100%",
 		"showSource": false
 	}, options);
@@ -49,12 +50,14 @@ $.fn.rssGrid = function(options){
 	
 	function createFeedItem(rssNode, feed_source, source_icon){
 		//console.log(rssNode);
+		//console.log(settings.total + " length: "+ _grid.children(".rssGrid-item").length);
+		if(_grid.children(".rssGrid-item").length < settings.total){
 		var nodeHTML = '<div class="rssGrid-item" data-source="'+feed_source+'" data-icon="'+source_icon+'" data-date="'+rssNode["publishedDate"]+'"" data-url="'+rssNode["link"]+'">';
 		nodeHTML += '<div class="source_icon_wrapper"><img src="'+source_icon+'" class="source_icon" alt="feed_source" /></div>';
 		
 		if(typeof(rssNode.mediaGroups) != 'undefined' && parseInt(rssNode.mediaGroups.length) >0){
 			for(var i=0; i<rssNode.mediaGroups.length; i++){
-				//console.log(rssNode.mediaGroups[i].contents[0].url);
+				
 				var url = rssNode.mediaGroups[i].contents[0].url;
 				if(typeof(url) != "undefined" && url !=""){
 					nodeHTML += '<div class="news_img" style="background-image:url('+url+')"></div>';
@@ -75,6 +78,7 @@ $.fn.rssGrid = function(options){
 			var url = $(this).data("url");
 			window.open(url,'_blank');
 		});
+		}
 		
 	}
 	
