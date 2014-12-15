@@ -156,6 +156,20 @@ body{
  
 }
 
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    background-image: url(../../../images/template/bullet_turquoise.png);
+    background-repeat: no-repeat;
+    background-position: 0px center; 
+    padding-left: 15px; 
+    margin-left:10px;
+}
+
 .clearboth{
   clear:both;
 }
@@ -282,6 +296,12 @@ input[type=submit], button{
   background-size:contain;
   width:196px;
   margin-left:0 !important;
+}
+
+.navbar-nav li{
+  background:none;
+  padding:0;
+  margin:0;
 }
 
 .navbar-nav>li>a, .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
