@@ -607,18 +607,18 @@ h1.site-tagline {
   padding-right: 25px;
   background-position: left top;
   background-repeat: no-repeat;
-  height: 200px;
+  height: 230px;
 }
 @media (max-width: 990px) {
   /* line 648, ../sass/main.scss */
   #home_benefits .benefit, #about_members-benefits .benefit {
-    height: 220px;
+    height: 290px;
   }
 }
 @media (max-width: 767px) {
   /* line 655, ../sass/main.scss */
   #home_benefits .benefit, #about_members-benefits .benefit {
-    height: 220px;
+    height: 230px;
     width: 50%;
     background: none !important;
     padding: 10px;
