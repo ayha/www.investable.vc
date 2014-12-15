@@ -1,0 +1,75 @@
+// variables
+
+$titleFont: "CalvertMT";
+$bodyFont: "ScalaSans";
+$headerHeight: 70px;
+$containerPad: 30px;
+$textColor: #636363;
+$darkGrey: #636363;
+$turquoise: #20B6AE;
+$skobeloff: #007B76;
+$orange: #F36B22;
+$rosebud: #FFB880;
+$palegrey: #f8f8f8;
+$darkgrey: #636363;
+$mediumgrey: #cccccc;
+$btnRadius: 5px;
+$font_sans: 'ScalaSans', Helvetica, Arial, sans-serif;
+$font_serif:'CalvertMT', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+
+// mixins
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow(){
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  -moz-box-shadow:    2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+  box-shadow:         2px 2px 5px 0px rgba(100, 100, 100, 0.8);
+}
+
+@mixin text-shadow(){
+     text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8);
+}
+
+@mixin circle($radius, $color){
+   width:$radius;
+  height: $radius;
+  background: $color;
+  -moz-border-radius: $radius/2;
+  -webkit-border-radius: $radius/2;
+  border-radius: $radius/2;
+  
+}
+
+@mixin triangle-up($size, $color){
+   width: 0;
+  height: 0;
+  border-left: $size/2 solid transparent;
+  border-right: $size/2 solid transparent;
+  border-bottom: $size solid $color;
+}
+
+@mixin triangle-down($size, $color){
+   width: 0;
+  height: 0;
+  border-left: $size/2 solid transparent;
+  border-right: $size/2 solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+

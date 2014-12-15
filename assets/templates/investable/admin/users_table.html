@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+       <link href="[[++site_url]]assets/templates/investable/css/admin.css" rel="stylesheet" media="all">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content admin_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+			<div class="page-header">
+				<h1>[[*pagetitle]]</h1>
+			</div>
+	    <div class="admin_filters">
+	    	<!--<input type="text" name="keyword" id="filter_keyword" placeholder="Name / Email / Phone" value="[[!http_get? &key=`keyword`]]"/>
+	    	
+	    	<!--<input type="date" name="start_date" id="filter_start_date" placeholder="Start Date: YYY-MM-DD" value="[[!http_get? &key=`start_date`]]" />
+	    	<input type="date" name="end_date" id="filter_end_date" placeholder="End Date: YYYY-MM-DD" value="[[!http_get? &key=`end_date`]]" />
+	    	-->
+	    	<select name="promote" id="filter_promote">
+	    		<option value="">-- Receive updates from investable --</option>
+	    		<option value="Yes" [[!http_get:is=`Yes`:then=`SELECTED`? &key=`promote`]]>Yes</option>
+	    		<option value="No" [[!http_get:is=`No`:then=`SELECTED`? &key=`promote`]]>No</option>
+	    	</select>
+	    	<!--<a href="#" class="btn update_table">Update Table</a>--> 
+	    	<a href="#" class="btn download_data">Download</a> 
+	    </div>
+	    <p>Total: <span class="total_count"></span></p>
+		<table name="user_table" id="user_table" cellpadding="5" cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Receive Updates</th>
+				<!--<th>Booked Information Session</th>-->
+				<th>Regsitration Date</th>
+				<th>Remarks</th>
+				<!--<th>Number of Visits</th>-->
+			</tr>
+			
+			[[!user_table?]]
+		</table>
+	
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   
+	
+  <script type="text/javascript">
+		
+		    $("span.total_count").html($("#user_table tr:last-child").data("total"));
+			$("a.update_table").click(function(e){
+				e.preventDefault();
+				//var promote = $("#filter_promote option:selected").val();
+				
+				//insertParam("promote", promote);
+			});
+			
+			$("select#filter_promote").change(function(){
+				var promote = $("#filter_promote option:selected").val();
+				insertParam("promote", promote);
+			});
+			
+			$("a.download_data").click(function(e){
+				e.preventDefault();
+				var promote = $("#filter_promote option:selected").val();
+				window.location.href="[[~109]]?action=download&promote="+promote;
+			});
+			
+			
+			
+			$("a.save_note").click(function(e){
+				e.preventDefault();
+				var uid = $(this).data("uid");
+				var notes_content =$(this).parent().children("textarea").val();
+				save_remarks(uid, notes_content);
+			});
+			
+			function save_remarks(uid, remarks){
+				$.ajax("processors/save-user-notes.html", {
+					type: "POST", 
+					data: {"uid": uid, "remarks": remarks},
+					complete: function(xhr, status){
+						$.fancybox.open("Remarks Updated");
+					
+						
+					}
+					
+				});
+			}
+			
+		</script>
+
+     
+    </body>
+</html>
+

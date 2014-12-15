@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>  
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
+	    	
+    		<div class="faq_list">	
+	   		  [[!getResources? &parents=`[[*id]]` &tpl=`faq_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`100` &showHidden=`1`  &sortby=`{"menuindex":"ASC"}`]]
+   			</div>
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   	
+	<div class="hidden">
+				[[$info_session_form]]
+				
+				</div>
+   <script type="text/javascript">
+   		$(document).ready(function(){
+   			$(".faq_item h4").on("click", function(e){
+   			e.preventDefault();
+   			$(this).parent().toggleClass("active");
+   			
+   		});
+   		$("#info_session_form .form_thankyou_message").hide();
+   			 $("a.info_session_button").click(function(e){
+			    	e.preventDefault();
+			    	$.fancybox.open("#info_session_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	})
+			    	
+			    });
+			    
+			    $("#info_submit").click(function(e){
+			    	e.preventDefault();
+			    	var fullname = $("#info_session_form #info_fullname").val();
+			    	var email = $("#info_session_form #info_email").val();
+			    	var contact = $("#info_session_form #info_contact").val();
+			    	var remarks = $("#info_session_form #info_remarks").val();
+			    	$.ajax($("#info_session_form").attr("action"),{
+			    		type:"POST",
+			    		data: {"fullname":fullname, "email":email, "contact":contact, "remarks":remarks},
+			    		complete:function(xhr, status){
+			    			console.log(xhr);
+			    			if(status == "success" && xhr.responseText=="1"){
+			    			    $("#info_session_form .form_section").hide();
+			    			    $("#info_session_form .form_thankyou_message").show();
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    });
+   			
+   		});
+   		
+   </script>
+
+     
+    </body>
+</html>

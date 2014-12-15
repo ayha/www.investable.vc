@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<div class="page-header">
+				<h1>[[%title.newsroom? &namespace=`investable`]]</h1>
+				<div class="allclear"></div>
+			</div>
+			
+	   		</div>
+		</section>
+	  	
+	</div>
+	<section class="newsfeed">
+			 <div id="feed_content"></div>	
+	</section>
+	[[$page_footer]]
+   	[[$member_footer]]
+	
+   <script type="text/javascript">
+   		$(document).ready(function(){
+   			$("#feed_content").rssGrid({
+   					"newsCount": 10,
+					sources: [
+						{"name":"Techcrunch", "url":"http://feeds.feedburner.com/techcrunch/startups?format=xml", "icon": "/assets/images/template/techcrunch_icon.png"},
+						{"name":"WSJ Technology", "url":"http://online.wsj.com/xml/rss/3_7455.xml", "icon":  "/assets/images/template/wsj_icon.png"},
+						//{"name": "NY Times Business", "url":"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml", "icon": "/assets/images/template/nytimes_icon.png"},
+						{"name": "NY Times Technology", "url":"http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml", "icon": "/assets/images/template/nytimes_icon.png"},
+						{"name":"Reuters", "url":"http://feeds.reuters.com/reuters/mergersNews?format=xml", "icon":"/assets/images/template/reuters_icon.png"},
+						{"name":"FinanceAsia", "url":"http://rss.feedsportal.com/c/32315/fe.ed/http://www.financeasia.com/RSS/rss.ashx?type=Category&ID=733", "icon":"/assets/images/template/financeasia_icon.png"}
+						]
+					
+			});
+				
+   			
+   		});
+   </script>
+
+     
+    </body>
+</html>

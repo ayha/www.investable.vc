@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content member_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<div class="page-header">
+				<h1>[[%title.my_profile? &topic=`default` &namespace=`investable` &language=`en`]]</h1>
+			
+				
+				<div class="clearboth"></div>
+			</div>
+			<div class="member_form_wrapper">
+			 [[!UpdateProfile? 
+               &validate=`fullname:required,email:required:email,firstname:checkEmpty=^First Name^,lastname:checkEmpty=^Last Name^`  
+ 				 &customValidators=`checkEmpty` 
+               &submitVar=`profile_submit`
+               &reloadOnSuccess=`1`
+                &excludeExtended=`profile_submit,confirm_password,new_photo,avatar` 
+                &preHooks=`uploadUserPhoto`
+                
+             ]]
+             
+             [[!ChangePassword?
+			   &submitVar=`update_password`
+			   &placeholderPrefix=``
+			   &fieldNewPassword=`password`
+			   &fieldConfirmNewPassword=`confirm_password`
+			   &validateOldPassword=`0`
+			   &validate=`nospam:blank`
+			   &successMessage=`Your password has been updated!`
+			]]
+			
+			<div class="member_content">
+				<div class="updprof-error">[[!+error_message]]</div>
+				<div class="form_message">[[!+successMessage]]</div>
+                <div class="form_message">[[+login.update_success:is=`1`:then=`Your profile information has been updated`]]</div>
+ 
+				<form name="profile_update_form" id="profile_update_form" method="post" action="[[~[[*id]]]]"  enctype="multipart/form-data">
+					<div class="form_header">Personal Information</div>
+					<input type="hidden" name="fullname" id="fullname" value="[[+fullname]]" />
+					<div class="form_section">
+						<div class="form_row"><label>Username</label><strong>[[+username]]</strong></div>
+						<div class="form_row"><label>Photo</label><input type="hidden" name="avatar" id="avatar" value="[[!modAvatar? &username=`[[+username]]` &tpl=`photo_path`]]" />
+							<img src="[[!modAvatar? &username=`[[+username]]` &tpl=`photo_path`]]" style="max-height:150px" >
+							<input type="file" name="new_photo" id="new_photo" />
+							</div>
+						
+						<div class="form_row"><label>Display Name</label><input type="text" name="displayname" id="displayname" placeholder="Display Name" value="[[+displayname]]" /></div>
+						<div class="form_row"><label>First Name</label><input type="text" name="firstname" id="firstname" placeholder="First Name" value="[[+firstname]]"/> <span class="error">[[!+reg.error.firstname]]</span> </div>
+						<div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="lastname" placeholder="Last Name" value="[[+lastname]]"/> <span class="error">[[!+reg.error.lastname]]</span> </div>
+					    
+					    <div class="form_row"><label>Email Address</label><input type="email" name="email" id="email" placeholder="Email Address" value="[[+email]]"/>  <span class="error">[[!+reg.error.email]]</span> </div>
+					    <div class="form_row"><label>Contact Number</label><input type="text" name="contact_number" id="contact_number" placeholder="Contact Number" value="[[+contact_number]]"/></div>
+					    <div class="form_row"><label>Country</label><input type="text" name="country" id="country" placeholder="Country" value="[[+country]]"/></div>
+						<div class="form_row"><label>LinkedIn Profile</label><input type="text" name="linkedin_profile" id="linkedin_profile" placeholder="LinkedIn Profile" value="[[+linkedin_profile]]" /></div>
+						<div class="form_row"><label>Personal Description</label><textarea cols="60" rows="5" name="personal_description" id="personal_description">[[+personal_description]]</textarea></div>
+						<div class="form_row"><label>Education</label><textarea cols="60" rows="5" name="education" id="education">[[+education]]</textarea></div>
+						<div class="form_row"><label>Interests</label><textarea cols="60" rows="5" name="personal_interests" id="personal_interests">[[+personal_interests]]</textarea></div>
+					</div>
+					<div class="form_header">Profesional Information</div>
+					<div class="form_section">
+						<div class="form_row"><label>Current Industry</label><input type="text" name="job_industry" id="job_industry" value="[[+job_industry]]" /></div>
+						<div class="form_row"><label>Job Title</label><input type="text" name="job_title" id="job_title" value="[[+job_title]]" /></div>
+					
+					</div>
+					
+					<div class="form_header">Investment Preferences</div>
+					<div class="form_section">
+						<div class="form_row"><label>Industries</label><span class="note">Hold CTRL (Command on MAC) key to select multiple</span><br />
+						<select  multiple name="investment_industries[]" id="investment_industries">
+						   [[!get_industry_list? &source=`user`]]
+						</select>
+						<br />
+						<br />Other
+						<input type="text" name="other_industry" id="other_industry" value="[[+other_industry]]" placeholder="Other" />
+						</div>	
+						
+						<div class="form_row"><label>Stage</label><span class="note">Hold CTRL (Command on MAC) key to select multiple</span><br />
+						<select multiple name="investment_stage[]" id="investment_stage">
+						   [[!get_stage_list? &source=`user`]]
+						</select>
+						<br /> 
+						</div>	
+						
+						<div class="form_row"><label>Level of Involvement</label><span class="note">Hold CTRL (Command on MAC) key to select multiple</span><br />
+						<select multiple name="investment_involvement[]" id="investment_involvement" >
+						  [[!get_involvement_list? &source=`user`]]
+						</select>
+						<br />
+						</div>	
+						
+						<div class="form_row"><label>Risk Appetite</label><input type="text" name="risk_appetite" id="risk_appetite" placeholder="Risk Appetite" value="[[+risk_appetite]]" /></div>
+						
+					</div>
+					<div class="form_section submit">
+         				<div class="form_row"><input type="submit" name="profile_submit" id="profile_submit" value="Update" /></div>
+      				</div>
+				
+      				
+      				
+					<div class="form_header">Password</div>
+					<div class="form_section">
+						<div class="form_row"><label>New Password</label><input type="password" name="password" id="password" placeholder="New password" /> <span class="error">[[!+error.password]]</span> </div>
+						<div class="form_row"><label>Confirm New Password</label><input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your new password" />  <span class="error">[[!+error.confirm_password]]</span> </div>
+					</div>
+					<div class="form_section submit">
+         				<div class="form_row"><input type="submit" name="update_password" id="update_password" value="Change Password" /></div>
+      				</div>
+      				
+      					<div class="form_header">Newsletter</div>
+					<div class="form_section">
+						<input type="hidden" name="promote" id="hidden_promote" value="No" />
+						<input type="hidden" name="info_session" id="hidden_info_session" value="No" />
+						<input type="hidden" name="events" id="hidden_events" value="No" />
+						<div class="form_row"><input type="checkbox" name="promote" id="promote" value="Yes" [[+promote:is=`Yes`:then=`Checked`]] /> I would like to receive updates from Investable via email</div>
+						<!--<div class="form_row"><input type="checkbox" name="info_session" id="info_session" value="Yes" [[+info_session:is=`Yes`:then=`Checked`]] /> I would like to attend information sessions</div>-->
+						<!--<div class="form_row"><input type="checkbox" name="events" id="events" value="Yes" [[+events:is=`Yes`:then=`Checked`]] /> I am interested in events targeted to members</div>-->
+					</div>
+					
+					<div class="form_section submit">
+         				<div class="form_row"><input type="submit" name="profile_submit" id="profile_submit" value="Update" /></div>
+      				</div>
+      				
+				</form>
+				
+			</div>
+	    	
+    			
+	   		</div>
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   	[[$member_footer]]
+	
+   <script type="text/javascript">
+   		$(document).ready(function(){
+		$("#firstname, #lastname").change(function(e){
+			$("#fullname").val($("#firstname").val() + " " +$("#lastname").val());
+			
+		});
+	});
+	
+   </script>
+
+     
+    </body>
+</html>

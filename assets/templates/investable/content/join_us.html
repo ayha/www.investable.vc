@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content text_page" id="[[*alias]]_content">
+    		
+[[!Register?
+    &submitVar=`register_submit`
+    &activation=`0` 
+    &activationResourceId=`46`
+    &activationEmailTpl=`lgnActivateEmailTpl`
+    &activationEmailSubject=`Thanks for Registering!`
+    &submittedResourceId=`46`
+    &usergroups=`Members`
+    &validate=`nospam:blank,  
+  username:required:minLength=^6^,
+  password:required:minLength=^6^,
+  confirm_password:password_confirm=^password^,
+  fullname:required,
+  email:required:email,disclaimer:checkDisclaimer=^^,firstname:checkEmpty=^First Name^,lastname:checkEmpty=^Last Name^`  
+ 	&customValidators=`checkEmpty,checkDisclaimer` 
+    &placeholderPrefix=`reg.`
+    &excludeExtended=`register_submit,confirm_password`
+    
+]]
+    	
+    	<section> 
+	    	
+    		<div class="container">
+    			<div class="page-header">
+				<h1>[[*longtitle]]</h1>
+		</div>
+<div id="register_form_wrapper" class="cd-tabs">
+	 <nav>
+        <ul class="cd-tabs-navigation">
+            <li><a data-content="investor" class="selected" id="tab-investor" href="#0">[[%cta.iam_investor? &namespace=`investable`]]</a></li>
+            <li><a data-content="startup" href="#0" id="tab-startup">[[%cta.iam_startup? &topic=`default` &namespace=`investable`]]</a></li>
+           
+        </ul> <!-- cd-tabs-navigation -->
+    </nav>
+     <ul class="cd-tabs-content">
+        <li data-content="investor" class="selected">
+        	<div class="investor_form_wrapper"  >
+   		<form name="investor_register_form"  action="[[++site_url]][[~[[*id]]]]" method="post">
+   			<input type="hidden" name="usertype" value="investor" id=""/>
+   			<input type="hidden" name="reg_date" value="[[!current_time?]]" />
+   			<input type="hidden" name="fullname" value="" id="investor_fullname" />
+   			<div class="form_header">Login Information</div>
+      		<div class="form_section" id="investor_login_details">
+      			<input type="hidden" name="username" id="investor_username" placeholder="Username"  required="required" /> 
+                <div class="form_row"><label>Email</label><input type="email" name="email" id="investor_email" placeholder="Email Address"  required="required" /> <span class="error">[[!+reg.error.email]]</span></div>
+      			<div class="form_row"><label>Password</label><input type="password" name="password" placeholder="Password"  required="required" /> <span class="error">[[!+reg.error.password]]</span></div>
+      			<div class="form_row"><label>Confirm your password</label><input type="password" name="confirm_password" placeholder="Confirm Your Password"  required="required" /> <span class="error">[[!+reg.error.confirm_password]]</span></div>
+      		</div>
+      		<div class="form_header">Personal Information</div>
+      		<div class="form_section" id="investor_contact">
+         		<div class="form_row"><label>First Name</label><input type="text" name="firstname" id="investor_firstname" placeholder="First Name"   required="required" /> <span class="error">[[!+reg.error.firstname]]</span> </div>
+         		<div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="investor_lastname" placeholder="Last Name"  required="required" /> <span class="error">[[!+reg.error.lastname]]</span></div>
+         		
+      		</div>
+      		
+      		<div class="form_section" id="investor_disclaimer">
+      			<input type="hidden" name="promote" id="hidden_promote" value="No" />
+         		<div class="form_row"><input type="checkbox" name="promote" id="investor_promote" value="Yes"> I would like to receive updates from Investable via email</div>
+         		<div class="form_row"><span class="error">[[!+reg.error.disclaimer]]</span><input type="checkbox" name="disclaimer" id="investor_disclaimer" value="Yes"> I understand and agree to the following statements:
+            		
+            		
+               			<p>1. You represent and warrant that you are a "professional investor" (as defined in the <a herf="http://www.legislation.gov.hk/eng/home.htm" target="_blank">Securities and Futures Ordinance (Cap. 571) of the laws of Hong Kong ("SFO")</a> or rules made thereunder) or a person that is appropriately licensed with the Hong Kong Securities and Futures Commission (“SFC”) and duly authorized to access this website for the purpose of acquiring information). Professional investors include any individual, either alone or with any of his or her associates on a join account, having a portfolio of not less than HKD$8 million or its equivalent in any foreign currency at the relevant date.</p>
+               			<p>2. You represent that you have such knowledge and experience in financial and business matters that you are capable of evaluating the merits and risks of an investment in illiquid securities, and you are able to bear the economic risk of such investments including the risk of complete loss.</p>
+               			<p>3. You (a) understand that Investable will rely on the foregoing representations to, among other things, maintain compliance with securities laws, (b) certify that your answers to the foregoing questions are correctly stated to the best of your knowledge and information, (c) you further agree that Investable may require (in order for you to remain a member of Investable or participate in any fund investment) that you (or your accountant or attorney) furnish any additional information to Investable that it deems reasonably necessary in order to verify your answers to the foregoing questions, (d) you promise to keep the information you learn about these companies confidential, and (e) agree to the Investable <a href="[[~16]]" target="_blank">Terms of Use</a> and <a href="[[~17]]" target="_blank">Privacy Policy</a>.</p>
+            	
+         		</div>
+      		</div>
+      		<div class="form_section submit">
+         		<div class="form_row"><input type="submit" name="register_submit" id="investor_submit" value="Submit" /></div>
+      		</div>
+  		 </form>
+   </div>
+        </li>
+        <li data-content="startup">
+        	 <div class="startup_form_wrapper">
+      <form name="startup_register_form"   action="[[~41]]" method="post">
+      	 <input type="hidden" name="usertype" value="startup" />
+      	 	<div class="form_header">Founder Information</div>
+         <div class="form_section" id="#startup_contact">
+         
+            <div class="form_row"><label>First Name</label><input type="text" name="firstname" id="startup_firstname" placeholder="First Name" required="required"/> </div>
+            <div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="startup_lastname" placeholder="Last Name"  required="required"/> </div>
+            <div class="form_row"><label>Primary Email</label><input type="email" name="email" id="startup_email" placeholder="email"  required="required"/> </div>
+         </div>
+         <div class="form_header">Company Information</div>
+         <div class="form_section" id="#startup_moreinfo">
+         	<div class="form_row"><label>Company Name</label><input type="text" name="startup_name" id="startup_company_name" placeholder="Company Name"  required="required" /></div>
+         	<div class="form_row"><label>Describe your business in 50 words or less</label><textarea rows="3" name="company_description" id="company_description"></textarea></div>
+         	<div class="form_row"><label>Highlight market opportunities in 100 words or less</label><textarea rows="5" name="market_opportunities" id="market_opportunities"></textarea></div>
+            <div class="form_row"><label>Describe your competitive advantage in 100 words or less</label><textarea rows="5" name="competitive_advantage" id="competitive_advantage"></textarea></div>
+         </div>
+         <div class="form_section submit">
+         	<div class="form_row"><input type="submit" name="register_submit" id="startup_submit" value="Submit" /></div>
+		 </div>
+      </form>
+	</div>
+        </li>
+	
+  
+</div>
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   
+	
+   <script type="text/javascript">
+   		$(document).ready(function(){
+		$("#investor_firstname, #investor_lastname").change(function(e){
+			$("#investor_fullname").val($("#investor_firstname").val() + " " +$("#investor_lastname").val());
+			
+		});
+
+               $("#investor_email").change(function(e){
+			$("#investor_username").val($("#investor_email").val() );
+			
+		});
+		
+	
+		
+	});
+   </script>
+
+     
+    </body>
+</html>

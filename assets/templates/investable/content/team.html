@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+    		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
+	    	
+    			
+	   		[[!getResources? &parents=`[[*id]]` &tpl=`team_type` &limit=`100` &showHidden=`1` &depth=`0` &sortby=`{"menuindex":"ASC"}`]]
+	   		</div>
+		</section> 
+	  	
+	</div>
+	[[$page_footer]] 
+   
+	
+   <script type="text/javascript">
+   		var max_thumbnail_per_row = 6;
+   		var team_page = "/[[~[[*id]]]]";
+   		$(document).ready(function(){
+   			$(".team_type").each(function(ind, ele){
+   				var section_alias = $(this).data("alias");
+   				//$(this).children(".team")
+   				var type_html = "";
+   				type_html += "<ul class='team_list'>";
+   					$(this).children(".team").children(".team_member").each(function(i, member){
+   						
+   						var member_alias = $(member).data("alias");
+   						var element_id = "member_"+$(member).data("memberid");
+   						var member_name = $(member).data("name");
+   						var member_title = $(member).data("title");
+   						var img_url = $(member).data("img");
+   						type_html += "<li data-alias='"+member_alias+"' data-memberid='"+$(member).data("memberid")+"'>";
+   						//type_html += $(member).data("name");
+   						
+   						
+   						type_html += '<div class="member_thumbnail" data-alias="'+member_alias+'"><div class="thumbnail_content">';
+						type_html += '<a class="member_link" data-target="'+element_id+'" data-alias="'+member_alias+'" href="'+team_page+'#!/'+member_alias+'"><img src="'+img_url+'" title="'+member_name+'" alt="'+member_name+'" /></a>';
+						type_html += '<div class="member_name"><a class="member_link" data-target="'+element_id+'" data-alias="'+member_alias+'" href="'+team_page+'#!/'+member_alias+'"><h4>'+member_name+'</h4><h5>'+member_title+'</h5></a></div>';
+						type_html += "</div></div>";
+	
+   						
+   						
+   						type_html += "</li>";
+   						
+   					});
+   				type_html += "</ul>";
+   				
+   				$(this).children(".team_holder").html(type_html);
+   				
+   				
+   			});
+   			
+   
+   		
+   		
+$("a.member_link").on("click", function(e){
+	e.preventDefault();
+	//
+	show_member_by_hash($(this).data("alias")); 
+	window.history.pushState("","", team_page + '#!/' + $(this).data("alias"));
+});
+
+show_member_by_hash(window.location.hash.substring(1));
+});
+   		
+
+function show_member_by_hash(hash){
+	
+	hash = hash.replace("!/", "");
+	hide_member_info();
+	
+	var windowW = $(window).width();
+	var content = $(".team .team_member[data-alias="+hash+"]").children(".team_bio").html();
+    var img = $(".team .team_member[data-alias="+hash+"]").data("img");
+    var name = $(".team .team_member[data-alias="+hash+"]").data("name");
+    var title = $(".team .team_member[data-alias="+hash+"]").data("title");
+	var email = $(".team .team_member[data-alias="+hash+"]").data("email");
+	var linkedin = $(".team .team_member[data-alias="+hash+"]").data("linkedin");
+	var currLeft = $(".member_thumbnail[data-alias="+hash+"]").offset().left;
+	
+	var currTop =  $(".member_thumbnail[data-alias="+hash+"]").offset().top;
+	var newDiv = '<div class="member_details" style="left:-'+currLeft+'px"><div class="member_details_content">';
+	newDiv += '<a class="close_member_bio btn" href="#">Close</a>';
+	newDiv += '<div class="col-sm-3"><img src="'+img+'" /></div><div class="col-sm-9">';
+	newDiv += '<h4>'+name+'</h4><h5>'+title+'</h5>';
+	if(email != "" || linkedin != ""){
+		newDiv += '<div class="member_social">';
+		
+		if(email != ""){
+			newDiv += '<a href="mailto:'+email+'" class="social email">Email</a>';
+		}
+		
+		if(linkedin != ""){
+			newDiv += '<a href="'+linkedin+'" class="social linkedin" target="_blank">Linkedin</a>';
+		}
+		
+		newDiv += '</div>'; 
+	}
+	newDiv += content;
+	newDiv += "</div><div class='clearboth'></div>";
+	newDiv += "</div></div>";
+	$(".member_thumbnail[data-alias="+hash+"]").height(450);
+	
+	$(".member_thumbnail[data-alias="+hash+"]").append(newDiv);
+	$(".member_thumbnail .member_details").width(windowW-30);
+	var newHeight = $(".member_thumbnail[data-alias="+hash+"] .member_details").height();
+	
+	if(newHeight > 300){
+		$(".member_thumbnail[data-alias="+hash+"] .member_details").finish().animate({height: (newHeight+50)}, 300);
+		$(".member_thumbnail[data-alias="+hash+"]").finish().animate({height: (newHeight+206)}, 300);
+	}
+	$("html, body").animate({ scrollTop: currTop }, 500);
+	
+	
+$("body").on("click", ".close_member_bio",  function(e){
+	
+	e.preventDefault();
+	$(".member_details_content").animate({"height":"0px"}, 300);
+	$(".member_details").fadeOut(300, function(){
+		$(".member_details").remove();
+		$(".member_thumbnail").height(156);
+		
+	});
+	
+});
+	
+}
+
+
+function hide_member_info(){
+	
+	
+	$(".member_details").remove();
+	$(".member_thumbnail").height(156);
+}
+
+
+   </script>
+
+     
+    </body>
+</html>

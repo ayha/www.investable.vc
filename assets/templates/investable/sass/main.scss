@@ -1,0 +1,1750 @@
+@import "compass";
+@import "base";
+@import "compass/css3/transform";
+
+/* @font-face definitions */
+
+/* calvert for titles */
+
+@font-face {
+    font-family: $titleFont;
+    src: url('../fonts/calvert-mt.eot');
+    src: url('../fonts/calvert-mt.eot') format('embedded-opentype'),
+         url('../fonts/calvert-mt.woff2') format('woff2'),
+         url('../fonts/calvert-mt.woff') format('woff'),
+         url('../fonts/calvert-mt.ttf') format('truetype'),
+         url('../fonts/calvert-mt.svg#CalvertMTRegular') format('svg');
+    font-style:normal;
+    font-weight:normal;
+}
+
+@font-face {
+    font-family: $titleFont;
+    src: url('../fonts/calvert-mt-bold.eot');
+    src: url('../fonts/calvert-mt-bold.eot') format('embedded-opentype'),
+         url('../fonts/calvert-mt-bold.woff2') format('woff2'),
+         url('../fonts/calvert-mt-bold.woff') format('woff'),
+         url('../fonts/calvert-mt-bold.ttf') format('truetype'),
+         url('../fonts/calvert-mt-bold.svg#CalvertMTBold') format('svg');
+  font-style:normal;
+  font-weight:bold;
+}
+
+
+
+
+/* scala font content */
+@font-face {
+    font-family: $bodyFont ;
+    src: url('../fonts/scala-sans-regular-webfont.eot');
+    src: url('../fonts/scala-sans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/scala-sans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/scala-sans-regular-webfont.woff') format('woff'),
+         url('../fonts/scala-sans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/scala-sans-regular-webfont.svg#scala_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: $bodyFont ;
+    src: url('../fonts/scala-sans-bold-italic-webfont.eot');
+    src: url('../fonts/scala-sans-bold-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/scala-sans-bold-italic-webfont.woff2') format('woff2'),
+         url('../fonts/scala-sans-bold-italic-webfont.woff') format('woff'),
+         url('../fonts/scala-sans-bold-italic-webfont.ttf') format('truetype'),
+         url('../fonts/scala-sans-bold-italic-webfont.svg#scala_sansbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family:$bodyFont ;
+    src: url('../fonts/scala-sans-regular-italic-webfont.eot');
+    src: url('../fonts/scala-sans-regular-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/scala-sans-regular-italic-webfont.woff2') format('woff2'),
+         url('../fonts/scala-sans-regular-italic-webfont.woff') format('woff'),
+         url('../fonts/scala-sans-regular-italic-webfont.ttf') format('truetype'),
+         url('../fonts/scala-sans-regular-italic-webfont.svg#scala_sansregular_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family:  $bodyFont ;
+    src: url('../fonts/scala-sans-bold-webfont.eot');
+    src: url('../fonts/scala-sans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/scala-sans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/scala-sans-bold-webfont.woff') format('woff'),
+         url('../fonts/scala-sans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/scala-sans-bold-webfont.svg#scala_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+html, body, p, li, a{
+  font-family: $font_sans;
+  font-weight:normal;
+  color:$textColor;
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $font_serif;
+  font-weight:normal;
+  color:$textColor;
+}
+
+
+h1{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:18px;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  margin-top:35px;
+}
+
+h3{
+  font-size:16px;
+}
+
+h4{
+  font-size:14px;
+}
+
+ @media (max-width:767px){
+   html, body, p{
+     font-size:13px;
+   }
+   h1{
+     font-size:18px; 
+   }
+   
+   h2{
+     font-size:16px;
+   }
+   
+   h3{
+      font-size:15px;
+   }
+   
+   h4{
+      font-size:14px;
+   }
+ }
+
+body{
+ 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    background-image: url(../../../images/template/bullet_turquoise.png);
+    background-repeat: no-repeat;
+    background-position: 0px center; 
+    padding-left: 15px; 
+    margin-left:10px;
+}
+
+.clearboth{
+  clear:both;
+}
+
+.btn{
+  background:$turquoise;
+  padding:5px 10px;
+  @include border-radius($btnRadius);
+  color: #ffffff;
+}
+
+.btn:hover{
+   color:#ffffff;
+}
+
+
+input[type=text], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
+  background:#ffffff;
+   @include border-radius($btnRadius);
+   border:none;
+   padding:3px 5px;
+   font-size:12px;
+   width: 150px;
+   color:$darkGrey;
+   border:1px solid $turquoise; 
+}
+
+input[type=submit], button{
+   @include border-radius($btnRadius);
+   border:1px solid $turquoise;
+   padding:3px 10px;
+   font-size:12px;
+    background: $turquoise;
+    color:#ffffff;
+}
+
+
+.form_section{
+  width:100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-bottom: 1px solid $mediumgrey;
+   padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+.form_header{
+   text-transform:uppercase;
+   padding:5px;
+   width:100%;
+   text-align:center;
+   background:$orange;
+   color:#fff;
+   margin-bottom:15px;
+  
+}
+
+.error{
+  color:$orange;
+  font-style:italic;
+}
+
+.form_section.submit{
+  border:none; 
+  
+}
+
+
+.form_row{
+  width:100%;
+  margin-bottom:10px;
+ 
+  
+  label{
+   margin-bottom:3px;
+   display:block;
+   text-align:left;
+   font-weight:normal;
+}
+  input[type=text], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
+    width:100%;
+  }
+  
+} 
+
+
+  
+
+/* header */
+
+.navbar-bg{
+  background-color:#FFFFFF;
+  opacity:0.95;
+  display:block;
+  width:100%;
+  height:$headerHeight;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:3;
+  border-bottom:1px solid $mediumgrey;
+}
+
+.navbar .container{
+  position:relative;
+  z-index:5;
+}
+
+.navbar{
+  z-index:500;
+
+}
+
+.navbar-toggle .icon-bar{
+  background-color:$turquoise;
+} 
+
+.navbar-brand{
+  text-indent: -9999px;
+  background-image: url(../../../images/template/investable_logo_196x41.png) ;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color:transparent;
+  background-size:contain;
+  width:196px;
+  margin-left:0 !important;
+}
+
+.navbar-nav li{
+  background:none;
+  padding:0;
+  margin:0;
+}
+
+.navbar-nav>li>a, .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
+  background:none;
+  text-transform:uppercase;
+}
+
+.navbar-nav>li>a:hover, .navbar-nav>li>a.active{
+  color:$turquoise;
+}
+
+.navbar-nav {
+  margin-left:20px;
+  margin-top:3px;
+}
+
+.navbar-header.header_login_btn{
+  margin-top:20px;
+}
+
+.navbar-header.header_login_btn a.btn{
+  background-image: url(../../../images/template/arrow_white_right.png);
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  padding-right: 25px;
+  text-transform:uppercase;
+}
+
+.member_dropdown{
+
+    img.top_profile_btn{
+       max-height:25px; 
+       max-width:25px;
+    }
+    
+    .dropdown-menu{
+      left:auto;
+      right:0;
+    }
+    
+    .dropdown-menu li{
+      background:none;
+      padding-left:0;
+      margin-left:0;
+    }
+}
+
+
+
+@media (max-width:767px){
+  .navbar-brand{
+    margin-left:10px !important; 
+  }
+  
+   .navbar-toggle{
+         margin-right:100px;
+  }
+  
+  .collapse .navbar-nav {
+     margin:0;
+     padding-left:0; 
+     padding-right:0;
+     
+  }
+  .container>.navbar-collapse{
+      
+     padding-left:0; 
+     padding-right:0;
+     margin: 0 -15px;
+  }
+  
+  .navbar-nav li a{
+    background-color:$turquoise;
+    color:#ffffff;
+    border-top:1px solid $mediumgrey;
+  }
+  
+  .collapse .navbar-nav li a:hover, .collapse .navbar-nav li a:active{
+     background:#ffffff;
+     color:$turquoise;
+  }
+  
+  .navbar-header.header_login_btn{
+    margin-top:-$headerHeight+20px;
+  }
+  
+   .navbar-header.header_login_btn a.btn{
+      position:absolute;
+      right:10px;
+     
+  }
+  
+  .member_dropdown{
+    position:absolute;
+    right:10px;   
+  }
+}
+
+@media (max-width:320px){
+  .navbar-brand{
+    max-width:120px;
+  
+  }
+  
+ 
+  
+  
+ 
+}
+/* end of header */
+
+
+/* footer */
+
+footer{
+  background-color:$turquoise;
+  color:#ffffff;
+  margin-top:25px;
+  h3, h3 a, h3 a:hover, h3 a:active{
+  font-family: $font_serif;
+  color:#ffffff;
+  font-weight:normal;
+  text-decoration:none;
+  }
+  
+  p, ul li a, ul li a:hover, ul li a.active, ul li a:focus{
+  color:#ffffff;
+  } 
+  
+  
+  ul{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  }
+  
+  ul li{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  }
+  
+  
+
+#newsletter_form input[type=submit]{
+  border: 1px solid #ffffff;
+  color:#FFFFFF;
+  background: transparent;
+}
+
+#newsletter_form input[type=submit]:hover{
+  border:1px solid $turquoise;
+  background:#FFFFFF;
+  color:$turquoise;
+  
+}
+
+.copyright{
+  font-size:11px;
+  color:#fff;
+  margin-top:15px;
+  
+}
+.footer_column{
+  margin-bottom:30px;
+}
+
+
+}
+
+
+.footer_social a.footer_social_icon{
+    display:inline-block;
+    width:22px;
+    height:22px;
+    text-indent:-9999px;
+    background-color:#fff;
+    @include border-radius($btnRadius);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right:5px;
+  }
+  .footer_social .facebook{
+  background-image:url(../../../images/template/social_facebook_18x18.png);
+}
+.footer_social .gplus{
+  background-image:url(../../../images/template/social_gplus_18x18.png);
+}
+  .footer_social .linkedin{
+  background-image:url(../../../images/template/social_linkedin_18x18.png);
+}
+
+  .footer_social .twitter{
+  background-image:url(../../../images/template/social_twitter_18x18.png);
+
+}
+
+ .footer_social .weibo{
+  background-image:url(../../../images/template/social_weibo_18x18.png);
+}
+
+ .footer_social .youtube{
+  background-image:url(../../../images/template/social_youtube_18x18.png);
+}
+
+ .footer_social .angel{
+  background-image:url(../../../images/template/social_angelco_18x18.png);
+}
+
+
+/* end of footer= */
+
+
+.main_content, footer{
+  z-index:1; 
+}
+.main_content section{
+    
+}
+
+.main_content{
+  margin-top: $headerHeight +20px;
+
+}
+
+
+.main_content h1{
+   text-align:center;
+   padding-bottom:20px;
+  color:$turquoise;
+    margin:20px auto;;
+   width: 50%; 
+   font-size:20px;
+   text-transform:uppercase;
+}
+
+@media (max-width:767px){
+   .main_content h1{
+      width:100%;
+   }
+}
+
+.main_content#homepage_content h1{
+  border: none;
+  text-align:left;
+}
+
+.page-header{
+    margin:0 auto;
+    padding:0;
+    border:none;
+  
+}
+
+/* homepage */
+
+.main_content#homepage_content{
+  margin-top:0;
+}
+
+.jumbotron{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  background-color:transparent;
+  position:relative;
+  background-attachment: fixed;
+}
+
+.jumbotron .container{
+  
+  
+}
+  h1.site-tagline{
+    color:#ffffff;
+    font-size:42px;
+    text-align:center;
+    @include text-shadow();
+    padding-top:20%;
+    max-width:650px;
+    margin:0 auto;
+  }
+  
+  
+  
+.jumbotron {
+  .join_cta{
+     text-align:center;
+     margin:50px auto;
+  }
+  
+  .registered_members{
+    background-position:right center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    
+    padding-right: 80px;
+    background-image: url(../../../images/template/investors_icon_71x70.png); 
+    height:70px;
+    position:absolute;
+    right:30px;
+    bottom:30px;
+  }
+  .registered_members p{
+    color:#ffffff;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:20px;
+    line-height:18px;
+
+  }
+  
+  a.btn.jumbotron_btn{
+    background-color:$orange;
+    font-size:18px;  
+    padding:5px 15px;
+    @include box-shadow();
+    
+  }
+  
+  a.btn.jumbotron_btn:hover{
+    color:#ffffff;
+    background-color:$orange;
+    
+  }
+  
+  @media (max-width:767px){
+    h1.site-tagline{
+         font-size:28px;
+         margin-top:30px;
+    } 
+  }
+}
+
+  #home_benefits, #about_members-benefits{
+    background-color:$palegrey;
+    
+    .benefit{
+       
+        width:30%;
+        padding-left:60px; 
+        padding-right:25px;
+        background-position: left top;
+        background-repeat:no-repeat;
+        margin-bottom:25px;
+        
+    }
+    
+    @media (max-width:990px){
+        .benefit{
+             
+        }
+    
+    }
+    
+    @media (max-width:767px){
+        .benefit{
+            
+           width:auto;
+        }
+    }
+    .benefit#top_startup{
+        background-image:url(../../../images/template/top_startup_colored.png);
+    }
+    
+    .benefit#customized_approach{
+         background-image:url(../../../images/template/customized_approach_colored.png);
+    }
+    
+    .benefit#newsroom{
+          background-image:url(../../../images/template/newsroom_colored.png);
+    }
+    
+    .benefit#events{
+          background-image:url(../../../images/template/events_colored.png);
+    }
+    
+    .benefit#documentation{
+          background-image:url(../../../images/template/documentation_colored.png);
+    } 
+     
+    .benefit#community{
+          background-image:url(../../../images/template/community_colored.png);
+    }
+  }
+  
+  
+  
+  #home_partners{
+      
+    
+
+  .testimonials{
+      padding:0 50px;
+      position:relative;
+      .testimonial_controls{
+              position:absolute;
+              top:40%; 
+              left:0;
+              z-index:10;
+              height:40px; 
+              width:100%;
+              
+         }
+         
+         a.prev_testimonial{
+             position:absolute;
+             left:0px;
+         }
+         
+         a.next_testimonial{
+             position:absolute;
+             right:0px; 
+         }         
+      
+      .testimonial_wrapper{
+          position:relative;
+           
+          display:block;
+          padding:0 30px;
+        
+      }
+      .testimonial_content, .testimonial_content p{
+          font-style:italic;
+          
+          
+      }  
+      .testimonial_content::before{
+          background:url(../../../images/template/open_quotation.png) left top no-repeat;
+          
+          width:20px;
+          height:20px;
+           content: ''; /* you have to define that to make the pseudo elements work */
+          position: absolute;
+          top: 0;
+          left:0px;
+      }
+      
+      .testimonial_content::after{
+        background:url(../../../images/template/close_quotation.png) left top no-repeat;
+        width:20px;
+        height:20px;
+          content: ''; /* you have to define that to make the pseudo elements work */
+        position: absolute;
+        bottom: 0;
+        right:0px;
+      } 
+      
+      .testimonial_from{
+         margin-top:35px;
+         display:block;
+         .from_picture{
+            float:left;
+            margin-right:15px;
+         }
+         .from{
+           float:left;
+           display:inline-block;
+           font-weight:bold;
+           max-width:250px; 
+           font-size:16px;
+           
+         }
+         
+         .from .title{
+           font-weight:normal;
+           font-size:14px;
+           line-height:16px;
+         }
+         
+         
+         .testimonial_controls{
+              position:relative;
+              top:50%; 
+              left:0;
+         }
+         
+         a.prev_testimonial{
+             position:absolute;
+             left:0;
+         }
+         
+         a.next_testimonial{
+             position:absolute;
+             right:0;
+         }         
+      }
+      
+      
+     
+  }
+
+   .partners{
+          max-width:100%;
+          overflow:hidden;
+          padding-left:30px;
+          
+          .partners_wrapper{
+             overflow:hidden;
+             height:280px;
+             
+          }
+          
+          .partner{
+             width: 40%;
+             float:left;
+             display:inline-block;
+             height:120px;
+              margin:5px 5%;
+              text-align:center;
+          }
+          
+          .partner img{
+             max-width:100%;
+          }
+      }
+        
+}
+  
+  
+  
+/* end of homepage */
+
+
+.main_content.text_page{
+  
+  margin-bottom:0;
+  padding-bottom:30px;
+ 
+  
+  h1, h2, h3{  
+   
+  }
+}
+
+
+/* about us */
+
+#about-us_content{
+  
+  
+}
+
+
+/* end about us */
+
+/* team */
+
+
+/* end team */
+
+/*contact us */
+
+#contact-us_content{
+   #map{
+     width:100%;
+     height:550px; 
+     margin-bottom:20px;
+     @include transition(all 0.5s ease);
+   }
+   
+   .map_wrapper{
+     position:relative;
+     height:300px;
+      @include transition(all 0.5s ease);
+     overflow:hidden;
+     margin-bottom:15px;
+     
+   }
+   
+    .map_expand{
+      cursor:pointer;
+      position:absolute;
+      bottom:10px;
+      
+      right:10px;
+      
+      width:40px;
+      height:40px; 
+      
+   }
+   
+   .circle{
+      @include circle(40px, #ffffff);
+      border-color:$turquoise;
+      border-style:solid;
+      border-width:2px;
+      position:relative;
+   }
+   
+   .arrow_down{
+      @include triangle-down(20px, $turquoise);
+      position:absolute;
+      top:10px;
+      left:8px; 
+      @include transition(all 0.5s ease);
+   }
+   
+   .map_wrapper.expand{
+      height:550px;
+     .arrow_down{
+        @include transform(rotate(180deg));
+         top: 7px;
+     }     
+      
+   }
+  
+  @media (max-width:767px){
+     .map_wrapper.expand{
+      height:350px; 
+    }
+  }
+  
+}
+
+/*end contact us*/
+
+/* faqs */
+#faqs_content{
+    display:block;
+    
+      .faq_list{
+          
+           margin:0;
+           padding:0;
+           
+
+          .faq_item{
+             padding:10px;
+             cursor:pointer;
+              border-bottom:2px solid #fff;
+              @include transition(all 0.5s ease);
+              background-color:$palegrey;
+          }
+          
+          h4.faq_question{
+              font-family:$font_sans;
+              font-size:16px;
+              cursor:pointer;
+          }
+          
+          .faq_answer{
+           display:block;
+           overflow:hidden;
+            @include transition(all 0.5s ease);
+            font-size:16px;
+            font-style:italic;
+            opacity: 0; 
+            height: 0; 
+            
+             
+          }
+          
+          .faq_answer p{
+              font-size:16px;
+            font-style:italic;
+            
+          }
+          
+          .faq_item.active{
+            background-color:#FFFFFF;    
+          }
+          
+          
+          .faq_item.active .faq_answer{
+               height:auto;
+               opacity:1;
+               
+               
+          }
+        
+      }
+    
+  }
+
+/* end faqs */
+
+/* team */
+#team_content{
+    .team_type .team{
+       display:none;
+    }
+    
+    
+    
+    h2.team_type_title{
+        display:block;
+        text-align:center;
+    }
+    
+    
+    
+    .team_member{
+      display:block;
+    }
+    
+    ul.team_list{
+      list-style:none;
+      text-align:center;
+      width:100%;
+      position:relative;
+      margin:0 auto; 
+    }
+    
+    ul.team_list li{
+      display:inline-block;
+      position:relative;
+      background:none;
+      margin:0;
+      padding:0;
+    }
+      
+     ul.team_list li .member_thumbnail{
+        width:120px;
+        height:120px;
+        margin:5px;
+        position:relative;
+        img{
+          width:120px;
+        }
+        
+        .member_name{
+          position:absolute;
+          bottom:0;
+          background:$skobeloff;
+          opacity:0.7; 
+          width:100%;
+          text-align:center;
+          z-index:20;
+          display:none;
+        }
+        
+        .thumbnail_content:hover .member_name{
+          display:block;  
+        }
+        
+        .member_name a:hover{
+           text-decoration:none;
+        }
+        
+        .member_name h4{
+          font-size:12px;
+          font-weight:bold;
+          color:#fff;
+        }
+        
+        .member_name h5{
+          font-size:9px;
+          color:#fff;
+        }
+        
+        
+        
+        .thumbnail_content{
+          position:relative;
+        }
+         .member_details{
+          display:block;
+          padding: 15px 15px 30px 15px;
+          min-height:300px;
+          background-color:$palegrey;
+          top:120px;
+          position:absolute; 
+          
+        }
+        
+        .member_details .member_details_content{
+          max-width:650px;
+          margin:0 auto;
+          position:relative;
+          width:100%;
+          text-align:left;
+          
+        }
+        
+        .member_details .member_details_content h4{
+            text-transform: uppercase;
+            color:$orange;  
+        }
+        
+        .member_details .member_details_content h5{
+            font-size:13px;
+
+        }
+        
+        .member_details_content .social{
+           display:inline-block;
+          width:22px;
+          height:22px;
+          text-indent:-9999px;
+          background-color:transparent;
+          @include border-radius($btnRadius);
+          background-repeat: no-repeat;
+          background-position: center center;
+          margin-right:5px;
+          
+        }
+        
+        .member_details_content .member_social{
+          
+        }
+        
+        .member_details_content .social.linkedin{
+          background-image:url(../../../images/template/social_linkedin_18x18.png);
+        }
+        
+        .member_details_content .social.email{
+          background-image:url(../../../images/template/social_email_18x18.png); 
+        }
+        
+        .member_details .close_member_bio{
+          display: block;    
+          position: absolute;
+          bottom: -25px;
+          right: 0px;
+          z-index: 30;
+         
+          
+        }
+     }
+    
+}
+
+/* end of team */
+
+/* login page */
+#login_form_wrapper, .loginFP, #register_form_wrapper{
+   max-width:400px;
+   margin: 0 auto;
+   
+   
+   .social_signin{
+      text-align:center;
+     
+   }
+   
+   
+}
+
+#forgot-password_content, #reset-password_content{
+  h2, p{
+    text-align:center;
+  } 
+  
+}
+
+#register_form_wrapper .cd-tabs-navigation li{
+    width:50%;
+    
+}
+
+ul.cd-tabs-navigation li a{
+    text-align:center;
+}
+
+ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
+    color:$orange !important;
+  
+}
+
+.cd-tabs-navigation a.selected{
+  box-shadow:none !important; 
+  border-top:2px solid $orange;
+  
+}
+ .cd-tabs ul{
+    width:100%;
+ }
+
+/* end login page */
+
+
+
+
+/* member's area */
+
+#how-it-works_content{
+  
+
+.howitworks_content{
+    marin:10px auto;
+     h3{
+        padding: 10px 10px;
+        background: $orange;
+        color:#fff;
+        margin-top:0;
+        text-align:center;
+        text-transform:uppercase;
+     }
+     
+     
+     
+     .way_of_investment{
+        border:1px solid $mediumgrey;
+        padding:0;
+        width:29%;
+        margin:2%; 
+        min-height: 250px;
+     }
+     
+      @media (max-width:767px){
+        .way_of_investment{
+          width:auto;
+          margin:0 auto;
+          height: auto; 
+        }
+      }
+     
+     .way_description{
+        p{
+          padding: 0 5px;
+        } 
+        
+        ul li{
+          
+        }   
+     }
+
+}
+
+}
+
+.member_page{
+    
+  
+}
+ @media (max-width:767px){
+.startup_info_session{
+    margin-bottom:15px;
+    text-align:right;
+    
+}
+
+}
+
+.download_link{
+  padding-left: 35px;
+  line-height:40px;
+  height:40px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC4UlEQVRYR+2WW4hPQRzHd1FsUR6kaLctErmUB4lNYXPJLVEoIQ9uq/BA2WVbf0K8UKTkkgflTp5cQ5Tw4C6EFEkh93LJ9fOtGY0x55w5u2lf/lOfzjm/OfOb7/zmN5fSkmYupc3cf0lRQFMjUMYUyscX+NmY6cwroDWdDIXR0B86QQt4AzfgOJyG17Fi8ggYg9MC9DPOH/J8Bt+hA/QAReQprIdtpi5VS4yAVnhYBXXwAbbCXrgHX413+SkHRWYB9IIjMCcrGlkCFN6NsBAuwDzTcdqo2lHZAEvgLEyE90kNsgTMNqE8xXOSiYD11Z2X9vDLGBSRj05HS3lfBztAfoIlTUAFLa7CZxgIzz0Px/ge6Qio5l1RcstuPqbBMDgTUpAmQGFcadRrFH45iWGEYxwcEFCJ7SZchlGO2D/NkgS04Y9roPlUQin5/HICgyJgS0iA6nbCDOPnge8kSUBPfrwD+2BqoHOZYgUoCQ/DFDgQK2A4Pyrx6mFNggDlgMJqSxUvlwL/9sF2C5bD2lgB4/nxKGj5bfYaKfvbwiZQp7bMMh3d5+muhq58PwJtTrWxAmwECjRQIrpFWb0LWoI/heexSby77vvyfT1vBJQDt+EQaO78sgXDfM/4iu8hcNezq71yaTIcjI2AXQXaaLQK3noNtTqUIwOMXSehknV/QKz2AonoDdGrQH5WQAFCeaB6OTwHOog2wOJA592waTlfBJ0T/xzZMTuhTrtB8DjQwUxs02EcfPLqdY5oCidAo3ZC+VNmbzcj0Hp+GehEKyK0UWn5LjPtdSoGS9ZhpHqdhotMKJV4V5KcGXtHnqtBB1CTT0P5dO8D3/jWEtwD2lzegU5DXUS6wFioAZ0B2v3mQurtKCsC7mCVRNoT7I3oBe+6Ef0AJaIEqDwBbTqaOuVPaskjQI7snVBbsIR0BiWbRqmzQ9vzf7sThkZib8W6M9iLSdag/6rPG4FczmN+LgooRuA3sA+TIXFR74YAAAAASUVORK5CYII=) left center no-repeat;
+  display:inline-block;
+}
+
+.startup_filters{
+  text-align:right;
+  margin-bottom:15px;
+  
+}
+
+.startup_item{
+    background-color:$palegrey;
+    border:1px solid $mediumgrey;
+    padding:15px;
+    margin-bottom:65px;
+    position:relative;
+    cursor:pointer;
+    
+    .startup_title{
+      display:block;
+      padding-left:10px;
+      h2.company_name{
+        color:$turquoise;
+        font-size:20px;
+        font-weight:bold;
+        margin:0;
+        padding:0;
+       display:inline-block;
+        width:auto;
+      }
+      
+      .company_industry{
+        font-size:14px;
+        font-style:italic;
+        margin-left:15px;
+        display:inline-block;
+      }
+      
+      .company_location{
+        font-size:14px;
+        padding:5px 10px 5px 25px;
+        background:url(../../../images/template/list_location_icon.png) left 5px center no-repeat;
+        
+      }
+      
+    }
+    
+    .startup_img{
+        .startup_logo{
+            border:1px solid $turquoise;
+            background-color:#fff;
+            min-height:200px;
+            position:relative;
+            text-align:center;
+          
+        }
+        
+        img.startup_image{
+          max-width:96%;
+          left:2%;
+          max-height:100%;
+          @include vertical-align; 
+        }
+    }
+    
+    
+    
+    .quickfacts{
+        display:block;
+        
+    }
+    
+    .quickfacts .fact_item{
+          display:block;
+          margin-bottom:10px;
+          .fact_number{
+            font-size:18px;
+            color:$turquoise;
+          }
+          
+          .fact_title{
+             font-size:12px;
+             display:block;
+             line-height:13px;
+          }
+        
+      }
+    
+    
+    .support_company{
+        position:absolute;
+        bottom:-38px;
+       right:0;
+       width:100%;
+       text-align:right;
+        .support_button{
+            -webkit-border-bottom-right-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -moz-border-radius-bottomright: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            
+            -webkit-border-top-left-radius: 0;
+            -webkit-border-top-right-radius: 0;
+            -moz-border-radius-topleft: 0;
+            -moz-border-radius-topright: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            
+            display:inline-block;
+            margin-right:5px;
+            font-size:18px;
+            text-transform:uppercase;
+        }
+    }
+    
+    
+}
+
+
+.key_investor_img{
+   display:none;
+  
+}
+
+.invested_by{
+    color:#fff;
+    padding:5px 10px;
+    background:$turquoise;
+    width:100%;
+    margin-top:3px;
+    text-align:center;
+    font-size:16px; 
+}
+
+.company_quick_links{
+      text-align:right;
+      .startup_badge{
+          display:inline-block;
+          text-transform:uppercase;
+          margin-right:15px;
+          font-size:12px;
+          line-height:25px;
+          margin-bottom:10px;
+      }
+      
+      .startup_badge a{
+          font-size:12px;
+          line-height:25px;
+        font-weight:bold; 
+      }
+      
+      .video_badge{
+        background:url(../../../images/template/video_orange.png) left center no-repeat;
+        padding-left:35px;
+      }
+      
+      .reward_badge{
+        padding-left:30px;
+        background:url(../../../images/template/rewards_orange.png) left center no-repeat;
+      }
+      
+      .meet_startup{
+         padding-left:32px;
+         background:url(../../../images/template/meet_orange.png) left center no-repeat;
+      }
+      
+      
+    }
+
+.ribbon-wrapper {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index:100;
+}
+
+.ribbon{
+  display:none;
+  font-size:15px;
+  font-weight:bold;
+  text-align: center;
+  /*text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;*/
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: 8px;
+  top: 20px;
+  width: 145px;
+   
+}
+
+.ribbon.active{
+  display:block;
+}
+
+.ribbon_white {
+ 
+  
+  background-color: $turquoise;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($skobeloff), to($turquoise)); 
+  background-image: -webkit-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:    -moz-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:     -ms-linear-gradient(top, $skobeloff, $turquoise); 
+  background-image:      -o-linear-gradient(top, $skobeloff, $turquoise); 
+  color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon_details {
+ 
+  
+  background-color: $turquoise;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($rosebud), to($orange)); 
+  background-image: -webkit-linear-gradient(top, $rosebud, $orange); 
+  background-image:    -moz-linear-gradient(top, $rosebud, $orange); 
+  background-image:     -ms-linear-gradient(top, $rosebud, $orange); 
+  background-image:      -o-linear-gradient(top, $rosebud, $orange); 
+  color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon_white:before, .ribbon_white:after {
+  
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+
+}
+
+.ribbon:before {
+    content: "";
+   position:absolute;
+  bottom: -3px;
+  left: 0;
+ 
+}
+.ribbon:after {
+    content: "";
+   position:absolute;
+  bottom: -3px;
+  right: 0;
+}​
+
+
+
+
+
+.member_form_wrapper{
+    width:100%;
+    max-width:400px;
+    
+    margin: 0 auto;
+  
+}
+    
+.connection_list{
+    margin-bottom:30px;
+   
+  
+}
+
+ .connection_item{
+   margin-bottom: 15px;
+   
+ }
+
+ .connection_item img.profile_picture{
+        max-width:90%;
+        max-height:90%;
+        
+}
+
+.highlight_notes{
+    text-align:right;
+    font-style:italic;
+}
+
+.support_button{
+  
+  @include box-shadow(); 
+}
+
+.company_details{
+    .member_content{
+        position:relative;
+      
+    }
+   .quick_facts{
+      background:$turquoise;
+      color:#fff;
+      margin-bottom:20px;
+      padding:20px 15px;
+      
+   }
+   
+   .status_item{
+      margin-bottom:25px;
+      .status_name{
+        font-size:12px;
+        font-style:italic;
+        
+      }
+      .status_number{
+        font-size:20px;
+        
+      }
+      
+      
+   }
+   
+   .company_founder{
+          padding:10px;
+          background:$palegrey;
+          margin-bottom:15px;
+    }
+    
+    .founder_profile{
+        h3{
+         font-size:14px;
+         color:$orange;
+      
+       }
+       
+       h3.founder_title{
+        color:$darkgrey;
+       }
+      
+      .profile_pic img{
+          max-width:100%;
+          vertical-align:top;
+          
+      }
+      .profile_content, .profile_content p, .profile_content li{
+          font-size:12px;
+      }
+      
+    } 
+    
+    .startup_downloads{
+      padding:10px;
+      background-color:$rosebud;
+      color:#fff;    
+      p, a, h3{
+         color:#fff
+      }
+      
+      h3{
+        font-size:16px;
+      }
+      
+    }
+      
+      
+      .why_we_love, .why_we_love p, .why_we_love a{
+          color:#fff;
+      }
+      
+      .why_we_love h3{
+          font-size:16px;
+          color:#fff;
+         
+        
+      } 
+      .why_we_love{
+          padding:10px;
+          background-color:$rosebud;
+          
+      }
+      
+      .why_we_love, .why_we_love p, .why_we_love a{
+          color:#fff;
+      }
+      
+      .why_we_love h3{
+          font-size:16px;
+          color:#fff;
+         
+        
+      }
+      
+    .company_details h3{
+        color:$turquoise;
+      
+    }
+    
+    .company_title{
+      h2{
+        color:$turquoise;
+        font-size:22px;
+         margin-bottom:5px;
+         margin-top:0;
+      } 
+      
+      h3{
+        font-size: 14px;
+        margin-top:0;
+        margin-bottom:10px; 
+        
+        
+      }
+    }
+    
+    .company_quick_links{
+        padding-top:25px;
+      
+    }
+    
+    .quick_facts{
+      position:relative;
+      .key_investors{
+          position:absolute;
+          bottom:15px;
+          right:15px;
+        
+      }
+      
+      .key_investors .invested_by{
+          text-align:right;
+      }  
+    }
+  
+}
+
+.fund_details{
+    
+  
+    .quick_facts{
+        background:$turquoise;
+        padding: 15px;
+        color:#fff;
+        font-size:16px;
+    }
+    
+    .quick_facts p{
+        color:#fff;
+        font-size:16px;
+    }
+    
+    .project_logo .logo_holder{
+        background-color:#fff;
+         min-height:250px;
+         background-repeat:no-repeat;
+        width:100%;
+          background-position:center center;
+          background-size: contain;
+         
+      
+    }
+    
+    .company_description h2{
+        color:$turquoise;
+      
+    }
+    
+    .fund_manager{
+        background-color:$palegrey;
+        
+        h2{
+            color:$turquoise;
+        }
+    }
+    .profile_pic{
+    
+    }
+    
+    .profile_pic img{
+        max-width:100%;
+        vertical-align:top;
+    }
+}
+
+
+.member_content{
+        position:relative;
+}
+
+.floating_content{
+      display:block;
+      position:absolute;
+      text-align:right;
+      width:100%;
+      z-index:50;
+      .support_company{
+          text-align:right;
+      }
+    
+  }   
+
+#info_session_form .form_thankyou_message{
+  display:none;
+}
+
+/* end of members area */ 
+ 
