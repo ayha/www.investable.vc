@@ -43,8 +43,9 @@
 	    <section id="home_benefits" >
 	    	<div class="container">
 	    		<h2>[[%title.members_benefits? &namespace=`investable`]]</h2>
+	    		<div class="benefits">
 	    		 [[!getResources? &parents=`[[*id]]` &tpl=`home_benefits` &showHidden=`1` &includeContent=`1` &hideContainers=`0` &where=`{"alias:=":"members-benefits"}`]]
-                
+                </div>
 	    	</div>
 	    </section>
 		<section id="home_partners">
@@ -137,6 +138,11 @@
 				}else{
 					show_testimonial(current_testimonail-1);
 				}
+   			});
+   			
+   			$(".benefits").isotope({
+   				 itemSelector: '.benefit',
+ 				 layoutMode: 'fitRows'
    			});
    		});
    </script>
