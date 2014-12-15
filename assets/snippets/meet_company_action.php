@@ -1,6 +1,6 @@
 <?php
-$emailTo = "emma@investable.vc";
-$emailCC = "alex@investable.vc";
+$emailTo = $modx->getOption("member_email");
+$emailCC = $modx->getOption("email_cc");
 
 
 

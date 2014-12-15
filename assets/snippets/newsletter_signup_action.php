@@ -1,22 +1,34 @@
 <?php
+$emailTo = $modx->getOption("newsletter_email");
+$emailCC = $modx->getOption("email_cc");
 $table = "ext_newsletter_signup";
 $user = $modx->getUser();
 $userid = $user->get("id");
-$url = $_SERVER['REQUEST_URI'];
-$ip_addr = $_SERVER['REMOTE_ADDR'];
-$user_agent = $_SERVER["HTTP_USER_AGENT"];
 $email = $_POST["email_address"];
+$user_agent = $_SERVER["HTTP_USER_AGENT"];
+$ip_addr = $_SERVER['REMOTE_ADDR'];
+$date = date("Y-m-d H:i:s");
 
 
-//$q = "INSERT INTO ".$table." (userid, visited_path, ip_address) VALUES ('".$userid."', '".$url."','".$ip_addr."')";
-$q = "INSERT INTO ".$table." (email_address, userid, user_agent, ip_address, date_sent) VALUE (".$modx->quote($email).", ".$userid.", ".$modx->quote($user_agent).", ".$modx->quote($ip_addr).", '".date("Y-m-d H:i:s")."')";
+$q = "INSERT INTO ".$table." (email_address, userid, user_agent, ip_address, date_sent) VALUES (".$modx->quote($email).", ".$modx->quote($userid).", ".$modx->quote($user_agent).", ".$modx->quote($ip_addr).", ".$modx->quote($date).")";
+
 $result = $modx->query($q);
-//return $result;
-if(is_obect($result)){
-	
-	
-	
-}else{
-	return "-1";
-	
-}
+
+
+$subject = "New mailing list request from ".$email;
+$from = "hello@investable.vc";
+$message = "<p>Hi,</p><p>There is a new mailing list request on ".date("Y-m-d H:i")." from ".$email."</p>";
+
+
+$modx->getService('mail', 'mail.modPHPMailer');
+$modx->mail->set(modMail::MAIL_BODY, $message);
+$modx->mail->set(modMail::MAIL_FROM, $from);
+$modx->mail->set(modMail::MAIL_FROM_NAME, "Investable.vc");
+$modx->mail->set(modMail::MAIL_SENDER, $from);;
+$modx->mail->set(modMail::MAIL_SUBJECT, $subject);
+$modx->mail->address('to', $emailTo, $emailTo);
+$modx->mail->address('cc', $emailCC, $emailCC);
+$modx->mail->address('reply-to', $from);
+$modx->mail->setHTML(true);
+//call send mail
+return $modx->mail->send();
