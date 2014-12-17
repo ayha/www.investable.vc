@@ -19,7 +19,11 @@
 	    	<div class="container">
 	     	[[*content]]
 	     	<div class="join_cta">
+	     	[[!checkLogin:is=``:then=`
 	     		<a class="btn jumbotron_btn" href="[[~9]]">[[%cta.joinus? &namespace=`investable` ]]</a>
+	     	`:else=`	
+	     		<a class="btn jumbotron_btn" href="[[~48]]">[[%cta.start_investing? &namespace=`investable` ]]</a>
+	     	`]] 
 	     	</div>
 	     	
 	     	<div class="registered_members pull-right">
