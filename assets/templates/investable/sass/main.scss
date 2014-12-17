@@ -821,10 +821,22 @@ footer{
              max-width:100%;
           }
       }
-        
+      
+      
 }
+  .newsroom_cta{
+    margin-bottom:25px;
+  }
   
-  
+  .newsroom_cta, .newsroom_cta p{
+          color:$orange;
+          font-size:16px;
+          text-align:center;
+      }
+      
+      .newsroom_cta a{
+          color:$orange;
+      }
   
 /* end of homepage */
 
