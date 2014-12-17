@@ -128,7 +128,7 @@ function linkedin_login_attempt(email, token){
 		type: "POST",
 		data: {"username": email, "password": token },
 		complete: function(xhr, status){
-			console.log(xhr.responseText);
+			//console.log(xhr.responseText);
 		}
 		
 	})
@@ -184,7 +184,7 @@ function addRibbon(wrapper, text){
 
 function updateInvestorIcons(wrapper){
 	$(wrapper).find(".key_investors").children(".key_investor_img").each(function(ind, ele){
-    		console.log($(ele));
+    		//console.log($(ele));
     		var src= $(ele).attr("src");
     		var html ='<div class="invested_by">Invested in by <img src="'+src+ '" /></div>';
     		$(this).parent().append(html);

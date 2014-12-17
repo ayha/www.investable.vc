@@ -182,6 +182,7 @@ $(document).ready(function(){
 					height		: '70%',
 					autoSize	: false,
 					closeClick	: false,
+					padding		: 0,
 					openEffect	: 'none',
 					closeEffect	: 'none'
 				});

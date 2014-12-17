@@ -848,6 +848,73 @@ footer{
       font-size:16px;
       
     }
+    
+    @media (max-width:990px){
+        p, li, a{
+          font-size:14px;
+        }
+    }
+  
+    ul.member_offerings{
+      list-style-type:none;
+      text-align:center;
+      padding:0; 
+      margin:0 auto;
+      
+      position:relative;
+      li{
+        @include circle(260px, $rosebud);
+       
+        display:inline-block;
+        
+        margin:10px;
+        color:#fff;
+        text-align:center;
+        position:relative;
+        
+      }
+      
+       
+      
+      li span{
+        @include vertical-align();
+        padding:0 25px;
+        textt-transform:uppercase;
+      }
+      
+      @media (max-width:990px){
+        li{
+             width:200px;
+             height:200px;
+             font-size:14px;
+        }
+    
+       }
+    
+        @media (max-width:767px){
+            li{
+              width:auto;
+              height:auto;
+              display:block;
+              background-color:$rosebud;
+              -moz-border-radius: 0;
+             -webkit-border-radius: 0;
+              border-radius: 0;
+               padding: 10px 20px;
+              
+            }
+            li span{
+              padding:0;
+              position:relative;
+              top:0;
+              -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+
+            }
+        }
+      
+    }
   
 }
 
