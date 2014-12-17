@@ -1,4 +1,4 @@
-<div data-url="[[~[[+id]]]]" class="startup_item" id="company_[[+alias]]" data-rewards="[[+tv.rewards:ne=``:then=`1`]]" data-youtube="[[+tv.youtube]]" data-nest="[[+tv.invested_by_nest]]" data-alias="[[+alias]]" data-goal="[[+tv.goal]]" data-cid="[[+id]]" data-raised="[[+tv.raised]]" data-enddate="[[+unpub_date]]"  data-overfunded="[[+tv.overfunded]]">
+<div data-url="[[~[[+id]]]]" class="startup_item" id="company_[[+alias]]"  data-rewards="[[+tv.rewards:ne=``:then=`1`]]" data-youtube="[[+tv.youtube]]" data-nest="[[+tv.invested_by_nest]]" data-alias="[[+alias]]" data-goal="[[+tv.goal]]" data-cid="[[+id]]" data-raised="[[+tv.raised]]" data-enddate="[[+unpub_date]]" data-overfunded="[[+tv.overfunded]]">
 	<div class="ribbon-wrapper"><div class="ribbon ribbon_white">Days Left</div></div>
 	<div class="startup_title">
 		<h2 class="company_name">[[+longtitle]]</h2> <div class="company_industry">[[+tv.industry]]</div><div class="clearboth"></div>
@@ -58,6 +58,7 @@
 	</div>
 	<div class="clearboth"></div>
 	<div class="support_company">
+		[[+tv.overfunded]]
 						[[+tv.overfunded:ne=`Yes`:then=`
 						<a class="btn support_button invest_company" data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Support" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[+id]]` &getCount=`1`]]</span>)</a>
 						`]]

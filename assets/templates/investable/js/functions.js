@@ -143,7 +143,7 @@ function linkedin_regsiter_attemp(username, firstname, lastname, summary, token,
 
 // member functions
 
-function updateCountdown(company){
+function updateCountdown(company, overfunded){
 	var end_date = $("#"+company).data("enddate");
 	//var target_date = new Date(end_date).getTime();
 	//var target_date = Date.parse(end_date);
@@ -153,17 +153,22 @@ function updateCountdown(company){
 	var current_date = new Date().getTime();
     var seconds_left = (target_date - current_date) / 1000;
     
-    days = parseInt(seconds_left / 86400);
+    days = parseInt(seconds_left / 86400);  
 	
 	$("#"+company).find(".timeleft").children(".fact_number").html(days);
-	
-	if(days <=10){
-		$("#"+company).find(".ribbon").html(days + " Days Left");
-		$("#"+company).find(".ribbon").addClass("active");
+	console.log(company + " / " + overfunded);
+	if(overfunded == "Yes"){
+		addRibbon("#"+company, "OVERFUNDED");
+	}else if(days <=10){
+		addRibbon("#"+company, days + " Days Left");
+		//$("#"+company).find(".ribbon").html(days + " Days Left");
+		//$("#"+company).find(".ribbon").addClass("active");
 	}
+	
+
 }
             
-function updateFundedPercentage(company){
+function updateFundedPercentage(company, overfunded){
 	var goal = $("#"+company).data("goal");
 	var raised = $("#"+company).data("raised");
 	
@@ -173,13 +178,19 @@ function updateFundedPercentage(company){
 	//	$("#"+company).find(".quickfacts").children(".percentage").remove();
 		
 	//}else{
-	   $("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
+		if(overfunded != "Yes"){
+			$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
+		}else{
+			$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html("Overfunded");
+		}
+	   
 	//}
 }
 
 
 function addRibbon(wrapper, text){
-	
+	$(wrapper).find(".ribbon").html(text);
+	$(wrapper).find(".ribbon").addClass("active");
 }
 
 function updateInvestorIcons(wrapper){

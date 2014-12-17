@@ -248,7 +248,10 @@
 				
 				<div class="floating_content">
 					<div class="support_company">
+						
+						[[*overfunded:ne=`Yes`:then=`
 						<a class="btn support_button invest_company" title="Support" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`1`]]</span>)</a>
+						`]]
 						<a class="btn support_button follow_company" title="Follow" href="#">[[%startups.add_favourite? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_followers? &companyid=`[[*id]]` &getCount=`1`]]</span>)</a>
 						
 					</div>
@@ -297,14 +300,19 @@
 				
 				percentage_raised = Math.ceil(investment_raised*100/investment_goal);
 				//if(percentage_raised >70){
+				[[*overfunded:ne=`Yes`:then=`
 					$("#raised .status_number").html(percentage_raised + "%");
+				`:else=`
+					$("#raised .status_number").html("Overfunded");
+				`]]
+					
 				//}else{
 				//	$("#raised").remove();
 				//}
 				
 				
 				setInterval(function(){
-					update_countdown($("#countdown").data("target_date"));
+					update_countdown($("#countdown").data("target_date"), "[[*overfunded]]"); 
 					
 				}, 1000);
 							
@@ -406,7 +414,7 @@
 			
 			
 			
-			function update_countdown(end_date){
+			function update_countdown(end_date, overfunded){
 				//var target_date = new Date(end_date).getTime();
 				var end_date = end_date.split(" ")[0].split("-");
    				 var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
@@ -419,9 +427,12 @@
 				
 				$("#countdown .status_number").html(days + " [[%startups.days? &topic=`default` &namespace=`investable` &language=`en`]]");
 				
-				if(days <=10){
-					$(".quick_facts").find(".ribbon").html(days + " Days Left");
-					$(".quick_facts").find(".ribbon").addClass("active");
+				if(overfunded == "Yes"){
+					addRibbon(".quick_facts", "OVERFUNDED");
+				}else if(days <=10){
+					addRibbon(".quick_facts", days + " Days Left");
+					//$(".quick_facts").find(".ribbon").html(days + " Days Left");
+				//	$(".quick_facts").find(".ribbon").addClass("active");
 				}
 				
 			}

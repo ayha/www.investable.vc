@@ -82,9 +82,9 @@
 				});
 				
 				$(".startup_item").each(function(ind){
-					updateCountdown($(this).attr("id"));
-				    updateFundedPercentage($(this).attr("id"));
-				});
+					updateCountdown($(this).attr("id"), $(this).data("overfunded"));
+				    updateFundedPercentage($(this).attr("id"), $(this).data("overfunded"));
+				}); 
 				
 				
 				
