@@ -115,15 +115,28 @@ function show_member_by_hash(hash){
 	newDiv += content;
 	newDiv += "</div><div class='clearboth'></div>";
 	newDiv += "</div></div>";
-	$(".member_thumbnail[data-alias="+hash+"]").height(450);
 	
+	if(windowW < 767){
+		$(".member_thumbnail[data-alias="+hash+"]").height(600);
+	
+	}else{
+		$(".member_thumbnail[data-alias="+hash+"]").height(450);
+		
+	}
 	$(".member_thumbnail[data-alias="+hash+"]").append(newDiv);
 	$(".member_thumbnail .member_details").width(windowW-30);
 	var newHeight = $(".member_thumbnail[data-alias="+hash+"] .member_details").height();
 	
+	if(windowW < 767){
 	if(newHeight > 300){
-		$(".member_thumbnail[data-alias="+hash+"] .member_details").finish().animate({height: (newHeight+50)}, 300);
+		$(".member_thumbnail[data-alias="+hash+"] .member_details").finish().animate({height: (newHeight+150)}, 300);
+		$(".member_thumbnail[data-alias="+hash+"]").finish().animate({height: (newHeight+306)}, 300);
+	}
+	}else{
+	if(newHeight > 300){
+		$(".member_thumbnail[data-alias="+hash+"] .member_details").finish().animate({height: (newHeight+70)}, 300);
 		$(".member_thumbnail[data-alias="+hash+"]").finish().animate({height: (newHeight+206)}, 300);
+	}	
 	}
 	$("html, body").animate({ scrollTop: currTop }, 500);
 	

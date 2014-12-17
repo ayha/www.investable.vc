@@ -156,6 +156,7 @@ body{
  
 }
 
+/*
 ul {
     list-style-type: none;
     padding: 0px;
@@ -165,10 +166,11 @@ ul {
 ul li {
     background-image: url(../../../images/template/bullet_turquoise.png);
     background-repeat: no-repeat;
-    background-position: 0px center; 
+    background-position: left 5px;
     padding-left: 15px; 
     margin-left:10px;
 }
+*/
 
 .clearboth{
   clear:both;
@@ -841,8 +843,11 @@ footer{
 
 /* about us */
 
-#about-us_content{
-  
+#about_content{
+    p, li, a{
+      font-size:16px;
+      
+    }
   
 }
 
@@ -1061,7 +1066,7 @@ footer{
         }
          .member_details{
           display:block;
-          padding: 15px 15px 30px 15px;
+          padding: 15px 15px 60px 15px;
           min-height:300px;
           background-color:$palegrey;
           top:120px;
@@ -1116,7 +1121,7 @@ footer{
         .member_details .close_member_bio{
           display: block;    
           position: absolute;
-          bottom: -25px;
+          bottom: -35px;
           right: 0px;
           z-index: 30;
          
@@ -1181,7 +1186,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 #how-it-works_content{
   
-
+   p, ul li, a{
+       font-size:16px;
+   }
+  
+  
+  
 .howitworks_content{
     marin:10px auto;
      h3{
@@ -1193,6 +1203,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         text-transform:uppercase;
      }
      
+    
      
      
      .way_of_investment{

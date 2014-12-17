@@ -186,7 +186,7 @@ function updateInvestorIcons(wrapper){
 	$(wrapper).find(".key_investors").children(".key_investor_img").each(function(ind, ele){
     		console.log($(ele));
     		var src= $(ele).attr("src");
-    		var html ='<div class="invested_by">Invested by <img src="'+src+ '" /></div>';
+    		var html ='<div class="invested_by">Invested in by <img src="'+src+ '" /></div>';
     		$(this).parent().append(html);
      });
 	
