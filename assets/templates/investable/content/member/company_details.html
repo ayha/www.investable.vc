@@ -349,10 +349,10 @@
 				//}
 				
 				
-				setInterval(function(){
+				//setInterval(function(){
 					update_countdown($("#countdown").data("target_date"), "[[*overfunded]]"); 
 					
-				}, 1000);
+				//}, 1000);
 							
 			    $("a.follow_company").click(function(e){
 			    	e.preventDefault();
@@ -442,6 +442,11 @@
 			
 			function update_countdown(end_date, overfunded){
 				//var target_date = new Date(end_date).getTime();
+				if(end_date == ""){
+					$("#countdown .status_number").html("CLOSED");
+					days = -1;
+				}else{
+				
 				var end_date = end_date.split(" ")[0].split("-");
    				 var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
 				
@@ -452,13 +457,12 @@
                 days = parseInt(seconds_left / 86400);
 				
 				$("#countdown .status_number").html(days + " [[%startups.days? &topic=`default` &namespace=`investable` &language=`en`]]");
-				
+				}
 				if(overfunded == "Yes"){
 					addRibbon(".quick_facts", "OVERFUNDED");
-				}else if(days <=10){
+				}else if(days <=10 && days >=0){
 					addRibbon(".quick_facts", days + " Days Left");
-					//$(".quick_facts").find(".ribbon").html(days + " Days Left");
-				//	$(".quick_facts").find(".ribbon").addClass("active");
+					
 				}
 				
 			}

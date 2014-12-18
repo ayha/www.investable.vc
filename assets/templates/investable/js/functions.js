@@ -166,7 +166,7 @@ function updateCountdown(company, overfunded){
 	
 	if(overfunded == "Yes"){
 		addRibbon("#"+company, "OVERFUNDED");
-	}else if(days <=10 && days >0){
+	}else if(days <=10 && days >=0){
 		addRibbon("#"+company, days + " Days Left");
 		
 	}
