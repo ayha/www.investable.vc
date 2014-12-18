@@ -7,7 +7,9 @@
     <head>
        [[$page_head]] 
        <link rel="stylesheet" href="[[++assets_url]]templates/investable/js/bxslider/jquery.bxslider.css">
+       <script src="[[++assets_url]]templates/investable/js/bxslider/plugins/jquery.fitvids.js"></script>
        <script src="[[++assets_url]]templates/investable/js/bxslider/jquery.bxslider.min.js"></script>
+       
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -54,6 +56,7 @@
 						
 						<ul class="bxslider">
 						  <li><img src="[[*content_image]]" /></li>
+						  
 						  [[*slideshow1:ne=``:then=`
 						  <li><img src="[[*slideshow1]]" /></li>
 						  `]]
@@ -73,24 +76,45 @@
 						   [[*slideshow5:ne=``:then=`
 						  <li><img src="[[*slideshow5]]" /></li>
 						  `]]
+						  
+						  [[*video1:ne=``:then=`
+						  <li class="video_slide" data-url="[[*video1]]">[[!embed_youtube? &url=`[[*video1]]`]]</li>
+						  `]] 
+						  
+						   [[*video2:ne=``:then=`
+						  <li class="video_slide" data-url="[[*video2]]">[[!embed_youtube? &url=`[[*video2]]`]]</li>
+						  `]]
+						  
+						   [[*video3:ne=``:then=`
+						  <li class="video_slide" data-url="[[*video3]]">[[!embed_youtube? &url=`[[*video3]]`]]</li>
+						  `]] 
+						  
+						   [[*video4:ne=``:then=`
+						  <li class="video_slide" data-url="[[*video4]]">[[!embed_youtube? &url=`[[*video4]]`]]</li>
+						  `]] 
+						  
+						   [[*video5:ne=``:then=`
+						  <li class="video_slide" data-url="[[*video5]]">[[!embed_youtube? &url=`[[*video5]]`]]</li>
+						  `]] 
+						   
 						</ul>
 						
 						<div id="bx-pager" class="bx-pager">
-						  <a data-slide-index="0" href=""><img src="[[*content_image:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="0" href=""><img src="[[*content_image:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  [[*slideshow1:ne=``:then=`
-						  <a data-slide-index="1" href=""><img src="[[*slideshow1:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="1" href=""><img src="[[*slideshow1:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  `]]
 						    [[*slideshow2:ne=``:then=`
-						  <a data-slide-index="2" href=""><img src="[[*slideshow2:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="2" href=""><img src="[[*slideshow2:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  `]]
 						    [[*slideshow3:ne=``:then=`
-						  <a data-slide-index="3" href=""><img src="[[*slideshow3:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="3" href=""><img src="[[*slideshow3:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  `]]
 						    [[*slideshow4:ne=``:then=`
-						  <a data-slide-index="4" href=""><img src="[[*slideshow4:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="4" href=""><img src="[[*slideshow4:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  `]]
 						    [[*slideshow5:ne=``:then=`
-						  <a data-slide-index="5" href=""><img src="[[*slideshow5:phpthumbof=`w=60&h=60&zc=1`]]" /></a>
+						  <a data-slide-index="5" href=""><img src="[[*slideshow5:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
 						  `]]
 						  
 						</div>
@@ -270,10 +294,19 @@
 				 updateInvestorIcons(".quick_facts");
 				$('.bxslider').bxSlider({
 				  pagerCustom: '#bx-pager',
-				  adaptiveHeight: true
+				  adaptiveHeight: true,
+				  infiniteLoop: false,
+  				  hideControlOnEnd: true
 				});
 				
 				var bottomPad = 230;
+				
+				$(".bxslider li").each(function(ind, ele){
+					if($(this).hasClass("video_slide")){
+						
+						getYoutubeImg($(this).data("url"), "#bx-pager", (ind));
+					}
+				});
 				
 				$(window).scroll(function(e){
 					$(".floating_content").finish();

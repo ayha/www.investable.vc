@@ -202,3 +202,36 @@ function updateInvestorIcons(wrapper){
      });
 	
 }
+
+function getYoutubeImg(url, appendTo, idx){
+	var apikey = "AIzaSyD00CRyUKuvfuRoT6V-5QsFctGttGqFqYg";
+	var part = "snippet";
+	var baseUrl = "https://www.googleapis.com/youtube/v3/";
+	var video_id = url.substring(url.indexOf("embed/")+6);
+	var apiUrl  = baseUrl +"videos?id="+video_id+"&key="+apikey+"&part="+part;
+	console.log(idx);
+	$.ajax({
+	  		url: apiUrl,
+		    dataType: 'json',
+		    success: function(data) {
+		    	var thumbnailUrl =data.items[0]["snippet"]["thumbnails"]["default"]["url"];
+		        //console.log(thumbnailUrl);
+		        var nextCount = $(appendTo).children("a").length;
+		        var html = '<a data-slide-index="'+idx+'" href="#"><img src="'+thumbnailUrl+'" width="48" height="32" /></a>';
+		        $(appendTo).append(html);
+		        
+		        var elements = $(appendTo + " a");
+		        elements.detach();
+		        elements.sort(function(a, b){
+		        	return parseInt($(a).data("slide-index")) - parseInt($(b).data("slide-index"));
+		        	//console.log($(a));  
+		        	//return 1;
+		        });
+		        //console.log(elements);
+		       $(appendTo).append(elements);
+		        
+		    }
+	  });
+	  
+	
+}
