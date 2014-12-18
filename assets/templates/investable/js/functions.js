@@ -145,25 +145,33 @@ function linkedin_regsiter_attemp(username, firstname, lastname, summary, token,
 
 function updateCountdown(company, overfunded){
 	var end_date = $("#"+company).data("enddate");
-	//var target_date = new Date(end_date).getTime();
-	//var target_date = Date.parse(end_date);
-	var end_date = end_date.split(" ")[0].split("-");
-	 var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
-	var days, hours, minutes, seconds;
-	var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
-    
-    days = parseInt(seconds_left / 86400);  
+	if(end_date == ""){
+		$("#"+company).find(".timeleft").children(".fact_number").html("CLOSED");
+		days = -1;
+	}else{
 	
-	$("#"+company).find(".timeleft").children(".fact_number").html(days);
-	console.log(company + " / " + overfunded);
+	
+		end_date = end_date.split(" ")[0].split("-");
+		var target_date = new Date( end_date[0], (end_date[1]-1), end_date[2], 0, 0, 0 ).getTime();
+		var days, hours, minutes, seconds;
+		var current_date = new Date().getTime();
+	    var seconds_left = (target_date - current_date) / 1000;
+	    
+	    days = parseInt(seconds_left / 86400);  
+		
+		$("#"+company).find(".timeleft").children(".fact_number").html(days);
+		
+	}
+	
+	
 	if(overfunded == "Yes"){
 		addRibbon("#"+company, "OVERFUNDED");
-	}else if(days <=10){
+	}else if(days <=10 && days >0){
 		addRibbon("#"+company, days + " Days Left");
-		//$("#"+company).find(".ribbon").html(days + " Days Left");
-		//$("#"+company).find(".ribbon").addClass("active");
+		
 	}
+	
+	
 	
 
 }
@@ -174,12 +182,13 @@ function updateFundedPercentage(company, overfunded){
 	
 	var percentage = Math.ceil(raised*100/goal);
 	
-	//if(percentage <70){ // hide the percentage
-	//	$("#"+company).find(".quickfacts").children(".percentage").remove();
-		
-	//}else{
+	
 		if(overfunded != "Yes"){
-			$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
+			if(percentage >0){
+				$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"% ("+$.formatNumber(raised, {format:"$#,###", locale:"us"})+")");
+			}else{
+				$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"%");
+			}
 		}else{
 			$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html("Overfunded");
 		}

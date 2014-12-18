@@ -334,7 +334,12 @@
 				percentage_raised = Math.ceil(investment_raised*100/investment_goal);
 				//if(percentage_raised >70){
 				[[*overfunded:ne=`Yes`:then=`
-					$("#raised .status_number").html(percentage_raised + "%");
+					if(percentage_raised >0){
+						$("#raised .status_number").html(percentage_raised + "% ("+$.formatNumber(investment_raised, {format:"$#,###", locale:"us"})+")");
+					}else{
+						$("#raised .status_number").html(percentage_raised + "%");
+					}
+					
 				`:else=`
 					$("#raised .status_number").html("Overfunded");
 				`]]
@@ -375,19 +380,7 @@
 			    	e.preventDefault();
 			    	var companyname ="[[*longtitle]]";
 			    	var companyid = "[[*id]]";
-			    	/*
-			    	$.ajax("[[~81]]",{
-			    		type:"POST",
-			    		data: {"companyid":companyid, "companyname":companyname},
-			    		complete:function(xhr, status){
-			    			if(status == "success"){
-			    				$.fancybox.open(xhr.responseText);
-			    			}else{
-			    				alert("There was an error sending the request, please try again.");
-			    			}
-			    		}
-			    	});
-			    	*/
+			    	
 			    	
 			    	$("#pledge_form").children("#pledge_company_id").val(companyid);
 			    	$("#pledge_form").children("#pledge_company_name").val(companyname);

@@ -124,19 +124,7 @@
 			    	e.preventDefault();
 			    	var companyname =$(this).data("companyname");
 			    	var companyid = $(this).data("companyid");
-			    	/*
-			    	$.ajax("[[~81]]",{
-			    		type:"POST",
-			    		data: {"companyid":companyid, "companyname":companyname},
-			    		complete:function(xhr, status){
-			    			if(status == "success"){
-			    				$.fancybox.open(xhr.responseText);
-			    			}else{
-			    				alert("There was an error sending the request, please try again.");
-			    			}
-			    		}
-			    	});
-			    	*/
+			    	
 			    	$("#pledge_form").children("#pledge_company_id").val(companyid);
 			    	$("#pledge_form").children("#pledge_company_name").val(companyname);
 			    	$.fancybox.open("#pledge_form_wrapper",{
