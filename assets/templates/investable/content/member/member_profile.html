@@ -64,7 +64,14 @@
 						<div class="form_row"><label>Display Name</label><input type="text" name="displayname" id="displayname" placeholder="Display Name" value="[[+displayname]]" /></div>
 						<div class="form_row"><label>First Name</label><input type="text" name="firstname" id="firstname" placeholder="First Name" value="[[+firstname]]"/> <span class="error">[[!+reg.error.firstname]]</span> </div>
 						<div class="form_row"><label>Last Name</label><input type="text" name="lastname" id="lastname" placeholder="Last Name" value="[[+lastname]]"/> <span class="error">[[!+reg.error.lastname]]</span> </div>
-					    
+					    <div class="form_row"><label>Gender</label>
+							
+							<select name="gender" id="gender" >
+								<option value="1" [[+gender:is=`1`:then=`selected`]]>Male</option>
+								<option value="2" [[+gender:is=`2`:then=`selected`]]>Female</option>
+								<option value="0" [[+gender:is=`0`:then=`selected`]]>Other</option>
+							</select>
+						</div>
 					    <div class="form_row"><label>Email Address</label><input type="email" name="email" id="email" placeholder="Email Address" value="[[+email]]"/>  <span class="error">[[!+reg.error.email]]</span> </div>
 					    <div class="form_row"><label>Contact Number</label><input type="text" name="contact_number" id="contact_number" placeholder="Contact Number" value="[[+contact_number]]"/></div>
 					    <div class="form_row"><label>Country</label><input type="text" name="country" id="country" placeholder="Country" value="[[+country]]"/></div>
@@ -105,7 +112,14 @@
 						<br />
 						</div>	
 						
-						<div class="form_row"><label>Risk Appetite</label><input type="text" name="risk_appetite" id="risk_appetite" placeholder="Risk Appetite" value="[[+risk_appetite]]" /></div>
+						<div class="form_row"><label>Risk Appetite</label>
+							
+							<select name="risk_appetite" id="risk_appetite" >
+								<option value="High" [[+risk_appetite:is=`High`:then=`selected`]]>High</option>
+								<option value="Medium" [[+risk_appetite:is=`Medium`:then=`selected`]]>Medium</option>
+								<option value="Low" [[+risk_appetite:is=`Low`:then=`selected`]]>Low</option>
+							</select>
+						</div>
 						
 					</div>
 					<div class="form_section submit">
