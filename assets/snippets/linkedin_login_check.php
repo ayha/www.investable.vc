@@ -22,6 +22,17 @@ if(!is_object($result)){
 	
    if($row = $result->fetch(PDO::FETCH_ASSOC)){ 
       $userid = $row["id"];
+	  
+	  // check if user has aprofile pic, if not then use the linkedin one
+	  $pq = "SELECT id, internalKey, photo FROM ".$config["table_prefix"]."user_attributes WHERE internalKey = ".$userid;
+	  $pr = $modx->query($pq);
+	  $prow = $pr->fetch(PDO::FETCH_ASSOC);
+	  if($prow["photo"] == ""){
+	  	$upq = "UPDATE ".$config["table_prefix"]."user_attributes SET photo=".$photo." WHERE internalKey =".$userid;
+		$upr = $modx->query($upq);
+	  }
+	   
+	   
    }else{ // user not registered, attempt to register first
      $user = $modx->newObject('modUser', array ('username'=>$_POST["emailAddress"]));
      $userProfile = $modx->newObject('modUserProfile');
@@ -44,7 +55,7 @@ if(!is_object($result)){
 		 
 		 // update extended profile
 		 
-			$q = "SELECT * FROM modx_user_attributes WHERE internalKey > '".$userid."' ";
+			$q = "SELECT * FROM ".$config["table_prefix"]."user_attributes WHERE internalKey = '".$userid."' ";
 			
 			$result = $modx->query($q);
 			
@@ -53,7 +64,7 @@ if(!is_object($result)){
 			    
 			     $extended = json_encode($extended);
 			     //return $extended;
-			     $q = "UPDATE modx_user_attributes SET extended = '".$extended."' WHERE internalKey='".$row["internalKey"]."'";
+			     $q = "UPDATE ".$config["table_prefix"]."user_attributes SET extended = '".$extended."' WHERE internalKey='".$row["internalKey"]."'";
 			     $modx->query($q);
 			}
 		 
