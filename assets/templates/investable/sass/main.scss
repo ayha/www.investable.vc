@@ -1618,7 +1618,14 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
  .connection_item{
    margin-bottom: 15px;
+   width:250px;
    
+ }
+
+ @media (max-width:767px){
+.connection_item{
+  width:50%; 
+}
  }
 
  .connection_item img.profile_picture{
@@ -1636,6 +1643,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
   
   @include box-shadow(); 
 }
+
 
 .company_details{
     .member_content{

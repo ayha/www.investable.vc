@@ -71,7 +71,13 @@
    	[[$member_footer]]
 	
    <script type="text/javascript">
-   		
+   		$(document).ready(function(){
+   			$(".connection_list").isotope({
+			  itemSelector: '.connection_item',
+			  layoutMode: 'fitRows',
+			 
+			});
+   		});
    </script>
 
      
