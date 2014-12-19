@@ -8,12 +8,8 @@
 		<div class="event_venue_address">[[+tv.venue_address]]</div>
 		
 		<div class="rsvp">
-			[[+tv.rsvp_link:ne=``:then=`
-				<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">
-			`:else=`
-				<a href="#" class="btn event_rsvp_link">
-			`]]
-			[[%title.event_rsvp? &namespace=`investable`]] </a>
+			[[+tv.rsvp_link:ne=``:then=`<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">`:else=`<a href="#" class="btn event_rsvp_link">`]][[%title.rsvp_now? &namespace=`investable`]]  
+			</a>
 		</div>
 		<div class="clearboth"></div>
 	</div>
