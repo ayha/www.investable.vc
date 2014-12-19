@@ -1,0 +1,23 @@
+<div class="event_item" data-eventid="[[+id]]" data-event-date="[[+tv.event_date:strtotime:date=`%d %B, %Y`]]" data-event-name="[[+longtitle:ne=``:then=`[[+longtitle]]`:else=`[[+pagetitle]]`]]">
+	<h3>[[+longtitle:ne=``:then=`[[+longtitle]]`:else=`[[+pagetitle]]`]]</h3>
+	<div class="event_date">[[+tv.event_date:strtotime:date=`%d %B, %Y`]] [[+tv.event_date:strtotime:date=`%R`]] - [[+tv.event_end:strtotime:date=`%R`]]</div>
+	
+	<div class="event_description">[[+content]]</div>
+	<div class="event_additiona_info">
+		<div class="event_venue">[[+tv.venue]]</div>
+		<div class="event_venue_address">[[+tv.venue_address]]</div>
+		
+		<div class="rsvp">
+			[[+tv.rsvp_link:ne=``:then=`
+				<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">
+			`:else=`
+				<a href="#" class="btn event_rsvp_link">
+			`]]
+			[[%title.event_rsvp? &namespace=`investable`]] </a>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	
+	
+</div>
+ 
