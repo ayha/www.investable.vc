@@ -1725,11 +1725,10 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 .calendar .current-month {
   background: #F36B22;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
   padding: 5px 0;
-  text-transform: uppercase;
 }
 /* line 1870, ../sass/main.scss */
 .calendar .header-day, .calendar .day {
