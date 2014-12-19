@@ -258,7 +258,7 @@ input[type=submit], button{
 } 
 
 
-  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media (max-width:767px) { 
   select:focus,
   textarea:focus,
   input:focus {
@@ -409,7 +409,7 @@ input[type=submit], button{
   }
 }
 
-@media (max-width:320px){
+@media (max-width:767px){
   .navbar-brand{
     max-width:120px;
   

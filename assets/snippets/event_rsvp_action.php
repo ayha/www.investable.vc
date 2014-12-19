@@ -8,7 +8,7 @@ if(!empty($_POST)){
 	$q = "INSERT INTO ext_event_rsvp (name, userid, email, event_name, event_id, num_attendees, date_sent) VALUES (".$modx->quote($_POST["name"]).", $userid, ".$modx->quote($_POST["email"]).", ".$modx->quote($_POST["eventname"]).", ".$modx->quote($_POST["eventid"]).", ".$modx->quote($_POST["no_attendees"]).", ".$modx->quote($date)."  )";
 	$result = $modx->query($q);
 	//return $q;
-$subject = "RSVP for event ".$_POST["eventname"];
+$subject = "RSVP for Investable Event - ".$_POST["eventname"];
 $from = "contact@investable.vc";
 //$message = "<p>Hi,</p><p>E <strong>".$username."</strong> (".$useremail.") from Investable.vc has expressed interest in meeting the company <strong>".$_POST["companyname"]."</strong> on ".date("Y-m-d H:i")."</p>";
 $message = "<p>Event Name: <strong>".$_POST["eventname"]."</strong></p>";

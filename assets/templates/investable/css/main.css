@@ -220,7 +220,7 @@ input[type=submit], button {
   width: 100%;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+@media (max-width: 767px) {
   /* line 262, ../sass/main.scss */
   select:focus,
   textarea:focus,
@@ -381,7 +381,7 @@ input[type=submit], button {
     right: 10px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   /* line 413, ../sass/main.scss */
   .navbar-brand {
     max-width: 120px;
