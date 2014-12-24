@@ -91,13 +91,14 @@ function insertParam(key, value)
 
  // 2. Runs when the JavaScript framework is loaded
   function onLinkedInLoad() {
-
+	
   	IN.Event.on(IN, "auth", onLinkedInAuth);
-   
+     
   }
 
   // 2. Runs when the viewer has authenticated
   function onLinkedInAuth() {
+  	show_loading_icon();
     IN.API.Profile("me").fields(["id","firstName","lastName","emailAddress", "summary", "pictureUrl", "publicProfileUrl"]).result(linkedin_login);
   	
   }
@@ -243,4 +244,10 @@ function getYoutubeImg(url, appendTo, idx){
 	  });
 	  
 	
+}
+
+function show_loading_icon(){
+	$('#loading').modal({
+		keyboard: false
+	});
 }
