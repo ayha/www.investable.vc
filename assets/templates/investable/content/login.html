@@ -23,7 +23,7 @@
     		<div class="page-header">
 				<h1>[[*longtitle]]</h1>
 			</div>
-[[!Login? &loginTpl=`login_form` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`43` &logoutResourceId=`42`]]
+[[!Login? &loginTpl=`login_form` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`0` &logoutResourceId=`42`]]
 	   		</div>
 		</section>
 	  	
@@ -34,7 +34,11 @@
    <script type="text/javascript">
    		$(document).ready(function(){
    			[[!checkLogin:ne=``:then=`
-   				window.location.href="[[~43]]";
+   				if($("#login_form").children("#returnUrl").val() != ""){
+   					window.location.href=	$("#login_form").children("#returnUrl").val();
+   				}else{
+   					window.location.href="[[~43]]";
+   				}
    			`]]
    		});
    		

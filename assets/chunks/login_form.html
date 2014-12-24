@@ -2,7 +2,7 @@
    <div class="form_header">[[%login? &topic=`default` &namespace=`login` &language=`en`]]</div>
   
    <form name="login_form"  action="[[~10]]" method="post" >
-       <input class="returnUrl" type="hidden" name="returnUrl" value="[[+request_uri]]" />
+       <input class="returnUrl" type="hidden" name="returnUrl" id="returnUrl" value="[[+request_uri]]" />
        <input class="loginLoginValue" type="hidden" name="service" value="login" />
      
       <div class="form_section">
