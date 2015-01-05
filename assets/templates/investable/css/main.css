@@ -1534,140 +1534,140 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 
-/* line 1648, ../sass/main.scss */
+/* line 1649, ../sass/main.scss */
 .company_details .member_content {
   position: relative;
 }
-/* line 1652, ../sass/main.scss */
+/* line 1653, ../sass/main.scss */
 .company_details .quick_facts {
   background: #20B6AE;
   color: #fff;
   margin-bottom: 20px;
   padding: 20px 15px;
 }
-/* line 1660, ../sass/main.scss */
+/* line 1661, ../sass/main.scss */
 .company_details .status_item {
   margin-bottom: 25px;
 }
-/* line 1662, ../sass/main.scss */
+/* line 1663, ../sass/main.scss */
 .company_details .status_item .status_name {
   font-size: 12px;
   font-style: italic;
 }
-/* line 1667, ../sass/main.scss */
+/* line 1668, ../sass/main.scss */
 .company_details .status_item .status_number {
   font-size: 20px;
 }
-/* line 1675, ../sass/main.scss */
+/* line 1676, ../sass/main.scss */
 .company_details .company_founder {
   padding: 10px;
   background: #f8f8f8;
   margin-bottom: 15px;
 }
-/* line 1682, ../sass/main.scss */
+/* line 1683, ../sass/main.scss */
 .company_details .founder_profile h3 {
   font-size: 14px;
   color: #F36B22;
 }
-/* line 1688, ../sass/main.scss */
+/* line 1689, ../sass/main.scss */
 .company_details .founder_profile h3.founder_title {
   color: #636363;
 }
-/* line 1692, ../sass/main.scss */
+/* line 1693, ../sass/main.scss */
 .company_details .founder_profile .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
-/* line 1697, ../sass/main.scss */
+/* line 1698, ../sass/main.scss */
 .company_details .founder_profile .profile_content, .company_details .founder_profile .profile_content p, .company_details .founder_profile .profile_content li {
   font-size: 12px;
 }
-/* line 1703, ../sass/main.scss */
+/* line 1704, ../sass/main.scss */
 .company_details .startup_downloads {
   padding: 10px;
   background-color: #FFB880;
   color: #fff;
 }
-/* line 1707, ../sass/main.scss */
+/* line 1708, ../sass/main.scss */
 .company_details .startup_downloads p, .company_details .startup_downloads a, .company_details .startup_downloads h3 {
   color: #fff;
 }
-/* line 1711, ../sass/main.scss */
+/* line 1712, ../sass/main.scss */
 .company_details .startup_downloads h3 {
   font-size: 16px;
 }
-/* line 1718, ../sass/main.scss */
+/* line 1719, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1722, ../sass/main.scss */
+/* line 1723, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1728, ../sass/main.scss */
+/* line 1729, ../sass/main.scss */
 .company_details .why_we_love {
   padding: 10px;
   background-color: #FFB880;
 }
-/* line 1734, ../sass/main.scss */
+/* line 1735, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
   color: #fff;
 }
-/* line 1738, ../sass/main.scss */
+/* line 1739, ../sass/main.scss */
 .company_details .why_we_love h3 {
   font-size: 16px;
   color: #fff;
 }
-/* line 1745, ../sass/main.scss */
+/* line 1746, ../sass/main.scss */
 .company_details .company_details h3 {
   color: #20B6AE;
 }
-/* line 1751, ../sass/main.scss */
+/* line 1752, ../sass/main.scss */
 .company_details .company_title h2 {
   color: #20B6AE;
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0;
 }
-/* line 1758, ../sass/main.scss */
+/* line 1759, ../sass/main.scss */
 .company_details .company_title h3 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 1767, ../sass/main.scss */
+/* line 1768, ../sass/main.scss */
 .company_details .company_quick_links {
   padding-top: 25px;
 }
-/* line 1772, ../sass/main.scss */
+/* line 1773, ../sass/main.scss */
 .company_details .quick_facts {
   position: relative;
 }
-/* line 1774, ../sass/main.scss */
+/* line 1775, ../sass/main.scss */
 .company_details .quick_facts .key_investors {
   position: absolute;
   bottom: 15px;
   right: 15px;
 }
-/* line 1781, ../sass/main.scss */
+/* line 1782, ../sass/main.scss */
 .company_details .quick_facts .key_investors .invested_by {
   text-align: right;
 }
 
-/* line 1791, ../sass/main.scss */
+/* line 1792, ../sass/main.scss */
 .fund_details .quick_facts {
   background: #20B6AE;
   padding: 15px;
   color: #fff;
   font-size: 16px;
 }
-/* line 1798, ../sass/main.scss */
+/* line 1799, ../sass/main.scss */
 .fund_details .quick_facts p {
   color: #fff;
   font-size: 16px;
 }
-/* line 1803, ../sass/main.scss */
+/* line 1804, ../sass/main.scss */
 .fund_details .project_logo .logo_holder {
   background-color: #fff;
   min-height: 250px;
@@ -1676,30 +1676,30 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   background-position: center center;
   background-size: contain;
 }
-/* line 1814, ../sass/main.scss */
+/* line 1815, ../sass/main.scss */
 .fund_details .company_description h2 {
   color: #20B6AE;
 }
-/* line 1819, ../sass/main.scss */
+/* line 1820, ../sass/main.scss */
 .fund_details .fund_manager {
   background-color: #f8f8f8;
 }
-/* line 1822, ../sass/main.scss */
+/* line 1823, ../sass/main.scss */
 .fund_details .fund_manager h2 {
   color: #20B6AE;
 }
-/* line 1830, ../sass/main.scss */
+/* line 1831, ../sass/main.scss */
 .fund_details .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
 
-/* line 1837, ../sass/main.scss */
+/* line 1838, ../sass/main.scss */
 .member_content {
   position: relative;
 }
 
-/* line 1841, ../sass/main.scss */
+/* line 1842, ../sass/main.scss */
 .floating_content {
   display: block;
   position: absolute;
@@ -1707,28 +1707,28 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   z-index: 50;
 }
-/* line 1847, ../sass/main.scss */
+/* line 1848, ../sass/main.scss */
 .floating_content .support_company {
   text-align: right;
 }
 
-/* line 1853, ../sass/main.scss */
+/* line 1854, ../sass/main.scss */
 #info_session_form .form_thankyou_message {
   display: none;
 }
 
-/* line 1858, ../sass/main.scss */
+/* line 1859, ../sass/main.scss */
 #calendars {
   display: block;
 }
 
-/* line 1863, ../sass/main.scss */
+/* line 1864, ../sass/main.scss */
 .calendar {
   display: block;
   margin-bottom: 5px;
   background: #f8f8f8;
 }
-/* line 1867, ../sass/main.scss */
+/* line 1868, ../sass/main.scss */
 .calendar .current-month {
   background: #F36B22;
   color: #ffffff;
@@ -1737,7 +1737,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   text-align: center;
   padding: 5px 0;
 }
-/* line 1877, ../sass/main.scss */
+/* line 1878, ../sass/main.scss */
 .calendar .header-day, .calendar .day {
   float: left;
   font-size: 12px;
@@ -1746,11 +1746,11 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   padding: 10px 0;
   text-align: center;
 }
-/* line 1887, ../sass/main.scss */
+/* line 1888, ../sass/main.scss */
 .calendar .header-day {
   background: #FFB880;
 }
-/* line 1895, ../sass/main.scss */
+/* line 1896, ../sass/main.scss */
 .calendar .day.event {
   color: #20B6AE;
   background-color: #20B6AE;
@@ -1759,12 +1759,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   cursor: pointer;
   border-radius: 34px;
 }
-/* line 1905, ../sass/main.scss */
+/* line 1906, ../sass/main.scss */
 .calendar .day.adjacent-month {
   color: #999;
 }
 
-/* line 1912, ../sass/main.scss */
+/* line 1913, ../sass/main.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -1774,29 +1774,165 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   height: 0;
 }
 
-/* line 1922, ../sass/main.scss */
+/* line 1923, ../sass/main.scss */
 .event_item {
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px solid #f8f8f8;
 }
-/* line 1927, ../sass/main.scss */
+/* line 1928, ../sass/main.scss */
 .event_item h3 {
   color: #20B6AE;
 }
-/* line 1931, ../sass/main.scss */
+/* line 1932, ../sass/main.scss */
 .event_item .event_date {
   font-style: italic;
 }
-/* line 1935, ../sass/main.scss */
+/* line 1936, ../sass/main.scss */
 .event_item .event_venue {
   padding: 5px 0 5px 20px;
   background: url(../../../images/template/list_location_icon.png) left center no-repeat;
   cursor: pointer;
 }
-/* line 1943, ../sass/main.scss */
+/* line 1944, ../sass/main.scss */
 .event_item .event_venue_address {
   display: none;
+}
+
+/* AddThisEvent (add to your existing CSS) */
+/* line 1954, ../sass/main.scss */
+.addthisevent-drop {
+  display: inline-block;
+  position: relative;
+  z-index: 1000;
+  background: #20B6AE;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: normal;
+}
+
+/* line 1955, ../sass/main.scss */
+.addthisevent-drop:hover {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #20B6AE;
+}
+
+/* line 1957, ../sass/main.scss */
+.addthisevent-drop .arrow {
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -5px;
+  background: url(icon-arrow.png) no-repeat;
+}
+
+/* line 1958, ../sass/main.scss */
+.addthisevent-selected {
+  background-color: #20B6AE;
+}
+
+/* line 1959, ../sass/main.scss */
+.addthisevent_dropdown {
+  width: 215px;
+  position: absolute;
+  z-index: 99999;
+  padding: 6px 0px 0px 0px;
+  background: #fff;
+  text-align: left;
+  display: none;
+  margin-top: 2px;
+  margin-left: -1px;
+  border-top: 1px solid #c8c8c8;
+  border-right: 1px solid #bebebe;
+  border-bottom: 1px solid #a8a8a8;
+  border-left: 1px solid #bebebe;
+  -webkit-box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* line 1960, ../sass/main.scss */
+.addthisevent_dropdown span {
+  display: block;
+  line-height: 110%;
+  background: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  color: #20B6AE;
+  padding: 8px 10px 9px 15px;
+}
+
+/* line 1961, ../sass/main.scss */
+.addthisevent_dropdown span:hover {
+  background: #f8f8f8;
+  color: #20B6AE;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* line 1962, ../sass/main.scss */
+.addthisevent span {
+  display: none !important;
+}
+
+/* line 1963, ../sass/main.scss */
+.addthisevent-drop ._url, .addthisevent-drop ._start, .addthisevent-drop ._end, .addthisevent-drop ._summary, .addthisevent-drop ._description, .addthisevent-drop ._location, .addthisevent-drop ._organizer, .addthisevent-drop ._organizer_email, .addthisevent-drop ._facebook_event, .addthisevent-drop ._all_day_event {
+  display: none !important;
+}
+
+/* line 1964, ../sass/main.scss */
+.addthisevent_dropdown .copyx {
+  height: 21px;
+  display: block;
+  position: relative;
+  cursor: default;
+}
+
+/* line 1965, ../sass/main.scss */
+.addthisevent_dropdown .brx {
+  width: 180px;
+  height: 1px;
+  overflow: hidden;
+  background: #e0e0e0;
+  position: absolute;
+  z-index: 100;
+  left: 10px;
+  top: 9px;
+}
+
+/* line 1966, ../sass/main.scss */
+.addthisevent_dropdown .frs {
+  position: absolute;
+  top: 3px;
+  cursor: pointer;
+  right: 10px;
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  z-index: 101;
+  line-height: 110%;
+  background: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  color: #cacaca;
+}
+
+/* line 1967, ../sass/main.scss */
+.addthisevent_dropdown .frs:hover {
+  color: #6d84b4;
+}
+
+/* line 1968, ../sass/main.scss */
+.addthisevent {
+  visibility: hidden;
 }
 
 /* end of members area */

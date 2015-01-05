@@ -10,7 +10,26 @@
 		<div class="rsvp">
 			[[+tv.rsvp_link:ne=``:then=`<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">`:else=`<a href="#" class="btn event_rsvp_link">`]][[%title.rsvp_now? &namespace=`investable`]]  
 			</a>
+			
+			<a href="[[~[[+id]]]]" title="Add to Calendar" class="addthisevent btn">
+			    Add to Calendar
+			    <span class="_start">[[+tv.event_date:strtotime:date=`%d-%m-%Y`]] [[+tv.event_date:strtotime:date=`%R`]]</span>
+			    <span class="_end">[[+tv.event_date:strtotime:date=`%d-%m-%Y`]] [[+tv.event_end:strtotime:date=`%R`]]</span>
+			    <span class="_zonecode">77</span>
+			    <span class="_summary">[[+longtitle:ne=``:then=`[[+longtitle]]`:else=`[[+pagetitle]]`]]</span>
+			    <span class="_description">[[+content:strlen=`200`]]</span>
+			    <span class="_location">[[+tv.venue]]</span>
+			    <span class="_organizer">Investable</span>
+			    <span class="_organizer_email">hello@investable.vc</span>
+			   
+			</a>
 		</div>
+		
+		<div class="add_to_calendar">
+		
+			
+		</div>
+		
 		<div class="clearboth"></div>
 	</div>
 	
