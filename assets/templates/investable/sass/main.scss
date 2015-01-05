@@ -208,6 +208,14 @@ input[type=submit], button{
     color:#ffffff;
 }
 
+input[type=file]#new_photo{
+  display:none; 
+}
+
+button#photo_trigger{
+  margin-top:5px;
+}
+
 
 .form_section{
   width:100%;
@@ -1943,6 +1951,24 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
   
   .event_venue_address{
     display:none;
+  }
+}
+
+.profile_sidebar_boxes{
+  background: $palegrey;
+  border:1px solid $mediumgrey;
+  padding:10px;
+  
+  h3{
+    color:$turquoise;
+    padding:0; 
+    margin:0;
+    margin-bottom:20px; 
+  }
+  
+  .count{
+    color:$orange;
+    font-size:18px;
   }
 }
 

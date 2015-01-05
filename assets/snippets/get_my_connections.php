@@ -20,6 +20,10 @@ $result = $modx->query($query);
 if (!is_object($result)) {
    return "<p>You do not have any connections at the moment.</p>";
 }else{
+	if($getCount == 1){
+  		 return $result->rowCount();
+   	}else{
+	
    while( $row = $result->fetch(PDO::FETCH_ASSOC)){
       $rowOutput = $modx->runSnippet("getUserById", array("uid"=>$row["id"], "tpl"=>$chunk ));
       $output .= $rowOutput;
@@ -28,6 +32,7 @@ if (!is_object($result)) {
    if($output ==""){
       $output = "<p>You do not have any connections at the moment.</p>";
    }
+	}
 }
 
 return $output;

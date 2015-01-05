@@ -11,7 +11,7 @@
 			[[+tv.rsvp_link:ne=``:then=`<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">`:else=`<a href="#" class="btn event_rsvp_link">`]][[%title.rsvp_now? &namespace=`investable`]]  
 			</a>
 			
-			<a href="[[~[[+id]]]]" title="Add to Calendar" class="addthisevent btn">
+			<a href="[[~[[+id]]]]" target="_blank" title="Add to Calendar" class="addthisevent btn">
 			    Add to Calendar
 			    <span class="_start">[[+tv.event_date:strtotime:date=`%d-%m-%Y`]] [[+tv.event_date:strtotime:date=`%R`]]</span>
 			    <span class="_end">[[+tv.event_date:strtotime:date=`%d-%m-%Y`]] [[+tv.event_end:strtotime:date=`%R`]]</span>
