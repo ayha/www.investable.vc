@@ -3,6 +3,10 @@ if(empty($chunk)){
    $chunk = "new_connection_item";
 }
 
+if(empty($total)){
+	$total = 20;	
+}
+
 $config = $modx->getConfig();
 $prefix = $config["table_prefix"];
 $output ="";
@@ -19,9 +23,13 @@ FROM ext_connection_requests r
 LEFT JOIN ".$prefix."users u2 ON ( u2.id = r.from
 OR u2.id = r.to ) 
 WHERE u2.id !=".$user->get("id")." AND r.request_status =1)";
-$query .= " ORDER BY RAND() LIMIT 20";
 
-//return $query;
+if(!empty($_GET["search"])){
+	$query .= " AND ((a.fullname LIKE \"%".$_GET["search"]."%\") OR (a.email LIKE \"%".$modx->quote($_GET["search"])."%\")) ";
+}
+
+$query .= " ORDER BY RAND() LIMIT ".$total;
+
 
 $result = $modx->query($query);
 if (!is_object($result)) {

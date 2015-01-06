@@ -35,7 +35,7 @@
   				    <div class="allclear"></div>
   				    </div>
   				    
-  				    
+  				     
 				</div>
 				<div id="add_connections">
 					<h2>[[%connection.add_connection? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
@@ -43,9 +43,14 @@
 						[[%connections.connect_to_see_investments? &topic=`default` &namespace=`investable` &language=`en`]]
 					</div>
 					<div class="connection_list">
-  				    [[!get_more_connections? &chunk=`new_connection_item`]]
+  				    [[!get_more_connections? &chunk=`new_connection_item` &total=`10`]]
   				    <div class="allclear"></div>
-  				    </div>
+  				   </div> 
+  				    <form id="search_connection_form" method="get" action="[[~[[*id]]]]">
+  				    	<h3>Investor Search</h3>
+  				    	<input type="text" name="search" id="search_keyword" placeholder="[[%cta.search_connections_by_name_email?  &namespace=`investable`]]" required>
+  				    	<input type="submit" value="Search Investor" class="btn "/> 
+  				    </form>
 				</div>
 				<div class="allclear"></div>
 			</div>

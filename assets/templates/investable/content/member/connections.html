@@ -57,7 +57,12 @@
 					<div class="connection_list">
   				    [[!get_more_connections? &chunk=`new_connection_item`]]
   				    <div class="clearboth"></div>
-  				    </div>
+  				   </div> 
+  				    <form id="search_connection_form" method="get" action="[[~[[*id]]]]">
+  				    	<h3>Investor Search</h3>
+  				    	<input type="text" name="search" id="search_keyword" placeholder="[[%cta.search_connections_by_name_email?  &namespace=`investable`]]" value="" required>
+  				    	<input type="submit" value="Search Investor" class="btn "/> 
+  				    </form>
 				</div>
 				<div class="clearboth"></div>
 			</div>
