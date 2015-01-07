@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-[[$member_head]]
+
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -29,12 +29,13 @@
     		<h1>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>
 	    	
     			
-	   		[[*content]]
+	   	
 	   		
 	   		<div>
 	   			<div id="event_list" class="col-sm-8">
 	   				  [[!getResources? &parents=`[[*id]]` &tpl=`event_list_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`5` &showHidden=`0`  &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
 	   			</div>
+	   				[[*content]]
 		   		<div id="calendars" class="col-sm-4 hidden-xs"> 
 		   			<div id="calendar-this-month" class="calendar clearfix"></div>
 		   			<div id="calendar-next-month" class="calendar clearfix"></div>
@@ -46,7 +47,7 @@
 	  	 
 	</div>
 	[[$page_footer]]
-   [[$member_footer]]
+  
 <div class="modal fade event_modal" tabindex="-1" role="dialog" id="event_modal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
