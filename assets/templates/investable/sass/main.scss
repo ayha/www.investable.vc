@@ -1992,7 +1992,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 
 /* AddThisEvent (add to your existing CSS) */
-.addthisevent-drop            {display:inline-block;position:relative;z-index:1000;background:$turquoise;color:#fff!important;text-decoration:none;font-size:14px;text-decoration:none;padding:5px 10px; font-weight:normal;}
+.addthisevent-drop            {display:inline-block;position:relative;background:$turquoise;color:#fff!important;text-decoration:none;font-size:14px;text-decoration:none;padding:5px 10px; font-weight:normal;}
 .addthisevent-drop:hover        {color:#fff;font-size:14px;text-decoration:none;background-color:$turquoise;}
 .addthisevent-drop:active         {}
 .addthisevent-drop .arrow         {width:15px;height:10px;position:absolute;top:50%;right:15px;margin-top:-5px;background:url(icon-arrow.png) no-repeat;}
@@ -2011,7 +2011,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 
 .dashboard_widget{
-  .addthisevent-drop           {width:300px;display:inline-block; padding-bottom:10px;margin-bottom:10px; position:relative;z-index:999998;cursor:pointer;background:$palegrey;color:$darkgrey !important;font-size:15px;border:1px solid $mediumgrey;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);-webkit-border-radius:2px;border-radius:2px;}
+  .addthisevent-drop           {width:300px;display:inline-block; padding-bottom:10px;margin-bottom:10px; position:relative;cursor:pointer;background:$palegrey;color:$darkgrey !important;font-size:15px;border:1px solid $mediumgrey;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);-webkit-border-radius:2px;border-radius:2px;}
 
 .addthisevent-drop:hover        {background-color:#f4f4f4;} 
 .addthisevent-drop:active         {top:1px;}
@@ -2036,7 +2036,6 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 .addthisevent_dropdown .frs:hover     {color:#6d84b4;}
 .addthisevent             {visibility:hidden;}
 
-  
 }
 
 

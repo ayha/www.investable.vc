@@ -1846,7 +1846,6 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
 .addthisevent-drop {
   display: inline-block;
   position: relative;
-  z-index: 1000;
   background: #20B6AE;
   color: #fff !important;
   text-decoration: none;
@@ -1984,7 +1983,6 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   padding-bottom: 10px;
   margin-bottom: 10px;
   position: relative;
-  z-index: 999998;
   cursor: pointer;
   background: #f8f8f8;
   color: #636363 !important;
