@@ -34,8 +34,10 @@
 	   		<div>
 	   			<div id="event_list" class="col-sm-8">
 	   				  [[!getResources? &parents=`[[*id]]` &tpl=`event_list_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`5` &showHidden=`0`  &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
+	   				 
+	   				  [[*content]]
 	   			</div>
-	   				[[*content]]
+	   				
 		   		<div id="calendars" class="col-sm-4 hidden-xs"> 
 		   			<div id="calendar-this-month" class="calendar clearfix"></div>
 		   			<div id="calendar-next-month" class="calendar clearfix"></div>
