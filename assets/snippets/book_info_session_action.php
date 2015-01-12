@@ -42,4 +42,8 @@ $modx->mail->address('bcc', $emailCC, $emailCC);
 $modx->mail->address('reply-to', $from);
 $modx->mail->setHTML(true);
 //call send mail
+
+if(!empty($fullname) && !empty($email)){
+
 return $modx->mail->send();
+}

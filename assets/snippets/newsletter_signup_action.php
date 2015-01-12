@@ -31,4 +31,7 @@ $modx->mail->address('cc', $emailCC, $emailCC);
 $modx->mail->address('reply-to', $from);
 $modx->mail->setHTML(true);
 //call send mail
+
+if(!empty($email)){
 return $modx->mail->send();
+}

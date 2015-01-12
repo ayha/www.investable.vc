@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+       <link href="[[++site_url]]assets/templates/investable/css/admin.css" rel="stylesheet" media="all">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content admin_page" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+			<div class="page-header">
+				<h1>[[*pagetitle]]</h1>
+			</div>
+	    <div class="admin_filters">
+	    	<!--<input type="text" name="keyword" id="filter_keyword" placeholder="Name / Email / Phone" value="[[!http_get? &key=`keyword`]]"/>
+	    	
+	    	<!--<input type="date" name="start_date" id="filter_start_date" placeholder="Start Date: YYY-MM-DD" value="[[!http_get? &key=`start_date`]]" />
+	    	<input type="date" name="end_date" id="filter_end_date" placeholder="End Date: YYYY-MM-DD" value="[[!http_get? &key=`end_date`]]" />
+	    	-->
+	    	<select name="event" id="filter_event">
+	    		<option value="">-- All Events --</option>
+	    		[[!rsvp_list? &getEvent=`1`]]
+	    	</select>
+	    	<!--<a href="#" class="btn update_table">Update Table</a>--> 
+	    	<a href="#" class="btn download_data">Download</a> 
+	    </div>
+	    <p>Total: <span class="total_count"></span></p>
+		<table name="user_table" id="user_table" cellpadding="5" cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>Event Name</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Attendees</th>
+				
+				
+				<th>Remarks</th>
+				
+			</tr>
+			
+			[[!rsvp_list? ]]
+		</table>
+	
+	   		</div>
+		</section>
+	  	
+	</div>
+	[[$page_footer]]
+   
+	
+  <script type="text/javascript">
+		
+		    $("span.total_count").html($("#user_table tr:last-child").data("total"));
+			$("a.update_table").click(function(e){
+				e.preventDefault();
+				//var promote = $("#filter_promote option:selected").val();
+				
+				//insertParam("promote", promote);
+			});
+			
+			$("select#filter_event").change(function(){
+				var event_id = $("#filter_event option:selected").val();
+				insertParam("event_id",event_id);
+			});
+			
+			$("a.download_data").click(function(e){
+				e.preventDefault();
+				var event_id = $("#filter_event option:selected").val();
+				window.location.href="[[~139]]?action=download&event_id="+event_id;
+			});
+			
+			
+			
+			$("a.save_note").click(function(e){
+				e.preventDefault();
+				var id = $(this).data("id");
+				var notes_content =$(this).parent().children("textarea").val();
+				save_remarks(id, notes_content);
+			});
+			
+			function save_remarks(id, remarks){
+				$.ajax("[[~138]]", {
+					type: "POST", 
+					data: {"action":"save_note","id": id, "remarks": remarks},
+					complete: function(xhr, status){
+						$.fancybox.open("Remarks Updated");
+					
+						
+					}
+					
+				});
+			}
+			
+		</script>
+
+     
+    </body>
+</html>
+

@@ -1,6 +1,7 @@
 <?php
 $config = $modx->getConfig();
 
+require_once("assets/snippets/admin_functions.php");
 if(empty($tpl)){
 	$tpl ="admin_user_table_row";
 	
@@ -57,7 +58,7 @@ if(is_object($result)){
 			$output .= $modx->getChunk($tpl, $rowOutput);
 			array_push($outputArray, $rowOutput);
 		}
-		
+		 
 	}
 	
 	if($_GET["action"]=="download"){
@@ -68,16 +69,3 @@ if(is_object($result)){
 	}
 }
 
-
-function array_to_csv_download($array, $filename = "export.csv", $delimiter=";") {
-    header('Content-Type: application/csv');
-    header('Content-Disposition: attachement; filename="'.$filename.'";');
-
-    // open the "output" stream
-    // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
-    $f = fopen('php://output', 'w');
-
-    foreach ($array as $line) {
-        fputcsv($f, $line, $delimiter);
-    }
-}
