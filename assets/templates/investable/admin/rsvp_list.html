@@ -35,7 +35,7 @@
 	    	<!--<a href="#" class="btn update_table">Update Table</a>--> 
 	    	<a href="#" class="btn download_data">Download</a> 
 	    </div>
-	    <p>Total: <span class="total_count"></span></p>
+	    <p><strong>Total Registrants: <span class="reg_count"></span> // Total Attendees: <span class="total_count"></span></strong></p>
 		<table name="user_table" id="user_table" cellpadding="5" cellspacing="0" border="1" width="100%">
 			<tr>
 				<th>Event Name</th>
@@ -61,6 +61,7 @@
   <script type="text/javascript">
 		
 		    $("span.total_count").html($("#user_table tr:last-child").data("total"));
+		     $("span.reg_count").html($("#user_table").find("tr").length-1);
 			$("a.update_table").click(function(e){
 				e.preventDefault();
 				//var promote = $("#filter_promote option:selected").val();
