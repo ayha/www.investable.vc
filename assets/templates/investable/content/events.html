@@ -33,9 +33,13 @@
 	   		
 	   		<div>
 	   			<div id="event_list" class="col-sm-8">
-	   				  [[!getResources? &parents=`[[*id]]` &tpl=`event_list_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`5` &showHidden=`0`  &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
+	   				  [[!getResources? &parents=`[[*id]]` &tpl=`event_list_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1`  &tvFilters=`past_event<>1`  &prepareTVs=`1` &limit=`10` &showHidden=`0` &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
 	   				 
 	   				  [[*content]]
+	   				  
+	   				  <h2>Past Events</h2>
+	   				  [[!getResources? &parents=`[[*id]]` &tpl=`past_event_item` &processTVs=`1` &includeTVs=`1` &includeContent=`1`  &tvFilters=`past_event===1`  &prepareTVs=`1` &limit=`10` &showHidden=`0` &sortbyTV=`event_date` sortdirTV=`DESC` sortbyTVType=`datettime`]]
+	   				 
 	   			</div>
 	   				
 		   		<div id="calendars" class="col-sm-4 hidden-xs"> 
@@ -98,7 +102,7 @@
 });
    
    		var eventList =  [
-			     [[!getResources? &parents=`[[*id]]` &tpl=`event_list_data` &processTVs=`1` &includeTVs=`1` &includeContent=`1` &prepareTVs=`1` &limit=`100` &showHidden=`0`  &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
+			     [[!getResources? &parents=`[[*id]]` &tpl=`event_list_data` &processTVs=`1` &includeTVs=`1` &includeContent=`1`  &tvFilters=`past_event<>1`  &prepareTVs=`1` &limit=`100` &showHidden=`0`  &sortbyTV=`event_date` sortdirTV=`ASC` sortbyTVType=`datettime`]]
    	
 			  ];
    		$(document).ready(function(){
