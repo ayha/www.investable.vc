@@ -158,7 +158,7 @@ function updateCountdown(company, overfunded){
 		var current_date = new Date().getTime();
 	    var seconds_left = (target_date - current_date) / 1000;
 	    
-	    days = parseInt(seconds_left / 86400);  
+	    days = parseInt(seconds_left / 86400)+1;  
 		
 		$("#"+company).find(".timeleft").children(".fact_number").html(days);
 		
@@ -167,7 +167,7 @@ function updateCountdown(company, overfunded){
 	
 	if(overfunded == "Yes"){
 		addRibbon("#"+company, "OVERFUNDED");
-	}else if(days <=10 && days >=0){
+	}else if(days <=12 && days >=0){
 		addRibbon("#"+company, days + " Days Left");
 		
 	}

@@ -454,13 +454,13 @@
 				var current_date = new Date().getTime();
                 var seconds_left = (target_date - current_date) / 1000;
                 
-                days = parseInt(seconds_left / 86400);
+                days = parseInt(seconds_left / 86400)+1;
 				
 				$("#countdown .status_number").html(days + " [[%startups.days? &topic=`default` &namespace=`investable` &language=`en`]]");
 				}
 				if(overfunded == "Yes"){
 					addRibbon(".quick_facts", "OVERFUNDED");
-				}else if(days <=10 && days >=0){
+				}else if(days <=12 && days >=0){
 					addRibbon(".quick_facts", days + " Days Left");
 					
 				}
