@@ -1,4 +1,10 @@
 <div class="team_member" data-memberid="[[+id]]" data-alias="[[+alias]]" data-name="[[+longtitle]]" data-title="[[+tv.jobtitle]]" data-img="[[+tv.content_image]]" data-email="[[+tv.email]]" data-linkedin="[[+tv.linkedin]]" data-twitter="[[+tv.twitter]]">
-   
+   <div class="hidden">
+   	<!-- google structured data-->
+   		<span itemprop="name">[[+longtitle]]</span>
+   		<span itemprop="title">[[+tv.jobtitle]]</span>
+   		<span itemprop="photo">[[++site_url]][[+tv.content_image]]</span>
+   		<span itemprop="url">[[++site_url]][[~[[*id]]]]#!/[[+alias]]</span>
+   </div>
    <div class="team_bio">[[+content]]</div>
 </div>
