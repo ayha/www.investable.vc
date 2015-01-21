@@ -43,9 +43,10 @@
 										[[!get_investment_portfolio? ]]
 									</script>
 									<div id="investment_msg"></div>
+									<div id="investment_distribution" class="investment_chart piechart col-sm-6"></div>
 									<div id="investable_regions" class="investment_chart geochart col-sm-6"></div>
 								<!--	<div id="investable_industries" class="investment_chart piechart col-sm-6"></div> -->
-									<div id="investment_distribution" class="investment_chart piechart col-sm-6"></div>
+									
 								    <div id="investment_returns" class="investment_chart barchart col-sm-6"></div>
 								    <div id="investment_return_percentage" class="investment_chart barchart col-sm-6"></div>
 								    <div class="clearboth"></div> 
@@ -276,7 +277,7 @@
 			var data = google.visualization.arrayToDataTable(data);
 	
 	        var options = {
-	          title: 'Investment Returns',
+	          title: 'Investment Returns (USD)',
 	          vAxis: {title: 'Type of Investment'},
 	          height:280
 	        };
@@ -291,7 +292,7 @@
 		
 		function drawReturnPercentageChart(){
 			data = [];
-			data.push(["Investment", "Percentage of Monthly Return"]);
+			data.push(["Investment", "%"]);
 			
 			for(var i=0; i<portfolio.length; i++){
 				if(portfolio[i].type != "investable"){
@@ -304,7 +305,7 @@
 				var data = google.visualization.arrayToDataTable(data);
 		
 		        var options = {
-		          title: 'Investment Returns Percentage',
+		          title: 'Monthly Returns (in Percentage)',
 		          vAxis: {title: 'Type of Investment'},
 	          height:280
 		        };
@@ -320,7 +321,7 @@
 		function drawRegionChart(){
 			
 			var data = new Array();
-			data.push(["Region", "Amount"]);
+			data.push(["Region", "Amount (USD)"]);
 			var region_data = new Array();
 			for(var i=0; i<portfolio.length; i++){
 				//data.push([portfolio[i].name, portfolio[i].amount]);
@@ -352,7 +353,7 @@
 			data =   google.visualization.arrayToDataTable(data);
 			
 			 var options = {
-	          title: 'Regions you invest in on Investable',
+	          title: 'My Investable Portfolio By Region',
 	          is3D: true,
 	          height:280
 	          
@@ -375,7 +376,7 @@
 		
 		function drawDistributionChart(){
 			var data = new Array();
-			data.push(["Investment", "Amount"]);
+			data.push(["Investment", "Amount (USD)"]);
 			
 			for(var i=0; i<portfolio.length; i++){
 				data.push([portfolio[i].name, parseInt(portfolio[i].amount)]);
@@ -385,7 +386,7 @@
 			if(data.length > 1){
 			data =   google.visualization.arrayToDataTable(data);
 			 var options = {
-	          title: 'Investment Distributions',
+	          title: 'Investment Distribution',
 	          is3D: true,
 	            pieHole: 0.3,
 	          height:280
@@ -410,7 +411,7 @@
 		
 		function appendInvestmentRow(type, amount, monthly_return, readonly){
 			
-			var default_investment_row='<tr><td><input type="text" name="investment_name[]" placeholder="Type of Investment" value="'+type+'" '+readonly+' /></td><td><input type="number" name="investment_amount[]" placeholder="Amount of Investment" value="'+amount+'" '+readonly+' /></td><td><input type="number" name="monthly_return[]" placeholder="Monthly Return" value="'+monthly_return+'" '+readonly+' /></td><td><button class="btn remove_investment_row  btn-warning btn-sm">Remove</button></td></tr>';
+			var default_investment_row='<tr><td><input type="text" name="investment_name[]" placeholder="Type of Investment" value="'+type+'" '+readonly+' /></td><td><input type="number" name="investment_amount[]" placeholder="Amount of Investment (USD)" value="'+amount+'" '+readonly+' /></td><td><input type="number" name="monthly_return[]" placeholder="Monthly Return (USD)" value="'+monthly_return+'" '+readonly+' /></td><td><button class="btn remove_investment_row  btn-warning btn-sm">Remove</button></td></tr>';
    			
    			$("#my_investments_table").append(default_investment_row); 
    			
