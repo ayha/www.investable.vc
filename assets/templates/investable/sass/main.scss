@@ -373,6 +373,10 @@ button#photo_trigger{
       padding-left:0;
       margin-left:0;
     }
+    
+    .dropdown-menu li.divider{
+      background:$mediumgrey;
+    }
 }
 
 
@@ -1986,7 +1990,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
   border:1px solid $mediumgrey;
   background:$palegrey;
   width:auto;
-  
+  padding-bottom:15px; 
   margin-bottom:30px;
   
 } 
@@ -2082,6 +2086,21 @@ table#my_investments{
   margin:0 auto;
   
 }
+
+
+.investment_chart{
+   min-height:20px;
+   margin-bottom:15px;
+}
+
+.investment_charts { 
+  display:block;
+} 
+
+.investment_management{
+  display:block;
+}
+
 
 /* end of members area */ 
  

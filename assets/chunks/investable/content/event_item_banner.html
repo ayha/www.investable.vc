@@ -1,0 +1,16 @@
+<div class="addthisevent-drop" data-url="[[~[[+id]]]]">
+		<div class="date">
+			<span class="mon">[[+tv.event_date:strtotime:date=`%h`]]</span>
+			<span class="day">[[+tv.event_date:strtotime:date=`%d`]]</span>
+			<div class="bdr1"></div>
+			<div class="bdr2"></div>
+		</div>
+		<div class="desc">
+			<p>
+				<strong class="hed">[[+longtitle:ne=``:then=`[[+longtitle]]`:else=`[[+pagetitle]]`]]</strong>
+				<br /><span class="des">Location: [[+tv.venue]]<br />When: [[+tv.event_date:strtotime:date=`%R`]] to [[+tv.event_end:strtotime:date=`%R`]]</span>
+			</p>
+		</div>
+		
+		
+	</div>

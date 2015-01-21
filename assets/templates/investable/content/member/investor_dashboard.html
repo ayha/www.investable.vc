@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+[[$member_head]]
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="[[++cultureKey]]"> <!--<![endif]-->
+    <head>
+       [[$page_head]]
+       <script type="text/javascript" src="[[++assets_url]]templates/investable/js/draggabilly.pkgd.min.js"></script>
+       <script type="text/javascript" src="[[++assets_url]]templates/investable/js/packery.pkgd.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  	
+  	[[$site_nav]]
+
+  
+    <div class="main_content" id="[[*alias]]_content">
+    	<section> 
+	    	
+    		<div class="container">
+	    		<div class="page-header">
+					<h1>[[%title.dashboard? &namespace=`investable`]]</h1>
+					<div class="allclear"></div>
+				</div>
+				<div class="dashboard_container">
+					<!--
+					<div class="dashboard_widget" id="whats_new">
+						
+					</div>	
+					-->
+					<div class="dashboard_widget col-sm-12" id="my_investments">
+						<div class="container">
+							<h3>My Investments</h3>
+							<div id="investment_wrapper">
+								<div id="investment_charts">
+									
+									
+									<script type="text/javascript">
+										var portfolio = new Array();
+										[[!get_investment_portfolio? ]]
+									</script>
+									<div id="investment_msg"></div>
+									<div id="investable_regions" class="investment_chart geochart col-sm-6"></div>
+								<!--	<div id="investable_industries" class="investment_chart piechart col-sm-6"></div> -->
+									<div id="investment_distribution" class="investment_chart piechart col-sm-6"></div>
+								    <div id="investment_returns" class="investment_chart barchart col-sm-6"></div>
+								    <div id="investment_return_percentage" class="investment_chart barchart col-sm-6"></div>
+								    <div class="clearboth"></div> 
+									
+								</div>
+								<div class="investment_management">
+									<a href="#" id="btn_manage_investment" class="btn">Manage Investments</a>
+								</div> 
+								
+							</div>
+							
+							<div class="modal fade" id="manage_investment_modal" tabindex="-1" role="dialog">
+								<div class="modal-dialog">
+									 <form id="my_investment_form" method="post" action="[[~136]]">
+									 <input type="hidden" name="action" value="save" />
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="exampleModalLabel">Manage Investments</h4>
+								      </div>
+								      <div class="modal-body">
+								      
+										
+								
+									<table id="my_investments_table" border="0" cellspacing="0" cellpadding="5" width="100%">
+										<tr>
+											<th>Investment</th>
+											<th>Amount</th>
+											<th>Monthly Returns</th>
+											<th>&nbsp;</th>
+										</tr>
+										<!--
+										<tr>
+											<td><input type="text" name="investment_name[]" placeholder="Type of Investment" /></td>				
+											<td><input type="number" name="investment_amount[]" placeholder="Amount of Investment" /></td>
+											<td><button class="btn remove_investment_row  btn-warning btn-sm">Remove</button></td>
+										</tr>
+										-->
+									</table>
+									<button class="btn add_investment_row btn-sm ">Add More Investment</button>
+									</div>
+								
+								     
+								      <div class="modal-footer">
+								       
+								        	<input name="save_investments" id="btn_save_investments" type="submit" value="Save" />
+								      </div>
+								    </div>
+								    	</form>
+								  </div>
+							</div> <!-- end modal box -->
+						</div> 
+					</div>
+					<div class="dashboard_widget col-sm-6" id="my_connections">
+						<div class="container">
+						<h3>Latest Connections</h3>
+						<div class="connection_list">
+	  				    [[!get_my_connections? &chunk=`connection_item` &latest=`1`]]
+	  				   
+	  				    <div class="clearboth"></div>
+	  				    </div>
+	  				   </div>
+					</div>
+					
+					<div class="dashboard_widget col-sm-6" id="upcoming_events">
+						<div class="container">
+						<h3>Upcoming Events</h3>
+						<div class="event_list">[[!get_my_events]]
+							<div class="clearboth"></div>
+						</div>
+						</div>
+					
+							 
+					<div class="clearboth"></div>
+					</div>
+					<div class="dashboard_widget col-md-6 col-sm-12" id="industry_insights">
+						<div class="container">
+							<h3>Industry Insights</h3>
+							<div class="insight_list">[[!getResources? &parents=`[[*id]]` &tpl=`dashboard_insight_item` &processTVs=`0` &includeTVs=`0` &includeContent=`1` &prepareTVs=`0` &limit=`12` &showHidden=`0`  ]]
+							</div>
+							<!-- modal box-->
+							   <div class="modal fade insight_modal" tabindex="-1" role="dialog" id="insight_modal">
+								  <div class="modal-dialog modal-lg">
+								    <div class="modal-content">
+								    	<div class="modal-header">
+								          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+								          <h4 class="modal-title" id="title-holder"></h4>
+								        </div>
+								    	<div id="content-holder">
+								    	
+								    	</div>
+								    </div>
+								  </div>    
+								</div>
+							<!-- end modal box -->
+						</div>
+					</div>
+							
+				</div>
+	   		</div>
+		</section>
+	  	
+	</div>
+	  
+	[[$page_footer]]
+   	[[$member_footer]]
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   <script type="text/javascript">
+   
+	//var default_investment_row='<tr><td><input type="text" name="investment_name[]" placeholder="Type of Investment" /></td><td><input type="number" name="investment_amount[]" placeholder="Amount of Investment" /></td><td><button class="btn remove_investment_row  btn-warning btn-sm">Remove</button></td></tr>';
+   	
+   		$(document).ready(function(){
+   			console.log(portfolio.length);
+   			
+   			if(portfolio.length > 0){
+   				for(var i=0; i<portfolio.length; i++){
+   					if(portfolio[i].type == "investable"){
+   						//appendInvestmentRow(portfolio[i].name, portfolio[i].amount, "readonly");
+   					}else{
+   						appendInvestmentRow(portfolio[i].name, portfolio[i].amount, portfolio[i].monthly_return, "");
+   					}
+   				}
+   			}else{ 
+   				appendInvestmentRow("Stock", "","",  "");
+   				appendInvestmentRow("Real Estate", "","", "");
+   				appendInvestmentRow("Others", "", "", "");
+   				//$("#investment_msg").html("You do not have any investment yet. Start managing your investments now.");
+   			}
+   			
+   			$("#btn_manage_investment").click(function(e){
+   				e.preventDefault();
+   				$('#manage_investment_modal').modal({
+					keyboard: false
+				});
+   			});
+   			
+   			$(".add_investment_row").click(function(e){
+   				
+   				e.preventDefault();
+   				//console.log("add");
+   				//$("#my_investments_table").append(default_investment_row); 
+   				appendInvestmentRow("", "", "", "");
+   			});
+   			
+   			$("#my_investments_table").on("click", ".remove_investment_row", function(e){
+   				e.preventDefault();
+   				//console.log($(this));
+   				$(this).parent().parent().remove();
+   			});
+   			
+   			$("#btn_save_investments").click(function(e){
+   				e.preventDefault();
+   				var action_page = $("#my_investment_form").attr("action");
+   				var serialized = $("#my_investment_form").serializeArray();
+   				
+   				//console.log(serialized);
+   				
+   				$.ajax(action_page,{
+			    		type:"POST",
+			    		data: serialized,
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    					"afterClose": function(){ window.location.reload();}
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+   				
+   			});
+   			
+   			$(".connection_list").isotope({
+			  itemSelector: '.connection_item',
+			  layoutMode: 'fitRows',
+			 
+			});
+			
+			
+			$("a.modal_link").click(function(e){
+   				e.preventDefault();
+   				var title = $(this).data("title");
+   				var content = $(".modal_content " + $(this).data("target")).html();
+   				
+   				$("#insight_modal h4#title-holder").html(title);
+   				$("#insight_modal #content-holder").html(content);
+   				
+   				$('#insight_modal').modal({
+					keyboard: false
+				});
+	 
+   			});
+   			
+			
+			
+			
+			
+			
+			// investment data charts
+			 google.load("visualization", "1", {packages:["corechart"], callback: function(){drawInvestmentCharts();   }});
+      		// google.setOnLoadCallback(drawInvestmentCharts);
+			
+			
+			 
+			// end charts
+			
+		});
+		 
+		function drawInvestmentCharts(){
+			var distributionChart = drawDistributionChart();
+			var returnsChart = drawReturnsChart();
+			var regionChart = drawRegionChart();
+			//var industryChart = drawIndustryChart();
+			var returnPercentageChart = drawReturnPercentageChart();
+		}
+		
+		function drawReturnsChart(){
+			data = [];
+			data.push(["Investment", "Amount", "Return"]);
+			
+			for(var i=0; i<portfolio.length; i++){
+				if(portfolio[i].type != "investable"){
+					data.push([portfolio[i].name, parseInt(portfolio[i].amount), parseInt(portfolio[i].monthly_return)]);
+				}
+			}
+			if(data.length > 1){
+			var data = google.visualization.arrayToDataTable(data);
+	
+	        var options = {
+	          title: 'Investment Returns',
+	          vAxis: {title: 'Type of Investment'},
+	          height:280
+	        };
+			//console.log(data);
+	        var chart = new google.visualization.ColumnChart(document.getElementById('investment_returns'));
+	
+	        chart.draw(data, options);
+	       }else{
+	       		//$("#investment_returns").html("You do not have any investments yet. Enter your investment data and start buiding your portfolio.");
+	       }
+		}
+		
+		function drawReturnPercentageChart(){
+			data = [];
+			data.push(["Investment", "Percentage of Monthly Return"]);
+			
+			for(var i=0; i<portfolio.length; i++){
+				if(portfolio[i].type != "investable"){
+					data.push([portfolio[i].name, (parseInt(portfolio[i].monthly_return)*100/parseInt(portfolio[i].amount))]);
+				}
+			}
+			
+			if(data.length > 1){
+			
+				var data = google.visualization.arrayToDataTable(data);
+		
+		        var options = {
+		          title: 'Investment Returns Percentage',
+		          vAxis: {title: 'Type of Investment'},
+	          height:280
+		        };
+				//console.log(data);
+		        var chart = new google.visualization.ColumnChart(document.getElementById('investment_return_percentage'));
+		
+		        chart.draw(data, options);
+	       }else{
+	       		//$("#investment_return_percentage").html("You do not have any investments yet. Enter your investment data and start buiding your portfolio.");
+	       }
+		}
+		
+		function drawRegionChart(){
+			
+			var data = new Array();
+			data.push(["Region", "Amount"]);
+			var region_data = new Array();
+			for(var i=0; i<portfolio.length; i++){
+				//data.push([portfolio[i].name, portfolio[i].amount]);
+				
+				if(portfolio[i].type == "investable"){
+					//console.log(portfolio[i].type);
+					var info = JSON.parse(portfolio[i].additional_info);
+				
+					
+					for(var j=0; j<info.length; j++){
+							//console.log(info[j]);
+						if(typeof region_data[info[j].country] !== "undefined"){
+					   	 	region_data[info[j].country] += parseInt(info[j].pledge_amount);
+					   	}else{
+					   		region_data[info[j].country] =parseInt(info[j].pledge_amount);
+					   	}
+						//data.push([info[j].country, parseInt(info[j].pledge_amount)]);
+					}
+					
+				}  
+				 
+			}
+			
+			for(k in region_data){
+				data.push([k, parseInt(region_data[k])]);
+			}
+			
+			if(data.length>1 ){
+			data =   google.visualization.arrayToDataTable(data);
+			
+			 var options = {
+	          title: 'Regions you invest in on Investable',
+	          is3D: true,
+	          height:280
+	          
+	        };
+	        
+	 
+	
+	        var chart = new google.visualization.PieChart(document.getElementById('investable_regions'));
+	
+	        chart.draw(data, options);
+	        return chart;
+	       }else{
+	       		$("#investable_regions").html("You have not invested in any companies yet. Check out our latest startups and start investing. ");
+	       }
+		}
+		
+		function drawIndustryChart(){
+			
+		}
+		
+		function drawDistributionChart(){
+			var data = new Array();
+			data.push(["Investment", "Amount"]);
+			
+			for(var i=0; i<portfolio.length; i++){
+				data.push([portfolio[i].name, parseInt(portfolio[i].amount)]);
+				//console.log(portfolio[i].name + ": "+ parseInt(portfolio[i].amount));
+			}
+			
+			if(data.length > 1){
+			data =   google.visualization.arrayToDataTable(data);
+			 var options = {
+	          title: 'Investment Distributions',
+	          is3D: true,
+	            pieHole: 0.3,
+	          height:280
+	       }; 
+	        
+	          var chart = new google.visualization.PieChart(document.getElementById('investment_distribution'));
+
+       		   chart.draw(data, options);
+       		   return chart;
+       	}else{
+       		  //	$("#investment_distribution").html("You have not invested in any companies yet. Check out our latest startups and start investing. ");
+       		  }
+		}
+		 
+		function afterDragging() {  
+		  var itemElems = $(".dashboard_container").packery('getItemElements');
+		  $( itemElems ).each( function( i, itemElem ) {
+		    //$(itemElem).text( i + 1 );
+		   // console.log($(itemElem).attr("id"));
+		  });
+		} 
+		
+		function appendInvestmentRow(type, amount, monthly_return, readonly){
+			
+			var default_investment_row='<tr><td><input type="text" name="investment_name[]" placeholder="Type of Investment" value="'+type+'" '+readonly+' /></td><td><input type="number" name="investment_amount[]" placeholder="Amount of Investment" value="'+amount+'" '+readonly+' /></td><td><input type="number" name="monthly_return[]" placeholder="Monthly Return" value="'+monthly_return+'" '+readonly+' /></td><td><button class="btn remove_investment_row  btn-warning btn-sm">Remove</button></td></tr>';
+   			
+   			$("#my_investments_table").append(default_investment_row); 
+   			
+			
+		}
+		
+   </script>
+
+	
+    </body>
+</html>
