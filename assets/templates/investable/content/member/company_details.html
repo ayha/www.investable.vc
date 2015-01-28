@@ -164,7 +164,7 @@
 							[[*premoney:ne=``:then=`
 							<div class="status_item  col-xs-6" id="premoney" data-value="[[*premoney]]">
 								<div class="status_name">[[%startups.premoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]</div>
+								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]] [[*id:is=`91`:then=`<sup>*</sup>`]]</div>
 								<div class="clearboth"></div>
 							</div>
 							`]]
@@ -458,8 +458,8 @@
 				
 				$("#countdown .status_number").html(days + " [[%startups.days? &topic=`default` &namespace=`investable` &language=`en`]]");
 				}
-				if(overfunded == "Yes"){
-					addRibbon(".quick_facts", "OVERFUNDED");
+				if(overfunded != ""){
+					addRibbon(".quick_facts", overfunded);
 				}else if(days <=12 && days >=0){
 					addRibbon(".quick_facts", days + " Days Left");
 					
