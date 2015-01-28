@@ -251,3 +251,20 @@ function show_loading_icon(){
 		keyboard: false
 	});
 }
+
+function meet_startup_submit(action_page, companyid, companyname, remarks){
+	$.ajax(action_page,{
+		type:"POST",
+		data: {"companyid":companyid, "companyname":companyname, "remarks":remarks},
+		complete:function(xhr, status){
+			if(status == "success"){
+				$.fancybox.open(xhr.responseText, {
+						"afterClose": function(){ window.location.reload();}
+					
+				});
+			}else{
+				alert("There was an error sending the request, please try again.");
+			}
+		}
+	});
+}

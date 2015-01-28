@@ -157,23 +157,24 @@
 			    
 			    $("a.meet_company").click(function(e){
 			    	e.preventDefault();
-			    	var companyname =$(this).data("companyname");
-			    	var companyid = $(this).data("companyid");
+			    	$("#meetstartup_form").find("#meet_company_id").val($(this).data("companyid"));
+			    	$("#meetstartup_form").find("#meet_company_name").val($(this).data("companyname"));
+			    	$.fancybox.open("#meet_startup_form_wrapper",{
+			    		maxWidth: 450
+			    		
+			    	})
 			    	
-			    	$.ajax("[[~82]]",{
-			    		type:"POST",
-			    		data: {"companyid":companyid, "companyname":companyname},
-			    		complete:function(xhr, status){
-			    			if(status == "success"){
-			    				$.fancybox.open(xhr.responseText, {
-			    						"afterClose": function(){ window.location.reload();}
-			    					
-			    				});
-			    			}else{
-			    				alert("There was an error sending the request, please try again.");
-			    			}
-			    		}
-			    	});
+			    });
+			    
+			    $("#meetstartup_form").submit(function(e){
+			    	e.preventDefault();
+			    	var companyname =$(this).find("#meet_company_name").val();
+			    	var companyid = $(this).find("#meet_company_id").val();
+			    	var remarks = $(this).find("#meeting_availability").val();
+			    	//console.log(companyname + " / " + companyid + " / " + remarks);
+			    	 meet_startup_submit("[[~82]]", companyid, companyname, remarks);
+			    	
+			    	
 			    	
 			    });
 			    

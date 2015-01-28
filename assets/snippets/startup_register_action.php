@@ -2,7 +2,8 @@
 $emailTo = $modx->getOption("startup_reg_email");
 $emailTo2 = $modx->getOption("member_email");
 $emailCC = $modx->getOption("email_cc");
-
+$emailCC1 = $modx->getOption("email_cc1");
+$emailCC2 = $modx->getOption("email_cc2");
 
 $redirectTo = 49;
 
@@ -37,6 +38,8 @@ $modx->mail->set(modMail::MAIL_SUBJECT, $subject);
 $modx->mail->address('to', $emailTo, $emailTo);
 $modx->mail->address('to', $emailTo2, $emailTo2);
 $modx->mail->address('cc', $emailCC, $emailCC);
+$modx->mail->address('cc', $emailCC1, $emailCC1);
+$modx->mail->address('cc', $emailCC2, $emailCC2);
 $modx->mail->address('reply-to', $from);
 $modx->mail->setHTML(true);
 //call send mail

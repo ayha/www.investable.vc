@@ -58,7 +58,7 @@
 	</div>
 	<div class="clearboth"></div>
 	<div class="support_company">
-						[[+tv.overfunded:ne=`Yes`:then=`
+						[[+tv.overfunded:ne=``:then=`
 						<a class="btn support_button invest_company" data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Support" href="#">[[%startups.invest? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_investors? &companyid=`[[+id]]` &getCount=`1`]]</span>)</a>
 						`]]
 						<a class="btn support_button follow_company"  data-companyid="[[+id]]" data-companyname="[[+longtitle]]" title="Follow" href="#">[[%startups.add_favourite? &topic=`default` &namespace=`investable` &language=`en`]] (<span class="count">[[!get_company_followers? &companyid=`[[+id]]` &getCount=`1`]]</span>)</a>
