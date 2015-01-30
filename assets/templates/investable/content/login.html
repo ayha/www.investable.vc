@@ -33,12 +33,17 @@
 	
    <script type="text/javascript">
    		$(document).ready(function(){
+   			
+   			var return_url = $("#login_form").children("#returnUrl").val();
+   			//console.log(return_url);
    			[[!checkLogin:ne=``:then=`
-   				if($("#login_form").children("#returnUrl").val() != ""){
-   					window.location.href=	$("#login_form").children("#returnUrl").val();
+   				if(typeof return_url != "undefined" && return_url != "" ){
+   					window.location.href=$("#login_form").children("#returnUrl").val();
    				}else{
    					window.location.href="[[~43]]";
    				}
+   				
+   				
    			`]]
    		});
    		
