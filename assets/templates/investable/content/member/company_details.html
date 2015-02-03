@@ -55,6 +55,8 @@
 					<div class="company_slideshow col-md-8">
 						
 						<ul class="bxslider">
+						  
+							
 						  <li><img src="[[*content_image]]" /></li>
 						  
 						  [[*slideshow1:ne=``:then=`
@@ -92,7 +94,7 @@
 						   [[*video4:ne=``:then=`
 						  <li class="video_slide" data-url="[[*video4]]">[[!embed_youtube? &url=`[[*video4]]`]]</li>
 						  `]] 
-						  
+						   
 						   [[*video5:ne=``:then=`
 						  <li class="video_slide" data-url="[[*video5]]">[[!embed_youtube? &url=`[[*video5]]`]]</li>
 						  `]] 
@@ -161,10 +163,11 @@
 							
 							
 							
-							[[*premoney:ne=``:then=`
+							[[*premoney:ne=``:then=` 
 							<div class="status_item  col-xs-6" id="premoney" data-value="[[*premoney]]">
 								<div class="status_name">[[%startups.premoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
-								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]] [[*id:is=`91`:then=`<sup>*</sup>`]]</div>
+								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]
+									[[*premoney_base:ne=``:then=`<br /><span class="note">([[*premoney_base]])</span>`]]</div>
 								<div class="clearboth"></div>
 							</div>
 							`]]
@@ -298,7 +301,7 @@
 				  infiniteLoop: false,
   				  hideControlOnEnd: true
 				});
-				
+				 
 				var bottomPad = 230;
 				
 				$(".bxslider li").each(function(ind, ele){
