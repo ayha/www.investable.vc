@@ -54,32 +54,8 @@
 					<div class="ribbon-wrapper"><div class="ribbon ribbon_details">Days Left</div></div>
 					<div class="company_slideshow col-md-8">
 						
-						<ul class="bxslider">
-						  
-							
-						  <li><img src="[[*content_image]]" /></li>
-						  
-						  [[*slideshow1:ne=``:then=`
-						  <li><img src="[[*slideshow1]]" /></li>
-						  `]]
-						 
-						   [[*slideshow2:ne=``:then=`
-						  <li><img src="[[*slideshow2]]" /></li>
-						  `]]
-						  
-						   [[*slideshow3:ne=``:then=`
-						  <li><img src="[[*slideshow3]]" /></li>
-						  `]]
-						  
-						   [[*slideshow4:ne=``:then=`
-						  <li><img src="[[*slideshow4]]" /></li>
-						  `]]
-						  
-						   [[*slideshow5:ne=``:then=`
-						  <li><img src="[[*slideshow5]]" /></li>
-						  `]]
-						  
-						  [[*video1:ne=``:then=`
+						<ul class="bxslider" id="bxslider">
+						   [[*video1:ne=``:then=`
 						  <li class="video_slide" data-url="[[*video1]]">[[!embed_youtube? &url=`[[*video1]]`]]</li>
 						  `]] 
 						  
@@ -97,28 +73,36 @@
 						   
 						   [[*video5:ne=``:then=`
 						  <li class="video_slide" data-url="[[*video5]]">[[!embed_youtube? &url=`[[*video5]]`]]</li>
-						  `]] 
+						  `]]   
+						
+						  <li data-thumbnail="[[*content_image:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*content_image]]" /></li>
+						  
+						  [[*slideshow1:ne=``:then=`
+						  <li data-thumbnail="[[*slideshow1:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*slideshow1]]" /></li>
+						  `]]
+						 
+						   [[*slideshow2:ne=``:then=`
+						  <li data-thumbnail="[[*slideshow2:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*slideshow2]]" /></li>
+						  `]]
+						  
+						   [[*slideshow3:ne=``:then=`
+						  <li data-thumbnail="[[*slideshow3:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*slideshow3]]" /></li>
+						  `]]
+						  
+						   [[*slideshow4:ne=``:then=`
+						  <li data-thumbnail="[[*slideshow4:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*slideshow4]]" /></li>
+						  `]]
+						  
+						   [[*slideshow5:ne=``:then=`
+						  <li data-thumbnail="[[*slideshow5:phpthumbof=`w=48&h=32&zc=1`]]"><img src="[[*slideshow5]]" /></li>
+						  `]]
+						  
+						
 						   
 						</ul>
 						
 						<div id="bx-pager" class="bx-pager">
-						  <a data-slide-index="0" href=""><img src="[[*content_image:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  [[*slideshow1:ne=``:then=`
-						  <a data-slide-index="1" href=""><img src="[[*slideshow1:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  `]]
-						    [[*slideshow2:ne=``:then=`
-						  <a data-slide-index="2" href=""><img src="[[*slideshow2:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  `]]
-						    [[*slideshow3:ne=``:then=`
-						  <a data-slide-index="3" href=""><img src="[[*slideshow3:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  `]]
-						    [[*slideshow4:ne=``:then=`
-						  <a data-slide-index="4" href=""><img src="[[*slideshow4:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  `]]
-						    [[*slideshow5:ne=``:then=`
-						  <a data-slide-index="5" href=""><img src="[[*slideshow5:phpthumbof=`w=48&h=32&zc=1`]]" /></a>
-						  `]]
-						  
+						
 						</div>
 												
 					
@@ -162,8 +146,8 @@
 							`]]
 							
 							
-							
-							[[*premoney:ne=``:then=` 
+							 
+							[[*premoney:ne=``:then=`
 							<div class="status_item  col-xs-6" id="premoney" data-value="[[*premoney]]">
 								<div class="status_name">[[%startups.premoney_valuation? &topic=`default` &namespace=`investable` &language=`en`]]</div>
 								<div class="status_number">[[%startups.currency? &topic=`default` &namespace=`investable` &language=`en`]][[*premoney:numberformat=`&decimals=0&dec_point=.&thousands_sep=,`]]
@@ -303,11 +287,11 @@
 				});
 				 
 				var bottomPad = 230;
-				
+				setup_slideshow_thumbs("#bx-pager");
 				$(".bxslider li").each(function(ind, ele){
 					if($(this).hasClass("video_slide")){
-						
-						getYoutubeImg($(this).data("url"), "#bx-pager", (ind));
+						getYoutubeImg($(this).data("url"), $(this), "#bx-pager");
+						//getYoutubeImg($(this).data("url"), "#bx-pager", (ind));
 					}
 				});
 				
