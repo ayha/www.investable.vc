@@ -330,6 +330,23 @@
 							
 						</div>
 						`]]
+						
+						<div class="ask_a_question">
+							<h3>Ask A Question</h3>
+							<form name="question_form" id="question_form" method="post" action="[[~146]]">
+								<input type="hidden" name="user_id" id="ask_user_id" value="[[+id]]" />
+								<input type="hidden" name="user_name" id="ask_user_name" value="[[+fullname]]" />
+								<input type="hidden" name="user_email" id="ask_user_email" value="[[+email]]" />
+								<input type="hidden" name="company_id" id="ask_company_id" value="[[*id]]" />
+								<input type="hidden" name="company_name" id="ask_company_name" value="[[*longtitle]]" />
+								<div class="form_row">
+									<textarea required="required" rows="5" name="question" id="ask_question"></textarea>
+								</div>
+								<div class="form_row">
+									<input type="submit" value="Send" />
+								</div>
+							</form>
+						</div>
 					</div>
 					<div class="clearboth"></div>
 				</div>
@@ -518,6 +535,33 @@
 			    	
 			    });
 			    
+			    $("#question_form").submit(function(e){
+			    	e.preventDefault();
+			    	var action_url =$(this).attr("action");
+			    	var user_id = $(this).find("#ask_user_id").val();
+			    	var user_name = $(this).find("#ask_user_name").val();
+					var user_email = $(this).find("#ask_user_email").val();
+					var company_id = $(this).find("#ask_company_id").val();
+					var company_name = $(this).find("#ask_company_name").val();
+					var company_email = "";
+					var question = $(this).find("#ask_question").val();
+								    
+			    	$.ajax(action_url,{
+			    		type:"POST",
+			    		data: {"user_id": user_id, "user_name":user_name, "user_email":user_email, "company_id":company_id, "company_name":company_name, "company_email":company_email, "question":question},
+			    		complete:function(xhr, status){
+			    			if(status == "success"){
+			    				$.fancybox.open(xhr.responseText, {
+			    						"afterClose": function(){ window.location.reload();}
+			    					
+			    				});
+			    			}else{
+			    				alert("There was an error sending the request, please try again.");
+			    			}
+			    		}
+			    	});
+			    });
+			    
 			   
 			   // GA Events
 			   $("a.download_link").click(function(e){
@@ -530,14 +574,14 @@
 			   
 			   $("a.meet_company").click(function(e){
 			   		ga('send', 'event', 'meet company', 'click', "[[*longtitle]]", 4);
-			   });
+			   }); 
 			   
 			   $(".reward_badge a").click(function(e){
 			   		ga('send', 'event', 'See Reward', 'click', "[[*longtitle]]", 4);
 			   });
 			   
 			   
-			   $("body").on("click", "a.bx-next", function(){
+			   $("body").on("click", "a.bx-next", function(){ 
 			   		ga('send', 'event', 'slider', 'next', "[[*longtitle]]", 4);
 			   });
 			   
