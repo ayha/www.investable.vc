@@ -3,8 +3,8 @@ $table = "ext_startup_questions";
 $emailTo = $modx->getOption("member_email");
 $emailCC = $modx->getOption("email_cc");
 
-$emailTo = "alex@investable.vc";
-$emailCC = "alex@investable.vc";
+//$emailTo = "alex@investable.vc";
+//$emailCC = "alex@investable.vc";
 
 $date = date("Y-m-d H:i:s");
 
