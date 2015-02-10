@@ -184,7 +184,7 @@ function updateFundedPercentage(company, overfunded){
 	var percentage = Math.ceil(raised*100/goal);
 	
 	
-		if(overfunded != "Yes"){
+		if(overfunded != "Yes" && overfunded != "Overfunded"){
 			if(percentage >0){
 				$("#"+company).find(".quickfacts").children(".percentage").children(".fact_number").html(percentage+"% ("+$.formatNumber(raised, {format:"$#,###", locale:"us"})+")");
 			}else{

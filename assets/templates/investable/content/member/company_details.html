@@ -426,7 +426,7 @@
 				
 				percentage_raised = Math.ceil(investment_raised*100/investment_goal);
 				//if(percentage_raised >70){
-				[[*overfunded:ne=`Yes`:then=`
+				[[*overfunded:ne=`Yes`:and:ne=`Overfunded`:then=`
 					if(percentage_raised >0){
 						$("#raised .status_number").html(percentage_raised + "% ("+$.formatNumber(investment_raised, {format:"$#,###", locale:"us"})+")");
 					}else{
