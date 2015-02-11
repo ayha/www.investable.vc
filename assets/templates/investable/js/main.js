@@ -166,6 +166,20 @@ $(document).ready(function(){
     		})    	
     });
     
+    $("a.modal_link").click(function(e){
+   				e.preventDefault();
+   				var title = $(this).data("title");
+   				var content = $(".modal_content " + $(this).data("content")).html();
+   				
+   				$("#event_modal h4#title-holder").html(title);
+   				$("#event_modal #content-holder").html(content);
+   				
+   				$('#event_modal').modal({
+					keyboard: false
+				});
+	
+   			});
+    
     $(".reward_badge a").click(function(e){
 					e.preventDefault();
 					
