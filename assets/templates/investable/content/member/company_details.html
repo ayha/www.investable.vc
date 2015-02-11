@@ -332,7 +332,13 @@
 						`]]
 						
 						<div class="ask_a_question">
-							<h3>Ask A Question</h3>
+							<h3>Ask A Question </h3>
+							[[*qanda:ne=``:then=`
+							(<a href="#" class="modal_link" data-content="#company_qa" data-toggle="modal" data-title="Past Questions">View Other's Questions</a>)
+							<div class="modal_content hidden">
+								<div id="company_qa">[[*qanda]]</div>
+							</div>
+						`]]
 							<form name="question_form" id="question_form" method="post" action="[[~146]]">
 								<input type="hidden" name="user_id" id="ask_user_id" value="[[+id]]" />
 								<input type="hidden" name="user_name" id="ask_user_name" value="[[+fullname]]" />
@@ -347,12 +353,7 @@
 								</div>
 							</form>
 						</div>
-						[[*qanda:ne=``:then=`
-							<a href="#" class="modal_link" data-content="#company_qa" data-toggle="modal" data-title="Past Questions">View Other's Questions</a>
-							<div class="modal_content hidden">
-								<div id="company_qa">[[*qanda]]</div>
-							</div>
-						`]]
+						
 					</div>
 					<div class="clearboth"></div>
 				</div>
