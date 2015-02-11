@@ -402,7 +402,7 @@
 				
 				
 				var bottomPad = 230;
-				setup_slideshow_thumbs("#bx-pager");
+				setup_slideshow_thumbs("#bxslider", "#bx-pager");
 				$(".bxslider li").each(function(ind, ele){
 					if($(this).hasClass("video_slide")){
 						getYoutubeImg($(this).data("url"), $(this), "#bx-pager");
