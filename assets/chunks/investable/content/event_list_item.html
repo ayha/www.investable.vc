@@ -8,8 +8,15 @@
 		<div class="event_venue_address">[[+tv.venue_address]]</div>
 		
 		<div class="rsvp">
+			[[+tv.disable_rsvp:is=``:then=`
+			
+			
 			[[+tv.rsvp_link:ne=``:then=`<a href="[[+tv.rsvp_link]]" class="btn" target="_blank">`:else=`<a href="#" class="btn event_rsvp_link">`]][[%title.rsvp_now? &namespace=`investable`]]  
 			</a>
+			
+			`:else=`
+				<a href="#" class="btn disabled">[[+tv.disable_rsvp]]</a>
+			`]]
 			
 			<a href="[[~[[+id]]]]" target="_blank" title="Add to Calendar" class="addthisevent btn">
 			    Add to Calendar
