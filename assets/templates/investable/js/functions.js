@@ -374,3 +374,12 @@ function accordionsToTabs(){
 	$('.tabs').tabs();*/
 $(".accordion").each(function(){var e=$('<div class="tabs">');var t=0;var n=$("<ul>");$(this).find(">h3").each(function(){t++;n.append('<li><a href="#tabs-'+t+'">'+$(this).text()+"</a></li>")});var t=0;var r=$("");$(this).find(">div").each(function(){t++;r=r.add('<div id="tabs-'+t+'">'+$(this).html()+"</div>")});e.append(n).append(r);$(this).before(e);$(this).remove()});$(".tabs").tabs()
 }
+
+
+
+function change_captcha()
+ {
+    document.getElementById('captcha').src="get_captcha.php?rnd=" + Math.random();
+ }
+
+

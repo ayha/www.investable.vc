@@ -83,6 +83,7 @@
             	
          		</div>
       		</div>
+      		
       		<div class="form_section submit">
          		<div class="form_row"><input type="submit" name="register_submit" id="investor_submit" value="Submit" /></div>
       		</div>
@@ -91,7 +92,7 @@
         </li>
         <li data-content="startup">
         	 <div class="startup_form_wrapper">
-      <form name="startup_register_form"   action="[[~41]]" method="post">
+      <form name="startup_register_form"  id="startup_register_form" action="[[~41]]" method="post">
       	 <input type="hidden" name="usertype" value="startup" />
       	 	<div class="form_header">Founder Information</div>
          <div class="form_section" id="#startup_contact">
@@ -107,8 +108,23 @@
          	<div class="form_row"><label>Highlight market opportunities in 100 words or less</label><textarea rows="5" name="market_opportunities" id="market_opportunities"></textarea></div>
             <div class="form_row"><label>Describe your competitive advantage in 100 words or less</label><textarea rows="5" name="competitive_advantage" id="competitive_advantage"></textarea></div>
          </div>
+         
+         
+         
          <div class="form_section submit">
-         	<div class="form_row"><input type="submit" name="register_submit" id="startup_submit" value="Submit" /></div>
+         	<div class="form_row">
+         		<div class="captcha_wrap">
+         			<img src="[[~151]]" alt="" id="captcha" />
+       				 <img src="[[++assets_url]]templates/investable/js/captcha/refresh.jpg" width="25" alt="" id="captcha_refresh" />
+        
+   				 
+			        <br clear="all" />
+			        <input name="captcha_code" type="text" id="captcha_code">
+         		</div>
+         		 
+         		
+         	</div>
+         	<div class="form_row"><input type="submit" name="register_submit" id="startup_submit" value="Submit" disabled /></div>
 		 </div>
       </form>
 	</div>
@@ -135,9 +151,51 @@
 			
 		});
 		
-	
+		$("#captcha_code").change(function(e){
+			var code = $(this).val();
+			
+			$.ajax("[[~150]]",{
+	    		type:"POST",
+	    		data: {"captcha":code},
+	    		complete:function(xhr, status){
+	    			if(status == "success" && xhr.responseText == "1"){
+	    				$("#startup_submit").prop("disabled", false);
+	    			}else{
+	    				$("#startup_submit").prop("disabled", true);
+	    			}
+	    		}
+	    	});
+			
+		});
+		
+		/*
+		$("#startup_register_form").submit(function(e){
+			 e.preventDefault();
+			
+			//return true;
+			
+			var can_submit = false;
+			var code = $("#captcha_code").val();
+			console.log(code);
+			$.ajax("[[~150]]",{
+			    		type:"POST",
+			    		data: {"captcha":code},
+			    		complete:function(xhr, status){
+			    			if(status == "success" && xhr.responseText == "1"){
+			    				can_submit = true;
+			    			}else{
+			    				$.fancybox.open(xhr.responseText);
+			    			}
+			    		}
+			    	});
+			    	
+			 return can_submit;
+			
+		});
+		*/
 		
 	});
+	
    </script>
 
      
