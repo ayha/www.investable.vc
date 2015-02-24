@@ -94,6 +94,7 @@
         	 <div class="startup_form_wrapper">
       <form name="startup_register_form"  id="startup_register_form" action="[[~41]]" method="post">
       	 <input type="hidden" name="usertype" value="startup" />
+      	 <input type="hidden" name="captcha_passed" id="captcha_passed" value="0" />
       	 	<div class="form_header">Founder Information</div>
          <div class="form_section" id="#startup_contact">
          
@@ -159,8 +160,11 @@
 	    		data: {"captcha":code},
 	    		complete:function(xhr, status){
 	    			if(status == "success" && xhr.responseText == "1"){
+	    				$("#captcha_passed").val(1);
 	    				$("#startup_submit").prop("disabled", false);
+	    				
 	    			}else{
+	    				$("#captcha_passed").val(0);
 	    				$("#startup_submit").prop("disabled", true);
 	    			}
 	    		}

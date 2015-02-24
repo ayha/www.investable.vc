@@ -9,7 +9,7 @@ $redirectTo = 49;
 
 
 
-if(!empty($_POST)){
+if(!empty($_POST) && $_POST["captcha_passed"] ==1){
    foreach($_POST as $k=>$v){
   // $_POST[$k] = mysql_real_escape_string($v);
 }
