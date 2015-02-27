@@ -127,13 +127,13 @@ $(document).ready(function(){
 			  layoutMode: 'fitRows',
 			 
 			});
-			
+	/*		
 	$(".company_grid").isotope({
 			  itemSelector: '.company_grid_item',
 			  layoutMode: 'fitRows',
 			 
 			});
-    
+    */
     $("body").on("click",".msg_reply .reply_button", function(e){
     	e.preventDefault();
     	 $("#send_message_form")[0].reset();

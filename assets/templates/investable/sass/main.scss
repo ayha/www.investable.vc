@@ -2271,7 +2271,10 @@ table#my_investments{
 .company_grid{
   .company_grid_item{
     margin:5px;
+    float:left;
+    display:inline;
   }
+  
   
   .company_thumbnail {
     background-color:#fff;
