@@ -26,6 +26,8 @@ if(!empty($uid) && is_numeric($uid)){
       foreach($extended as $k=>$v){
          $placeholders[$ns.$k] = $v;
       }
+	  
+	  if($placeholders[$ns.$k])
       
 	  if(empty($placeholders[$ns."displayname"])){
 	  		$placeholders[$ns."displayname"] = substr($placeholders[$ns."fullname"], 0, strpos($placeholders[$ns."fullname"], " "));

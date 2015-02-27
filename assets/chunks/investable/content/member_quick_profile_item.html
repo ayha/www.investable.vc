@@ -38,6 +38,9 @@
 				[[+u.job_industry:ne=``:then=`<p class="industry">In [[+u.job_industry]]</p>`]]
 				[[+u.country:ne=``:then=`<p class="country">[[+u.country]]</p>`]]
 				
+				[[+u.reg_date:ne=``:then=`
+					<p class="note">Member since [[+u.reg_date:strtotime:date=`%b %e, %Y`]]</p>
+				`]]
 				<div class="member_investment"></div>
 				
 				<div class="connection_buttons">
