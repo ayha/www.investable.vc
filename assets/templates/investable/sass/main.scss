@@ -1702,16 +1702,20 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
     font-size:11px;
     text-align:center;
     opacity:0.75;
+    
   }
-  
   .member_bio h4{
-    color:#fff;
+    color:$turquoise;
     display:block;
     width:100%; 
     text-align:center;
     font-size:12px;
     margin:0; 
     padding:0;
+  }
+  
+  .member_bio p{
+    color:#fff;
   }
   
   
@@ -1947,7 +1951,13 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
          color:#fff;
          cursor:pointer;
          margin:0;
-         padding:8px 0;
+        
+         
+      }
+      
+      p{
+        margin-bottom:0;
+        color:#fff;
       }
       
       h4.expandable_header{
@@ -1958,7 +1968,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
       }
       
       .user_list{
-        display:none;
+       
         margin-top:25px;
         
       }
