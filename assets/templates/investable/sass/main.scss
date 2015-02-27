@@ -1975,6 +1975,8 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         
       }
       
+      
+      
     .connection_item{
      /*
       background: #fff;
@@ -2256,6 +2258,38 @@ table#my_investments{
  
   
 }
+
+.member_investment {
+  h3{
+    margin-top:10px 0;
+    font-size:16px;
+    color:$turquoise;
+  }
+  
+}
+
+.company_grid{
+  .company_grid_item{
+    margin:5px;
+  }
+  
+  .company_thumbnail {
+    background-color:#fff;
+  }
+  
+  .company_thumbnail img{
+    display:block;
+  }
+  
+  .company_name{
+    background:$mediumgrey;
+    color:$turquoise;
+    font-size:13px;
+    font-weight:bold;
+    text-align:center;
+  }
+}
+
 
  @media (max-width:767px){
 #my_investments_table{

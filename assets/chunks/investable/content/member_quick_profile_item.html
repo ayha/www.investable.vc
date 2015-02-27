@@ -1,4 +1,4 @@
-<div class="member_quick_profile connection_item" id="[[+u.id]]" data-uid="[[+u.id]]" data-displayname="[[+u.displayname]]" data-job-title="[[+u.job_title]]" data-job-industry="[[+u.job_industry]]" data-country="[[+u.country]]" data-profilepic="[[+u.photoUrl]]" data-connection-status="[[+u.connected]]" data-toggle="modal" data-content="#quick_profile_[[+u.id]]" data-target="event_modal"  data-title="[[+u.displayname]]" >
+<div class="member_quick_profile connection_item" id="[[+u.internalKey]]" data-uid="[[+u.internalKey]]" data-displayname="[[+u.displayname]]" data-job-title="[[+u.job_title]]" data-job-industry="[[+u.job_industry]]" data-country="[[+u.country]]" data-profilepic="[[+u.photoUrl]]" data-connection-status="[[+u.connected]]" data-toggle="modal" data-content="#quick_profile_[[+u.id]]" data-target="event_modal"  data-title="[[+u.displayname]]" >
 	<div class="thumbnail_holder">
 	<div class="member_thumbnail" >
 	<div class="member_pic" style="background-image:url([[+u.photoUrl]]);">
@@ -41,17 +41,27 @@
 				[[+u.reg_date:ne=``:then=`
 					<p class="note">Member since [[+u.reg_date:strtotime:date=`%b %e, %Y`]]</p>
 				`]]
-				<div class="member_investment"></div>
+				<div class="member_investment">
+					
+					[[!get_investor_invested_companies:ne=`0`:then=`
+						<h3>Investments on Investable</h3>
+						<div class="invested_company_list company_grid">
+							[[!get_investor_invested_companies? &tpl=`invested_company_item`  &userid=`[[+u.internalKey]]` ]]
+							<div class="clearboth"></div>
+						</div>
+					`? &getCount=`1` &userid=`[[+u.internalKey]]`]]
+					
+				</div>
 				
 				<div class="connection_buttons">
 					[[+u.connected:is=`no`:then=`
-						<a href="#" class="btn connect_button" data-uid="[[+u.uid]]"   data-url="[[~57]]">Connect</a>
+						<a href="#" class="btn connect_button" data-uid="[[+u.internalKey]]"   data-url="[[~57]]">Connect</a>
 					`]]
 					[[+u.connected:is=`sent`:then=`
-						<a href="#" class="btn" data-uid="[[+u.uid]]"  disabled >Request Sent</a>
+						<a href="#" class="btn" data-uid="[[+u.internalKey]]"  disabled >Request Sent</a>
 					`]]
 					[[+u.connected:is=`requested`:then=`
-						<a href="#" class="btn approve_connect_button" data-uid="[[+u.uid]]"  data-url="[[~61]]">Confirm</a>
+						<a href="#" class="btn approve_connect_button" data-uid="[[+u.internalKey]]"  data-url="[[~61]]">Confirm</a>
 					`]]
 					
 					
