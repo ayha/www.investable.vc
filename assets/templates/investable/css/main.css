@@ -1602,55 +1602,69 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   text-align: center;
 }
 
-/* line 1748, ../sass/main.scss */
+/* line 1739, ../sass/main.scss */
+.profile_info, .profile_info p {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+/* line 1744, ../sass/main.scss */
+.profile_info .jobtitle, .profile_info p .jobtitle {
+  color: #20B6AE;
+}
+/* line 1751, ../sass/main.scss */
+.profile_info .country, .profile_info p .country {
+  margin-top: 15px;
+}
+
+/* line 1764, ../sass/main.scss */
 .highlight_notes {
   text-align: right;
   font-style: italic;
 }
 
-/* line 1753, ../sass/main.scss */
+/* line 1769, ../sass/main.scss */
 .note {
   font-size: 12px;
   font-style: italic;
 }
 
-/* line 1758, ../sass/main.scss */
+/* line 1774, ../sass/main.scss */
 .support_button {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   -moz-box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
   box-shadow: 2px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 
-/* line 1765, ../sass/main.scss */
+/* line 1781, ../sass/main.scss */
 .company_details .member_content {
   position: relative;
 }
-/* line 1769, ../sass/main.scss */
+/* line 1785, ../sass/main.scss */
 .company_details .quick_facts {
   background: #20B6AE;
   color: #fff;
   margin-bottom: 20px;
   padding: 20px 15px;
 }
-/* line 1777, ../sass/main.scss */
+/* line 1793, ../sass/main.scss */
 .company_details .quick_facts .note, .company_details .quick_facts .note p {
   color: #fff;
   text-align: right;
 }
-/* line 1784, ../sass/main.scss */
+/* line 1800, ../sass/main.scss */
 .company_details .status_item {
   margin-bottom: 15px;
 }
-/* line 1786, ../sass/main.scss */
+/* line 1802, ../sass/main.scss */
 .company_details .status_item .status_name {
   font-size: 12px;
   font-style: italic;
 }
-/* line 1791, ../sass/main.scss */
+/* line 1807, ../sass/main.scss */
 .company_details .status_item .status_number {
   font-size: 16px;
 }
-/* line 1798, ../sass/main.scss */
+/* line 1814, ../sass/main.scss */
 .company_details #company_news {
   padding: 10px;
   border: 1px solid #cccccc;
@@ -1658,57 +1672,43 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   overflow-y: auto;
   background-color: #f8f8f8;
 }
-/* line 1805, ../sass/main.scss */
+/* line 1821, ../sass/main.scss */
 .company_details #company_news h3 {
   color: #20B6AE;
 }
-/* line 1812, ../sass/main.scss */
+/* line 1828, ../sass/main.scss */
 .company_details .company_founder {
   padding: 10px;
   background: #f8f8f8;
   margin-bottom: 15px;
 }
-/* line 1819, ../sass/main.scss */
+/* line 1835, ../sass/main.scss */
 .company_details .founder_profile h3 {
   font-size: 14px;
   color: #F36B22;
 }
-/* line 1825, ../sass/main.scss */
+/* line 1841, ../sass/main.scss */
 .company_details .founder_profile h3.founder_title {
   color: #636363;
 }
-/* line 1829, ../sass/main.scss */
+/* line 1845, ../sass/main.scss */
 .company_details .founder_profile .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
-/* line 1840, ../sass/main.scss */
+/* line 1856, ../sass/main.scss */
 .company_details .startup_downloads {
   padding: 10px;
   background-color: #FFB880;
   color: #fff;
 }
-/* line 1844, ../sass/main.scss */
+/* line 1860, ../sass/main.scss */
 .company_details .startup_downloads p, .company_details .startup_downloads a, .company_details .startup_downloads h3 {
   color: #fff;
 }
-/* line 1848, ../sass/main.scss */
+/* line 1864, ../sass/main.scss */
 .company_details .startup_downloads h3 {
   font-size: 16px;
-}
-/* line 1855, ../sass/main.scss */
-.company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
-  color: #fff;
-}
-/* line 1859, ../sass/main.scss */
-.company_details .why_we_love h3 {
-  font-size: 16px;
-  color: #fff;
-}
-/* line 1865, ../sass/main.scss */
-.company_details .why_we_love {
-  padding: 10px;
-  background-color: #FFB880;
 }
 /* line 1871, ../sass/main.scss */
 .company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
@@ -1719,121 +1719,137 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   font-size: 16px;
   color: #fff;
 }
-/* line 1882, ../sass/main.scss */
+/* line 1881, ../sass/main.scss */
+.company_details .why_we_love {
+  padding: 10px;
+  background-color: #FFB880;
+}
+/* line 1887, ../sass/main.scss */
+.company_details .why_we_love, .company_details .why_we_love p, .company_details .why_we_love a {
+  color: #fff;
+}
+/* line 1891, ../sass/main.scss */
+.company_details .why_we_love h3 {
+  font-size: 16px;
+  color: #fff;
+}
+/* line 1898, ../sass/main.scss */
 .company_details .company_details h3 {
   color: #20B6AE;
 }
-/* line 1888, ../sass/main.scss */
+/* line 1904, ../sass/main.scss */
 .company_details .company_title h2 {
   color: #20B6AE;
   font-size: 22px;
   margin-bottom: 5px;
   margin-top: 0;
 }
-/* line 1895, ../sass/main.scss */
+/* line 1911, ../sass/main.scss */
 .company_details .company_title h3 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 1904, ../sass/main.scss */
+/* line 1920, ../sass/main.scss */
 .company_details .company_quick_links {
   padding-top: 25px;
 }
-/* line 1909, ../sass/main.scss */
+/* line 1925, ../sass/main.scss */
 .company_details .quick_facts {
   position: relative;
 }
-/* line 1914, ../sass/main.scss */
+/* line 1930, ../sass/main.scss */
 .company_details .key_investors {
   position: relative;
   text-align: right;
   margin-bottom: 15px;
 }
-/* line 1920, ../sass/main.scss */
+/* line 1936, ../sass/main.scss */
 .company_details .key_investors h4 {
   color: #fff;
 }
-/* line 1925, ../sass/main.scss */
+/* line 1941, ../sass/main.scss */
 .company_details .company_backers {
   margin: 15px auto;
   padding: 10px 15px;
   background: #FFB880;
 }
-/* line 1930, ../sass/main.scss */
+/* line 1946, ../sass/main.scss */
 .company_details .company_backers h4 {
   color: #fff;
   cursor: pointer;
   margin: 0;
   padding: 8px 0;
 }
-/* line 1937, ../sass/main.scss */
+/* line 1953, ../sass/main.scss */
 .company_details .company_backers h4.expandable_header {
   padding-right: 30px;
   width: auto;
   display: inline;
   background: url(../../../images/more_icon_24x24.png) right center no-repeat transparent;
 }
-/* line 1944, ../sass/main.scss */
+/* line 1960, ../sass/main.scss */
 .company_details .company_backers .user_list {
   display: none;
   margin-top: 25px;
 }
-/* line 1950, ../sass/main.scss */
+/* line 1966, ../sass/main.scss */
 .company_details .company_backers .connection_item {
-  background: #fff;
-  margin: 5px;
-  padding: 5px;
+  /*
+   background: #fff;
+   margin:5px;
+   padding:5px;
+  */
   /*
    @include border-radius($btnRadius); 
    */
 }
-/* line 1959, ../sass/main.scss */
+/* line 1977, ../sass/main.scss */
 .company_details .company_backers .connection_item h4 {
   color: #20B6AE;
 }
-/* line 1966, ../sass/main.scss */
+/* line 1984, ../sass/main.scss */
 .company_details .ask_a_question h3 {
   color: #20B6AE;
 }
-/* line 1971, ../sass/main.scss */
+/* line 1989, ../sass/main.scss */
 .company_details .ask_a_question #company_qa .qanda {
   margin-bottom: 10px;
   padding: 10px;
   background: #f8f8f8;
 }
-/* line 1977, ../sass/main.scss */
+/* line 1995, ../sass/main.scss */
 .company_details .ask_a_question #company_qa h4 {
   cursor: pointer;
   font-size: 13px;
 }
-/* line 1982, ../sass/main.scss */
+/* line 2000, ../sass/main.scss */
 .company_details .ask_a_question #company_qa .answer {
   display: none;
 }
-/* line 1986, ../sass/main.scss */
+/* line 2004, ../sass/main.scss */
 .company_details .ask_a_question #company_qa .answer p {
   font-size: 13px;
 }
-/* line 1991, ../sass/main.scss */
+/* line 2009, ../sass/main.scss */
 .company_details .ask_a_question h4#ask_a_question {
   margin-top: 25px;
   margin-bottom: 0;
 }
 
-/* line 2006, ../sass/main.scss */
+/* line 2024, ../sass/main.scss */
 .fund_details .quick_facts {
   background: #20B6AE;
   padding: 15px;
   color: #fff;
   font-size: 16px;
 }
-/* line 2015, ../sass/main.scss */
+/* line 2033, ../sass/main.scss */
 .fund_details .quick_facts p {
   color: #fff;
   font-size: 16px;
 }
-/* line 2020, ../sass/main.scss */
+/* line 2038, ../sass/main.scss */
 .fund_details .project_logo .logo_holder {
   background-color: #fff;
   min-height: 250px;
@@ -1842,30 +1858,30 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   background-position: center center;
   background-size: contain;
 }
-/* line 2031, ../sass/main.scss */
+/* line 2049, ../sass/main.scss */
 .fund_details .company_description h2 {
   color: #20B6AE;
 }
-/* line 2036, ../sass/main.scss */
+/* line 2054, ../sass/main.scss */
 .fund_details .fund_manager {
   background-color: #f8f8f8;
 }
-/* line 2039, ../sass/main.scss */
+/* line 2057, ../sass/main.scss */
 .fund_details .fund_manager h2 {
   color: #20B6AE;
 }
-/* line 2047, ../sass/main.scss */
+/* line 2065, ../sass/main.scss */
 .fund_details .profile_pic img {
   max-width: 100%;
   vertical-align: top;
 }
 
-/* line 2054, ../sass/main.scss */
+/* line 2072, ../sass/main.scss */
 .member_content {
   position: relative;
 }
 
-/* line 2058, ../sass/main.scss */
+/* line 2076, ../sass/main.scss */
 .floating_content {
   display: block;
   position: absolute;
@@ -1873,28 +1889,28 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   width: 100%;
   z-index: 50;
 }
-/* line 2064, ../sass/main.scss */
+/* line 2082, ../sass/main.scss */
 .floating_content .support_company {
   text-align: right;
 }
 
-/* line 2070, ../sass/main.scss */
+/* line 2088, ../sass/main.scss */
 #info_session_form .form_thankyou_message {
   display: none;
 }
 
-/* line 2075, ../sass/main.scss */
+/* line 2093, ../sass/main.scss */
 #calendars {
   display: block;
 }
 
-/* line 2080, ../sass/main.scss */
+/* line 2098, ../sass/main.scss */
 .calendar {
   display: block;
   margin-bottom: 5px;
   background: #f8f8f8;
 }
-/* line 2084, ../sass/main.scss */
+/* line 2102, ../sass/main.scss */
 .calendar .current-month {
   background: #F36B22;
   color: #ffffff;
@@ -1903,7 +1919,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   text-align: center;
   padding: 5px 0;
 }
-/* line 2094, ../sass/main.scss */
+/* line 2112, ../sass/main.scss */
 .calendar .header-day, .calendar .day {
   float: left;
   font-size: 12px;
@@ -1912,11 +1928,11 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   padding: 10px 0;
   text-align: center;
 }
-/* line 2104, ../sass/main.scss */
+/* line 2122, ../sass/main.scss */
 .calendar .header-day {
   background: #FFB880;
 }
-/* line 2112, ../sass/main.scss */
+/* line 2130, ../sass/main.scss */
 .calendar .day.event {
   color: #20B6AE;
   background-color: #20B6AE;
@@ -1927,12 +1943,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
     @include border-radius(34px);
   */
 }
-/* line 2124, ../sass/main.scss */
+/* line 2142, ../sass/main.scss */
 .calendar .day.adjacent-month {
   color: #999;
 }
 
-/* line 2131, ../sass/main.scss */
+/* line 2149, ../sass/main.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -1942,51 +1958,51 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   height: 0;
 }
 
-/* line 2141, ../sass/main.scss */
+/* line 2159, ../sass/main.scss */
 .event_item {
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px solid #f8f8f8;
 }
-/* line 2146, ../sass/main.scss */
+/* line 2164, ../sass/main.scss */
 .event_item h3 {
   color: #20B6AE;
 }
-/* line 2150, ../sass/main.scss */
+/* line 2168, ../sass/main.scss */
 .event_item .event_date {
   font-style: italic;
 }
-/* line 2154, ../sass/main.scss */
+/* line 2172, ../sass/main.scss */
 .event_item .event_venue {
   padding: 5px 0 5px 20px;
   background: url(../../../images/template/list_location_icon.png) left center no-repeat;
   cursor: pointer;
 }
-/* line 2162, ../sass/main.scss */
+/* line 2180, ../sass/main.scss */
 .event_item .event_venue_address {
   display: none;
 }
 
-/* line 2167, ../sass/main.scss */
+/* line 2185, ../sass/main.scss */
 .profile_sidebar_boxes {
   background: #f8f8f8;
   border: 1px solid #cccccc;
   padding: 10px;
 }
-/* line 2172, ../sass/main.scss */
+/* line 2190, ../sass/main.scss */
 .profile_sidebar_boxes h3 {
   color: #20B6AE;
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 2179, ../sass/main.scss */
+/* line 2197, ../sass/main.scss */
 .profile_sidebar_boxes .count {
   color: #F36B22;
   font-size: 18px;
 }
 
-/* line 2186, ../sass/main.scss */
+/* line 2204, ../sass/main.scss */
 .dashboard_widget .container {
   border: 1px solid #cccccc;
   background: #f8f8f8;
@@ -1995,17 +2011,22 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected {
   margin-bottom: 30px;
 }
 
-/* line 2196, ../sass/main.scss */
+/* line 2214, ../sass/main.scss */
 .modal-content #content-holder {
   padding: 15px;
 }
+/* line 2219, ../sass/main.scss */
+.modal-content h4.modal-title {
+  color: #20B6AE;
+  font-size: 16px;
+}
 
-/* line 2202, ../sass/main.scss */
+/* line 2226, ../sass/main.scss */
 #investment_wrapper {
   padding: 15px 0;
 }
 
-/* line 2207, ../sass/main.scss */
+/* line 2231, ../sass/main.scss */
 table#my_investments th {
   color: #fff;
   background: #636363;
@@ -2014,20 +2035,20 @@ table#my_investments th {
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 2216, ../sass/main.scss */
+/* line 2240, ../sass/main.scss */
 table#my_investments td {
   padding: 5px;
   border: 1px solid #cccccc;
 }
 
 @media (max-width: 767px) {
-  /* line 2226, ../sass/main.scss */
+  /* line 2250, ../sass/main.scss */
   #my_investments_table input[type=text], #my_investments_table input[type=email], #my_investments_table input[type=number], #my_investments_table input[type=date], #my_investments_table input[type=password], #my_investments_table textarea {
     max-width: 100px;
   }
 }
 /* AddThisEvent (add to your existing CSS) */
-/* line 2234, ../sass/main.scss */
+/* line 2258, ../sass/main.scss */
 .addthisevent-drop {
   display: inline-block;
   position: relative;
@@ -2040,7 +2061,7 @@ table#my_investments td {
   font-weight: normal;
 }
 
-/* line 2235, ../sass/main.scss */
+/* line 2259, ../sass/main.scss */
 .addthisevent-drop:hover {
   color: #fff;
   font-size: 14px;
@@ -2048,7 +2069,7 @@ table#my_investments td {
   background-color: #20B6AE;
 }
 
-/* line 2237, ../sass/main.scss */
+/* line 2261, ../sass/main.scss */
 .addthisevent-drop .arrow {
   width: 15px;
   height: 10px;
@@ -2059,12 +2080,12 @@ table#my_investments td {
   background: url(icon-arrow.png) no-repeat;
 }
 
-/* line 2238, ../sass/main.scss */
+/* line 2262, ../sass/main.scss */
 .addthisevent-selected {
   background-color: #20B6AE;
 }
 
-/* line 2239, ../sass/main.scss */
+/* line 2263, ../sass/main.scss */
 .addthisevent_dropdown {
   width: 215px;
   position: absolute;
@@ -2084,7 +2105,7 @@ table#my_investments td {
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* line 2240, ../sass/main.scss */
+/* line 2264, ../sass/main.scss */
 .addthisevent_dropdown span {
   display: block;
   line-height: 110%;
@@ -2095,7 +2116,7 @@ table#my_investments td {
   padding: 8px 10px 9px 15px;
 }
 
-/* line 2241, ../sass/main.scss */
+/* line 2265, ../sass/main.scss */
 .addthisevent_dropdown span:hover {
   background: #f8f8f8;
   color: #20B6AE;
@@ -2103,17 +2124,17 @@ table#my_investments td {
   font-size: 14px;
 }
 
-/* line 2242, ../sass/main.scss */
+/* line 2266, ../sass/main.scss */
 .addthisevent span {
   display: none !important;
 }
 
-/* line 2243, ../sass/main.scss */
+/* line 2267, ../sass/main.scss */
 .addthisevent-drop ._url, .addthisevent-drop ._start, .addthisevent-drop ._end, .addthisevent-drop ._summary, .addthisevent-drop ._description, .addthisevent-drop ._location, .addthisevent-drop ._organizer, .addthisevent-drop ._organizer_email, .addthisevent-drop ._facebook_event, .addthisevent-drop ._all_day_event {
   display: none !important;
 }
 
-/* line 2244, ../sass/main.scss */
+/* line 2268, ../sass/main.scss */
 .addthisevent_dropdown .copyx {
   height: 21px;
   display: block;
@@ -2121,7 +2142,7 @@ table#my_investments td {
   cursor: default;
 }
 
-/* line 2245, ../sass/main.scss */
+/* line 2269, ../sass/main.scss */
 .addthisevent_dropdown .brx {
   width: 180px;
   height: 1px;
@@ -2133,7 +2154,7 @@ table#my_investments td {
   top: 9px;
 }
 
-/* line 2246, ../sass/main.scss */
+/* line 2270, ../sass/main.scss */
 .addthisevent_dropdown .frs {
   position: absolute;
   top: 3px;
@@ -2151,17 +2172,17 @@ table#my_investments td {
   color: #cacaca;
 }
 
-/* line 2247, ../sass/main.scss */
+/* line 2271, ../sass/main.scss */
 .addthisevent_dropdown .frs:hover {
   color: #6d84b4;
 }
 
-/* line 2248, ../sass/main.scss */
+/* line 2272, ../sass/main.scss */
 .addthisevent {
   visibility: hidden;
 }
 
-/* line 2253, ../sass/main.scss */
+/* line 2277, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop {
   width: 280px;
   display: inline-block;
@@ -2179,22 +2200,22 @@ table#my_investments td {
   /*
    @include border-radius(2px);*/
 }
-/* line 2258, ../sass/main.scss */
+/* line 2282, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop:hover {
   background-color: #f4f4f4;
 }
-/* line 2259, ../sass/main.scss */
+/* line 2283, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop:active {
   top: 1px;
 }
-/* line 2260, ../sass/main.scss */
+/* line 2284, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .date {
   width: 50px;
   height: 60px;
   float: left;
   position: relative;
 }
-/* line 2261, ../sass/main.scss */
+/* line 2285, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .date .mon {
   display: block;
   text-align: center;
@@ -2205,7 +2226,7 @@ table#my_investments td {
   line-height: 110%;
   text-transform: uppercase;
 }
-/* line 2262, ../sass/main.scss */
+/* line 2286, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .date .day {
   display: block;
   text-align: center;
@@ -2215,7 +2236,7 @@ table#my_investments td {
   color: #333;
   line-height: 100%;
 }
-/* line 2263, ../sass/main.scss */
+/* line 2287, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .date .bdr1 {
   width: 1px;
   height: 50px;
@@ -2225,7 +2246,7 @@ table#my_investments td {
   top: 5px;
   right: -3px;
 }
-/* line 2264, ../sass/main.scss */
+/* line 2288, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .date .bdr2 {
   width: 1px;
   height: 50px;
@@ -2235,14 +2256,14 @@ table#my_investments td {
   top: 5px;
   right: -4px;
 }
-/* line 2265, ../sass/main.scss */
+/* line 2289, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .desc {
   width: 200px;
   height: 60px;
   float: left;
   position: relative;
 }
-/* line 2266, ../sass/main.scss */
+/* line 2290, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .desc p {
   margin: 0;
   display: block;
@@ -2252,7 +2273,7 @@ table#my_investments td {
   color: #666;
   line-height: 110%;
 }
-/* line 2267, ../sass/main.scss */
+/* line 2291, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .desc .hed {
   height: 15px;
   display: block;
@@ -2263,17 +2284,17 @@ table#my_investments td {
   color: #333;
   text-transform: uppercase;
 }
-/* line 2268, ../sass/main.scss */
+/* line 2292, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop .desc .des {
   height: 28px;
   display: block;
   overflow: hidden;
 }
-/* line 2269, ../sass/main.scss */
+/* line 2293, ../sass/main.scss */
 .dashboard_widget .addthisevent-selected {
   background-color: #f4f4f4;
 }
-/* line 2270, ../sass/main.scss */
+/* line 2294, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown {
   width: 280px;
   position: absolute;
@@ -2289,7 +2310,7 @@ table#my_investments td {
   -moz-box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
 }
-/* line 2271, ../sass/main.scss */
+/* line 2295, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown span {
   display: block;
   line-height: 110%;
@@ -2299,29 +2320,29 @@ table#my_investments td {
   color: #6d84b4;
   padding: 8px 10px 9px 15px;
 }
-/* line 2272, ../sass/main.scss */
+/* line 2296, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown span:hover {
   background: #f4f4f4;
   color: #6d84b4;
   text-decoration: none;
   font-size: 14px;
 }
-/* line 2273, ../sass/main.scss */
+/* line 2297, ../sass/main.scss */
 .dashboard_widget .addthisevent_banner span {
   display: none !important;
 }
-/* line 2274, ../sass/main.scss */
+/* line 2298, ../sass/main.scss */
 .dashboard_widget .addthisevent-drop ._url, .dashboard_widget .addthisevent-drop ._start, .dashboard_widget .addthisevent-drop ._end, .dashboard_widget .addthisevent-drop ._summary, .dashboard_widget .addthisevent-drop ._description, .dashboard_widget .addthisevent-drop ._location, .dashboard_widget .addthisevent-drop ._organizer, .dashboard_widget .addthisevent-drop ._organizer_email, .dashboard_widget .addthisevent-drop ._facebook_event, .dashboard_widget .addthisevent-drop ._all_day_event {
   display: none !important;
 }
-/* line 2275, ../sass/main.scss */
+/* line 2299, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown .copyx {
   height: 21px;
   display: block;
   position: relative;
   cursor: default;
 }
-/* line 2276, ../sass/main.scss */
+/* line 2300, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown .brx {
   width: 180px;
   height: 1px;
@@ -2332,7 +2353,7 @@ table#my_investments td {
   left: 10px;
   top: 9px;
 }
-/* line 2277, ../sass/main.scss */
+/* line 2301, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown .frs {
   position: absolute;
   top: 3px;
@@ -2349,40 +2370,40 @@ table#my_investments td {
   font-size: 10px;
   color: #cacaca;
 }
-/* line 2278, ../sass/main.scss */
+/* line 2302, ../sass/main.scss */
 .dashboard_widget .addthisevent_dropdown .frs:hover {
   color: #6d84b4;
 }
-/* line 2279, ../sass/main.scss */
+/* line 2303, ../sass/main.scss */
 .dashboard_widget .addthisevent {
   visibility: hidden;
 }
 
-/* line 2284, ../sass/main.scss */
+/* line 2308, ../sass/main.scss */
 #event_carousel {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 2291, ../sass/main.scss */
+/* line 2315, ../sass/main.scss */
 .investment_chart {
   min-height: 20px;
   margin-bottom: 15px;
 }
 
-/* line 2296, ../sass/main.scss */
+/* line 2320, ../sass/main.scss */
 .investment_charts {
   display: block;
 }
 
-/* line 2300, ../sass/main.scss */
+/* line 2324, ../sass/main.scss */
 .investment_management {
   display: block;
 }
 
 /* end of members area */
 /*captcha */
-/* line 2312, ../sass/main.scss */
+/* line 2336, ../sass/main.scss */
 #captcha_wrap {
   border: solid #CCCCCC 1px;
   width: 203px;
@@ -2395,7 +2416,7 @@ table#my_investments td {
   margin-left: 80px;
 }
 
-/* line 2325, ../sass/main.scss */
+/* line 2349, ../sass/main.scss */
 .captcha_error {
   color: #CC0000;
   font-size: 12px;
@@ -2404,7 +2425,7 @@ table#my_investments td {
   width: 200px;
 }
 
-/* line 2327, ../sass/main.scss */
+/* line 2351, ../sass/main.scss */
 .captcha_success {
   color: #009900;
   font-size: 12px;
@@ -2413,7 +2434,7 @@ table#my_investments td {
   width: 200px;
 }
 
-/* line 2329, ../sass/main.scss */
+/* line 2353, ../sass/main.scss */
 img#captcha_refresh {
   cursor: pointer;
 }

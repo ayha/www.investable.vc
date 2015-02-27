@@ -1736,9 +1736,25 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
       text-align:center;
   }
   
-  .profile_info{
-     
+  .profile_info, .profile_info p{
+      font-weight: normal;
+      margin-bottom:0;
+      
+      
+      .jobtitle{
+          color:$turquoise;
+      }    
+      .industry{
+        
+      }
+      
+      .country{
+        margin-top:15px;
+      }
+      
   }
+  
+  
 
  @media (max-width:767px){
 
@@ -2197,6 +2213,12 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 .modal-content{
 #content-holder{
   padding:15px;
+  
+}
+
+h4.modal-title{
+  color:$turquoise;
+  font-size:16px;
   
 }
 }
