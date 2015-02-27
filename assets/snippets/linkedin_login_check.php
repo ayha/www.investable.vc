@@ -39,11 +39,12 @@ if(!is_object($result)){
      $userProfile->set('fullname',$_POST["firstName"]." ".$_POST["lastName"]);
 	 $userProfile->set('photo',$_POST["pictureUrl"]);
      $userProfile->set('email',$_POST["emailAddress"]);
+	
 	 $displayname = $_POST["firstName"]." ".substr($_POST["lastName"], 1, 1);
 	$linkedin_profile = $_POST["publicProfileUrl"];
 	 $reg_date = date("Y-m-d H:i:s");
-			    
-	$extended = Array("usertype"=>"investor", "firstname"=>$_POST["firstName"], "lastname"=>$_POST["lastName"], "displayname"=>$displayname, "linkedin_profile"=>$linkedin_profile, "reg_date"=>$reg_date);
+	$personal_desc = $_POST["summary"]; 
+	$extended = Array("usertype"=>"investor", "firstname"=>$_POST["firstName"], "lastname"=>$_POST["lastName"], "displayname"=>$displayname, "linkedin_profile"=>$linkedin_profile, "personal_description"=>$personal_desc, "reg_date"=>$reg_date);
 	$userProfile->set("extended", $extended);
      $success = $user->addOne($userProfile);
      if ($success) {

@@ -30,7 +30,7 @@
 				<div id="new_connections">
 				   <h2>[[%connection.new_connections? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
   				    <div class="connection_list">
-  				          [[!get_connection_request_action? &chunk=`connection_request_item`]]
+  				          [[!get_connection_request_action? &chunk=`member_quick_profile_item`]]
   				    <div class="clearboth"></div>
   				    </div>
   				    
@@ -42,8 +42,8 @@
 					<h2>[[%connection.your_connections? &topic=`default` &namespace=`investable` &language=`en`]]</h2>
 					
   				    <div class="connection_list">
-  				    [[!get_my_connections? &chunk=`connection_item`]]
-  				    [[!get_pending_connections? &chunk=`pending_connection_item`]]
+  				    [[!get_my_connections? &chunk=`member_quick_profile_item`]] <br />
+  				    [[!get_pending_connections? &chunk=`member_quick_profile_item`]]
   				    <div class="clearboth"></div>
   				    </div>
   				    
@@ -55,7 +55,7 @@
 						[[%connections.connect_to_see_investments? &topic=`default` &namespace=`investable` &language=`en`]]
 					</div>
 					<div class="connection_list">
-  				    [[!get_more_connections? &chunk=`new_connection_item`]]
+  				    [[!get_more_connections? &chunk=`member_quick_profile_item`]]
   				    <div class="clearboth"></div>
   				   </div> 
   				    <form id="search_connection_form" method="get" action="[[~[[*id]]]]">
@@ -78,11 +78,9 @@
 	
    <script type="text/javascript">
    		$(document).ready(function(){
-   			$(".connection_list").isotope({
-			  itemSelector: '.connection_item',
-			  layoutMode: 'fitRows',
-			 
-			});
+   			
+			
+			
    		});
    </script>
 

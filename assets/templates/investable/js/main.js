@@ -40,13 +40,14 @@ $(document).ready(function(){
 		});
 		*/
 		
-		var msg_url = $("#send_message_form #connect_action_page").val();
+		var msg_url = $(this).data("url");
     	//console.log(url);
     	var msg_from = $("#send_message_form").children("input#sender_id").val();
     	var msg_to = $(this).data("uid");
     	var msg_subject  = "Please connect with me";
     	var msg = "Please connect with me";
     	var form = $(this).parent().parent();
+    	var this_btn = $(this);
     	$.ajax(msg_url,
     		{
     			cache: false,
@@ -59,6 +60,8 @@ $(document).ready(function(){
     				  
     				  $("#send_message_form").hide();
     				  $("#send_message_form").parent().children(".form_message").show();
+    				  this_btn.html("Request Sent");
+    				  this_btn.attr("disabled", true);
     				  $.fancybox.open({
 						href:"#send_message_wrapper",
 						modal: false,
@@ -78,8 +81,8 @@ $(document).ready(function(){
     
     $("a.approve_connect_button").click(function(e){
     	e.preventDefault();
-    	var url=$(this).parent().parent().parent().data("url");
-    	var send_data = {"requestid":$(this).data("rid"), "hash":$(this).data("hash")};
+    	var url=$(this).data("url");;
+    	var send_data = {"uid":$(this).data("uid")};
     	
     	$.ajax(url, {
     		   cache:false,
@@ -118,6 +121,12 @@ $(document).ready(function(){
     	}
     	
     });
+    
+    $(".connection_list").isotope({
+			  itemSelector: '.connection_item',
+			  layoutMode: 'fitRows',
+			 
+			});
     
     $("body").on("click",".msg_reply .reply_button", function(e){
     	e.preventDefault();
@@ -178,7 +187,22 @@ $(document).ready(function(){
 					keyboard: false
 				});
 	
-   			});
+   	});
+    
+    $(".connection_item").on("click", ".member_thumbnail", function(e){
+				e.preventDefault();
+				//console.log($(this).parent().parent());
+   				var title = $(this).parent().parent().data("displayname");
+   				var content = $(".modal_content " + $(this).parent().parent().data("content")).html();
+   				
+   				$("#event_modal h4#title-holder").html(title);
+   				$("#event_modal #content-holder").html(content);
+   				
+   				$('#event_modal').modal({
+					keyboard: false
+				});
+				
+	});
     
     $(".reward_badge a").click(function(e){
 					e.preventDefault();

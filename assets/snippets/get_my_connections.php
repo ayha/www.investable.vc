@@ -1,6 +1,6 @@
 <?php
 if(empty($chunk)){
-   $chunk = "connection_item";
+   $chunk = "member_quick_profile_item";
 }
 
 $config = $modx->getConfig();

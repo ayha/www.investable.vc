@@ -20,13 +20,16 @@ $result = $modx->query($query);
 if (!is_object($result)) {
    return "You have no connection request at this moment";
 }else{
+   
+   if($getCount == 1){
+      return $result->rowCount();
+   }else{
+	
    while( $row = $result->fetch(PDO::FETCH_ASSOC)){
-      if($getCount==1){
-          $output++;
-      }else{
+      
          
 
-         
+         /*
          
          $extended = json_decode($row["extended"]);
          $placeholders = $row;      
@@ -45,12 +48,15 @@ if (!is_object($result)) {
          $rowOutput = $modx->getChunk($chunk, $placeholders);
          $output .= $rowOutput;
         
+       */
        
-      }
+         $rowOutput = $modx->runSnippet("getUserById", array("uid"=>$row["from"], "tpl"=>$chunk ));
+      	 $output .= $rowOutput;
+     
       
-
+   
    }
 }
-
+}
 
 return $output;

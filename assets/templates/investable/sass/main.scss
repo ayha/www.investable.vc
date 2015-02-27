@@ -179,7 +179,9 @@ ul li {
 .btn{
   background:$turquoise;
   padding:5px 10px;
+  /*
   @include border-radius($btnRadius);
+  */
   color: #ffffff;
 }
 
@@ -198,7 +200,9 @@ ul li {
 
 input[type=text], input[type=email], input[type=number], input[type=date], input[type=password], textarea{
   background:#ffffff;
-   @include border-radius($btnRadius);
+  /*
+   @include border-radius($btnRadius); 
+   */
    border:none;
    padding:3px 5px;
    font-size:12px;
@@ -208,7 +212,9 @@ input[type=text], input[type=email], input[type=number], input[type=date], input
 }
 
 input[type=submit], button{
+  /*
    @include border-radius($btnRadius);
+   */
    border:1px solid $turquoise;
    padding:3px 10px;
    font-size:12px;
@@ -516,7 +522,9 @@ footer{
     height:22px;
     text-indent:-9999px;
     background-color:#fff;
+    /*
     @include border-radius($btnRadius);
+    */
     background-repeat: no-repeat;
     background-position: center center;
     margin-right:5px;
@@ -944,9 +952,9 @@ footer{
               height:auto;
               display:block;
               background-color:$rosebud;
-              -moz-border-radius: 0;
-             -webkit-border-radius: 0;
-              border-radius: 0;
+              /*
+             @include border-radius(0);
+               */
                padding: 10px 20px;
               
             }
@@ -1213,7 +1221,9 @@ footer{
           height:22px;
           text-indent:-9999px;
           background-color:transparent;
+          /*
           @include border-radius($btnRadius);
+          */
           background-repeat: no-repeat;
           background-position: center center;
           margin-right:5px;
@@ -1467,6 +1477,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
        width:100%;
        text-align:right;
         .support_button{
+          /*
             -webkit-border-bottom-right-radius: 5px;
             -webkit-border-bottom-left-radius: 5px;
             -moz-border-radius-bottomright: 5px;
@@ -1480,7 +1491,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
             -moz-border-radius-topright: 0;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            
+            */
             display:inline-block;
             margin-right:5px;
             font-size:18px;
@@ -1494,6 +1505,9 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 .key_investor_img{
    display:none;
+   margin-right:5px;
+   margin-bottom:5px;
+   padding:5px;
   
 }
 
@@ -1629,7 +1643,6 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 
 
 
-
 .member_form_wrapper{
     width:100%;
     max-width:400px;
@@ -1639,28 +1652,98 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
 }
     
 .connection_list{
+    
     margin-bottom:30px;
    
   
 }
 
- .connection_item{
-   margin-bottom: 15px;
-   width:250px;
+
+.member_quick_profile{
+ 
+ 
+ 
+  .thumbnail_holder{
+  position:relative;
+  margin:10px; 
+   width:120px !important;
    
- }
+  
+  }
+  
+  .member_thumbnail{
+    position:relative;
+    width:120px;
+    height:120px;
+     cursor:pointer;
+  }
+  
+  
+  .member_pic {
+     width:120px;
+     height:120px;
+     background-repeat:no-repeat;
+     background-size:cover;
+     background-position: center center;   
+     position:relative;
+     z-index:1;
+     background-color:$palegrey;
+  }
+  
+  .member_bio{
+    position:absolute;
+    bottom:0;
+    z-index:10;
+    background:#000;
+    color:#fff;
+    display:block;
+    width:100%;
+    padding:5px 0;
+    font-size:11px;
+    text-align:center;
+    opacity:0.75;
+  }
+  
+  .member_bio h4{
+    color:#fff;
+    display:block;
+    width:100%; 
+    text-align:center;
+    font-size:12px;
+    margin:0; 
+    padding:0;
+  }
+  
+  
+  
+ 
+  
+}
+ .connection_buttons a.btn{
+    display:block;
+    width:100%;
+  } 
+  
+  .profile_pic{
+    text-align:center;
+    background-color:$palegrey;
+    
+  }
+  
+ .profile_pic img{
+      max-width:100%; 
+      
+      text-align:center;
+  }
+  
+  .profile_info{
+     
+  }
 
  @media (max-width:767px){
-.connection_item{
-  width:50%; 
-}
+
  }
 
- .connection_item img.profile_picture{
-        max-width:90%;
-        max-height:90%;
-        
-}
 
 .highlight_notes{
     text-align:right;
@@ -1691,21 +1774,41 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
       
    }
    
+   .quick_facts .note, .quick_facts .note p{
+     color:#fff;
+     text-align:right;
+   }
+   
+   
+   
    .status_item{
-      margin-bottom:25px;
+      margin-bottom:15px;
       .status_name{
         font-size:12px;
         font-style:italic;
         
       }
       .status_number{
-        font-size:20px;
+        font-size:16px;
         
       }
       
       
    }
-   
+   #company_news{
+  padding:10px;
+  border:1px solid $mediumgrey;
+  max-height:350px;
+  overflow-y: auto;
+  background-color:$palegrey; 
+  
+    h3{
+      color:$turquoise;
+    }
+  
+ } 
+ 
+ 
    .company_founder{
           padding:10px;
           background:$palegrey;
@@ -1729,7 +1832,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
           
       }
       .profile_content, .profile_content p, .profile_content li{
-          font-size:12px;
+         
       }
       
     } 
@@ -1805,17 +1908,97 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
     
     .quick_facts{
       position:relative;
-      .key_investors{
-          position:absolute;
-          bottom:15px;
-          right:15px;
+     
+    }
+    
+    .key_investors{
+       position:relative;
+       text-align:right;
+      margin-bottom:15px;
+    }
+    
+    .key_investors h4{
+      color:#fff;
+      
+    }
+    
+    .company_backers{
+      margin:15px auto;
+      padding:10px 15px;
+      background:$rosebud;
+        
+       h4{
+         color:#fff;
+         cursor:pointer;
+         margin:0;
+         padding:8px 0;
+      }
+      
+      h4.expandable_header{
+          padding-right:30px;
+          width:auto;
+          display:inline;         
+          background: url(../../../images/more_icon_24x24.png) right center no-repeat transparent;
+      }
+      
+      .user_list{
+        display:none;
+        margin-top:25px;
         
       }
       
-      .key_investors .invested_by{
-          text-align:right;
-      }  
+    .connection_item{
+     /*
+      background: #fff;
+      margin:5px;
+      padding:5px;
+     */
+     /*
+      @include border-radius($btnRadius); 
+      */
     }
+    
+    .connection_item h4{
+        color:$turquoise;
+    }
+      
+    }
+  
+  .ask_a_question{
+    h3{
+      color:$turquoise;
+    }
+    
+    #company_qa{
+       .qanda{
+         margin-bottom:10px;
+         padding:10px;
+         background: $palegrey;
+       }
+       
+       h4{
+        cursor:pointer; 
+        font-size:13px;
+       }
+       
+       .answer{
+         display:none;
+         
+       } 
+       .answer p{
+         font-size:13px;
+       }
+    }
+
+      h4#ask_a_question{
+         margin-top:25px;
+         margin-bottom:0;
+       } 
+}
+  
+  hr{
+    
+  }
   
 }
 
@@ -1829,6 +2012,8 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         font-size:16px;
     }
     
+    
+    
     .quick_facts p{
         color:#fff;
         font-size:16px;
@@ -1838,7 +2023,7 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
         background-color:#fff;
          min-height:250px;
          background-repeat:no-repeat;
-        width:100%;
+         width:100%;
           background-position:center center;
           background-size: contain;
          
@@ -1932,7 +2117,9 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
      color:#fff;
      font-weight:bold;
      cursor:pointer;
-     border-radius:34px;
+   /*
+     @include border-radius(34px);
+   */
      
   }
   
@@ -2065,7 +2252,10 @@ table#my_investments{
 
 
 .dashboard_widget{
-  .addthisevent-drop           {width:280px;display:inline-block; padding-bottom:10px;margin-bottom:10px; position:relative;cursor:pointer;background:$palegrey;color:$darkgrey !important;font-size:15px;border:1px solid $mediumgrey;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);-webkit-border-radius:2px;border-radius:2px;}
+  .addthisevent-drop           {width:280px;display:inline-block; padding-bottom:10px;margin-bottom:10px; position:relative;cursor:pointer;background:$palegrey;color:$darkgrey !important;font-size:15px;border:1px solid $mediumgrey;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);
+ /*
+  @include border-radius(2px);*/
+  }
 
 .addthisevent-drop:hover        {background-color:#f4f4f4;} 
 .addthisevent-drop:active         {top:1px;}
@@ -2124,10 +2314,11 @@ table#my_investments{
 #captcha_wrap{
     border:solid #CCCCCC 1px;
     width:203px;
-    -webkit-border-radius: 10px;
     float:left;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    /*
+   @include border-radius(10px);
+    */
+   
     padding:3px;
     margin-top:3px;
     margin-left:80px;

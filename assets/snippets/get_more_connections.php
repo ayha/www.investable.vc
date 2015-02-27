@@ -1,10 +1,10 @@
 <?php
 if(empty($chunk)){
-   $chunk = "new_connection_item";
+   $chunk = "member_quick_profile_item";
 }
 
 if(empty($total)){
-	$total = 20;	
+	$total = 16;	
 }
 
 $config = $modx->getConfig();

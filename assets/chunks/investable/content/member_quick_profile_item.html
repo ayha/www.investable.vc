@@ -1,0 +1,64 @@
+<div class="member_quick_profile connection_item" id="[[+u.id]]" data-uid="[[+u.id]]" data-displayname="[[+u.displayname]]" data-job-title="[[+u.job_title]]" data-job-industry="[[+u.job_industry]]" data-country="[[+u.country]]" data-profilepic="[[+u.photoUrl]]" data-connection-status="[[+u.connected]]" data-toggle="modal" data-content="#quick_profile_[[+u.id]]" data-target="event_modal"  data-title="[[+u.displayname]]" >
+	<div class="thumbnail_holder">
+	<div class="member_thumbnail" >
+	<div class="member_pic" style="background-image:url([[+u.photoUrl]]);">
+		
+	</div>
+	<div class="member_bio">
+		<h4>[[+u.displayname]]</h4>
+		[[+u.job_title:ne=``:then=`<p><strong>[[+u.job_title]]</strong></p>`]]
+		
+	</div>
+	</div>
+			<div class="connection_buttons">
+					[[+u.connected:is=`no`:then=`
+						<a href="#" class="btn connect_button" data-uid="[[+u.internalKey]]"  data-url="[[~57]]" >Connect</a>
+					`]]
+					[[+u.connected:is=`sent`:then=`
+						<a href="#" class="btn" data-uid="[[+u.internalKey]]"  disabled >Request Sent</a>
+					`]]
+					[[+u.connected:is=`requested`:then=`
+						<a href="#" class="btn approve_connect_button" data-uid="[[+u.internalKey]]"  data-url="[[~61]]" >Confirm</a>
+					`]]
+					
+					
+					
+				</div>
+
+	</div>
+	<div class="hidden modal_content">
+		<div class="quick_profile " id="quick_profile_[[+u.id]]">
+			<div class="profile_pic col-xs-3">
+				[[+u.photo]]
+				
+			</div>
+			<div class="profile_info col-xs-9">
+				<h4>[[+u.displayname]]</h4>
+				[[+u.job_title:ne=``:then=`<p><strong>[[+u.job_title]]</strong></p>`]]
+				[[+u.job_industry:ne=``:then=`<p><strong>In [[+u.job_industry]]</strong></p>`]]
+				[[+u.country:ne=``:then=`<p><strong>[[+u.country]]</strong></p>`]]
+				
+				<div class="member_investment"></div>
+				
+				<div class="connection_buttons">
+					[[+u.connected:is=`no`:then=`
+						<a href="#" class="btn connect_button" data-uid="[[+u.uid]]"   data-url="[[~57]]">Connect</a>
+					`]]
+					[[+u.connected:is=`sent`:then=`
+						<a href="#" class="btn" data-uid="[[+u.uid]]"  disabled >Request Sent</a>
+					`]]
+					[[+u.connected:is=`requested`:then=`
+						<a href="#" class="btn approve_connect_button" data-uid="[[+u.uid]]"  data-url="[[~61]]">Confirm</a>
+					`]]
+					
+					
+					
+				</div>
+				
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		
+		
+	</div>
+</div>

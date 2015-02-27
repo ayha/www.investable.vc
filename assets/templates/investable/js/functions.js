@@ -99,31 +99,31 @@ function insertParam(key, value)
   // 2. Runs when the viewer has authenticated
   function onLinkedInAuth() {
   	show_loading_icon();
-    IN.API.Profile("me").fields(["id","firstName","lastName","emailAddress", "summary", "pictureUrl", "publicProfileUrl"]).result(linkedin_login);
+    IN.API.Profile("me").fields(["id","firstName","lastName","emailAddress", "summary", "industry", "positions", "pictureUrl", "publicProfileUrl"]).result(linkedin_login);
   	
   }
-
-  // 2. Runs when the Profile() API call returns successfully
-  function linkedin_login(profiles) {
-   
-     member = profiles.values[0];
-    
-    
-     $.ajax("processors/linkedin-login-check.html", {
-     	type: "POST",
-     	data: member,
-     	complete: function(xhr,status){
-     
-     		if(xhr.responseText != "failed"){
-     			//linkedin_login_attempt(member.emailAddress, member.id);
-     			window.location.href=xhr.responseText;
-     		}
-     	}
-     	
-     }) ; 
-    
-  }
-  
+	
+	  // 2. Runs when the Profile() API call returns successfully
+	  function linkedin_login(profiles) {
+	   
+	     member = profiles.values[0];
+	    
+	     console.log(member);
+	     $.ajax("processors/linkedin-login-check.html", {
+	     	type: "POST",
+	     	data: member,
+	     	complete: function(xhr,status){
+	     
+	     		if(xhr.responseText != "failed"){
+	     			//linkedin_login_attempt(member.emailAddress, member.id);
+	     			window.location.href=xhr.responseText;
+	     		}
+	     	}
+	     	
+	     }) ; 
+	    
+	  }
+	  
 function linkedin_login_attempt(email, token){
 	$.ajax("/en/member/login.html",{
 		type: "POST",
@@ -381,5 +381,3 @@ function change_captcha()
  {
     document.getElementById('captcha').src="get_captcha.php?rnd=" + Math.random();
  }
-
-

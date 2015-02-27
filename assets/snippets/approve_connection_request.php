@@ -1,4 +1,5 @@
 <?php
+/*
 if(empty($requestid)){
    $requestid = $modx->quote($_POST["requestid"]);
 }
@@ -40,3 +41,14 @@ if (!is_object($result)) {
 }else{
    return "invalid parameters";;
 }
+  * 
+  * */
+  
+ // feb 27, 2015 - simplified the process, just update those records 
+$config = $modx->getConfig();
+$user = $modx->getUser();
+$userid = $user->get("id");
+$datetime = date("Y-m-d H:i:s");
+$q = "UPDATE ext_connection_requests SET request_status=1, connect_datetime = '".$datetime."' WHERE (`from` = ".$modx->quote($_POST["uid"])." AND `to`=".$modx->quote($userid)." ) ";
+$modx->query($q);
+return "connected";

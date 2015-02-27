@@ -24,7 +24,7 @@
   	[[$site_nav]]
 
   
-    <div class="main_content company_details" id="[[*alias]]_content">
+    <div class="main_content company_details company_profile" id="[[*alias]]_content">
     	<section> 
 	    	
     		<div class="container">
@@ -175,6 +175,18 @@
 								<div class="status_number"></div>
 								<div class="clearboth"></div>
 							</div>
+							
+							[[*key_investors:ne=``:then=`
+								
+								<div class="status_item  col-xs-6" id="key_investor" data-value="[[*postmoney]]">
+								<div class="status_name">Key Investors</div>
+								<div class="status_number">[[*key_investors]]</div>
+								<div class="clearboth"></div>
+								</div>
+								
+								
+							`]]
+							
 							<div class="clearboth"></div>
 						</div>
 						
@@ -182,164 +194,110 @@
 					</div>
 					
 					<div class="clearboth"></div>
-					<div class="key_investors">
-							[[*key_investors]]
-					</div>
-					<div class="note" >[[%note.all_usd? &namespace=`investable`]]</div>
-				</div>
-				<div class="highlight_notes">
-					[[*highlight_note]]
 					
+					
+					
+					<div class="note" >[[%note.all_usd? &namespace=`investable`]]<br />[[*highlight_note]]</div>
+					<div class="clearboth"></div>
 				</div>
+				
+				
+				
+				<hr />
+					
 				<div class="company_info">
 					
-					
-					<div id="company_details_accordions" class="company_details col-md-8 ui-corner-flat hidden-lg">
-						[[*content:ne=``:then=`<h3 id="company_description">[[%title.company_description? &namespace=`investable`]]</h3><div class="company_content">[[*content]]</div>`]]
-							
-						[[*business_model:ne=``:then=`<h3 id="business_model">[[%title.business_model? &namespace=`investable`]]</h3><div class="company_content">[[*business_model]]</div>`]]
-						[[*news:ne=``:then=`<h3 id="news">[[%title.news? &namespace=`investable`]]</h3><div class="company_content">[[*news]]</div>`]]
-						
-						[[*competitors:ne=``:then=`
-						<h3 id="market">[[%title.market_competition? &namespace=`investable`]]</h3><div class="company_content">[[*competitors]]</div>
-						
-						`]]
-						[[*product_description:ne=``:then=`<h3 id="product">[[%title.product_description? &namespace=`investable`]]</h3><div class="company_content">[[*product_description]]</div>`]]
-						[[*registered_ip:ne=``:then=`<h3 id="registered_ip">[[%startups.registered_ip? &topic=`default` &namespace=`investable` &language=`en`]]</h3><div class="company_content">[[*registered_ip]]</div>`]]
-						[[*mobile_app:ne=``:then=`<h3 id="mobile_app">[[%title.mobile_app? &namespace=`investable`]]</h3><div class="company_content">[[*mobile_app]]</div>`]]
-						
-						[[*projections:ne=``:then=`<h3 id="projections">[[%title.projections? &namespace=`investable`]]</h3><div class="company_content">[[*projections]]</div>`]]
-							
-							
-							[[*use_of_funds:ne=``:then=`<h3 id="use_of_funds">[[%title.use_of_funds? &namespace=`investable`]]</h3><div class="company_content">[[*use_of_funds]]</div>`]]
-							
-							<h3 id="financial_statements">[[%title.financial_statements? &namespace=`investable`]]</h3>
-							<div class="company_content">
-							[[*fin_statements:is=``:then=`
-								<p>Financial statements are available upon request.</p>
-							`:else=`
-								[[*fin_statements]]
-							`]]
-							</div>
-						<h3>Team</h3>
-						<div class="company_content">[[!get_company_founders? &founders=`[[*founder]]`]]</div>
-						
-						
-						[[!get_company_investors:ne=`0`:then=`
-						 <h3>[[%startups.investors_invested_in? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
-						  <div class="investor_list user_list connection_list">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`0`]]
-						  	
-						  	<div class="clearboth"></div>
-						  	</div>
-						`? &getCount=`1`  &companyid=`[[*id]]` ]]
-						
-						[[!get_company_followers:ne=`0`:then=`
-		        	    <h3>[[%startups.investors_following? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
-					   <div class="follower_list user_list connection_list">[[!get_company_followers?  &getCount=`0`  &companyid=`[[*id]]` ]]
-					   	<div class="clearboth"></div>
-					   	</div>
-					`? &getCount=`1`  &companyid=`[[*id]]` ]]
-						
-					</div>
-						
-					
-					<div id="company_details_tabs" class="company_details tabs col-md-8 ui-corner-flat visible-lg-block">
-						<ul class="ui-corner-flat ">
-						    <li><a href="[[~[[*id]]]]#basic">Company Information</a></li>
-						   [[*competitors:ne=``:then=` <li><a href="[[~[[*id]]]]#market">Market &amp; Competitions</a></li>`]]
-						    <li><a href="[[~[[*id]]]]#products">Products</a></li>
-						    <li><a href="[[~[[*id]]]]#financials">Financial Model</a></li>
-						    <li><a href="[[~[[*id]]]]#team">Team</a></li>
-						    <li><a href="[[~[[*id]]]]#investors">Investors &amp; Followers</a></li>
-						</ul>
-						
-						<div id="basic">
-							[[*content:ne=``:then=`<h3 id="company_description">[[%title.company_description? &namespace=`investable`]]</h3>[[*content]]`]]
-							
-							[[*business_model:ne=``:then=`<h3 id="business_model">[[%title.business_model? &namespace=`investable`]]</h3>[[*business_model]]`]]
-							[[*news:ne=``:then=`<h3 id="news">[[%title.news? &namespace=`investable`]]</h3>[[*news]]`]]
-						</div>
-						[[*competitors:ne=``:then=`<div id="market">
-							<h3 id="market_competition">[[%title.market_competition? &namespace=`investable`]]</h3>[[*competitors]]
-						</div>
-						`]]
-						<div id="products">
-							[[*product_description:ne=``:then=`<h3 id="product">[[%title.product_description? &namespace=`investable`]]</h3>[[*product_description]]`]]
-							[[*registered_ip:ne=``:then=`<h3 id="registered_ip">[[%startups.registered_ip? &topic=`default` &namespace=`investable` &language=`en`]]</h3>[[*registered_ip]]`]]
-							[[*mobile_app:ne=``:then=`<h3 id="mobile_app">[[%title.mobile_app? &namespace=`investable`]]</h3>[[*mobile_app]]`]]
-						</div>
-						<div id="financials">
-							[[*projections:ne=``:then=`<h3 id="projections">[[%title.projections? &namespace=`investable`]]</h3>[[*projections]]`]]
-							
-							
-							[[*use_of_funds:ne=``:then=`<h3 id="use_of_funds">[[%title.use_of_funds? &namespace=`investable`]]</h3>[[*use_of_funds]]`]]
-							
-							<h3 id="financial_statements">[[%title.financial_statements? &namespace=`investable`]]</h3>
-							[[*fin_statements:is=``:then=`
-								<p>Financial statements are available upon request.</p>
-							`:else=`
-								[[*fin_statements]]
-							`]]
-							
-						</div>
-						<div id="team">
-							<div class="company_founder ">
-						[[!get_company_founders? &founders=`[[*founder]]`]]
-						</div>
-							
-						</div>
-						<div id="investors">
-							<div class="company_investors">
-								[[!get_company_investors:ne=`0`:then=`
-								 <h3>[[%startups.investors_invested_in? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
-								  <div class="investor_list user_list connection_list">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`0`]]
-								  	<div class="clearboth"></div>
-								  	</div>
-								`? &getCount=`1`  &companyid=`[[*id]]` ]]
-								
-							</div>
-							
-					        <div class="company_followers">
-					        	
-					        	[[!get_company_followers:ne=`0`:then=`
-					        	    <h3>[[%startups.investors_following? &topic=`default` &namespace=`investable` &language=`en`]] [[*longtitle]]</h3>
-								   <div class="follower_list user_list connection_list">[[!get_company_followers?  &getCount=`0`  &companyid=`[[*id]]` ]]
-								   	<div class="clearboth"></div>
-								   	</div>
-								`? &getCount=`1`  &companyid=`[[*id]]` ]]
-					        </div>
-							
-						</div>
-						
-					</div>
-					
-					
 					<div class="col-md-4">
-						
-						
-						[[*downloads:ne=``:then=`
-						<div class="startup_downloads">
-							<h3>[[%title.downloads? &namespace=`investable`]]</h3>
-							[[*downloads]]
+						[[*news:ne=``:then=`
+						<div id="company_news">
+							<h3>[[%title.news? &namespace=`investable`]]</h3>
+							[[*news]]
 						</div>
 						`]]
-						
-						
+
 						[[*why_we_love:ne=``:then=`
 						<div class="why_we_love">
 							[[*why_we_love]]
 							
 						</div>
 						`]]
+					
+					</div>
+					
+					
+					<div id="company_details_tabs" class="company_details tabs col-md-8 ui-corner-flat ">
+						<ul class="ui-corner-flat ">
+						    <li><a href="[[~[[*id]]]]#background">[[*tab1_title]]</a></li>
+						   	<li><a href="[[~[[*id]]]]#market">[[*tab2_title]]</a></li>
+						    <li><a href="[[~[[*id]]]]#financial">[[*tab3_title]]</a></li>
+						    <li><a href="[[~[[*id]]]]#product">[[*tab4_title]]</a></li>
+						    <li><a href="[[~[[*id]]]]#team">[[%title.team? &namespace=`investable`]]</a></li>
+						    
+						    <li><a href="[[~[[*id]]]]#downloads">[[%title.downloads? &namespace=`investable`]]</a></li>
+						</ul>
+						
+						<div id="background">
+							[[*tab1_content]]
+						</div>
+						
+						<div id="market">
+							[[*tab2_content]]
+						</div>
+						<div id="financial">
+							[[*tab3_content]]
+						</div>
+						
+						<div id="product">
+							[[*tab4_content]]
+						</div>
+						
+						<div id="team">
+						
+							[[!get_company_founders? &founders=`[[*founder]]`]]
+							
+						</div>
+						<div id="downloads">
+							[[*downloads]]
+						</div>
+						
+					
+					</div>
+						
+					<div class="clearboth"></div>
+					
+					
+					<hr />
+				[[!get_company_investors:ne=`0`:then=`
+					<div class="company_backers">
+				<div class="company_investors investor_link">
+							
+							<h4 class="expandable_header">[[%cta.company_backed_by? &namespace=`investable`]] [[!get_company_investors?  &getCount=`1`  &companyid=`[[*id]]` ]] [[%cta.investors? &namespace=`investable`]]</h4>
+							 <div class="investor_list user_list connection_list">[[!get_company_investors? &companyid=`[[*id]]` &getCount=`0`]]
+								  	<div class="clearboth"></div>
+								  	</div>
+						</div>
+			   </div>	
+			   `? &getCount=`1`  &companyid=`[[*id]]` ]]
+			   [[!get_company_followers:ne=`0`:then=`
+			   		<div class="company_backers">	
+						<div class="company_followers investor_link">
+							
+							<h4 class="expandable_header">[[%cta.company_followed_by? &namespace=`investable`]] [[!get_company_followers?  &getCount=`1`  &companyid=`[[*id]]` ]] [[%cta.investors? &namespace=`investable`]]</h4>
+							 <div class="follower_list user_list connection_list">[[!get_company_followers?  &getCount=`0`  &companyid=`[[*id]]` ]]
+								   	<div class="clearboth"></div>
+								   	</div>
+						</div>
+				</div>
+					`? &getCount=`1`  &companyid=`[[*id]]` ]]
+				<hr />
+					
+					<div class="q_and_a">
 						
 						<div class="ask_a_question">
-							<h3>Ask A Question </h3>
-							[[*qanda:ne=``:then=`
-							(<a href="#" class="modal_link" data-content="#company_qa" data-toggle="modal" data-title="Past Questions">See Other's Questions</a>)
-							<div class="modal_content hidden">
-								<div id="company_qa">[[*qanda]]</div>
-							</div>
-						`]]
+							<h3>[[%title.q_and_a? &namespace=`investable`]]</h3>
+							<div id="company_qa">[[*qanda]]</div>
+							
+							[[*qanda:ne=``:then=`<h4 id="ask_a_question">[[%title.cannot_find_your_question? &namespace=`investable`]]</h4>`]]
 							<form name="question_form" id="question_form" method="post" action="[[~146]]">
 								<input type="hidden" name="user_id" id="ask_user_id" value="[[+id]]" />
 								<input type="hidden" name="user_name" id="ask_user_name" value="[[+fullname]]" />
@@ -356,8 +314,10 @@
 						</div>
 						
 					</div>
-					<div class="clearboth"></div>
 				</div>
+				
+				
+				<hr />
 				
 				<div class="floating_content">
 					<div class="support_company">
@@ -393,7 +353,10 @@
 				});
 				//updateUI();
 				
-				 updateInvestorIcons(".quick_facts");
+				 //updateInvestorIcons(".quick_facts");
+				 
+				$(".key_investor_img").css({"display":"inline"})
+				//$(".key_investor_img").show(); 
 				$('.bxslider').bxSlider({
 				  pagerCustom: '#bx-pager',
 				  adaptiveHeight: true,
@@ -416,8 +379,9 @@
 					var wtop = $(window).scrollTop();
 					var wheight = $(window).height();
 					var currTop = $(".floating_content").offset().top;
-					var diff = currTop - (top+wheight);
-				   // console.log(currTop + " / " + wtop + " / " + wheight);
+					var diff = currTop - (wtop+wheight);
+				  // console.log(currTop + " / " + wtop + " / " + wheight);
+				   
 					$(".floating_content").animate({
 						top: (wtop+wheight-bottomPad)+"px",
 						left: 0+"px"
@@ -573,6 +537,15 @@
 			    	});
 			    });
 			    
+			    
+			   $(".qanda").on("click", "h4", function(){
+			   		$(this).parent().children(".answer").slideToggle();
+			   });
+			    
+			   $(".company_backers").on("click", "h4.expandable_header", function(){
+			   		$(this).parent().children(".user_list").slideToggle();
+			   	
+			   });
 			   
 			   // GA Events
 			   $("a.download_link").click(function(e){
@@ -608,6 +581,8 @@
 			    $("body").on("click", ".ui-tabs-anchor", function(){
 			   		ga('send', 'event', 'Tabs UI', 'click', $(this).html(), 4);
 			   });
+			   
+			  
 			   
 			   
 			});
