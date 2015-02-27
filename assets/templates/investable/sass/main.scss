@@ -1961,9 +1961,11 @@ ul.cd-tabs-navigation li a:hover, .cd-tabs ul li a.selected{
       }
       
       h4.expandable_header{
-          padding-right:30px;
+          padding: 10px 30px 10px 0;
+          
           width:auto;
-          display:inline;         
+          display:inline;     
+            
           background: url(../../../images/more_icon_24x24.png) right center no-repeat transparent;
       }
       
