@@ -1,4 +1,5 @@
 <?php
+
 $table = "ext_connection_requests";
 $config = $modx->getConfig();
 $prefix = $config["table_prefix"];
