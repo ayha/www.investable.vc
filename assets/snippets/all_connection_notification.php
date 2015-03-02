@@ -35,6 +35,7 @@ while( $row = $r->fetch(PDO::FETCH_ASSOC)){
 	));
 	
 	$modx->getService('mail', 'mail.modPHPMailer');
+	$modx->mail->ClearAllRecipients();
 	$modx->mail->set(modMail::MAIL_BODY, $body);
 	$modx->mail->set(modMail::MAIL_FROM, $from);
 	$modx->mail->set(modMail::MAIL_FROM_NAME, "Investable.vc");
