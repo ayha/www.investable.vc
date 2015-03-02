@@ -1,5 +1,4 @@
 <?php
-
 $table = "ext_connection_requests";
 $config = $modx->getConfig();
 $prefix = $config["table_prefix"];
@@ -35,7 +34,7 @@ while( $row = $r->fetch(PDO::FETCH_ASSOC)){
 	));
 	
 	$modx->getService('mail', 'mail.modPHPMailer');
-	$modx->mail->ClearAllRecipients();
+	$modx->mail->reset();
 	$modx->mail->set(modMail::MAIL_BODY, $body);
 	$modx->mail->set(modMail::MAIL_FROM, $from);
 	$modx->mail->set(modMail::MAIL_FROM_NAME, "Investable.vc");
