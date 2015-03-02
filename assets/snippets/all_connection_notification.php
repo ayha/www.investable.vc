@@ -6,7 +6,7 @@ $prefix = $config["table_prefix"];
 $emailCC = $modx->getOption("email_cc");
 $from = "hello@investable.vc";
 $subject = "Pending requests at Investable";
-$login_page =$modx->makeUrl(10);
+$login_page =$modx->makeUrl(10,'', '', 'full');
 
 $dummyEmail = "alex@investable.vc";
 // get all unconfirmed connections
@@ -18,11 +18,11 @@ $count=0;
 
 while( $row = $r->fetch(PDO::FETCH_ASSOC)){
 	
-	$memberq = "SELECT email FROM ".$prefix."user_attributes WHERE internalKey=".$row["member_id"];	
+	$memberq = "SELECT fullname, email FROM ".$prefix."user_attributes WHERE internalKey=".$row["member_id"];	
 	$memberr = $modx->query($memberq);
 	$member_row = $memberr->fetch(PDO::FETCH_ASSOC);
 	
-	$msg = "<p>Hi,</p>";
+	$msg = "<p>Hello ".$row["fullname"].",</p>";
 	$msg .= "<p>You have ".$row["no_request"]." new connection requests pending at Investable. <a href='".$login_page."' target='_blank'>Login</a> now to see your new connections.</p>";
 	$msg .= "<p>&nbsp;</p>";
 	$msg .= "<p>Best Regards,<br /><strong>Investable</strong></p>";
