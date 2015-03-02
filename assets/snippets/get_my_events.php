@@ -1,4 +1,5 @@
 <?php
+/*
 if(empty($tpl)){
 	$tpl = "event_item_banner";
 }
@@ -54,8 +55,8 @@ if (!is_object($result)) {
 }
 
 if($output == ""){
-	 return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
-
+	 //return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
+	return "";
 }else{
 	return $output;
-}
+}*/return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
