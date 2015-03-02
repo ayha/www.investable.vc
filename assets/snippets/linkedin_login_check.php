@@ -94,7 +94,7 @@ if(!is_object($result)){
     
 	
 	// attempt to login now
-	$url = $modx->makeUrl(43);
+	$url = $modx->makeUrl(43, '', '', 'full');
 	$c = array(
    'login_context' => 'web',
    'username' => $_POST["emailAddress"],

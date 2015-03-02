@@ -33,14 +33,14 @@
 	
    <script type="text/javascript">
    		$(document).ready(function(){
-   			
+   			//[[++site_url]][[~43]]
    			var return_url = $("#login_form").children("#returnUrl").val();
    			//console.log(return_url);
    			[[!checkLogin:ne=``:then=`
    				if(typeof return_url != "undefined" && return_url != "" ){
    					window.location.href=$("#login_form").children("#returnUrl").val();
    				}else{
-   					window.location.href="[[~43]]";
+   					window.location.href="[[++site_url]][[~43]]";
    				}
    				
    				
