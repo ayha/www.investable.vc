@@ -1,5 +1,4 @@
 <?php
-/*
 if(empty($tpl)){
 	$tpl = "event_item_banner";
 }
@@ -32,31 +31,36 @@ if (!is_object($result)) {
     'published' => 1,
     'id' => $row["event_id"],
 	));
+	//$output .= var_dump($document)."<br /><br /><br />";
+	
+	//$rowOutput["tv.past_event"] = $document->getTVValue("past_event");
 	
 	
-	$rowOutput["tv.past_event"] = $document->getTVValue("past_event");
+	
+	/* Get the TV */
+	$tv = $modx->getObject('modTemplateVar',array('name'=>'past_event'));
+
+
+	/* get the processed content of the TV */
+	$rowOutput["tv.past_event"] = $tv->renderOutput($row["event_id"]);
 	
 	
-	$rowOutput["id"] = $row["event_id"];
-	$rowOutput["longtitle"] = $document->get("pagetitle");
-	$rowOutput["tv.venue"] = $document->getTVValue("venue");
-	$rowOutput["tv.event_date"] = $document->getTVValue("event_date");
-	$rowOutput["tv.event_end"] = $document->getTVValue("event_end");
-	
-	if($rowOutput["tv.past_event"] != 1){
-	//return $document->getTVValue('venue');
-   	$output .= $modx->getChunk($tpl, $rowOutput);
+	if(isset($rowOutput["tv.past_event"]) && $rowOutput["tv.past_event"] != 1){
+		$rowOutput["id"] = $row["event_id"];
+		$rowOutput["longtitle"] = $document->get("pagetitle");
+		$rowOutput["tv.venue"] = $document->getTVValue("venue");
+		$rowOutput["tv.event_date"] = $document->getTVValue("event_date");
+		$rowOutput["tv.event_end"] = $document->getTVValue("event_end");
+	   	$output .= $modx->getChunk($tpl, $rowOutput);
 	}
-     // $rowOutput = $modx->runSnippet("getUserById", array("uid"=>$row["id"], "tpl"=>$chunk ));
-     // $output .= $rowOutput;
-    
-    
+   
+   
    }
 }
 
 if($output == ""){
-	 //return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
-	return "";
+	 return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
+
 }else{
 	return $output;
-}*/return "You have not registered for any events yet. Checkout our <a href='[[~132]]'>upcoming events</a>.";
+}
