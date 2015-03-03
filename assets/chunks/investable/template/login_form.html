@@ -2,7 +2,7 @@
    
   
    <form name="login_form"  action="[[~10]]" method="post" >
-       <input class="returnUrl" type="hidden" name="returnUrl" value="[[+request_uri]]" />
+       <input class="returnUrl" type="hidden" name="returnUrl" value="[[++site_url]][[+request_uri]]" />
        <input class="loginLoginValue" type="hidden" name="service" value="login" />
      
       <div class="form_section social_signin">
