@@ -94,19 +94,21 @@ if(!is_object($result)){
     
 	
 	// attempt to login now
-	$url = $modx->makeUrl(43, '', '', 'full');
-	$c = array(
-   'login_context' => 'web',
-   'username' => $_POST["emailAddress"],
-   'password' => $_POST["id"],
-   'returnUrl' => $url,
-	 );
- 	$response = $modx->runProcessor('security/login', $c);
-   // $modx->send
-	//return json_encode($response);
 	
-
-	//$modx->sendRedirect($url);
-    return $url;
+	if(empty($_POST["return_url"])){
+		$url = $modx->makeUrl(43, '', '', 'full');
+		
+	}else{
+		$url=  $_POST["return_url"];
+	}
+	
+	$c = array(
+	   'login_context' => 'web',
+	   'username' => $_POST["emailAddress"],
+	   'password' => $_POST["id"],
+	   'returnUrl' => $url,
+		 );
+	 	$response = $modx->runProcessor('security/login', $c);
   
+    	return $url;
 }

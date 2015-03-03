@@ -107,7 +107,7 @@ function insertParam(key, value)
 	  function linkedin_login(profiles) {
 	   
 	     member = profiles.values[0];
-	    
+	    member["return_url"] = window.location.href;
 	     console.log(member);
 	     $.ajax("processors/linkedin-login-check.html", {
 	     	type: "POST",
